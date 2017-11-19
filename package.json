@@ -1,0 +1,69 @@
+{
+  "name": "react-native-swiper-flatlist",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "Apache-2.0",
+  "author": "Gustavo Gard <gusgard@gmail.com> (https://gusgard.com)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gusgard/react-native-swiper-flatlist.git"
+  },
+  "description": "React native swiper flatlist component",
+  "bugs": {
+    "url": "https://github.com/gusgard/react-native-swiper-flatlist/issues"
+  },
+  "homepage": "https://github.com/gusgard/react-native-swiper-flatlist#readme",
+  "keywords": [
+    "swiper flatlist",
+    "swiper",
+    "swiper component",
+    "react native",
+    "react-native",
+    "react",
+    "flatlist",
+    "flatlist swiper"
+  ],
+  "scripts": {
+    "lint": "eslint index.js src",
+    "lint-fix": "eslint index.js src --fix",
+    "test": "jest",
+    "test-watch": "jest --watch",
+    "publish": "npm publish"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.1",
+    "babel-jest": "21.2.0",
+    "babel-preset-react-native": "4.0.0",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.2",
+    "enzyme-to-json": "^3.1.4",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-config-prettier": "^2.1.1",
+    "eslint-plugin-flowtype": "^2.33.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-prettier": "^2.1.1",
+    "eslint-plugin-react": "^7.0.1",
+    "eslint-plugin-react-native": "^3.1.0",
+    "jest": "21.2.1",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.3.1",
+    "prettier-eslint": "^8.2.1",
+    "react": "16.0.0",
+    "react-dom": "^16.0.0",
+    "react-native": "0.50.3"
+  },
+  "jest": {
+    "preset": "react-native",
+    "setupTestFrameworkScriptFile": "./enzyme.js",
+    "modulePathIgnorePatterns": ["<rootDir>/example/node_modules/"],
+    "snapshotSerializers": ["./node_modules/enzyme-to-json/serializer"]
+  },
+  "pre-commit": {
+    "run": ["lint", "test"]
+  }
+}
