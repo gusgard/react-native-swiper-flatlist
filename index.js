@@ -1,3 +1,3 @@
-import { GridList } from './src/components';
+import { SwiperFlatList } from './src/components';
 
-export default GridList;
+export default SwiperFlatList;

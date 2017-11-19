@@ -31,4 +31,4 @@ function matchesFile(filename, fileGlob) {
   return minimatch(path.basename(filename), fileGlob);
 }
 
-copyAndWatch('../src', 'node_modules/react-native-grid-list/src');
+copyAndWatch('../src', 'node_modules/react-native-swiper-flatlist/src');

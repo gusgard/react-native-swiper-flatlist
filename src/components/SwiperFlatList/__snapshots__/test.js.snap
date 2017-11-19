@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "marginVertical": 16.675,
+    }
+  }
+>
+  <FlatList
+    data={
+      Array [
+        Object {
+          "id": 1,
+          "picture": Object {
+            "uri": "https://...",
+          },
+        },
+        Object {
+          "id": 2,
+          "picture": Object {
+            "uri": "https://...",
+          },
+        },
+      ]
+    }
+    disableVirtualization={false}
+    horizontal={true}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    numColumns={1}
+    onEndReachedThreshold={2}
+    onMomentumScrollEnd={[Function]}
+    pagingEnabled={true}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    showsHorizontalScrollIndicator={false}
+    updateCellsBatchingPeriod={50}
+    windowSize={21}
+  />
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "marginVertical": 16.675,
+      }
+    }
+  >
+    <TouchableOpacity
+      activeOpacity={0.2}
+      key="1"
+      onPress={[Function]}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(45, 120, 210)",
+            "borderRadius": 25,
+            "height": 28.125,
+            "marginHorizontal": 18.75,
+            "width": 28.125,
+          },
+          Object {
+            "backgroundColor": "rgb(15, 45, 90)",
+          },
+        ]
+      }
+    />
+    <TouchableOpacity
+      activeOpacity={0.2}
+      key="2"
+      onPress={[Function]}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgb(45, 120, 210)",
+            "borderRadius": 25,
+            "height": 28.125,
+            "marginHorizontal": 18.75,
+            "width": 28.125,
+          },
+          false,
+        ]
+      }
+    />
+  </View>
+</View>
+`;
