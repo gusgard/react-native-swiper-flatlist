@@ -1,16 +1,29 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { TouchableOpacity, View, FlatList, Image } from 'react-native';
+import { TouchableOpacity, View, FlatList } from 'react-native';
 
 import styles from './styles';
 
 export default class SwiperFlatList extends PureComponent {
   static propTypes = {
-    items: PropTypes.array.isRequired,
+    data: PropTypes.array.isRequired,
+    renderItem: PropTypes.func.isRequired,
+    // showsPagination: PropTypes.bool,
+    // activeDotColor: PropTypes.string,
+    // dotColor: PropTypes.string,
+    // loop: PropTypes.bool,
+    index: PropTypes.number.isRequired,
+    // autoplay: PropTypes.bool.isRequired,
+    // scrollToIndex: PropTypes.func,
+  };
+
+  static defaultProps = {
+    index: 0,
+    // autoplay: false,
   };
 
   state = {
-    index: 0,
+    index: this.props.index,
   };
   onScrollEnd = e => {
     const { contentOffset, layoutMeasurement } = e.nativeEvent;
@@ -24,38 +37,32 @@ export default class SwiperFlatList extends PureComponent {
     this.flatListRef.scrollToIndex(params);
   };
 
-  keyExtractor = item => item.id;
-
-  renderItem = ({ item }) => (
-    <View style={styles.imageContainer}>
-      <Image style={styles.image} source={item.thumbnail} />
-    </View>
-  );
+  _keyExtractor = (item, index) => index;
 
   render() {
-    const { items } = this.props;
+    const { data, renderItem } = this.props;
     return (
       <View style={styles.container}>
         <FlatList
           ref={component => {
             this.flatListRef = component;
           }}
-          data={items}
-          keyExtractor={this.keyExtractor}
-          renderItem={this.renderItem}
+          data={data}
+          keyExtractor={this._keyExtractor}
+          renderItem={renderItem}
           horizontal
           showsHorizontalScrollIndicator={false}
           pagingEnabled
           onMomentumScrollEnd={this.onScrollEnd}
         />
         <View style={styles.dotsContainer}>
-          {items.map((item, index) => (
+          {data.map((item, index) => (
             <TouchableOpacity
               style={[
                 styles.dot,
                 this.state.index === index && styles.dotActive,
               ]}
-              key={item.id}
+              key={index}
               onPress={() => this.goTo(index)}
             />
           ))}

@@ -7,6 +7,6 @@ const logo = { uri: 'https://...' };
 const items = [{ id: 1, picture: logo }, { id: 2, picture: logo }];
 
 it('renders correctly', () => {
-  const wrapper = shallow(<SwiperFlatList items={items} />);
+  const wrapper = shallow(<SwiperFlatList data={items} />);
   expect(wrapper).toMatchSnapshot();
 });

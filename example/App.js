@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import { Dimensions, Image, StyleSheet, View } from 'react-native';
 import SwiperFlatList from 'react-native-swiper-flatlist';
+
+export const { width, height } = Dimensions.get('window');
 
 const newImage = {
   0: 'business',
@@ -23,28 +25,19 @@ const image = index => ({
   },
 });
 
-const items = Array.from(Array(20)).map((_, index) => image(index));
+const items = Array.from(Array(5)).map((_, index) => image(index));
 
 export default class App extends PureComponent {
-  renderItem = ({ item, stagger }) => (
-    <Image
-      style={styles.image}
-      source={item.thumbnail}
-      onLoad={() => stagger.start()}
-    />
+  renderItem = ({ item }) => (
+    <View style={styles.imageContainer}>
+      <Image style={styles.image} source={item.thumbnail} />
+    </View>
   );
 
   render() {
     return (
       <View style={styles.container}>
-        <SwiperFlatList
-          // showAnimation
-          // showSeparator
-          data={items}
-          items={items}
-          // numColumns={3}
-          renderItem={this.renderItem}
-        />
+        <SwiperFlatList data={items} renderItem={this.renderItem} />
       </View>
     );
   }
@@ -58,6 +51,16 @@ const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: '100%',
-    borderRadius: 10,
+    // borderRadius: 10,
   },
+  imageContainer: {
+    height,
+    width,
+    // justifyContent: 'center',
+  },
+  // image: {
+  //   alignSelf: 'center',
+  //   height: size,
+  //   width: size,
+  // },
 });
