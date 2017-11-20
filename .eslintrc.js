@@ -43,6 +43,7 @@ module.exports = {
     'react-native/split-platform-components': 1,
     'react/jsx-filename-extension': 0,
     'react/no-array-index-key': 0,
+    'react/require-default-props': 0,
     'react/forbid-prop-types': [0, { forbid: ['any', 'array'] }],
     'react/jsx-no-bind': 1,
     'react/no-multi-comp': 1,

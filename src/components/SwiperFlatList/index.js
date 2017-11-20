@@ -29,7 +29,6 @@ export default class SwiperFlatList extends PureComponent {
     autoplay: false,
     showPagination: false,
     horizontal: true,
-    onMomentumScrollEnd: undefined,
   };
 
   state = {
@@ -101,7 +100,6 @@ export default class SwiperFlatList extends PureComponent {
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}
           pagingEnabled
-          // onEndReachedThreshold={1}
           onMomentumScrollEnd={this._onMomentumScrollEnd}
           {...props}
         />
