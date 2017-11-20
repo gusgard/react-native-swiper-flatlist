@@ -8,6 +8,10 @@
 
 # WIP...
 
+## Limitations
+
+Vertical not work in android
+
 ## Author
 
 Gustavo Gard

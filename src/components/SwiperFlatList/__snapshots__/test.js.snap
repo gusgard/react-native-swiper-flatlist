@@ -9,6 +9,9 @@ exports[`renders correctly 1`] = `
   }
 >
   <FlatList
+    autoplay={false}
+    autoplayDelay={1}
+    autoplayDirection={true}
     data={
       Array [
         Object {
@@ -27,67 +30,18 @@ exports[`renders correctly 1`] = `
     }
     disableVirtualization={false}
     horizontal={true}
+    index={0}
     initialNumToRender={10}
     keyExtractor={[Function]}
     maxToRenderPerBatch={10}
     numColumns={1}
     onEndReachedThreshold={2}
-    onMomentumScrollEnd={[Function]}
     pagingEnabled={true}
     scrollEventThrottle={50}
     showsHorizontalScrollIndicator={false}
+    showsVerticalScrollIndicator={false}
     updateCellsBatchingPeriod={50}
     windowSize={21}
   />
-  <View
-    style={
-      Object {
-        "bottom": 0,
-        "flexDirection": "row",
-        "justifyContent": "center",
-        "left": 187.5,
-        "marginVertical": 16.675,
-        "position": "absolute",
-        "right": 187.5,
-      }
-    }
-  >
-    <TouchableOpacity
-      activeOpacity={0.2}
-      key="0"
-      onPress={[Function]}
-      style={
-        Array [
-          Object {
-            "backgroundColor": "gray",
-            "borderRadius": 25,
-            "height": 28.125,
-            "marginHorizontal": 18.75,
-            "width": 28.125,
-          },
-          Object {
-            "backgroundColor": "rgb(15, 45, 90)",
-          },
-        ]
-      }
-    />
-    <TouchableOpacity
-      activeOpacity={0.2}
-      key="1"
-      onPress={[Function]}
-      style={
-        Array [
-          Object {
-            "backgroundColor": "gray",
-            "borderRadius": 25,
-            "height": 28.125,
-            "marginHorizontal": 18.75,
-            "width": 28.125,
-          },
-          false,
-        ]
-      }
-    />
-  </View>
 </View>
 `;

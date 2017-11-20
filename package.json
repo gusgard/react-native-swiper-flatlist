@@ -60,10 +60,17 @@
   "jest": {
     "preset": "react-native",
     "setupTestFrameworkScriptFile": "./enzyme.js",
-    "modulePathIgnorePatterns": ["<rootDir>/example/node_modules/"],
-    "snapshotSerializers": ["./node_modules/enzyme-to-json/serializer"]
+    "modulePathIgnorePatterns": [
+      "<rootDir>/example/node_modules/"
+    ],
+    "snapshotSerializers": [
+      "./node_modules/enzyme-to-json/serializer"
+    ]
   },
   "pre-commit": {
-    "run": ["lint", "test"]
+    "run": [
+      "lint",
+      "test"
+    ]
   }
 }

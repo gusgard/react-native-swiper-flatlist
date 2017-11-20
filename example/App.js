@@ -37,7 +37,13 @@ export default class App extends PureComponent {
   render() {
     return (
       <View style={styles.container}>
-        <SwiperFlatList data={items} renderItem={this.renderItem} />
+        <SwiperFlatList
+          autoplay
+          // horizontal={false}
+          showPagination
+          data={items}
+          renderItem={this.renderItem}
+        />
       </View>
     );
   }
@@ -51,16 +57,9 @@ const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: '100%',
-    // borderRadius: 10,
   },
   imageContainer: {
     height,
     width,
-    // justifyContent: 'center',
   },
-  // image: {
-  //   alignSelf: 'center',
-  //   height: size,
-  //   width: size,
-  // },
 });
