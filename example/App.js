@@ -29,9 +29,7 @@ const items = Array.from(Array(5)).map((_, index) => image(index));
 
 export default class App extends PureComponent {
   renderItem = ({ item }) => (
-    <View style={styles.imageContainer}>
-      <Image style={styles.image} source={item.thumbnail} />
-    </View>
+    <Image style={styles.image} source={item.thumbnail} />
   );
 
   render() {
@@ -55,10 +53,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   image: {
-    width: '100%',
-    height: '100%',
-  },
-  imageContainer: {
     height,
     width,
   },

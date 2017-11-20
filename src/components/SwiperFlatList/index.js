@@ -24,7 +24,7 @@ export default class SwiperFlatList extends PureComponent {
   static defaultProps = {
     index: 0,
     data: [],
-    autoplayDelay: 1,
+    autoplayDelay: 3,
     autoplayDirection: true,
     autoplay: false,
     showPagination: false,
@@ -88,7 +88,7 @@ export default class SwiperFlatList extends PureComponent {
       ...props
     } = this.props;
     return (
-      <View style={styles.container}>
+      <View>
         <FlatList
           ref={component => {
             this.flatListRef = component;

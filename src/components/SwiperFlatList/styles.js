@@ -3,9 +3,6 @@ import { StyleSheet } from 'react-native';
 import { vertical, colors, horizontal, width } from '../../themes';
 
 export default StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   dotsContainer: {
     position: 'absolute',
     flexDirection: 'row',

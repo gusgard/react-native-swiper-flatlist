@@ -1,16 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`swiper flatlist renders correctly 1`] = `
-<View
-  style={
-    Object {
-      "flex": 1,
-    }
-  }
->
+<View>
   <FlatList
     autoplay={false}
-    autoplayDelay={1}
+    autoplayDelay={3}
     autoplayDirection={true}
     data={
       Array [
