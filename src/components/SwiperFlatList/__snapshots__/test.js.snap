@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`swiper flatlist renders correctly 1`] = `
 <View
   style={
     Object {
@@ -16,13 +16,13 @@ exports[`renders correctly 1`] = `
       Array [
         Object {
           "id": 1,
-          "picture": Object {
+          "thumbnail": Object {
             "uri": "https://...",
           },
         },
         Object {
           "id": 2,
-          "picture": Object {
+          "thumbnail": Object {
             "uri": "https://...",
           },
         },
@@ -38,6 +38,7 @@ exports[`renders correctly 1`] = `
     onEndReachedThreshold={2}
     onMomentumScrollEnd={[Function]}
     pagingEnabled={true}
+    renderItem={[Function]}
     scrollEventThrottle={50}
     showsHorizontalScrollIndicator={false}
     showsVerticalScrollIndicator={false}
