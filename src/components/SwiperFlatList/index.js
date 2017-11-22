@@ -7,7 +7,6 @@ import styles from './styles';
 export default class SwiperFlatList extends PureComponent {
   static propTypes = {
     data: PropTypes.array.isRequired,
-    renderItem: PropTypes.func.isRequired,
     onMomentumScrollEnd: PropTypes.func,
     showPagination: PropTypes.bool.isRequired,
     // paginationActiveColor: PropTypes.string,
@@ -19,7 +18,20 @@ export default class SwiperFlatList extends PureComponent {
     autoplay: PropTypes.bool.isRequired,
     autoplayDirection: PropTypes.bool.isRequired,
     autoplayLoop: PropTypes.bool.isRequired,
+
+    renderItem: PropTypes.func,
     // scrollToIndex: PropTypes.func,
+
+    // Only is allowed children or data not both
+    children(props, propName) {
+      const { data } = props;
+      if (!props[propName] && data && data.length === 0) {
+        return new Error('Invalid props, `data` or `children` is required');
+      }
+      if (data && data.length !== 0 && !props.renderItem) {
+        return new Error('Invalid props, `renderItem` is required');
+      }
+    },
   };
 
   static defaultProps = {
@@ -37,11 +49,17 @@ export default class SwiperFlatList extends PureComponent {
     index: this.props.index,
   };
 
+  componentWillMount() {
+    this.setup(this.props);
+  }
   componentDidMount() {
     const { autoplay } = this.props;
     if (autoplay) {
       this.autoplay();
     }
+  }
+  componentWillUpdate(nextProps) {
+    this.setup(nextProps);
   }
 
   componentWillUnmount() {
@@ -50,16 +68,26 @@ export default class SwiperFlatList extends PureComponent {
     }
   }
 
+  setup = ({ children, data, renderItem }) => {
+    if (children) {
+      this.data = children;
+      this.renderItem = this.renderChildren;
+    } else if (data) {
+      this.data = data;
+      this.renderItem = renderItem;
+    }
+  };
+
   autoplay = (index = 0) => {
-    const { autoplayDelay, autoplayLoop, data } = this.props;
+    const { autoplayDelay, autoplayLoop } = this.props;
     if (this.autoplayTimer) {
       clearTimeout(this.autoplayTimer);
     }
-    const isEnd = index !== data.length - 1;
+    const isEnd = index !== this.data.length - 1;
 
     if (autoplayLoop || isEnd) {
       this.autoplayTimer = setTimeout(() => {
-        const nextIndex = (index + 1) % data.length;
+        const nextIndex = (index + 1) % this.data.length;
         this._scrollToIndex(nextIndex);
       }, autoplayDelay * 1000);
     }
@@ -92,33 +120,29 @@ export default class SwiperFlatList extends PureComponent {
 
   _keyExtractor = (item, index) => index;
 
+  renderChildren = ({ item }) => item;
+
   render() {
-    const {
-      horizontal,
-      data,
-      renderItem,
-      showPagination,
-      ...props
-    } = this.props;
+    const { horizontal, showPagination, children, ...props } = this.props;
     return (
       <View>
         <FlatList
           ref={component => {
             this.flatListRef = component;
           }}
-          data={data}
           keyExtractor={this._keyExtractor}
-          renderItem={renderItem}
           horizontal={horizontal}
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}
           pagingEnabled
           onMomentumScrollEnd={this._onMomentumScrollEnd}
           {...props}
+          data={this.data}
+          renderItem={this.renderItem}
         />
         {showPagination && (
           <View style={styles.dotsContainer}>
-            {data.map((item, index) => (
+            {this.data.map((_, index) => (
               <TouchableOpacity
                 style={[
                   styles.dot,

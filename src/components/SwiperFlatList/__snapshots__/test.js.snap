@@ -6,6 +6,7 @@ exports[`swiper flatlist renders correctly 1`] = `
     autoplay={false}
     autoplayDelay={3}
     autoplayDirection={true}
+    autoplayLoop={false}
     data={
       Array [
         Object {
