@@ -10,14 +10,15 @@ export default class SwiperFlatList extends PureComponent {
     renderItem: PropTypes.func.isRequired,
     onMomentumScrollEnd: PropTypes.func,
     showPagination: PropTypes.bool.isRequired,
-    // activeDotColor: PropTypes.string,
-    // dotColor: PropTypes.string,
+    // paginationActiveColor: PropTypes.string,
+    // paginationColor: PropTypes.string,
     // loop: PropTypes.bool,
     horizontal: PropTypes.bool.isRequired,
     index: PropTypes.number.isRequired,
     autoplayDelay: PropTypes.number.isRequired,
     autoplay: PropTypes.bool.isRequired,
     autoplayDirection: PropTypes.bool.isRequired,
+    autoplayLoop: PropTypes.bool.isRequired,
     // scrollToIndex: PropTypes.func,
   };
 
@@ -26,6 +27,7 @@ export default class SwiperFlatList extends PureComponent {
     data: [],
     autoplayDelay: 3,
     autoplayDirection: true,
+    autoplayLoop: false,
     autoplay: false,
     showPagination: false,
     horizontal: true,
@@ -36,7 +38,10 @@ export default class SwiperFlatList extends PureComponent {
   };
 
   componentDidMount() {
-    this.autoplay();
+    const { autoplay } = this.props;
+    if (autoplay) {
+      this.autoplay();
+    }
   }
 
   componentWillUnmount() {
@@ -45,18 +50,23 @@ export default class SwiperFlatList extends PureComponent {
     }
   }
 
-  autoplay = () => {
-    const { autoplayDelay, autoplay } = this.props;
-    if (autoplay) {
+  autoplay = (index = 0) => {
+    const { autoplayDelay, autoplayLoop, data } = this.props;
+    if (this.autoplayTimer) {
+      clearTimeout(this.autoplayTimer);
+    }
+    const isEnd = index !== data.length - 1;
+
+    if (autoplayLoop || isEnd) {
       this.autoplayTimer = setTimeout(() => {
-        const index = (this.state.index + 1) % this.props.data.length;
-        this._scrollToIndex(index);
+        const nextIndex = (index + 1) % data.length;
+        this._scrollToIndex(nextIndex);
       }, autoplayDelay * 1000);
     }
   };
 
   _onMomentumScrollEnd = e => {
-    const { horizontal, onMomentumScrollEnd } = this.props;
+    const { autoplay, horizontal, onMomentumScrollEnd } = this.props;
     const { contentOffset, layoutMeasurement } = e.nativeEvent;
     let index;
     if (horizontal) {
@@ -69,7 +79,10 @@ export default class SwiperFlatList extends PureComponent {
     if (onMomentumScrollEnd) {
       onMomentumScrollEnd();
     }
-    this.autoplay();
+
+    if (autoplay) {
+      this.autoplay(index);
+    }
   };
 
   _scrollToIndex = index => {

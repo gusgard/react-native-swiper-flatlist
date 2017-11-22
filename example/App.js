@@ -37,6 +37,8 @@ export default class App extends PureComponent {
       <View style={styles.container}>
         <SwiperFlatList
           autoplay
+          autoplayDelay={1}
+          // autoplayLoop
           // horizontal={false}
           showPagination
           data={items}
