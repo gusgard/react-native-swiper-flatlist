@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import { TouchableOpacity, View, FlatList } from 'react-native';
 
 import styles from './styles';
-import { vertical, colors, height, width } from '../../themes';
+
+// import { vertical, colors, height, width } from '../../themes';
 
 export default class SwiperFlatList extends PureComponent {
   static propTypes = {
@@ -48,9 +49,9 @@ export default class SwiperFlatList extends PureComponent {
   componentWillMount() {
     this.setup(this.props);
     // console.log(this.state, this.data.length);
-    const nextIndex =
-      this.data.length - 1 === this.props.index ? 0 : this.props.index;
-    this.setState({ index: nextIndex });
+    // const nextIndex =
+    //   this.data.length - 1 === this.props.index ? 0 : this.props.index;
+    this.setState({ index: this.props.index });
   }
   componentDidMount() {
     const { autoplay } = this.props;
@@ -61,19 +62,19 @@ export default class SwiperFlatList extends PureComponent {
     }
 
     if (index !== 0) {
-      console.log('ok');
-      setTimeout(() => {
-        this._scrollToIndex(index, false);
-      }, 500);
+      this._scrollToIndex(index, false);
+      // setTimeout(() => {
+      //   console.log('ok');
+      // }, 0);
     }
   }
   componentWillReceiveProps(nextProps) {
     console.log('-------');
-    const nextIndex =
-      nextProps.data.length - 1 === nextProps.index ? 0 : nextProps.index;
-    this.setState({ index: nextIndex });
-    console.log(nextProps.index, nextIndex);
-    this.setup(nextProps);
+    // const nextIndex =
+    //   nextProps.data.length - 1 === nextProps.index ? 0 : nextProps.index;
+    // this.setState({ index: nextIndex });
+    // console.log(nextProps.index, nextIndex);
+    // this.setup(nextProps);
   }
   // componentWillUpdate(nextProps) {
   // this.setup(nextProps);
@@ -107,19 +108,28 @@ export default class SwiperFlatList extends PureComponent {
     if (autoplayLoop || !isEnd) {
       this.autoplayTimer = setTimeout(() => {
         const nextIndex = (index + 1) % this.data.length;
-        this._scrollToIndex(nextIndex); // with false not work.
+
+        this._scrollToIndex(nextIndex, !isEnd);
+      }, autoplayDelay * 1000);
+    }
+    if (isEnd) {
+      // When scroll to the end and animated is false need to restart the autoplay
+      setTimeout(() => {
+        this.autoplayTimer = setTimeout(
+          () => this._scrollToIndex(1, true),
+          autoplayDelay * 1000,
+        );
       }, autoplayDelay * 1000);
     }
   };
 
-  _scrollToIndex = (index, animated = true) => {
+  _scrollToIndex = (index, animated) => {
     const params = { animated, index };
     this.flatListRef.scrollToIndex(params);
     this.setState({ index });
   };
 
   _onMomentumScrollEnd = e => {
-    // console.log('eeee');
     const { autoplay, horizontal, onMomentumScrollEnd } = this.props;
     const { contentOffset, layoutMeasurement } = e.nativeEvent;
     let index;
@@ -129,8 +139,6 @@ export default class SwiperFlatList extends PureComponent {
     } else {
       index = Math.floor(contentOffset.y / layoutMeasurement.height);
     }
-
-    // console.log(index);
 
     // this.setState(() => {
     if (autoplay) {
@@ -146,6 +154,10 @@ export default class SwiperFlatList extends PureComponent {
     }
   };
 
+  _onScrollToIndexFailed = info => {
+    setTimeout(() => this._scrollToIndex(info.index, false));
+  };
+
   _keyExtractor = (item, index) => index;
 
   renderChildren = ({ item }) => item;
@@ -156,13 +168,14 @@ export default class SwiperFlatList extends PureComponent {
         <TouchableOpacity
           style={[styles.dot, this.state.index === index && styles.dotActive]}
           key={index}
-          onPress={() => this._scrollToIndex(index)}
+          onPress={() => this._scrollToIndex(index, true)}
         />
       ))}
     </View>
   );
 
   render() {
+    // console.log('render');
     const { horizontal, showPagination, children, ...props } = this.props;
     return (
       <View>
@@ -176,9 +189,13 @@ export default class SwiperFlatList extends PureComponent {
           showsVerticalScrollIndicator={false}
           pagingEnabled
           onMomentumScrollEnd={this._onMomentumScrollEnd}
+          onScrollToIndexFailed={this._onScrollToIndexFailed}
           {...props}
           data={this.data}
           renderItem={this.renderItem}
+          // onViewableItemsChanged={(data, index, x) => {
+          //   console.log(data, index, x);
+          // }}
           // getItemLayout={(data, index, x) => {
           //   console.log(data, index, x);
           //   return {

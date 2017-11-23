@@ -41,6 +41,7 @@ export default class App extends PureComponent {
     //   () => this.setState({ autoplayDelay: this.state.autoplayDelay + 0.1 }),
     //   5000,
     // );
+
     return (
       <View style={styles.container}>
         <View style={styles.container}>
@@ -63,14 +64,23 @@ export default class App extends PureComponent {
             // autoplayDelay={this.state.autoplayDelay}
             autoplayLoop
             // index={4}
-            // index={2}
+            index={3}
             showPagination
           >
-            <View style={{ height, width, backgroundColor: 'tomato' }} />
-            <View style={{ height, width, backgroundColor: 'blue' }} />
-            <View style={{ height, width, backgroundColor: 'red' }} />
-            <Image style={styles.image} source={items[1].thumbnail} />
-            <Image style={styles.image} source={items[2].thumbnail} />
+            <View style={[styles.child, { backgroundColor: 'tomato' }]}>
+              <Text style={styles.text}>1</Text>
+            </View>
+            <View style={[styles.child, { backgroundColor: 'thistle' }]}>
+              <Text style={styles.text}>2</Text>
+            </View>
+            <View style={[styles.child, { backgroundColor: 'skyblue' }]}>
+              <Text style={styles.text}>3</Text>
+            </View>
+            <View style={[styles.child, { backgroundColor: 'teal' }]}>
+              <Text style={styles.text}>4</Text>
+            </View>
+            {/* <Image style={styles.image} source={items[1].thumbnail} />
+            <Image style={styles.image} source={items[2].thumbnail} /> */}
           </SwiperFlatList>
         </View>
       </View>
@@ -86,5 +96,13 @@ const styles = StyleSheet.create({
   image: {
     height,
     width,
+  },
+  child: {
+    height: height * 0.5,
+    width,
+  },
+  text: {
+    fontSize: width * 0.5,
+    textAlign: 'center',
   },
 });

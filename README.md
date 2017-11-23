@@ -8,9 +8,16 @@
 
 # WIP...
 
+## Example
+
+[Example](./example/README.md)
+
+Implemented only with flatlist
+
 ## Limitations
 
-Vertical not work in android
+Note: Vertical pagination is not supported on Android.
+[Doc](https://github.com/facebook/react-native/blob/a48da14800013659e115bf2b58e31aa396e678e5/Libraries/Components/ScrollView/ScrollView.js#L274)
 
 ## Author
 

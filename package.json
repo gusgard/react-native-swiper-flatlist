@@ -28,6 +28,7 @@
     "lint-fix": "eslint index.js src --fix",
     "test": "jest",
     "test-watch": "jest --watch",
+    "start": "echo ----- Check example folder  ----- 👻",
     "publish": "npm publish"
   },
   "dependencies": {
@@ -60,17 +61,10 @@
   "jest": {
     "preset": "react-native",
     "setupTestFrameworkScriptFile": "./enzyme.js",
-    "modulePathIgnorePatterns": [
-      "<rootDir>/example/node_modules/"
-    ],
-    "snapshotSerializers": [
-      "./node_modules/enzyme-to-json/serializer"
-    ]
+    "modulePathIgnorePatterns": ["<rootDir>/example/node_modules/"],
+    "snapshotSerializers": ["./node_modules/enzyme-to-json/serializer"]
   },
   "pre-commit": {
-    "run": [
-      "lint",
-      "test"
-    ]
+    "run": ["lint", "test"]
   }
 }
