@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { TouchableOpacity, View, FlatList } from 'react-native';
 
 import styles from './styles';
+import { vertical, colors, height, width } from '../../themes';
 
 export default class SwiperFlatList extends PureComponent {
   static propTypes = {
@@ -11,7 +12,6 @@ export default class SwiperFlatList extends PureComponent {
     showPagination: PropTypes.bool.isRequired,
     // paginationActiveColor: PropTypes.string,
     // paginationColor: PropTypes.string,
-    // loop: PropTypes.bool,
     horizontal: PropTypes.bool.isRequired,
     index: PropTypes.number.isRequired,
     autoplayDelay: PropTypes.number.isRequired,
@@ -45,23 +45,39 @@ export default class SwiperFlatList extends PureComponent {
     horizontal: true,
   };
 
-  state = {
-    index: this.props.index,
-  };
-
   componentWillMount() {
     this.setup(this.props);
+    // console.log(this.state, this.data.length);
+    const nextIndex =
+      this.data.length - 1 === this.props.index ? 0 : this.props.index;
+    this.setState({ index: nextIndex });
   }
   componentDidMount() {
     const { autoplay } = this.props;
+    const { index } = this.state;
+    // console.log(index);
     if (autoplay) {
-      this.autoplay();
+      this.autoplay(index);
+    }
+
+    if (index !== 0) {
+      console.log('ok');
+      setTimeout(() => {
+        this._scrollToIndex(index, false);
+      }, 500);
     }
   }
-  componentWillUpdate(nextProps) {
+  componentWillReceiveProps(nextProps) {
+    console.log('-------');
+    const nextIndex =
+      nextProps.data.length - 1 === nextProps.index ? 0 : nextProps.index;
+    this.setState({ index: nextIndex });
+    console.log(nextProps.index, nextIndex);
     this.setup(nextProps);
   }
-
+  // componentWillUpdate(nextProps) {
+  // this.setup(nextProps);
+  // }
   componentWillUnmount() {
     if (this.autoplayTimer) {
       clearTimeout(this.autoplayTimer);
@@ -76,24 +92,34 @@ export default class SwiperFlatList extends PureComponent {
       this.data = data;
       this.renderItem = renderItem;
     }
+    // const nextIndex = this.data.length - 1 === index ? 0 : index;
+    // console.log(index, nextIndex);
+    // this.setState({ index: nextIndex });
   };
 
-  autoplay = (index = 0) => {
+  autoplay = index => {
     const { autoplayDelay, autoplayLoop } = this.props;
     if (this.autoplayTimer) {
       clearTimeout(this.autoplayTimer);
     }
-    const isEnd = index !== this.data.length - 1;
+    const isEnd = index === this.data.length - 1;
 
-    if (autoplayLoop || isEnd) {
+    if (autoplayLoop || !isEnd) {
       this.autoplayTimer = setTimeout(() => {
         const nextIndex = (index + 1) % this.data.length;
-        this._scrollToIndex(nextIndex);
+        this._scrollToIndex(nextIndex); // with false not work.
       }, autoplayDelay * 1000);
     }
   };
 
+  _scrollToIndex = (index, animated = true) => {
+    const params = { animated, index };
+    this.flatListRef.scrollToIndex(params);
+    this.setState({ index });
+  };
+
   _onMomentumScrollEnd = e => {
+    // console.log('eeee');
     const { autoplay, horizontal, onMomentumScrollEnd } = this.props;
     const { contentOffset, layoutMeasurement } = e.nativeEvent;
     let index;
@@ -103,24 +129,38 @@ export default class SwiperFlatList extends PureComponent {
     } else {
       index = Math.floor(contentOffset.y / layoutMeasurement.height);
     }
-    this.setState({ index });
+
+    // console.log(index);
+
+    // this.setState(() => {
+    if (autoplay) {
+      this.autoplay(index);
+    } else {
+      this.setState({ index });
+    }
+    // return { index };
+    // });
+
     if (onMomentumScrollEnd) {
       onMomentumScrollEnd();
     }
-
-    if (autoplay) {
-      this.autoplay(index);
-    }
-  };
-
-  _scrollToIndex = index => {
-    const params = { animated: true, index };
-    this.flatListRef.scrollToIndex(params);
   };
 
   _keyExtractor = (item, index) => index;
 
   renderChildren = ({ item }) => item;
+
+  renderPagination = () => (
+    <View style={styles.dotsContainer}>
+      {this.data.map((_, index) => (
+        <TouchableOpacity
+          style={[styles.dot, this.state.index === index && styles.dotActive]}
+          key={index}
+          onPress={() => this._scrollToIndex(index)}
+        />
+      ))}
+    </View>
+  );
 
   render() {
     const { horizontal, showPagination, children, ...props } = this.props;
@@ -139,21 +179,19 @@ export default class SwiperFlatList extends PureComponent {
           {...props}
           data={this.data}
           renderItem={this.renderItem}
+          // getItemLayout={(data, index, x) => {
+          //   console.log(data, index, x);
+          //   return {
+          //     length: width,
+          //     offset: width * index,
+          //     index,
+          //   };
+          // }}
+          // initialScrollIndex={this.state.index}
+          // ListFooterComponent=
+          // ListEmptyComponent loading...
         />
-        {showPagination && (
-          <View style={styles.dotsContainer}>
-            {this.data.map((_, index) => (
-              <TouchableOpacity
-                style={[
-                  styles.dot,
-                  this.state.index === index && styles.dotActive,
-                ]}
-                key={index}
-                onPress={() => this._scrollToIndex(index)}
-              />
-            ))}
-          </View>
-        )}
+        {showPagination && this.renderPagination()}
       </View>
     );
   }

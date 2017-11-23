@@ -25,38 +25,52 @@ const image = index => ({
   },
 });
 
-const items = Array.from(Array(4)).map((_, index) => image(index));
+const items = Array.from(Array(6)).map((_, index) => image(index));
 
 export default class App extends PureComponent {
   renderItemComponent = ({ item }) => (
     <Image style={styles.image} source={item.thumbnail} />
   );
 
+  // state = {
+  //   autoplayDelay: 1,
+  // };
+
   render() {
+    // setTimeout(
+    //   () => this.setState({ autoplayDelay: this.state.autoplayDelay + 0.1 }),
+    //   5000,
+    // );
     return (
       <View style={styles.container}>
         <View style={styles.container}>
-          <SwiperFlatList
+          {/* <SwiperFlatList
+            // horizontal={false}
             autoplay
             autoplayDelay={1}
+            index={5}
             autoplayLoop
-            // horizontal={false}
-            showPagination
             data={items}
             renderItem={this.renderItemComponent}
-          />
+            showPagination
+          /> */}
         </View>
         <View style={styles.container}>
           <SwiperFlatList
+            // horizontal={false}
             autoplay
             autoplayDelay={1}
-            showPagination
+            // autoplayDelay={this.state.autoplayDelay}
             autoplayLoop
+            // index={4}
+            // index={2}
+            showPagination
           >
-            <Image style={styles.image} source={items[0].thumbnail} />
+            <View style={{ height, width, backgroundColor: 'tomato' }} />
+            <View style={{ height, width, backgroundColor: 'blue' }} />
+            <View style={{ height, width, backgroundColor: 'red' }} />
             <Image style={styles.image} source={items[1].thumbnail} />
             <Image style={styles.image} source={items[2].thumbnail} />
-            <Image style={styles.image} source={items[3].thumbnail} />
           </SwiperFlatList>
         </View>
       </View>
