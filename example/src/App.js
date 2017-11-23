@@ -2,34 +2,28 @@ import React, { PureComponent } from 'react';
 import { Text, Dimensions, Image, StyleSheet, View } from 'react-native';
 import SwiperFlatList from 'react-native-swiper-flatlist';
 
+import { fox, cat, background, element, lion } from './images';
+
 export const { width, height } = Dimensions.get('window');
 
-const newImage = {
-  0: 'business',
-  1: 'cats',
-  2: 'city',
-  3: 'food',
-  4: 'nightlife',
-  5: 'fashion',
-  6: 'people',
-  7: 'nature',
-  8: 'animals',
-  9: 'imageUrl',
-};
-
-const image = index => ({
-  thumbnail: {
-    uri: `https://lorempixel.com/200/200/${
-      newImage[index % (Object.keys(newImage).length - 1)]
-    }`,
-  },
-});
+const newImage = [lion, fox, cat, background, element];
+const image = index => ({ image: newImage[index % newImage.length] });
 
 const items = Array.from(Array(6)).map((_, index) => image(index));
 
 export default class App extends PureComponent {
   renderItemComponent = ({ item }) => (
-    <Image style={styles.image} source={item.thumbnail} />
+    <View>
+      <Image
+        style={styles.image}
+        source={item.image}
+        // resizeMode={Image.resizeMode.stretch}
+        // resizeMode={Image.resizeMode.contain}
+        // resizeMode={Image.resizeMode.center}
+        resizeMode={Image.resizeMode.cover}
+        // resizeMode={Image.resizeMode.repeat}
+      />
+    </View>
   );
 
   // state = {
@@ -45,16 +39,16 @@ export default class App extends PureComponent {
     return (
       <View style={styles.container}>
         <View style={styles.container}>
-          {/* <SwiperFlatList
+          <SwiperFlatList
             // horizontal={false}
             autoplay
-            autoplayDelay={1}
-            index={5}
+            autoplayDelay={3}
+            // index={5}
             autoplayLoop
             data={items}
             renderItem={this.renderItemComponent}
             showPagination
-          /> */}
+          />
         </View>
         <View style={styles.container}>
           <SwiperFlatList
@@ -79,8 +73,6 @@ export default class App extends PureComponent {
             <View style={[styles.child, { backgroundColor: 'teal' }]}>
               <Text style={styles.text}>4</Text>
             </View>
-            {/* <Image style={styles.image} source={items[1].thumbnail} />
-            <Image style={styles.image} source={items[2].thumbnail} /> */}
           </SwiperFlatList>
         </View>
       </View>
@@ -94,12 +86,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   image: {
-    height,
+    height: height * 0.5,
     width,
   },
   child: {
     height: height * 0.5,
     width,
+    justifyContent: 'center',
   },
   text: {
     fontSize: width * 0.5,
