@@ -125,11 +125,15 @@ export default class SwiperFlatList extends PureComponent {
 
   _scrollToIndex = (index, animated) => {
     const params = { animated, index };
-    this.flatListRef.scrollToIndex(params);
-    this.setState({ index });
+    this.setState(() => {
+      // this.setState({ index });
+      this.flatListRef.scrollToIndex(params);
+      return { index };
+    });
   };
 
   _onMomentumScrollEnd = e => {
+    // console.log('_onMomentumScrollEnd');
     const { autoplay, horizontal, onMomentumScrollEnd } = this.props;
     const { contentOffset, layoutMeasurement } = e.nativeEvent;
     let index;
@@ -141,6 +145,7 @@ export default class SwiperFlatList extends PureComponent {
     }
 
     // this.setState(() => {
+    // console.log(autoplay);
     if (autoplay) {
       this.autoplay(index);
     } else {
@@ -155,6 +160,7 @@ export default class SwiperFlatList extends PureComponent {
   };
 
   _onScrollToIndexFailed = info => {
+    console.log('fail');
     setTimeout(() => this._scrollToIndex(info.index, false));
   };
 
@@ -175,7 +181,6 @@ export default class SwiperFlatList extends PureComponent {
   );
 
   render() {
-    // console.log('render');
     const { horizontal, showPagination, children, ...props } = this.props;
     return (
       <View>
@@ -192,6 +197,8 @@ export default class SwiperFlatList extends PureComponent {
           onScrollToIndexFailed={this._onScrollToIndexFailed}
           {...props}
           data={this.data}
+          // inverted
+          initialNumToRender={0}
           renderItem={this.renderItem}
           // onViewableItemsChanged={(data, index, x) => {
           //   console.log(data, index, x);
