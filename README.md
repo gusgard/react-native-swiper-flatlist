@@ -6,13 +6,106 @@
 [![travis](https://travis-ci.org/gusgard/react-native-swiper-flatlist.svg?branch=master)](https://travis-ci.org/gusgard/react-native-swiper-flatlist)
 ![license](https://img.shields.io/npm/l/react-native-swiper-flatlist.svg)
 
-# WIP...
+![Demo](./demo.gif)
+
+## Installation
+
+```
+yarn add react-native-swiper-flatlist
+```
+
+or
+
+```
+npm install react-native-swiper-flatlist --save
+```
+
+<!-- ### Expo
+
+[Example](https://snack.expo.io/@gusgard/react-native-grid-list) -->
 
 ## Example
 
+Implemented only with flatlist
+
+### Code
+
+```js
+import React, { PureComponent } from 'react';
+import { Text, Dimensions, Image, StyleSheet, View } from 'react-native';
+
+import SwiperFlatList from 'react-native-swiper-flatlist';
+
+export default class App extends PureComponent {
+  render() {
+    return (
+      <View style={styles.container}>
+        <SwiperFlatList
+          autoplay
+          autoplayDelay={2}
+          autoplayLoop
+          index={2}
+          showPagination
+        >
+          <View style={[styles.child, { backgroundColor: 'tomato' }]}>
+            <Text style={styles.text}>1</Text>
+          </View>
+          <View style={[styles.child, { backgroundColor: 'thistle' }]}>
+            <Text style={styles.text}>2</Text>
+          </View>
+          <View style={[styles.child, { backgroundColor: 'skyblue' }]}>
+            <Text style={styles.text}>3</Text>
+          </View>
+          <View style={[styles.child, { backgroundColor: 'teal' }]}>
+            <Text style={styles.text}>4</Text>
+          </View>
+        </SwiperFlatList>
+      </View>
+    );
+  }
+}
+
+export const { width, height } = Dimensions.get('window');
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
+  child: {
+    height: height * 0.5,
+    width,
+    justifyContent: 'center',
+  },
+  text: {
+    fontSize: width * 0.5,
+    textAlign: 'center',
+  },
+});
+```
+
 [Example](./example/README.md)
 
-Implemented only with flatlist
+## Props
+
+| Prop                |              Default               |   Type   | Description                                           |
+| :------------------ | :--------------------------------: | :------: | :---------------------------------------------------- |
+| data                | _not required if children is used_ | `array`  | Data to use in renderItem                             |
+| children            |                 -                  |  `node`  | Children elements                                     |
+| renderItem          | _not required if children is used_ |  `func`  | Takes an item from data and renders it into the list. |
+| onMomentumScrollEnd |                 -                  |  `func`  | Called after scroll end                               |
+| showPagination      |               false                |  `bool`  | Show pagination                                       |
+| horizontal          |               false                |  `bool`  | Show                                                  |
+| index               |                 0                  | `number` | Index to start                                        |
+| renderAll           |               false                |  `bool`  | Render all the items before display it                |
+| **Autoplay**        |
+| autoplay            |               false                |  `bool`  | Change index automatically                            |
+| autoplayDelay       |                 3                  | `number` | Delay between every page                              |
+| autoplayLoop        |               false                |  `bool`  | Continue playing after reach end                      |
+
+<!-- paginationActiveColor: PropTypes.string,
+paginationColor: PropTypes.string,
+autoplayDirection: PropTypes.bool.isRequired,  -->
 
 ## Limitations
 
