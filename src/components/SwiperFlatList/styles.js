@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import { vertical, colors, horizontal, width } from '../../themes';
 
 export default StyleSheet.create({
-  dotsContainer: {
+  paginationContainer: {
     position: 'absolute',
     flexDirection: 'row',
     marginVertical: vertical.xxSmall,
@@ -12,14 +12,14 @@ export default StyleSheet.create({
     left: width * 0.25,
     right: width * 0.25,
   },
-  dot: {
+  pagination: {
     width: horizontal.small,
     height: horizontal.small,
     backgroundColor: colors.gray,
     borderRadius: 25,
     marginHorizontal: horizontal.xSmall,
   },
-  dotActive: {
+  paginationActive: {
     backgroundColor: colors.primaryDark,
   },
 });

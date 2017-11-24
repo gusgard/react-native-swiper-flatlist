@@ -9,7 +9,7 @@ export const { width, height } = Dimensions.get('window');
 const newImage = [lion, fox, cat, background, element];
 const image = index => ({ image: newImage[index % newImage.length] });
 
-const items = Array.from(Array(6)).map((_, index) => image(index));
+const items = Array.from(Array(5)).map((_, index) => image(index));
 
 export default class App extends PureComponent {
   renderItemComponent = ({ item }) => (
@@ -17,25 +17,12 @@ export default class App extends PureComponent {
       <Image
         style={styles.image}
         source={item.image}
-        // resizeMode={Image.resizeMode.stretch}
-        // resizeMode={Image.resizeMode.contain}
-        // resizeMode={Image.resizeMode.center}
         resizeMode={Image.resizeMode.cover}
-        // resizeMode={Image.resizeMode.repeat}
       />
     </View>
   );
 
-  // state = {
-  //   autoplayDelay: 1,
-  // };
-
   render() {
-    // setTimeout(
-    //   () => this.setState({ autoplayDelay: this.state.autoplayDelay + 0.1 }),
-    //   5000,
-    // );
-
     return (
       <View style={styles.container}>
         <View style={styles.container}>
@@ -43,7 +30,7 @@ export default class App extends PureComponent {
             // horizontal={false}
             autoplay
             autoplayDelay={3}
-            // index={5}
+            index={3}
             autoplayLoop
             data={items}
             renderItem={this.renderItemComponent}
@@ -52,12 +39,9 @@ export default class App extends PureComponent {
         </View>
         <View style={styles.container}>
           <SwiperFlatList
-            // horizontal={false}
             autoplay
-            autoplayDelay={1}
-            // autoplayDelay={this.state.autoplayDelay}
+            autoplayDelay={1.5}
             autoplayLoop
-            // index={4}
             index={3}
             showPagination
           >
