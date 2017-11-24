@@ -20,13 +20,13 @@ or
 npm install react-native-swiper-flatlist --save
 ```
 
-<!-- ### Expo
-
-[Example](https://snack.expo.io/@gusgard/react-native-grid-list) -->
+Implemented only with flatlist
 
 ## Example
 
-Implemented only with flatlist
+### Expo
+
+[Example](https://snack.expo.io/@gusgard/react-native-swiper-flatlist)
 
 ### Code
 
@@ -70,17 +70,17 @@ export const { width, height } = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: 'white'
   },
   child: {
     height: height * 0.5,
     width,
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   text: {
     fontSize: width * 0.5,
-    textAlign: 'center',
-  },
+    textAlign: 'center'
+  }
 });
 ```
 
