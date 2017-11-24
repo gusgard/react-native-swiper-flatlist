@@ -31,6 +31,7 @@ export default class SwiperFlatList extends Component {
       if (data && data.length !== 0 && !props.renderItem) {
         return new Error('Invalid props, `renderItem` is required');
       }
+      return undefined;
     },
   };
 
@@ -64,8 +65,10 @@ export default class SwiperFlatList extends Component {
 
   componentWillReceiveProps() {}
 
-  shouldComponentUpdate(nextProps) {
+  shouldComponentUpdate(nextProps, nextState) {
     // TODO improve shouldComponentUpdate
+    const { paginationIndex } = this.state;
+    const { paginationIndex: nextPaginationIndex } = nextState;
     const {
       children,
       data,
@@ -91,6 +94,7 @@ export default class SwiperFlatList extends Component {
       horizontal: newHorizontal,
     } = nextProps;
     let shouldUpdate =
+      nextPaginationIndex !== paginationIndex ||
       newRenderItem !== renderItem ||
       renderAll !== newRenderAll ||
       autoplayDelay !== newAutoplayDelay ||
