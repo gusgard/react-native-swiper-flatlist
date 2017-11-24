@@ -1,6 +1,6 @@
 {
   "name": "react-native-swiper-flatlist",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "main": "index.js",
   "license": "Apache-2.0",
   "author": "Gustavo Gard <gusgard@gmail.com> (https://gusgard.com)",
@@ -28,6 +28,7 @@
     "lint-fix": "eslint index.js src --fix",
     "test": "jest",
     "test-watch": "jest --watch",
+    "start": "echo ----- Check example folder  ----- 👻",
     "publish": "npm publish"
   },
   "dependencies": {

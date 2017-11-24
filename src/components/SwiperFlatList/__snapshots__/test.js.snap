@@ -1,17 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`swiper flatlist renders correctly 1`] = `
-<View
-  style={
-    Object {
-      "flex": 1,
-    }
-  }
->
+<View>
   <FlatList
     autoplay={false}
-    autoplayDelay={1}
+    autoplayDelay={3}
     autoplayDirection={true}
+    autoplayLoop={false}
     data={
       Array [
         Object {
@@ -31,13 +26,15 @@ exports[`swiper flatlist renders correctly 1`] = `
     disableVirtualization={false}
     horizontal={true}
     index={0}
-    initialNumToRender={10}
+    initialNumToRender={1}
     keyExtractor={[Function]}
     maxToRenderPerBatch={10}
     numColumns={1}
     onEndReachedThreshold={2}
     onMomentumScrollEnd={[Function]}
+    onScrollToIndexFailed={[Function]}
     pagingEnabled={true}
+    renderAll={false}
     renderItem={[Function]}
     scrollEventThrottle={50}
     showsHorizontalScrollIndicator={false}
