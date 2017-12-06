@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { TouchableOpacity, View, FlatList } from 'react-native';
 
 import { colors } from '../../themes';
 import styles from './styles';
 
-export default class SwiperFlatList extends Component {
+export default class SwiperFlatList extends PureComponent {
   static propTypes = {
     data: PropTypes.array.isRequired,
     onMomentumScrollEnd: PropTypes.func,
@@ -62,54 +62,6 @@ export default class SwiperFlatList extends Component {
     if (index !== 0) {
       this._scrollToIndex(index, false);
     }
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    // TODO improve shouldComponentUpdate
-    const { paginationIndex } = this.state;
-    const { paginationIndex: nextPaginationIndex } = nextState;
-    const {
-      children,
-      data,
-      renderItem,
-      renderAll,
-      autoplayDelay,
-      autoplayDirection,
-      autoplayLoop,
-      autoplay,
-      showPagination,
-      vertical,
-    } = this.props;
-    const {
-      children: newChildren,
-      data: newData,
-      renderItem: newRenderItem,
-      renderAll: newRenderAll,
-      autoplayDelay: newAutoplayDelay,
-      autoplayDirection: newAutoplayDirection,
-      autoplayLoop: newAutoplayLoop,
-      autoplay: newAutoplay,
-      showPagination: newShowPagination,
-      vertical: newVertical,
-    } = nextProps;
-    let shouldUpdate =
-      nextPaginationIndex !== paginationIndex ||
-      newRenderItem !== renderItem ||
-      renderAll !== newRenderAll ||
-      autoplayDelay !== newAutoplayDelay ||
-      autoplayDirection !== newAutoplayDirection ||
-      autoplayLoop !== newAutoplayLoop ||
-      autoplay !== newAutoplay ||
-      showPagination !== newShowPagination ||
-      vertical !== newVertical;
-
-    if (children) {
-      shouldUpdate = shouldUpdate || children.length !== newChildren.length;
-    }
-    if (data) {
-      shouldUpdate = shouldUpdate || data.length !== newData.length;
-    }
-    return shouldUpdate;
   }
 
   componentWillUpdate(nextProps) {
