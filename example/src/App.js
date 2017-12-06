@@ -44,6 +44,8 @@ export default class App extends PureComponent {
             autoplayLoop
             index={3}
             showPagination
+            paginationActiveColor="black"
+            paginationDefaultColor="white"
           >
             <View style={[styles.child, { backgroundColor: 'tomato' }]}>
               <Text style={styles.text}>1</Text>
