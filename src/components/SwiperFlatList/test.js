@@ -17,4 +17,13 @@ describe('swiper flatlist', () => {
     );
     expect(wrapper).toMatchSnapshot();
   });
+  it('renders children', () => {
+    const wrapper = shallow(
+      <SwiperFlatList>
+        <Image source={items[0].thumbnail} />
+        <Image source={items[1].thumbnail} />
+      </SwiperFlatList>,
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
 });

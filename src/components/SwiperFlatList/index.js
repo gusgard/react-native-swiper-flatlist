@@ -2,17 +2,20 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { TouchableOpacity, View, FlatList } from 'react-native';
 
+import { colors } from '../../themes';
 import styles from './styles';
 
 export default class SwiperFlatList extends Component {
   static propTypes = {
     data: PropTypes.array.isRequired,
     onMomentumScrollEnd: PropTypes.func,
-    showPagination: PropTypes.bool.isRequired,
-    // paginationActiveColor: PropTypes.string,
-    // paginationColor: PropTypes.string,
-    horizontal: PropTypes.bool.isRequired,
+    vertical: PropTypes.bool.isRequired,
     index: PropTypes.number.isRequired,
+
+    showPagination: PropTypes.bool.isRequired,
+    paginationActiveColor: PropTypes.string,
+    paginationDefaultColor: PropTypes.string,
+
     autoplayDelay: PropTypes.number.isRequired,
     autoplay: PropTypes.bool.isRequired,
     autoplayDirection: PropTypes.bool.isRequired,
@@ -20,7 +23,6 @@ export default class SwiperFlatList extends Component {
 
     renderAll: PropTypes.bool,
     renderItem: PropTypes.func,
-    // scrollToIndex: PropTypes.func,
 
     // Only is allowed children or data not both
     children(props, propName) {
@@ -32,7 +34,7 @@ export default class SwiperFlatList extends Component {
         return new Error('Invalid props, `renderItem` is required');
       }
       return undefined;
-    }
+    },
   };
 
   static defaultProps = {
@@ -43,8 +45,8 @@ export default class SwiperFlatList extends Component {
     autoplayLoop: false,
     autoplay: false,
     showPagination: false,
-    horizontal: true,
-    renderAll: false
+    vertical: false,
+    renderAll: false,
   };
 
   componentWillMount() {
@@ -63,8 +65,6 @@ export default class SwiperFlatList extends Component {
     }
   }
 
-  componentWillReceiveProps() {}
-
   shouldComponentUpdate(nextProps, nextState) {
     // TODO improve shouldComponentUpdate
     const { paginationIndex } = this.state;
@@ -79,7 +79,7 @@ export default class SwiperFlatList extends Component {
       autoplayLoop,
       autoplay,
       showPagination,
-      horizontal
+      vertical,
     } = this.props;
     const {
       children: newChildren,
@@ -91,7 +91,7 @@ export default class SwiperFlatList extends Component {
       autoplayLoop: newAutoplayLoop,
       autoplay: newAutoplay,
       showPagination: newShowPagination,
-      horizontal: newHorizontal
+      vertical: newVertical,
     } = nextProps;
     let shouldUpdate =
       nextPaginationIndex !== paginationIndex ||
@@ -102,7 +102,7 @@ export default class SwiperFlatList extends Component {
       autoplayLoop !== newAutoplayLoop ||
       autoplay !== newAutoplay ||
       showPagination !== newShowPagination ||
-      horizontal !== newHorizontal;
+      vertical !== newVertical;
     if (children) {
       shouldUpdate = shouldUpdate || children.length !== newChildren.length;
     }
@@ -118,7 +118,15 @@ export default class SwiperFlatList extends Component {
     }
   }
 
-  setup = ({ children, data, renderItem, renderAll }) => {
+  setup = props => {
+    const {
+      children,
+      data,
+      renderItem,
+      renderAll,
+      paginationActiveColor,
+      paginationDefaultColor,
+    } = props;
     if (children) {
       this._data = children;
       this._renderItem = this.renderChildren;
@@ -128,6 +136,15 @@ export default class SwiperFlatList extends Component {
     }
     // Items to render in the initial batch.
     this._initialNumToRender = renderAll ? this._data.length : 1;
+
+    this.pagination = {
+      default: {
+        backgroundColor: paginationDefaultColor || colors.gray,
+      },
+      active: {
+        backgroundColor: paginationActiveColor || colors.white,
+      },
+    };
   };
 
   _autoplay = index => {
@@ -148,7 +165,7 @@ export default class SwiperFlatList extends Component {
       setTimeout(() => {
         this.autoplayTimer = setTimeout(
           () => this._scrollToIndex(1, true),
-          autoplayDelay * 1000
+          autoplayDelay * 1000,
         );
       }, autoplayDelay * 1000);
     }
@@ -163,14 +180,14 @@ export default class SwiperFlatList extends Component {
   };
 
   _onMomentumScrollEnd = e => {
-    const { autoplay, horizontal, onMomentumScrollEnd } = this.props;
+    const { autoplay, vertical, onMomentumScrollEnd } = this.props;
     const { contentOffset, layoutMeasurement } = e.nativeEvent;
     let index;
-    if (horizontal) {
+    if (vertical) {
+      index = Math.floor(contentOffset.y / layoutMeasurement.height);
+    } else {
       // Divide the horizontal offset by the width of the view to see which page is visible
       index = Math.floor(contentOffset.x / layoutMeasurement.width);
-    } else {
-      index = Math.floor(contentOffset.y / layoutMeasurement.height);
     }
 
     if (autoplay) {
@@ -197,7 +214,9 @@ export default class SwiperFlatList extends Component {
         <TouchableOpacity
           style={[
             styles.pagination,
-            this.state.paginationIndex === index && styles.paginationActive
+            this.state.paginationIndex === index
+              ? this.pagination.active
+              : this.pagination.default,
           ]}
           key={index}
           onPress={() => this._scrollToIndex(index, true)}
@@ -207,7 +226,7 @@ export default class SwiperFlatList extends Component {
   );
 
   render() {
-    const { horizontal, showPagination, children, ...props } = this.props;
+    const { vertical, showPagination, children, ...props } = this.props;
     return (
       <View>
         <FlatList
@@ -215,7 +234,7 @@ export default class SwiperFlatList extends Component {
             this.flatListRef = component;
           }}
           keyExtractor={this._keyExtractor}
-          horizontal={horizontal}
+          horizontal={!vertical}
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}
           pagingEnabled
