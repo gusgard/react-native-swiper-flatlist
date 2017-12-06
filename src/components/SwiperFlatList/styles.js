@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { vertical, colors, horizontal, width } from '../../themes';
+import { vertical, horizontal, width } from '../../themes';
 
 export default StyleSheet.create({
   paginationContainer: {
@@ -10,16 +10,12 @@ export default StyleSheet.create({
     justifyContent: 'center',
     bottom: 0,
     left: width * 0.25,
-    right: width * 0.25
+    right: width * 0.25,
   },
   pagination: {
     width: horizontal.small,
     height: horizontal.small,
-    backgroundColor: colors.gray,
     borderRadius: 25,
-    marginHorizontal: horizontal.xSmall
+    marginHorizontal: horizontal.xSmall,
   },
-  paginationActive: {
-    backgroundColor: colors.primaryDark
-  }
 });

@@ -70,17 +70,17 @@ export const { width, height } = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white'
+    backgroundColor: 'white',
   },
   child: {
     height: height * 0.5,
     width,
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   text: {
     fontSize: width * 0.5,
-    textAlign: 'center'
-  }
+    textAlign: 'center',
+  },
 });
 ```
 
@@ -88,23 +88,25 @@ const styles = StyleSheet.create({
 
 ## Props
 
-| Prop                |              Default               |   Type   | Description                                           |
-| :------------------ | :--------------------------------: | :------: | :---------------------------------------------------- |
-| data                | _not required if children is used_ | `array`  | Data to use in renderItem                             |
-| children            |                 -                  |  `node`  | Children elements                                     |
-| renderItem          | _not required if children is used_ |  `func`  | Takes an item from data and renders it into the list. |
-| onMomentumScrollEnd |                 -                  |  `func`  | Called after scroll end                               |
-| showPagination      |               false                |  `bool`  | Show pagination                                       |
-| horizontal          |               false                |  `bool`  | Show                                                  |
-| index               |                 0                  | `number` | Index to start                                        |
-| renderAll           |               false                |  `bool`  | Render all the items before display it                |
-| **Autoplay**        |
-| autoplay            |               false                |  `bool`  | Change index automatically                            |
-| autoplayDelay       |                 3                  | `number` | Delay between every page                              |
-| autoplayLoop        |               false                |  `bool`  | Continue playing after reach end                      |
+| Prop                   |              Default               |   Type   | Description                                           |
+| :--------------------- | :--------------------------------: | :------: | :---------------------------------------------------- |
+| data                   | _not required if children is used_ | `array`  | Data to use in renderItem                             |
+| children               |                 -                  |  `node`  | Children elements                                     |
+| renderItem             | _not required if children is used_ |  `func`  | Takes an item from data and renders it into the list. |
+| onMomentumScrollEnd    |                 -                  |  `func`  | Called after scroll end                               |
+| vertical               |               false                |  `bool`  | Show vertical swiper                                  |
+| index                  |                 0                  | `number` | Index to start                                        |
+| renderAll              |               false                |  `bool`  | Render all the items before display it                |
+| **Pagination**         |
+| showPagination         |               false                |  `bool`  | Show pagination                                       |
+| paginationDefaultColor |                gray                | `string` | Pagination color                                      |
+| paginationActiveColor  |               white                | `string` | Pagination color                                      |
+| **Autoplay**           |
+| autoplay               |               false                |  `bool`  | Change index automatically                            |
+| autoplayDelay          |                 3                  | `number` | Delay between every page                              |
+| autoplayLoop           |               false                |  `bool`  | Continue playing after reach end                      |
 
-<!-- paginationActiveColor: PropTypes.string,
-paginationColor: PropTypes.string,
+<!-- 
 autoplayDirection: PropTypes.bool.isRequired,  -->
 
 ## Limitations
