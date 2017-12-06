@@ -27,7 +27,7 @@ export default class SwiperFlatList extends Component {
     // Only is allowed children or data not both
     children(props, propName) {
       const { data } = props;
-      if (!props[propName] && data && data.length === 0) {
+      if (!props[propName] && !data) {
         return new Error('Invalid props, `data` or `children` is required');
       }
       if (data && data.length !== 0 && !props.renderItem) {
@@ -55,7 +55,6 @@ export default class SwiperFlatList extends Component {
   }
   componentDidMount() {
     const { autoplay, index } = this.props;
-    // const { paginationIndex } = this.state;
     if (autoplay) {
       this._autoplay(index);
     }
@@ -103,6 +102,7 @@ export default class SwiperFlatList extends Component {
       autoplay !== newAutoplay ||
       showPagination !== newShowPagination ||
       vertical !== newVertical;
+
     if (children) {
       shouldUpdate = shouldUpdate || children.length !== newChildren.length;
     }
@@ -110,6 +110,10 @@ export default class SwiperFlatList extends Component {
       shouldUpdate = shouldUpdate || data.length !== newData.length;
     }
     return shouldUpdate;
+  }
+
+  componentWillUpdate(nextProps) {
+    this.setup(nextProps);
   }
 
   componentWillUnmount() {
@@ -174,7 +178,9 @@ export default class SwiperFlatList extends Component {
   _scrollToIndex = (index, animated) => {
     const params = { animated, index };
     this.setState(() => {
-      this.flatListRef.scrollToIndex(params);
+      if (this.flatListRef) {
+        this.flatListRef.scrollToIndex(params);
+      }
       return { paginationIndex: index };
     });
   };
