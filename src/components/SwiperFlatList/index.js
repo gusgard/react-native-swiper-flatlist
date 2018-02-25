@@ -1,9 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { TouchableOpacity, View, FlatList } from 'react-native';
+import { View, FlatList } from 'react-native';
 
-import { colors } from '../../themes';
-import styles from './styles';
+import Pagination from '../Pagination';
 
 export default class SwiperFlatList extends PureComponent {
   static propTypes = {
@@ -24,6 +23,8 @@ export default class SwiperFlatList extends PureComponent {
     renderAll: PropTypes.bool,
     renderItem: PropTypes.func,
 
+    PaginationComponent: PropTypes.func,
+
     // Only is allowed children or data not both
     children(props, propName) {
       const { data } = props;
@@ -34,7 +35,7 @@ export default class SwiperFlatList extends PureComponent {
         return new Error('Invalid props, `renderItem` is required');
       }
       return undefined;
-    },
+    }
   };
 
   static defaultProps = {
@@ -47,6 +48,7 @@ export default class SwiperFlatList extends PureComponent {
     showPagination: false,
     vertical: false,
     renderAll: false,
+    PaginationComponent: Pagination
   };
 
   componentWillMount() {
@@ -75,14 +77,7 @@ export default class SwiperFlatList extends PureComponent {
   }
 
   setup = props => {
-    const {
-      children,
-      data,
-      renderItem,
-      renderAll,
-      paginationActiveColor,
-      paginationDefaultColor,
-    } = props;
+    const { children, data, renderItem, renderAll } = props;
     if (children) {
       this._data = children;
       this._renderItem = this.renderChildren;
@@ -92,15 +87,6 @@ export default class SwiperFlatList extends PureComponent {
     }
     // Items to render in the initial batch.
     this._initialNumToRender = renderAll ? this._data.length : 1;
-
-    this.pagination = {
-      default: {
-        backgroundColor: paginationDefaultColor || colors.gray,
-      },
-      active: {
-        backgroundColor: paginationActiveColor || colors.white,
-      },
-    };
   };
 
   _autoplay = index => {
@@ -121,13 +107,13 @@ export default class SwiperFlatList extends PureComponent {
       setTimeout(() => {
         this.autoplayTimer = setTimeout(
           () => this._scrollToIndex(1, true),
-          autoplayDelay * 1000,
+          autoplayDelay * 1000
         );
       }, autoplayDelay * 1000);
     }
   };
 
-  _scrollToIndex = (index, animated) => {
+  _scrollToIndex = (index, animated = true) => {
     const params = { animated, index };
     this.setState(() => {
       if (this.flatListRef) {
@@ -166,50 +152,48 @@ export default class SwiperFlatList extends PureComponent {
 
   renderChildren = ({ item }) => item;
 
-  renderPagination = () => (
-    <View style={styles.paginationContainer}>
-      {this._data.map((_, index) => (
-        <TouchableOpacity
-          style={[
-            styles.pagination,
-            this.state.paginationIndex === index
-              ? this.pagination.active
-              : this.pagination.default,
-          ]}
-          key={index}
-          onPress={() => this._scrollToIndex(index, true)}
-        />
-      ))}
-    </View>
-  );
-
   render() {
-    const { vertical, showPagination, children, ...props } = this.props;
+    const {
+      vertical,
+      showPagination,
+      children,
+      PaginationComponent,
+      ...props
+    } = this.props;
+
+    const flatListProps = {
+      ref: component => {
+        this.flatListRef = component;
+      },
+      keyExtractor: this._keyExtractor,
+      horizontal: !vertical,
+      showsHorizontalScrollIndicator: false,
+      showsVerticalScrollIndicator: false,
+      pagingEnabled: true,
+      onMomentumScrollEnd: this._onMomentumScrollEnd,
+      onScrollToIndexFailed: this._onScrollToIndexFailed,
+      ...props,
+      data: this._data,
+      renderItem: this._renderItem,
+      initialNumToRender: this._initialNumToRender
+      // inverted
+      // onViewableItemsChanged={(data, index, x) => {
+      // getItemLayout={(data, index, x) => {
+      // initialScrollIndex={this.state.index}
+      // ListFooterComponent=
+      // ListEmptyComponent loading...
+    };
+
+    const paginationProps = {
+      data: this._data,
+      paginationIndex: this.state.paginationIndex,
+      scrollToIndex: this._scrollToIndex
+    };
+
     return (
       <View>
-        <FlatList
-          ref={component => {
-            this.flatListRef = component;
-          }}
-          keyExtractor={this._keyExtractor}
-          horizontal={!vertical}
-          showsHorizontalScrollIndicator={false}
-          showsVerticalScrollIndicator={false}
-          pagingEnabled
-          onMomentumScrollEnd={this._onMomentumScrollEnd}
-          onScrollToIndexFailed={this._onScrollToIndexFailed}
-          {...props}
-          data={this._data}
-          renderItem={this._renderItem}
-          // inverted
-          initialNumToRender={this._initialNumToRender}
-          // onViewableItemsChanged={(data, index, x) => {
-          // getItemLayout={(data, index, x) => {
-          // initialScrollIndex={this.state.index}
-          // ListFooterComponent=
-          // ListEmptyComponent loading...
-        />
-        {showPagination && this.renderPagination()}
+        <FlatList {...flatListProps} />
+        {showPagination && <PaginationComponent {...paginationProps} />}
       </View>
     );
   }
