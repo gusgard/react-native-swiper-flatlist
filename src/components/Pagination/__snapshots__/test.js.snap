@@ -1,0 +1,215 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pagination renders all props 1`] = `
+<View
+  style={
+    Object {
+      "bottom": 0,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "left": 187.5,
+      "marginVertical": 16.675,
+      "position": "absolute",
+      "right": 187.5,
+    }
+  }
+>
+  <TouchableOpacity
+    activeOpacity={0.2}
+    key="0"
+    onPress={[Function]}
+    style={
+      Array [
+        Object {
+          "borderRadius": 25,
+          "height": 28.125,
+          "marginHorizontal": 18.75,
+          "width": 28.125,
+        },
+        Object {
+          "backgroundColor": "white",
+        },
+      ]
+    }
+  />
+  <TouchableOpacity
+    activeOpacity={0.2}
+    key="1"
+    onPress={[Function]}
+    style={
+      Array [
+        Object {
+          "borderRadius": 25,
+          "height": 28.125,
+          "marginHorizontal": 18.75,
+          "width": 28.125,
+        },
+        Object {
+          "backgroundColor": "black",
+        },
+      ]
+    }
+  />
+  <TouchableOpacity
+    activeOpacity={0.2}
+    key="2"
+    onPress={[Function]}
+    style={
+      Array [
+        Object {
+          "borderRadius": 25,
+          "height": 28.125,
+          "marginHorizontal": 18.75,
+          "width": 28.125,
+        },
+        Object {
+          "backgroundColor": "white",
+        },
+      ]
+    }
+  />
+  <TouchableOpacity
+    activeOpacity={0.2}
+    key="3"
+    onPress={[Function]}
+    style={
+      Array [
+        Object {
+          "borderRadius": 25,
+          "height": 28.125,
+          "marginHorizontal": 18.75,
+          "width": 28.125,
+        },
+        Object {
+          "backgroundColor": "white",
+        },
+      ]
+    }
+  />
+  <TouchableOpacity
+    activeOpacity={0.2}
+    key="4"
+    onPress={[Function]}
+    style={
+      Array [
+        Object {
+          "borderRadius": 25,
+          "height": 28.125,
+          "marginHorizontal": 18.75,
+          "width": 28.125,
+        },
+        Object {
+          "backgroundColor": "white",
+        },
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`pagination renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "bottom": 0,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "left": 187.5,
+      "marginVertical": 16.675,
+      "position": "absolute",
+      "right": 187.5,
+    }
+  }
+>
+  <TouchableOpacity
+    activeOpacity={0.2}
+    key="0"
+    onPress={[Function]}
+    style={
+      Array [
+        Object {
+          "borderRadius": 25,
+          "height": 28.125,
+          "marginHorizontal": 18.75,
+          "width": 28.125,
+        },
+        Object {
+          "backgroundColor": "#FFFFFF",
+        },
+      ]
+    }
+  />
+  <TouchableOpacity
+    activeOpacity={0.2}
+    key="1"
+    onPress={[Function]}
+    style={
+      Array [
+        Object {
+          "borderRadius": 25,
+          "height": 28.125,
+          "marginHorizontal": 18.75,
+          "width": 28.125,
+        },
+        Object {
+          "backgroundColor": "gray",
+        },
+      ]
+    }
+  />
+  <TouchableOpacity
+    activeOpacity={0.2}
+    key="2"
+    onPress={[Function]}
+    style={
+      Array [
+        Object {
+          "borderRadius": 25,
+          "height": 28.125,
+          "marginHorizontal": 18.75,
+          "width": 28.125,
+        },
+        Object {
+          "backgroundColor": "gray",
+        },
+      ]
+    }
+  />
+  <TouchableOpacity
+    activeOpacity={0.2}
+    key="3"
+    onPress={[Function]}
+    style={
+      Array [
+        Object {
+          "borderRadius": 25,
+          "height": 28.125,
+          "marginHorizontal": 18.75,
+          "width": 28.125,
+        },
+        Object {
+          "backgroundColor": "gray",
+        },
+      ]
+    }
+  />
+  <TouchableOpacity
+    activeOpacity={0.2}
+    key="4"
+    onPress={[Function]}
+    style={
+      Array [
+        Object {
+          "borderRadius": 25,
+          "height": 28.125,
+          "marginHorizontal": 18.75,
+          "width": 28.125,
+        },
+        Object {
+          "backgroundColor": "gray",
+        },
+      ]
+    }
+  />
+</View>
+`;

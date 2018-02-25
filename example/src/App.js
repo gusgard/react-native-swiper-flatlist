@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react';
 import { Text, Dimensions, Image, StyleSheet, View } from 'react-native';
 import SwiperFlatList from 'react-native-swiper-flatlist';
 
+import Pagination from './Pagination';
+
 import { fox, cat, background, element, lion } from './images';
 
 export const { width, height } = Dimensions.get('window');
@@ -27,7 +29,6 @@ export default class App extends PureComponent {
       <View style={styles.container}>
         <View style={styles.container}>
           <SwiperFlatList
-            // horizontal={false}
             autoplay
             autoplayDelay={3}
             index={3}
@@ -44,8 +45,7 @@ export default class App extends PureComponent {
             autoplayLoop
             index={3}
             showPagination
-            paginationActiveColor="black"
-            paginationDefaultColor="white"
+            PaginationComponent={Pagination}
           >
             <View style={[styles.child, { backgroundColor: 'tomato' }]}>
               <Text style={styles.text}>1</Text>
@@ -69,19 +69,19 @@ export default class App extends PureComponent {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: 'white'
   },
   image: {
     height: height * 0.5,
-    width,
+    width
   },
   child: {
     height: height * 0.5,
     width,
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   text: {
     fontSize: width * 0.5,
-    textAlign: 'center',
-  },
+    textAlign: 'center'
+  }
 });
