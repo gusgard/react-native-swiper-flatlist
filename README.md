@@ -1,4 +1,4 @@
-# :point_up_2: Swiper flatlist component
+# :point_up_2: Swiper FlatList component
 
 ![platforms](https://img.shields.io/badge/platforms-Android%20|%20iOS-brightgreen.svg)
 [![npm](https://img.shields.io/npm/v/react-native-swiper-flatlist.svg)](https://www.npmjs.com/package/react-native-swiper-flatlist)
@@ -20,7 +20,7 @@ or
 npm install react-native-swiper-flatlist --save
 ```
 
-Implemented only with flatlist
+Implemented using with FlatList
 
 ## Example
 
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
 | autoplayDelay          |                   3                    | `number` | Delay between every page                              |
 | autoplayLoop           |                 false                  |  `bool`  | Continue playing after reach end                      |
 
-<!-- 
+<!--
 autoplayDirection: PropTypes.bool.isRequired,  -->
 
 ## Limitations
