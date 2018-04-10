@@ -148,7 +148,7 @@ export default class SwiperFlatList extends PureComponent {
     setTimeout(() => this._scrollToIndex(info.index, false));
   };
 
-  _keyExtractor = (item, index) => index;
+  _keyExtractor = (item, index) => index.toString();
 
   renderChildren = ({ item }) => item;
 
