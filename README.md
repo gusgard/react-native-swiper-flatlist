@@ -6,7 +6,7 @@
 [![travis](https://travis-ci.org/gusgard/react-native-swiper-flatlist.svg?branch=master)](https://travis-ci.org/gusgard/react-native-swiper-flatlist)
 ![license](https://img.shields.io/npm/l/react-native-swiper-flatlist.svg)
 
-![Demo](./demo.gif)
+![Demo](https://raw.githubusercontent.com/gusgard/react-native-swiper-flatlist/master/demo.gif)
 
 ## Installation
 
