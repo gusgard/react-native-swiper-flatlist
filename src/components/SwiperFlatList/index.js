@@ -140,7 +140,7 @@ export default class SwiperFlatList extends PureComponent {
     this.setState({ paginationIndex: index });
 
     if (onMomentumScrollEnd) {
-      onMomentumScrollEnd();
+      onMomentumScrollEnd(index);
     }
   };
 
