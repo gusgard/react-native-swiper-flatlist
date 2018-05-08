@@ -167,6 +167,7 @@ export default class SwiperFlatList extends PureComponent {
       ref: component => {
         this.flatListRef = component;
       },
+      ...props,
       keyExtractor: this._keyExtractor,
       horizontal: !vertical,
       showsHorizontalScrollIndicator: false,
@@ -174,7 +175,6 @@ export default class SwiperFlatList extends PureComponent {
       pagingEnabled: true,
       onMomentumScrollEnd: this._onMomentumScrollEnd,
       onScrollToIndexFailed: this._onScrollToIndexFailed,
-      ...props,
       data: this._data,
       renderItem: this._renderItem,
       initialNumToRender: this._initialNumToRender
