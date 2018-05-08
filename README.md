@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
 | data                   |        _not required if children is used_         | `array`  | Data to use in renderItem                             |
 | children               |                         -                         |  `node`  | Children elements                                     |
 | renderItem             |        _not required if children is used_         |  `func`  | Takes an item from data and renders it into the list. |
-| onMomentumScrollEnd    |                         -                         |  `func`  | Called after scroll end                               |
+| onMomentumScrollEnd    |                         -                         |  `func`  | Called after scroll end, passes new index             |
 | vertical               |                       false                       |  `bool`  | Show vertical swiper                                  |
 | index                  |                         0                         | `number` | Index to start                                        |
 | renderAll              |                       false                       |  `bool`  | Render all the items before display it                |
