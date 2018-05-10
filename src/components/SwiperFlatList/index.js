@@ -140,7 +140,7 @@ export default class SwiperFlatList extends PureComponent {
     this.setState({ paginationIndex: index });
 
     if (onMomentumScrollEnd) {
-      onMomentumScrollEnd();
+      onMomentumScrollEnd({ index }, e);
     }
   };
 
@@ -172,9 +172,9 @@ export default class SwiperFlatList extends PureComponent {
       showsHorizontalScrollIndicator: false,
       showsVerticalScrollIndicator: false,
       pagingEnabled: true,
+      ...props,
       onMomentumScrollEnd: this._onMomentumScrollEnd,
       onScrollToIndexFailed: this._onScrollToIndexFailed,
-      ...props,
       data: this._data,
       renderItem: this._renderItem,
       initialNumToRender: this._initialNumToRender
