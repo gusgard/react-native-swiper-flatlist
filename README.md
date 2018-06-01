@@ -20,7 +20,6 @@ or
 npm install react-native-swiper-flatlist --save
 ```
 
-Implemented using with FlatList
 
 ## Example
 
@@ -85,6 +84,8 @@ const styles = StyleSheet.create({
 ```
 
 [Example](./example/README.md)
+
+You can use all the props from FlatList: http://facebook.github.io/react-native/docs/flatlist.html
 
 ## Props
 
