@@ -4,17 +4,16 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android && adb reverse tcp:8081 tcp:8081",
-    "ios": "react-native run-ios --simulator='iPhone 6'",
-    "postinstall":
-      "rm -rf node_modules/react-native-swiper-flatlist/node_modules/react-native",
+    "ios": "react-native run-ios",
+    "postinstall": "rm -rf node_modules/react-native-swiper-flatlist/node_modules/react-native",
     "watch": "node ./scripts/watch-and-copy.js",
-    "start": "concurrently 'npm run watch' 'npm run start-rn'",
-    "start-rn": "node node_modules/react-native/local-cli/cli.js start"
+    "start-watch": "concurrently 'npm run watch' 'npm run start'",
+    "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
-    "react": "16.0.0",
-    "react-native": "0.50.3",
-    "react-native-swiper-flatlist": "file:../"
+    "react": "16.3.1",
+    "react-native": "0.55.4",
+    "react-native-swiper-flatlist": "*"
   },
   "devDependencies": {
     "concurrently": "^2.2.0",
