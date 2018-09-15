@@ -6,18 +6,21 @@ module.exports = {
     'prettier',
     'prettier/flowtype',
     'prettier/react',
+    'eslint:recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings'
   ],
   plugins: ['flowtype', 'react', 'prettier', 'react-native'],
   parserOptions: {
     ecmaVersion: 2016,
     sourceType: 'module',
     ecmaFeatures: {
-      jsx: true,
-    },
+      jsx: true
+    }
   },
   env: {
     es6: true,
-    node: true,
+    node: true
   },
   rules: {
     'comma-dangle': 0,
@@ -28,6 +31,16 @@ module.exports = {
     'import/no-unresolved': [2, { ignore: ['@'] }],
     'import/prefer-default-export': 'off',
     'import/no-named-as-default-member': 'off',
+    'import/order': [
+      'error',
+      {
+        'newlines-between': 'always',
+        groups: [
+          ['builtin', 'external', 'internal'],
+          ['parent', 'sibling', 'index']
+        ]
+      }
+    ],
     'no-case-declarations': 1,
     'no-confusing-arrow': 0,
     'no-console': 0,
@@ -49,11 +62,11 @@ module.exports = {
     'react/no-multi-comp': 1,
     'react/prefer-stateless-function': 1,
     'react/display-name': 0,
-    'react/prefer-stateless-function': 'off',
+    'react/prefer-stateless-function': 'off'
   },
   globals: {
     it: false,
     describe: false,
-    expect: false,
-  },
+    expect: false
+  }
 };
