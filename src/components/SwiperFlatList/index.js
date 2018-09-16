@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { View, FlatList } from 'react-native';
+import { View, FlatList, Platform } from 'react-native';
 
 import Pagination from '../Pagination';
 
@@ -111,6 +111,10 @@ export default class SwiperFlatList extends PureComponent {
   };
 
   _scrollToIndex = (index, animated = true) => {
+    const { autoplay } = this.props;
+    if (autoplay && Platform.OS === 'android') {
+      this._autoplay(index);
+    }
     const params = { animated, index };
     this.setState(() => {
       if (this.flatListRef) {

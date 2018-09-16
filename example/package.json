@@ -7,7 +7,7 @@
     "ios": "react-native run-ios",
     "postinstall": "rm -rf node_modules/react-native-swiper-flatlist/node_modules/react-native",
     "watch": "node ./scripts/watch-and-copy.js",
-    "start-watch": "concurrently 'npm run watch' 'npm run start'",
+    "start:watch": "concurrently 'npm run watch' 'npm run start'",
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
