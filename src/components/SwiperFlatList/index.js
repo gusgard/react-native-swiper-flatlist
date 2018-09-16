@@ -1,6 +1,6 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { View, FlatList, Platform } from 'react-native';
+import { FlatList, Platform } from 'react-native';
 
 import Pagination from '../Pagination';
 
@@ -196,10 +196,10 @@ export default class SwiperFlatList extends PureComponent {
     };
 
     return (
-      <View>
+      <Fragment>
         <FlatList {...flatListProps} />
         {showPagination && <PaginationComponent {...paginationProps} />}
-      </View>
+      </Fragment>
     );
   }
 }

@@ -13,11 +13,7 @@ const image = index => ({ image: newImage[index % newImage.length] });
 const items = Array.from(Array(5)).map((_, index) => image(index));
 
 export default class App extends PureComponent {
-  renderItemComponent = ({ item }) => (
-    <View>
-      <Image style={styles.image} source={item.image} resizeMode={Image.resizeMode.cover} />
-    </View>
-  );
+  renderItemComponent = ({ item }) => <Image style={styles.image} source={item.image} />;
 
   render() {
     return (
