@@ -52,8 +52,8 @@
     "eslint-plugin-react-native": "^3.3.0",
     "jest": "23.6.0",
     "pre-commit": "^1.2.2",
-    "prettier": "^1.14.2",
-    "prettier-eslint": "^8.8.2",
+    "prettier": "^1.10.2",
+    "prettier-eslint": "^8.8.1",
     "react": "16.5.1",
     "react-dom": "^16.5.1",
     "react-native": "0.57.0"
@@ -61,17 +61,10 @@
   "jest": {
     "preset": "react-native",
     "setupTestFrameworkScriptFile": "./enzyme.js",
-    "modulePathIgnorePatterns": [
-      "<rootDir>/example/node_modules/"
-    ],
-    "snapshotSerializers": [
-      "./node_modules/enzyme-to-json/serializer"
-    ]
+    "modulePathIgnorePatterns": ["<rootDir>/example/node_modules/"],
+    "snapshotSerializers": ["./node_modules/enzyme-to-json/serializer"]
   },
   "pre-commit": {
-    "run": [
-      "lint",
-      "test"
-    ]
+    "run": ["lint", "test"]
   }
 }

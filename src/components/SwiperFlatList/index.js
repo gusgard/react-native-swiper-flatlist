@@ -35,7 +35,7 @@ export default class SwiperFlatList extends PureComponent {
         return new Error('Invalid props, `renderItem` is required');
       }
       return undefined;
-    }
+    },
   };
 
   static defaultProps = {
@@ -48,7 +48,7 @@ export default class SwiperFlatList extends PureComponent {
     showPagination: false,
     vertical: false,
     renderAll: false,
-    PaginationComponent: Pagination
+    PaginationComponent: Pagination,
   };
 
   componentWillMount() {
@@ -105,10 +105,7 @@ export default class SwiperFlatList extends PureComponent {
     if (isEnd) {
       // When scroll to the end and animated is false need to restart the autoplay
       setTimeout(() => {
-        this.autoplayTimer = setTimeout(
-          () => this._scrollToIndex(1, true),
-          autoplayDelay * 1000
-        );
+        this.autoplayTimer = setTimeout(() => this._scrollToIndex(1, true), autoplayDelay * 1000);
       }, autoplayDelay * 1000);
     }
   };
@@ -177,7 +174,7 @@ export default class SwiperFlatList extends PureComponent {
       onScrollToIndexFailed: this._onScrollToIndexFailed,
       data: this._data,
       renderItem: this._renderItem,
-      initialNumToRender: this._initialNumToRender
+      initialNumToRender: this._initialNumToRender,
       // inverted
       // onViewableItemsChanged={(data, index, x) => {
       // getItemLayout={(data, index, x) => {
@@ -191,7 +188,7 @@ export default class SwiperFlatList extends PureComponent {
       paginationIndex: this.state.paginationIndex,
       scrollToIndex: this._scrollToIndex,
       paginationActiveColor,
-      paginationDefaultColor
+      paginationDefaultColor,
     };
 
     return (

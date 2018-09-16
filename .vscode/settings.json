@@ -1,0 +1,7 @@
+{
+  "editor.rulers": [100],
+  "prettier.printWidth": 100,
+  "prettier.eslintIntegration": true,
+  "prettier.trailingComma": "all",
+  "workbench.editor.labelFormat": "short"
+}
