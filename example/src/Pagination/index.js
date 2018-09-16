@@ -10,14 +10,14 @@ export default class Pagination extends PureComponent {
     data: PropTypes.array,
     paginationIndex: PropTypes.number,
     paginationActiveColor: PropTypes.string,
-    paginationDefaultColor: PropTypes.string
+    paginationDefaultColor: PropTypes.string,
   };
 
   static defaultProps = {
     data: [],
     paginationIndex: 0,
     paginationActiveColor: 'black',
-    paginationDefaultColor: 'white'
+    paginationDefaultColor: 'white',
   };
 
   render() {
@@ -26,7 +26,7 @@ export default class Pagination extends PureComponent {
       paginationIndex,
       scrollToIndex,
       paginationDefaultColor,
-      paginationActiveColor
+      paginationActiveColor,
     } = this.props;
     return (
       <View style={styles.paginationContainer}>
@@ -36,7 +36,7 @@ export default class Pagination extends PureComponent {
               styles.pagination,
               paginationIndex === index
                 ? { backgroundColor: paginationActiveColor }
-                : { backgroundColor: paginationDefaultColor }
+                : { backgroundColor: paginationDefaultColor },
             ]}
             key={index}
             onPress={() => scrollToIndex(index)}

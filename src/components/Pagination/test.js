@@ -7,9 +7,7 @@ const items = [1, 2, 3, 4, 5];
 
 describe('pagination', () => {
   it('renders correctly', () => {
-    const wrapper = shallow(
-      <Pagination scrollToIndex={() => undefined} data={items} />
-    );
+    const wrapper = shallow(<Pagination scrollToIndex={() => undefined} data={items} />);
     expect(wrapper).toMatchSnapshot();
   });
   it('renders all props', () => {
@@ -20,7 +18,7 @@ describe('pagination', () => {
         paginationActiveColor="black"
         paginationDefaultColor="white"
         data={items}
-      />
+      />,
     );
     expect(wrapper).toMatchSnapshot();
   });

@@ -1,4 +1,5 @@
 {
   "singleQuote": true,
-  "semicolons": true
+  "printWidth": 100,
+  "trailingComma": "all"
 }

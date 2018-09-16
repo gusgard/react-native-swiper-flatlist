@@ -10,10 +10,7 @@ const items = [{ id: 1, thumbnail: logo }, { id: 2, thumbnail: logo }];
 describe('swiper flatlist', () => {
   it('renders correctly', () => {
     const wrapper = shallow(
-      <SwiperFlatList
-        renderItem={({ item }) => <Image source={item.thumbnail} />}
-        data={items}
-      />,
+      <SwiperFlatList renderItem={({ item }) => <Image source={item.thumbnail} />} data={items} />,
     );
     expect(wrapper).toMatchSnapshot();
   });

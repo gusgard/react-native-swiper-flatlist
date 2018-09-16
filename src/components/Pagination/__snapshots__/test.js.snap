@@ -1,17 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`pagination renders all props 1`] = `
-<View
+<ForwardRef(View)
   style={
-    Object {
-      "bottom": 0,
-      "flexDirection": "row",
-      "justifyContent": "center",
-      "left": 187.5,
-      "marginVertical": 16.675,
-      "position": "absolute",
-      "right": 187.5,
-    }
+    Array [
+      Object {
+        "bottom": 0,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "left": 187.5,
+        "marginVertical": 16.675,
+        "position": "absolute",
+        "right": 187.5,
+      },
+      Object {},
+    ]
   }
 >
   <TouchableOpacity
@@ -26,6 +29,7 @@ exports[`pagination renders all props 1`] = `
           "marginHorizontal": 18.75,
           "width": 28.125,
         },
+        Object {},
         Object {
           "backgroundColor": "white",
         },
@@ -44,6 +48,7 @@ exports[`pagination renders all props 1`] = `
           "marginHorizontal": 18.75,
           "width": 28.125,
         },
+        Object {},
         Object {
           "backgroundColor": "black",
         },
@@ -62,6 +67,7 @@ exports[`pagination renders all props 1`] = `
           "marginHorizontal": 18.75,
           "width": 28.125,
         },
+        Object {},
         Object {
           "backgroundColor": "white",
         },
@@ -80,6 +86,7 @@ exports[`pagination renders all props 1`] = `
           "marginHorizontal": 18.75,
           "width": 28.125,
         },
+        Object {},
         Object {
           "backgroundColor": "white",
         },
@@ -98,27 +105,31 @@ exports[`pagination renders all props 1`] = `
           "marginHorizontal": 18.75,
           "width": 28.125,
         },
+        Object {},
         Object {
           "backgroundColor": "white",
         },
       ]
     }
   />
-</View>
+</ForwardRef(View)>
 `;
 
 exports[`pagination renders correctly 1`] = `
-<View
+<ForwardRef(View)
   style={
-    Object {
-      "bottom": 0,
-      "flexDirection": "row",
-      "justifyContent": "center",
-      "left": 187.5,
-      "marginVertical": 16.675,
-      "position": "absolute",
-      "right": 187.5,
-    }
+    Array [
+      Object {
+        "bottom": 0,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "left": 187.5,
+        "marginVertical": 16.675,
+        "position": "absolute",
+        "right": 187.5,
+      },
+      Object {},
+    ]
   }
 >
   <TouchableOpacity
@@ -133,6 +144,7 @@ exports[`pagination renders correctly 1`] = `
           "marginHorizontal": 18.75,
           "width": 28.125,
         },
+        Object {},
         Object {
           "backgroundColor": "#FFFFFF",
         },
@@ -151,6 +163,7 @@ exports[`pagination renders correctly 1`] = `
           "marginHorizontal": 18.75,
           "width": 28.125,
         },
+        Object {},
         Object {
           "backgroundColor": "gray",
         },
@@ -169,6 +182,7 @@ exports[`pagination renders correctly 1`] = `
           "marginHorizontal": 18.75,
           "width": 28.125,
         },
+        Object {},
         Object {
           "backgroundColor": "gray",
         },
@@ -187,6 +201,7 @@ exports[`pagination renders correctly 1`] = `
           "marginHorizontal": 18.75,
           "width": 28.125,
         },
+        Object {},
         Object {
           "backgroundColor": "gray",
         },
@@ -205,11 +220,12 @@ exports[`pagination renders correctly 1`] = `
           "marginHorizontal": 18.75,
           "width": 28.125,
         },
+        Object {},
         Object {
           "backgroundColor": "gray",
         },
       ]
     }
   />
-</View>
+</ForwardRef(View)>
 `;

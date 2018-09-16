@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import { vertical, horizontal, width } from '../../themes';
 
 export default StyleSheet.create({
-  paginationContainer: {
+  container: {
     position: 'absolute',
     flexDirection: 'row',
     marginVertical: vertical.xxSmall,

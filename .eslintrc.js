@@ -3,9 +3,13 @@ module.exports = {
     'airbnb',
     'plugin:flowtype/recommended',
     'plugin:react/recommended',
+    'plugin:prettier/recommended',
     'prettier',
     'prettier/flowtype',
     'prettier/react',
+    'eslint:recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
   ],
   plugins: ['flowtype', 'react', 'prettier', 'react-native'],
   parserOptions: {
@@ -28,6 +32,13 @@ module.exports = {
     'import/no-unresolved': [2, { ignore: ['@'] }],
     'import/prefer-default-export': 'off',
     'import/no-named-as-default-member': 'off',
+    'import/order': [
+      'error',
+      {
+        'newlines-between': 'always',
+        groups: [['builtin', 'external', 'internal'], ['parent', 'sibling', 'index']],
+      },
+    ],
     'no-case-declarations': 1,
     'no-confusing-arrow': 0,
     'no-console': 0,

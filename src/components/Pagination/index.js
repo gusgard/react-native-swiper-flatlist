@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { TouchableOpacity, View } from 'react-native';
+import { TouchableOpacity, View, ViewPropTypes } from 'react-native';
 
 import { colors } from '../../themes';
 import styles from './styles';
@@ -11,14 +11,18 @@ export default class Pagination extends PureComponent {
     data: PropTypes.array,
     paginationIndex: PropTypes.number,
     paginationActiveColor: PropTypes.string,
-    paginationDefaultColor: PropTypes.string
+    paginationDefaultColor: PropTypes.string,
+    paginationStyle: ViewPropTypes.style,
+    paginationStyleItem: ViewPropTypes.style,
   };
 
   static defaultProps = {
     data: [],
     paginationIndex: 0,
     paginationActiveColor: colors.white,
-    paginationDefaultColor: colors.gray
+    paginationDefaultColor: colors.gray,
+    paginationStyle: {},
+    paginationStyleItem: {},
   };
 
   render() {
@@ -27,17 +31,20 @@ export default class Pagination extends PureComponent {
       paginationIndex,
       scrollToIndex,
       paginationDefaultColor,
-      paginationActiveColor
+      paginationActiveColor,
+      paginationStyle,
+      paginationStyleItem,
     } = this.props;
     return (
-      <View style={styles.paginationContainer}>
+      <View style={[styles.container, paginationStyle]}>
         {data.map((_, index) => (
           <TouchableOpacity
             style={[
               styles.pagination,
+              paginationStyleItem,
               paginationIndex === index
                 ? { backgroundColor: paginationActiveColor }
-                : { backgroundColor: paginationDefaultColor }
+                : { backgroundColor: paginationDefaultColor },
             ]}
             key={index}
             onPress={() => scrollToIndex(index)}

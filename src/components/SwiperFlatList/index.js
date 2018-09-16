@@ -1,6 +1,6 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { View, FlatList } from 'react-native';
+import { FlatList, Platform } from 'react-native';
 
 import Pagination from '../Pagination';
 
@@ -10,21 +10,8 @@ export default class SwiperFlatList extends PureComponent {
     onMomentumScrollEnd: PropTypes.func,
     vertical: PropTypes.bool.isRequired,
     index: PropTypes.number.isRequired,
-
-    showPagination: PropTypes.bool.isRequired,
-    paginationActiveColor: PropTypes.string,
-    paginationDefaultColor: PropTypes.string,
-
-    autoplayDelay: PropTypes.number.isRequired,
-    autoplay: PropTypes.bool.isRequired,
-    autoplayDirection: PropTypes.bool.isRequired,
-    autoplayLoop: PropTypes.bool.isRequired,
-
     renderAll: PropTypes.bool,
     renderItem: PropTypes.func,
-
-    PaginationComponent: PropTypes.func,
-
     // Only is allowed children or data not both
     children(props, propName) {
       const { data } = props;
@@ -35,20 +22,34 @@ export default class SwiperFlatList extends PureComponent {
         return new Error('Invalid props, `renderItem` is required');
       }
       return undefined;
-    }
+    },
+
+    // Pagination
+    showPagination: PropTypes.bool.isRequired,
+    PaginationComponent: PropTypes.func,
+    paginationActiveColor: Pagination.propTypes.paginationActiveColor,
+    paginationDefaultColor: Pagination.propTypes.paginationDefaultColor,
+    paginationStyle: Pagination.propTypes.paginationStyle,
+    paginationStyleItem: Pagination.propTypes.paginationStyleItem,
+
+    // Autoplay
+    autoplayDelay: PropTypes.number.isRequired,
+    autoplay: PropTypes.bool.isRequired,
+    // autoplayDirection: PropTypes.bool.isRequired,
+    autoplayLoop: PropTypes.bool.isRequired,
   };
 
   static defaultProps = {
     index: 0,
     data: [],
     autoplayDelay: 3,
-    autoplayDirection: true,
+    // autoplayDirection: true,
     autoplayLoop: false,
     autoplay: false,
     showPagination: false,
     vertical: false,
     renderAll: false,
-    PaginationComponent: Pagination
+    PaginationComponent: Pagination,
   };
 
   componentWillMount() {
@@ -105,15 +106,16 @@ export default class SwiperFlatList extends PureComponent {
     if (isEnd) {
       // When scroll to the end and animated is false need to restart the autoplay
       setTimeout(() => {
-        this.autoplayTimer = setTimeout(
-          () => this._scrollToIndex(1, true),
-          autoplayDelay * 1000
-        );
+        this.autoplayTimer = setTimeout(() => this._scrollToIndex(1, true), autoplayDelay * 1000);
       }, autoplayDelay * 1000);
     }
   };
 
   _scrollToIndex = (index, animated = true) => {
+    const { autoplay } = this.props;
+    if (autoplay && Platform.OS === 'android') {
+      this._autoplay(index);
+    }
     const params = { animated, index };
     this.setState(() => {
       if (this.flatListRef) {
@@ -160,6 +162,8 @@ export default class SwiperFlatList extends PureComponent {
       PaginationComponent,
       paginationActiveColor,
       paginationDefaultColor,
+      paginationStyle,
+      paginationStyleItem,
       ...props
     } = this.props;
 
@@ -177,7 +181,7 @@ export default class SwiperFlatList extends PureComponent {
       onScrollToIndexFailed: this._onScrollToIndexFailed,
       data: this._data,
       renderItem: this._renderItem,
-      initialNumToRender: this._initialNumToRender
+      initialNumToRender: this._initialNumToRender,
       // inverted
       // onViewableItemsChanged={(data, index, x) => {
       // getItemLayout={(data, index, x) => {
@@ -191,14 +195,16 @@ export default class SwiperFlatList extends PureComponent {
       paginationIndex: this.state.paginationIndex,
       scrollToIndex: this._scrollToIndex,
       paginationActiveColor,
-      paginationDefaultColor
+      paginationDefaultColor,
+      paginationStyle,
+      paginationStyleItem,
     };
 
     return (
-      <View>
+      <Fragment>
         <FlatList {...flatListProps} />
         {showPagination && <PaginationComponent {...paginationProps} />}
-      </View>
+      </Fragment>
     );
   }
 }
