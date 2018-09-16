@@ -25,9 +25,9 @@
   ],
   "scripts": {
     "lint": "eslint index.js src",
-    "lint-fix": "eslint index.js src --fix",
-    "test": "jest",
-    "test-watch": "jest --watch",
+    "lint:fix": "eslint index.js src --fix",
+    "test": "jest && eslint index.js src",
+    "test:watch": "jest --watch",
     "start": "echo ----- Check example folder  ----- 👻",
     "publish": "npm publish"
   },
@@ -35,6 +35,8 @@
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
+    "@types/jest": "^23.3.1",
+    "@types/react-native": "^0.56.16",
     "babel-eslint": "^9.0.0",
     "babel-jest": "23.6.0",
     "babel-preset-react-native": "4.0.1",
