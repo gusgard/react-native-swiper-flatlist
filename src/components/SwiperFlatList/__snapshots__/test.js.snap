@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`swiper flatlist renders children 1`] = `
-<View>
+<ForwardRef(View)>
   <FlatList
     autoplay={false}
     autoplayDelay={3}
@@ -9,14 +9,14 @@ exports[`swiper flatlist renders children 1`] = `
     autoplayLoop={false}
     data={
       Array [
-        <Image
+        <Component
           source={
             Object {
               "uri": "https://...",
             }
           }
         />,
-        <Image
+        <Component
           source={
             Object {
               "uri": "https://...",
@@ -44,11 +44,11 @@ exports[`swiper flatlist renders children 1`] = `
     updateCellsBatchingPeriod={50}
     windowSize={21}
   />
-</View>
+</ForwardRef(View)>
 `;
 
 exports[`swiper flatlist renders correctly 1`] = `
-<View>
+<ForwardRef(View)>
   <FlatList
     autoplay={false}
     autoplayDelay={3}
@@ -89,5 +89,5 @@ exports[`swiper flatlist renders correctly 1`] = `
     updateCellsBatchingPeriod={50}
     windowSize={21}
   />
-</View>
+</ForwardRef(View)>
 `;
