@@ -3,7 +3,6 @@ import { Text, Dimensions, Image, StyleSheet, View } from 'react-native';
 import SwiperFlatList from 'react-native-swiper-flatlist';
 
 import Pagination from './Pagination';
-
 import { fox, cat, background, element, lion } from './images';
 
 export const { width, height } = Dimensions.get('window');
@@ -16,11 +15,7 @@ const items = Array.from(Array(5)).map((_, index) => image(index));
 export default class App extends PureComponent {
   renderItemComponent = ({ item }) => (
     <View>
-      <Image
-        style={styles.image}
-        source={item.image}
-        resizeMode={Image.resizeMode.cover}
-      />
+      <Image style={styles.image} source={item.image} resizeMode={Image.resizeMode.cover} />
     </View>
   );
 
@@ -69,19 +64,19 @@ export default class App extends PureComponent {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white'
+    backgroundColor: 'white',
   },
   image: {
     height: height * 0.5,
-    width
+    width,
   },
   child: {
     height: height * 0.5,
     width,
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   text: {
     fontSize: width * 0.5,
-    textAlign: 'center'
-  }
+    textAlign: 'center',
+  },
 });
