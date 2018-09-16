@@ -10,21 +10,8 @@ export default class SwiperFlatList extends PureComponent {
     onMomentumScrollEnd: PropTypes.func,
     vertical: PropTypes.bool.isRequired,
     index: PropTypes.number.isRequired,
-
-    showPagination: PropTypes.bool.isRequired,
-    paginationActiveColor: PropTypes.string,
-    paginationDefaultColor: PropTypes.string,
-
-    autoplayDelay: PropTypes.number.isRequired,
-    autoplay: PropTypes.bool.isRequired,
-    autoplayDirection: PropTypes.bool.isRequired,
-    autoplayLoop: PropTypes.bool.isRequired,
-
     renderAll: PropTypes.bool,
     renderItem: PropTypes.func,
-
-    PaginationComponent: PropTypes.func,
-
     // Only is allowed children or data not both
     children(props, propName) {
       const { data } = props;
@@ -36,13 +23,27 @@ export default class SwiperFlatList extends PureComponent {
       }
       return undefined;
     },
+
+    // Pagination
+    showPagination: PropTypes.bool.isRequired,
+    PaginationComponent: PropTypes.func,
+    paginationActiveColor: Pagination.propTypes.paginationActiveColor,
+    paginationDefaultColor: Pagination.propTypes.paginationDefaultColor,
+    paginationStyle: Pagination.propTypes.paginationStyle,
+    paginationStyleItem: Pagination.propTypes.paginationStyleItem,
+
+    // Autoplay
+    autoplayDelay: PropTypes.number.isRequired,
+    autoplay: PropTypes.bool.isRequired,
+    // autoplayDirection: PropTypes.bool.isRequired,
+    autoplayLoop: PropTypes.bool.isRequired,
   };
 
   static defaultProps = {
     index: 0,
     data: [],
     autoplayDelay: 3,
-    autoplayDirection: true,
+    // autoplayDirection: true,
     autoplayLoop: false,
     autoplay: false,
     showPagination: false,
@@ -161,6 +162,8 @@ export default class SwiperFlatList extends PureComponent {
       PaginationComponent,
       paginationActiveColor,
       paginationDefaultColor,
+      paginationStyle,
+      paginationStyleItem,
       ...props
     } = this.props;
 
@@ -193,6 +196,8 @@ export default class SwiperFlatList extends PureComponent {
       scrollToIndex: this._scrollToIndex,
       paginationActiveColor,
       paginationDefaultColor,
+      paginationStyle,
+      paginationStyleItem,
     };
 
     return (

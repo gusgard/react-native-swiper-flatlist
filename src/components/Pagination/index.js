@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { TouchableOpacity, View } from 'react-native';
+import { TouchableOpacity, View, ViewPropTypes } from 'react-native';
 
 import { colors } from '../../themes';
 import styles from './styles';
@@ -12,6 +12,8 @@ export default class Pagination extends PureComponent {
     paginationIndex: PropTypes.number,
     paginationActiveColor: PropTypes.string,
     paginationDefaultColor: PropTypes.string,
+    paginationStyle: ViewPropTypes.style,
+    paginationStyleItem: ViewPropTypes.style,
   };
 
   static defaultProps = {
@@ -19,6 +21,8 @@ export default class Pagination extends PureComponent {
     paginationIndex: 0,
     paginationActiveColor: colors.white,
     paginationDefaultColor: colors.gray,
+    paginationStyle: {},
+    paginationStyleItem: {},
   };
 
   render() {
@@ -28,13 +32,16 @@ export default class Pagination extends PureComponent {
       scrollToIndex,
       paginationDefaultColor,
       paginationActiveColor,
+      paginationStyle,
+      paginationStyleItem,
     } = this.props;
     return (
-      <View style={styles.paginationContainer}>
+      <View style={[styles.container, paginationStyle]}>
         {data.map((_, index) => (
           <TouchableOpacity
             style={[
               styles.pagination,
+              paginationStyleItem,
               paginationIndex === index
                 ? { backgroundColor: paginationActiveColor }
                 : { backgroundColor: paginationDefaultColor },
