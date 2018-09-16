@@ -27,8 +27,6 @@ export default class App extends PureComponent {
             data={items}
             renderItem={this.renderItemComponent}
             showPagination
-            paginationStyle={{ top: 0 }}
-            paginationStyleItem={{ borderRadius: 2 }}
           />
         </View>
         <View style={styles.container}>
