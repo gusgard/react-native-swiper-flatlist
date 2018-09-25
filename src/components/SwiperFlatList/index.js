@@ -197,7 +197,6 @@ export default class SwiperFlatList extends PureComponent {
       onMomentumScrollEnd: this._onMomentumScrollEnd,
       onEndReached: this._onEndReached,
       onEndReachedThreshold: 0,
-      scrollToIndex: this._scrollToIndex,
       onScrollToIndexFailed: this._onScrollToIndexFailed,
       data: this._data,
       renderItem: this._renderItem,
