@@ -130,7 +130,7 @@ export default class SwiperFlatList extends PureComponent {
   _onMomentumScrollBegin = e => {
     const { onMomentumScrollBegin } = this.props;
     if (onMomentumScrollBegin) {
-      onMomentumScrollBegin({ index }, e);
+      onMomentumScrollBegin(e);
     }
   }
 
