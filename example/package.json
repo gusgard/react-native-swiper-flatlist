@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "react": "16.5.0",
-    "react-native": "0.57.0",
+    "react-native": "0.57.1",
     "react-native-swiper-flatlist": "*"
   },
   "devDependencies": {
@@ -21,5 +21,8 @@
     "minimatch": "^3.0.2",
     "node-watch": "^0.4.0",
     "rimraf": "^2.5.4"
+  },
+  "jest": {
+    "preset": "react-native"
   }
 }
