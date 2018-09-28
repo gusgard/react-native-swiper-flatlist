@@ -83,9 +83,8 @@ const styles = StyleSheet.create({
 });
 ```
 
-[Example](./example/README.md)
+[Code example](./example/README.md)
 
-You can use all the props from FlatList: http://facebook.github.io/react-native/docs/flatlist.html
 
 ## Props
 
@@ -109,6 +108,10 @@ You can use all the props from FlatList: http://facebook.github.io/react-native
 | autoplay               | false                                             | `bool`                | Change index automatically                                           |
 | autoplayDelay          | 3                                                 | `number`              | Delay between every page                                             |
 | autoplayLoop           | false                                             | `bool`                | Continue playing after reach end                                     |
+
+
+**More props**
+This is a wrapper around [Flatlist](http://facebook.github.io/react-native/docs/flatlist.html#props), all their `props` works well and the inherited `props` too (from [ScrollView](http://facebook.github.io/react-native/docs/scrollview#props) and [VirtualizedList](http://facebook.github.io/react-native/docs/virtualizedlist#props))
 
 <!--
 autoplayDirection: PropTypes.bool.isRequired,  -->
