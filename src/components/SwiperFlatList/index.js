@@ -7,7 +7,9 @@ import Pagination from '../Pagination';
 export default class SwiperFlatList extends PureComponent {
   static propTypes = {
     data: PropTypes.array.isRequired,
+    onMomentumScrollBegin: PropTypes.func,
     onMomentumScrollEnd: PropTypes.func,
+    onEndReached: PropTypes.func,
     vertical: PropTypes.bool.isRequired,
     index: PropTypes.number.isRequired,
     renderAll: PropTypes.bool,
@@ -125,6 +127,13 @@ export default class SwiperFlatList extends PureComponent {
     });
   };
 
+  _onMomentumScrollBegin = e => {
+    const { onMomentumScrollBegin } = this.props;
+    if (onMomentumScrollBegin) {
+      onMomentumScrollBegin(e);
+    }
+  }
+
   _onMomentumScrollEnd = e => {
     const { autoplay, vertical, onMomentumScrollEnd } = this.props;
     const { contentOffset, layoutMeasurement } = e.nativeEvent;
@@ -145,6 +154,13 @@ export default class SwiperFlatList extends PureComponent {
       onMomentumScrollEnd({ index }, e);
     }
   };
+
+  _onEndReached = (e) => {
+    const { onEndReached } = this.props;
+    if (onEndReached) {
+      onEndReached(e);
+    }
+  }
 
   _onScrollToIndexFailed = info => {
     setTimeout(() => this._scrollToIndex(info.index, false));
@@ -177,7 +193,10 @@ export default class SwiperFlatList extends PureComponent {
       showsVerticalScrollIndicator: false,
       pagingEnabled: true,
       ...props,
+      onMomentumScrollBegin: this._onMomentumScrollBegin,
       onMomentumScrollEnd: this._onMomentumScrollEnd,
+      onEndReached: this._onEndReached,
+      onEndReachedThreshold: 0,
       onScrollToIndexFailed: this._onScrollToIndexFailed,
       data: this._data,
       renderItem: this._renderItem,
