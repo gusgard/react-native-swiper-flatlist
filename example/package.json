@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "react": "16.5.0",
-    "react-native": "0.57.1",
+    "react-native": "0.57.2",
     "react-native-swiper-flatlist": "*"
   },
   "devDependencies": {
@@ -20,7 +20,11 @@
     "fs-extra": "^0.30.0",
     "minimatch": "^3.0.2",
     "node-watch": "^0.4.0",
-    "rimraf": "^2.5.4"
+    "rimraf": "^2.5.4",
+    "babel-jest": "23.6.0",
+    "jest": "23.6.0",
+    "metro-react-native-babel-preset": "0.48.0",
+    "react-test-renderer": "16.5.0"
   },
   "jest": {
     "preset": "react-native"
