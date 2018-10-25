@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@types/jest": "^23.3.1",
-    "@types/react-native": "^0.56.16",
+    "@types/react-native": "^0.56.24",
     "babel-eslint": "^9.0.0",
     "babel-jest": "23.6.0",
     "babel-preset-react-native": "4.0.1",
@@ -45,28 +45,35 @@
     "enzyme-to-json": "^3.3.4",
     "eslint": "^4.9.0",
     "eslint-config-airbnb": "^15.0.1",
-    "eslint-config-prettier": "^3.0.1",
-    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-flowtype": "^2.50.1",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^5.0.3",
-    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-prettier": "^2.7.0",
     "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-react-native": "^3.3.0",
     "jest": "23.6.0",
     "pre-commit": "^1.2.2",
-    "prettier": "^1.14.2",
+    "prettier": "^1.14.3",
     "prettier-eslint": "^8.8.1",
     "react": "16.5.1",
-    "react-dom": "^16.5.1",
+    "react-dom": "^16.5.2",
     "react-native": "0.57.0"
   },
   "jest": {
     "preset": "react-native",
     "setupTestFrameworkScriptFile": "./enzyme.js",
-    "modulePathIgnorePatterns": ["<rootDir>/example/node_modules/"],
-    "snapshotSerializers": ["./node_modules/enzyme-to-json/serializer"]
+    "modulePathIgnorePatterns": [
+      "<rootDir>/example/node_modules/"
+    ],
+    "snapshotSerializers": [
+      "./node_modules/enzyme-to-json/serializer"
+    ]
   },
   "pre-commit": {
-    "run": ["lint", "test"]
+    "run": [
+      "lint",
+      "test"
+    ]
   }
 }
