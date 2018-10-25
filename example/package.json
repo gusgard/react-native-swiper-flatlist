@@ -11,20 +11,20 @@
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
-    "react": "16.5.0",
-    "react-native": "0.57.2",
+    "react": "16.6.0-alpha.8af6728",
+    "react-native": "0.57.3",
     "react-native-swiper-flatlist": "*"
   },
   "devDependencies": {
+    "babel-jest": "23.6.0",
     "concurrently": "^2.2.0",
     "fs-extra": "^0.30.0",
-    "minimatch": "^3.0.2",
-    "node-watch": "^0.4.0",
-    "rimraf": "^2.5.4",
-    "babel-jest": "23.6.0",
     "jest": "23.6.0",
     "metro-react-native-babel-preset": "0.48.0",
-    "react-test-renderer": "16.5.0"
+    "minimatch": "^3.0.2",
+    "node-watch": "^0.4.0",
+    "react-test-renderer": "16.5.0",
+    "rimraf": "^2.5.4"
   },
   "jest": {
     "preset": "react-native"
