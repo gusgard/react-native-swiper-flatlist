@@ -24,6 +24,9 @@ export default class SwiperFlatList extends PureComponent {
       return undefined;
     },
 
+    // Callbacks
+    onIndexChanged: PropTypes.func,
+
     // Pagination
     showPagination: PropTypes.bool.isRequired,
     PaginationComponent: PropTypes.func,
@@ -53,8 +56,11 @@ export default class SwiperFlatList extends PureComponent {
   };
 
   componentWillMount() {
+    const { index, onIndexChanged } = this.props;
     this.setup(this.props);
-    this.setState({ paginationIndex: this.props.index });
+    this.setState({ paginationIndex: index }, () => {
+      if (onIndexChanged) onIndexChanged(index);
+    });
   }
   componentDidMount() {
     const { autoplay, index } = this.props;
@@ -112,21 +118,26 @@ export default class SwiperFlatList extends PureComponent {
   };
 
   _scrollToIndex = (index, animated = true) => {
-    const { autoplay } = this.props;
+    const { autoplay, onIndexChanged } = this.props;
     if (autoplay && Platform.OS === 'android') {
       this._autoplay(index);
     }
     const params = { animated, index };
-    this.setState(() => {
-      if (this.flatListRef) {
-        this.flatListRef.scrollToIndex(params);
-      }
-      return { paginationIndex: index };
-    });
+    this.setState(
+      () => {
+        if (this.flatListRef) {
+          this.flatListRef.scrollToIndex(params);
+        }
+        return { paginationIndex: index };
+      },
+      () => {
+        if (onIndexChanged) onIndexChanged(index);
+      },
+    );
   };
 
   _onMomentumScrollEnd = e => {
-    const { autoplay, vertical, onMomentumScrollEnd } = this.props;
+    const { autoplay, vertical, onMomentumScrollEnd, onIndexChanged } = this.props;
     const { contentOffset, layoutMeasurement } = e.nativeEvent;
     let index;
     if (vertical) {
@@ -139,7 +150,9 @@ export default class SwiperFlatList extends PureComponent {
     if (autoplay) {
       this._autoplay(index);
     }
-    this.setState({ paginationIndex: index });
+    this.setState({ paginationIndex: index }, () => {
+      if (onIndexChanged) onIndexChanged(index);
+    });
 
     if (onMomentumScrollEnd) {
       onMomentumScrollEnd({ index }, e);

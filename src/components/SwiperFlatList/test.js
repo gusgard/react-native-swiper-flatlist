@@ -23,4 +23,20 @@ describe('swiper flatlist', () => {
     );
     expect(wrapper).toMatchSnapshot();
   });
+  describe('call onIndexChanged callback', () => {
+    const fn = jest.fn();
+    const wrapper = shallow(
+      <SwiperFlatList onIndexChanged={fn}>
+        <Image source={items[0].thumbnail} />
+        <Image source={items[1].thumbnail} />
+      </SwiperFlatList>,
+    );
+    it('.. on mount', () => {
+      expect(fn).toHaveBeenCalledWith(0);
+    });
+    it('.. while scrolling to index', () => {
+      wrapper.instance()._scrollToIndex(1);
+      expect(fn).toHaveBeenCalledWith(1);
+    });
+  });
 });
