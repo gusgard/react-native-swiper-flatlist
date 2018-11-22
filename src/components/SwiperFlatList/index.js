@@ -154,6 +154,16 @@ export default class SwiperFlatList extends PureComponent {
 
   renderChildren = ({ item }) => item;
 
+  // additional functions for user
+  scrollToIndex(index) {
+    this.setState({ paginationIndex: index });
+    this.flatListRef.scrollToIndex({ animated: false, index });
+  }
+
+  getCurrentIndex() {
+    return this.state.paginationIndex;
+  }
+
   render() {
     const {
       vertical,
