@@ -90,6 +90,10 @@ export default class SwiperFlatList extends PureComponent {
     this._initialNumToRender = renderAll ? this._data.length : 1;
   };
 
+  getCurrentIndex() {
+    return this.state.paginationIndex;
+  }
+
   _autoplay = index => {
     const { autoplayDelay, autoplayLoop } = this.props;
     if (this.autoplayTimer) {
@@ -158,10 +162,6 @@ export default class SwiperFlatList extends PureComponent {
   scrollToIndex(index) {
     this.setState({ paginationIndex: index });
     this.flatListRef.scrollToIndex({ animated: false, index });
-  }
-
-  getCurrentIndex() {
-    return this.state.paginationIndex;
   }
 
   render() {
