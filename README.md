@@ -109,13 +109,20 @@ const styles = StyleSheet.create({
 | autoplayDelay          | 3                                                 | `number`              | Delay between every page                                             |
 | autoplayLoop           | false                                             | `bool`                | Continue playing after reach end                                     |
 
-
 **More props**
 
 This is a wrapper around [Flatlist](http://facebook.github.io/react-native/docs/flatlist.html#props), all their `props` works well and the inherited `props` too (from [ScrollView](http://facebook.github.io/react-native/docs/scrollview#props) and [VirtualizedList](http://facebook.github.io/react-native/docs/virtualizedlist#props))
 
 <!--
 autoplayDirection: PropTypes.bool.isRequired,  -->
+
+## Functions
+
+| Function name | Use |
+|-----------------|----------------------------------------------------|
+| scrollToIndex | Forces the scroll of the swiper to a precise index |
+| getCurrentIndex | Returns the current index inside the swiper |
+
 
 ## Limitations
 
