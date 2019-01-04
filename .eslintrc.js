@@ -61,6 +61,7 @@ module.exports = {
     'react/prefer-stateless-function': 1,
     'react/display-name': 0,
     'react/prefer-stateless-function': 'off',
+    'react/sort-comp': 'off',
   },
   globals: {
     it: false,
