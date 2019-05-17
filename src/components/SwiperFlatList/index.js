@@ -130,10 +130,10 @@ export default class SwiperFlatList extends PureComponent {
     const { contentOffset, layoutMeasurement } = e.nativeEvent;
     let index;
     if (vertical) {
-      index = Math.floor(contentOffset.y / layoutMeasurement.height);
+      index = Math.round(contentOffset.y / layoutMeasurement.height);
     } else {
       // Divide the horizontal offset by the width of the view to see which page is visible
-      index = Math.floor(contentOffset.x / layoutMeasurement.width);
+      index = Math.round(contentOffset.x / layoutMeasurement.width);
     }
 
     if (autoplay) {
