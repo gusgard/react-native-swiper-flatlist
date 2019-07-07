@@ -5,57 +5,11 @@ import { FlatList, Platform } from 'react-native';
 import Pagination from '../Pagination';
 
 export default class SwiperFlatList extends PureComponent {
-  static propTypes = {
-    data: PropTypes.array.isRequired,
-    onMomentumScrollEnd: PropTypes.func,
-    vertical: PropTypes.bool.isRequired,
-    index: PropTypes.number.isRequired,
-    renderAll: PropTypes.bool,
-    renderItem: PropTypes.func,
-    // Only is allowed children or data not both
-    children(props, propName) {
-      const { data } = props;
-      if (!props[propName] && !data) {
-        return new Error('Invalid props, `data` or `children` is required');
-      }
-      if (data && data.length !== 0 && !props.renderItem) {
-        return new Error('Invalid props, `renderItem` is required');
-      }
-      return undefined;
-    },
-
-    // Pagination
-    showPagination: PropTypes.bool.isRequired,
-    PaginationComponent: PropTypes.func,
-    paginationActiveColor: Pagination.propTypes.paginationActiveColor,
-    paginationDefaultColor: Pagination.propTypes.paginationDefaultColor,
-    paginationStyle: Pagination.propTypes.paginationStyle,
-    paginationStyleItem: Pagination.propTypes.paginationStyleItem,
-
-    // Autoplay
-    autoplayDelay: PropTypes.number.isRequired,
-    autoplay: PropTypes.bool.isRequired,
-    // autoplayDirection: PropTypes.bool.isRequired,
-    autoplayLoop: PropTypes.bool.isRequired,
-  };
-
-  static defaultProps = {
-    index: 0,
-    data: [],
-    autoplayDelay: 3,
-    // autoplayDirection: true,
-    autoplayLoop: false,
-    autoplay: false,
-    showPagination: false,
-    vertical: false,
-    renderAll: false,
-    PaginationComponent: Pagination,
-  };
-
   componentWillMount() {
     this.setup(this.props);
     this.setState({ paginationIndex: this.props.index });
   }
+
   componentDidMount() {
     const { autoplay, index } = this.props;
     if (autoplay) {
@@ -212,3 +166,50 @@ export default class SwiperFlatList extends PureComponent {
     );
   }
 }
+
+SwiperFlatList.propTypes = {
+  data: PropTypes.array,
+  onMomentumScrollEnd: PropTypes.func,
+  vertical: PropTypes.bool,
+  index: PropTypes.number,
+  renderAll: PropTypes.bool,
+  renderItem: PropTypes.func,
+  // Only is allowed children or data not both
+  children(props, propName) {
+    const { data } = props;
+    if (!props[propName] && !data) {
+      return new Error('Invalid props, `data` or `children` is required');
+    }
+    if (data && data.length !== 0 && !props.renderItem) {
+      return new Error('Invalid props, `renderItem` is required');
+    }
+    return undefined;
+  },
+
+  // Pagination
+  showPagination: PropTypes.bool,
+  PaginationComponent: PropTypes.func,
+  paginationActiveColor: Pagination.propTypes.paginationActiveColor,
+  paginationDefaultColor: Pagination.propTypes.paginationDefaultColor,
+  paginationStyle: Pagination.propTypes.paginationStyle,
+  paginationStyleItem: Pagination.propTypes.paginationStyleItem,
+
+  // Autoplay
+  autoplayDelay: PropTypes.number,
+  autoplay: PropTypes.bool,
+  // autoplayDirection: PropTypes.bool,
+  autoplayLoop: PropTypes.bool,
+};
+
+SwiperFlatList.defaultProps = {
+  index: 0,
+  data: [],
+  autoplayDelay: 3,
+  // autoplayDirection: true,
+  autoplayLoop: false,
+  autoplay: false,
+  showPagination: false,
+  vertical: false,
+  renderAll: false,
+  PaginationComponent: Pagination,
+};
