@@ -27,10 +27,11 @@ export default class App extends PureComponent {
             data={items}
             renderItem={this.renderItemComponent}
             showPagination
+            // vertical={true}
           />
         </View>
         <View style={styles.container}>
-          <SwiperFlatList
+          {/* <SwiperFlatList
             autoplay
             autoplayDelay={1.5}
             autoplayLoop
@@ -50,7 +51,7 @@ export default class App extends PureComponent {
             <View style={[styles.child, { backgroundColor: 'teal' }]}>
               <Text style={styles.text}>4</Text>
             </View>
-          </SwiperFlatList>
+          </SwiperFlatList> */}
         </View>
       </View>
     );

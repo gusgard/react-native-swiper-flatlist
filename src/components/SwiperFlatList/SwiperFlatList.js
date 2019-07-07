@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { FlatList, Platform } from 'react-native';
 
@@ -13,35 +13,70 @@ const SwiperFlatList = ({
   paginationDefaultColor,
   paginationStyle,
   paginationStyleItem,
+  data,
+  renderItem,
+  renderAll,
+  index,
   ...props
 }) => {
+  let _data;
+  let _renderItem;
+  if (children) {
+    _data = children;
+    _renderItem = ({ item }) => item;
+  } else if (data) {
+    _data = data;
+    _renderItem = renderItem;
+  }
+  // Items to render in the initial batch.
+  const _initialNumToRender = renderAll ? _data.length : 1;
+
+  const flatListElement = React.useRef(null);
   const flatListProps = {
-    ref: component => {
-      this.flatListRef = component;
-    },
-    keyExtractor: this._keyExtractor,
+    ref: flatListElement,
+    keyExtractor: (_item, _index) => _index.toString(),
     horizontal: !vertical,
     showsHorizontalScrollIndicator: false,
     showsVerticalScrollIndicator: false,
     pagingEnabled: true,
     ...props,
-    onMomentumScrollEnd: this._onMomentumScrollEnd,
-    onScrollToIndexFailed: this._onScrollToIndexFailed,
-    data: this._data,
-    renderItem: this._renderItem,
-    initialNumToRender: this._initialNumToRender,
+    // onMomentumScrollEnd: this._onMomentumScrollEnd,  ...
+    // onScrollToIndexFailed: this._onScrollToIndexFailed, ...
+    data: _data,
+    renderItem: _renderItem,
+    initialNumToRender: _initialNumToRender,
+    // ----
     // inverted
     // onViewableItemsChanged={(data, index, x) => {
     // getItemLayout={(data, index, x) => {
     // initialScrollIndex={this.state.index}
     // ListFooterComponent=
     // ListEmptyComponent loading...
+    // ----
+  };
+  const [paginationIndex, setPaginationIndex] = React.useState(index);
+
+  // console.log(paginationIndex);
+
+  const _scrollToIndex = (_index, _animated = true) => {
+    //   const { autoplay } = this.props;
+    //   if (autoplay && Platform.OS === 'android') {
+    //     this._autoplay(index);
+    //   }
+    const params = { animated: _animated, index: _index };
+    setPaginationIndex(() => {
+      // console.log('flatListElement', flatListElement, prevState, _index);
+      if (flatListElement && flatListElement.current) {
+        flatListElement.current.scrollToIndex(params);
+      }
+      return _index;
+    });
   };
 
   const paginationProps = {
-    data: this._data,
-    paginationIndex: this.state.paginationIndex,
-    scrollToIndex: this._scrollToIndex,
+    size: _data.length,
+    paginationIndex: paginationIndex,
+    scrollToIndex: _scrollToIndex,
     paginationActiveColor,
     paginationDefaultColor,
     paginationStyle,
@@ -49,16 +84,12 @@ const SwiperFlatList = ({
   };
 
   return (
-    <Fragment>
+    <>
       <FlatList {...flatListProps} />
       {showPagination && <PaginationComponent {...paginationProps} />}
-    </Fragment>
+    </>
   );
 };
-// componentWillMount() {
-//   this.setup(this.props);
-//   this.setState({ paginationIndex: this.props.index });
-// }
 
 // componentDidMount() {
 //   const { autoplay, index } = this.props;
@@ -71,28 +102,11 @@ const SwiperFlatList = ({
 //   }
 // }
 
-// componentWillUpdate(nextProps) {
-//   this.setup(nextProps);
-// }
-
 // componentWillUnmount() {
 //   if (this.autoplayTimer) {
 //     clearTimeout(this.autoplayTimer);
 //   }
 // }
-
-// setup = props => {
-//   const { children, data, renderItem, renderAll } = props;
-//   if (children) {
-//     this._data = children;
-//     this._renderItem = this.renderChildren;
-//   } else if (data) {
-//     this._data = data;
-//     this._renderItem = renderItem;
-//   }
-//   // Items to render in the initial batch.
-//   this._initialNumToRender = renderAll ? this._data.length : 1;
-// };
 
 // _autoplay = index => {
 //   const { autoplayDelay, autoplayLoop } = this.props;
@@ -113,20 +127,6 @@ const SwiperFlatList = ({
 //       this.autoplayTimer = setTimeout(() => this._scrollToIndex(1, true), autoplayDelay * 1000);
 //     }, autoplayDelay * 1000);
 //   }
-// };
-
-// _scrollToIndex = (index, animated = true) => {
-//   const { autoplay } = this.props;
-//   if (autoplay && Platform.OS === 'android') {
-//     this._autoplay(index);
-//   }
-//   const params = { animated, index };
-//   this.setState(() => {
-//     if (this.flatListRef) {
-//       this.flatListRef.scrollToIndex(params);
-//     }
-//     return { paginationIndex: index };
-//   });
 // };
 
 // _onMomentumScrollEnd = e => {
@@ -154,13 +154,7 @@ const SwiperFlatList = ({
 //   setTimeout(() => this._scrollToIndex(info.index, false));
 // };
 
-// _keyExtractor = (item, index) => index.toString();
-
-// getCurrentIndex = () => this.state.paginationIndex;
-
 // scrollToIndex = (...args) => this._scrollToIndex(...args);
-
-// renderChildren = ({ item }) => item;
 
 SwiperFlatList.propTypes = {
   data: PropTypes.array,
@@ -208,3 +202,5 @@ SwiperFlatList.defaultProps = {
   renderAll: false,
   PaginationComponent: Pagination,
 };
+
+export default SwiperFlatList;

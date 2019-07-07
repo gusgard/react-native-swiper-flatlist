@@ -1,2 +1,2 @@
 export { colors } from './colors';
-export { horizontal, vertical, width, height } from './layout';
+export { horizontal, vertical } from './layout';

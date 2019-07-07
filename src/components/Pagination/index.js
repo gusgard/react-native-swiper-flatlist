@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, TouchableOpacity, View, ViewPropTypes } from 'react-native';
 
-import { colors, vertical, horizontal, width } from '../../themes';
+import { colors, vertical, horizontal } from '../../themes';
 
 const styles = StyleSheet.create({
   container: {
@@ -11,8 +11,9 @@ const styles = StyleSheet.create({
     marginVertical: vertical.xxSmall,
     justifyContent: 'center',
     bottom: 0,
-    left: width * 0.25,
-    right: width * 0.25,
+    width: '100%',
+    // left: width * 0.25,
+    // right: width * 0.25,
   },
   pagination: {
     width: horizontal.small,
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
 });
 
 const Pagination = ({
-  data,
+  size,
   paginationIndex,
   scrollToIndex,
   paginationDefaultColor,
@@ -33,7 +34,7 @@ const Pagination = ({
 }) => {
   return (
     <View style={[styles.container, paginationStyle]}>
-      {data.map((_, index) => (
+      {Array.from({ length: size }).map((_, index) => (
         <TouchableOpacity
           style={[
             styles.pagination,
@@ -51,7 +52,7 @@ const Pagination = ({
 };
 Pagination.propTypes = {
   scrollToIndex: PropTypes.func.isRequired,
-  data: PropTypes.array,
+  size: PropTypes.number.isRequired,
   paginationIndex: PropTypes.number,
   paginationActiveColor: PropTypes.string,
   paginationDefaultColor: PropTypes.string,
@@ -60,7 +61,6 @@ Pagination.propTypes = {
 };
 
 Pagination.defaultProps = {
-  data: [],
   paginationIndex: 0,
   paginationActiveColor: colors.white,
   paginationDefaultColor: colors.gray,
