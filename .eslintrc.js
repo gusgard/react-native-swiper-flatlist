@@ -1,5 +1,7 @@
 module.exports = {
+  root: true,
   extends: [
+    '@react-native-community',
     'airbnb',
     'plugin:flowtype/recommended',
     'plugin:react/recommended',
@@ -12,17 +14,17 @@ module.exports = {
     'plugin:import/warnings',
   ],
   plugins: ['flowtype', 'react', 'prettier', 'react-native'],
-  parserOptions: {
-    ecmaVersion: 2016,
-    sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true,
-    },
-  },
-  env: {
-    es6: true,
-    node: true,
-  },
+  // parserOptions: {
+  //   ecmaVersion: 2016,
+  //   sourceType: 'module',
+  //   ecmaFeatures: {
+  //     jsx: true,
+  //   },
+  // },
+  // env: {
+  //   es6: true,
+  //   node: true,
+  // },
   rules: {
     'comma-dangle': 0,
     'consistent-return': 1,

@@ -8,14 +8,14 @@ exports[`swiper flatlist renders children 1`] = `
     autoplayLoop={false}
     data={
       Array [
-        <Component
+        <Image
           source={
             Object {
               "uri": "https://...",
             }
           }
         />,
-        <Component
+        <Image
           source={
             Object {
               "uri": "https://...",
@@ -35,6 +35,7 @@ exports[`swiper flatlist renders children 1`] = `
     onMomentumScrollEnd={[Function]}
     onScrollToIndexFailed={[Function]}
     pagingEnabled={true}
+    removeClippedSubviews={false}
     renderAll={false}
     renderItem={[Function]}
     scrollEventThrottle={50}
@@ -79,6 +80,7 @@ exports[`swiper flatlist renders correctly 1`] = `
     onMomentumScrollEnd={[Function]}
     onScrollToIndexFailed={[Function]}
     pagingEnabled={true}
+    removeClippedSubviews={false}
     renderAll={false}
     renderItem={[Function]}
     scrollEventThrottle={50}
