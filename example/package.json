@@ -3,28 +3,34 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint .",
     "android": "react-native run-android && adb reverse tcp:8081 tcp:8081",
-    "ios": "react-native run-ios",
+    "ios": "react-native run-ios --simulator='iPhone X'",
     "postinstall": "rm -rf node_modules/react-native-swiper-flatlist/node_modules/react-native",
     "watch": "node ./scripts/watch-and-copy.js",
-    "start:watch": "concurrently 'npm run watch' 'npm run start'",
-    "start": "node node_modules/react-native/local-cli/cli.js start"
+    "start:watch": "concurrently 'npm run watch' 'npm run start'"
   },
   "dependencies": {
-    "react": "16.6.0-alpha.8af6728",
-    "react-native": "0.57.3",
+    "react": "16.8.6",
+    "react-native": "0.60.0",
     "react-native-swiper-flatlist": "*"
   },
   "devDependencies": {
-    "babel-jest": "23.6.0",
-    "concurrently": "^2.2.0",
-    "fs-extra": "^0.30.0",
-    "jest": "23.6.0",
-    "metro-react-native-babel-preset": "0.48.0",
-    "minimatch": "^3.0.2",
-    "node-watch": "^0.4.0",
-    "react-test-renderer": "16.5.0",
-    "rimraf": "^2.5.4"
+    "@babel/core": "^7.5.0",
+    "@babel/runtime": "^7.5.1",
+    "@react-native-community/eslint-config": "^0.0.5",
+    "babel-jest": "^24.8.0",
+    "eslint": "^6.0.1",
+    "jest": "^24.8.0",
+    "metro-react-native-babel-preset": "^0.55.0",
+    "concurrently": "2.2.0",
+    "fs-extra": "0.30.0",
+    "minimatch": "3.0.4",
+    "node-watch": "0.4.0",
+    "rimraf": "^2.5.4",
+    "react-test-renderer": "16.8.6"
   },
   "jest": {
     "preset": "react-native"
