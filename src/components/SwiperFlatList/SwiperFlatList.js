@@ -33,10 +33,10 @@ const SwiperFlatList = ({
   // Items to render in the initial batch.
   const _initialNumToRender = renderAll ? _data.length : 1;
 
-  // const flatListElement = React.useRef(null);
+  const flatListElement = React.useRef(null);
 
   const flatListProps = {
-    // ref: flatListElement,
+    ref: flatListElement,
     keyExtractor: (_item, _index) => _index.toString(),
     horizontal: !vertical,
     showsHorizontalScrollIndicator: false,

@@ -17,14 +17,14 @@ export default class List extends React.PureComponent {
 
   render() {
     // return <SwiperFlatList {...this.props} test={this.viewabilityConfig}></SwiperFlatList>;
-    console.log(this.flatListRef);
+    // console.log(this.flatListRef);
 
     return (
       <SwiperFlatList
         {...this.props}
-        ref={component => {
-          this.flatListRef = component;
-        }}
+        // ref={component => {
+        //   this.flatListRef = component;
+        // }}
         viewabilityConfig={this.viewabilityConfig}
         onViewableItemsChanged={({ viewableItems, changed }) => {
           console.log('viewableItems', viewableItems?.[0]?.index);
