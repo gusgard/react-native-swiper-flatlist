@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FlatList, Platform } from 'react-native';
+// import { FlatList, Platform } from 'react-native';
+import { FlatList } from 'react-native';
 
 import Pagination from '../Pagination';
 
@@ -17,6 +18,7 @@ const SwiperFlatList = ({
   renderItem,
   renderAll,
   index,
+  autoplayDelay,
   ...props
 }) => {
   let _data;
@@ -32,6 +34,7 @@ const SwiperFlatList = ({
   const _initialNumToRender = renderAll ? _data.length : 1;
 
   const flatListElement = React.useRef(null);
+
   const flatListProps = {
     ref: flatListElement,
     keyExtractor: (_item, _index) => _index.toString(),
@@ -39,6 +42,10 @@ const SwiperFlatList = ({
     showsHorizontalScrollIndicator: false,
     showsVerticalScrollIndicator: false,
     pagingEnabled: true,
+    // onViewableItemsChanged: ({ viewableItems, changed }) => {
+    //   console.log('viewableItems', viewableItems);
+    //   console.log('changed', changed);
+    // },
     ...props,
     // onMomentumScrollEnd: this._onMomentumScrollEnd,  ...
     // onScrollToIndexFailed: this._onScrollToIndexFailed, ...
@@ -65,7 +72,7 @@ const SwiperFlatList = ({
     //   }
     const params = { animated: _animated, index: _index };
     setPaginationIndex(() => {
-      // console.log('flatListElement', flatListElement, prevState, _index);
+      console.log('flatListElement', flatListElement, _index);
       if (flatListElement && flatListElement.current) {
         flatListElement.current.scrollToIndex(params);
       }
@@ -84,10 +91,11 @@ const SwiperFlatList = ({
   };
 
   return (
-    <>
+    <React.Fragment>
       <FlatList {...flatListProps} />
+      {/* <List {...flatListProps} /> */}
       {showPagination && <PaginationComponent {...paginationProps} />}
-    </>
+    </React.Fragment>
   );
 };
 
