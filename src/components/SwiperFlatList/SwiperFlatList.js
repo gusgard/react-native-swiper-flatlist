@@ -19,6 +19,10 @@ const SwiperFlatList = ({
   renderAll,
   index,
   autoplayDelay,
+  autoplay,
+  autoplayLoop,
+  onMomentumScrollEnd,
+  // onChangeItem,
   ...props
 }) => {
   let _data;
@@ -32,6 +36,46 @@ const SwiperFlatList = ({
   }
   // Items to render in the initial batch.
   const _initialNumToRender = renderAll ? _data.length : 1;
+  const [paginationIndex, setPaginationIndex] = React.useState(index);
+
+  const _autoplay = _index => {
+    if (this.autoplayTimer) {
+      clearTimeout(this.autoplayTimer);
+    }
+    const isEnd = _index === _data.length - 1;
+
+    if (autoplayLoop || !isEnd) {
+      this.autoplayTimer = setTimeout(() => {
+        const nextIndex = (_index + 1) % _data.length;
+        _scrollToIndex(nextIndex, !isEnd);
+      }, autoplayDelay * 1000);
+    }
+    if (isEnd) {
+      // When scroll to the end and animated is false need to restart the autoplay
+      setTimeout(() => {
+        this.autoplayTimer = setTimeout(() => _scrollToIndex(1, true), autoplayDelay * 1000);
+      }, autoplayDelay * 1000);
+    }
+  };
+  const _onMomentumScrollEnd = e => {
+    const { contentOffset, layoutMeasurement } = e.nativeEvent;
+    let _index;
+    if (vertical) {
+      _index = Math.round(contentOffset.y / layoutMeasurement.height);
+    } else {
+      // Divide the horizontal offset by the width of the view to see which page is visible
+      _index = Math.round(contentOffset.x / layoutMeasurement.width);
+    }
+
+    if (autoplay) {
+      _autoplay(_index);
+    }
+    setPaginationIndex(_index);
+
+    if (onMomentumScrollEnd) {
+      onMomentumScrollEnd({ index: _index }, e);
+    }
+  };
 
   const flatListElement = React.useRef(null);
 
@@ -43,11 +87,7 @@ const SwiperFlatList = ({
     showsVerticalScrollIndicator: false,
     pagingEnabled: true,
     ...props,
-    // onViewableItemsChanged: ({ viewableItems, changed }) => {
-    //   console.log('viewableItems', viewableItems);
-    //   console.log('changed', changed);
-    // },
-    // onMomentumScrollEnd: this._onMomentumScrollEnd,  ...
+    onMomentumScrollEnd: _onMomentumScrollEnd,
     // onScrollToIndexFailed: this._onScrollToIndexFailed, ...
     data: _data,
     renderItem: _renderItem,
@@ -61,7 +101,6 @@ const SwiperFlatList = ({
     // ListEmptyComponent loading...
     // ----
   };
-  const [paginationIndex, setPaginationIndex] = React.useState(index);
 
   // console.log(paginationIndex);
 
@@ -72,7 +111,7 @@ const SwiperFlatList = ({
     //   }
     const params = { animated: _animated, index: _index };
     setPaginationIndex(() => {
-      console.log('flatListElement', flatListElement, _index);
+      // console.log('flatListElement', flatListElement, _index);
       if (flatListElement && flatListElement.current) {
         flatListElement.current.scrollToIndex(params);
       }
@@ -114,27 +153,6 @@ const SwiperFlatList = ({
 //     clearTimeout(this.autoplayTimer);
 //   }
 // }
-
-// _autoplay = index => {
-//   const { autoplayDelay, autoplayLoop } = this.props;
-//   if (this.autoplayTimer) {
-//     clearTimeout(this.autoplayTimer);
-//   }
-//   const isEnd = index === this._data.length - 1;
-
-//   if (autoplayLoop || !isEnd) {
-//     this.autoplayTimer = setTimeout(() => {
-//       const nextIndex = (index + 1) % this._data.length;
-//       this._scrollToIndex(nextIndex, !isEnd);
-//     }, autoplayDelay * 1000);
-//   }
-//   if (isEnd) {
-//     // When scroll to the end and animated is false need to restart the autoplay
-//     setTimeout(() => {
-//       this.autoplayTimer = setTimeout(() => this._scrollToIndex(1, true), autoplayDelay * 1000);
-//     }, autoplayDelay * 1000);
-//   }
-// };
 
 // _onMomentumScrollEnd = e => {
 //   const { autoplay, vertical, onMomentumScrollEnd } = this.props;

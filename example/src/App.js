@@ -21,7 +21,7 @@ export default class App extends PureComponent {
         <View style={styles.container}>
           <SwiperFlatList
             autoplay
-            autoplayDelay={3}
+            autoplayDelay={1}
             // index={3} // FIX THIS
             autoplayLoop
             data={items}
