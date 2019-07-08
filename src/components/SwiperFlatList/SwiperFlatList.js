@@ -33,20 +33,20 @@ const SwiperFlatList = ({
   // Items to render in the initial batch.
   const _initialNumToRender = renderAll ? _data.length : 1;
 
-  const flatListElement = React.useRef(null);
+  // const flatListElement = React.useRef(null);
 
   const flatListProps = {
-    ref: flatListElement,
+    // ref: flatListElement,
     keyExtractor: (_item, _index) => _index.toString(),
     horizontal: !vertical,
     showsHorizontalScrollIndicator: false,
     showsVerticalScrollIndicator: false,
     pagingEnabled: true,
+    ...props,
     // onViewableItemsChanged: ({ viewableItems, changed }) => {
     //   console.log('viewableItems', viewableItems);
     //   console.log('changed', changed);
     // },
-    ...props,
     // onMomentumScrollEnd: this._onMomentumScrollEnd,  ...
     // onScrollToIndexFailed: this._onScrollToIndexFailed, ...
     data: _data,
@@ -93,7 +93,6 @@ const SwiperFlatList = ({
   return (
     <React.Fragment>
       <FlatList {...flatListProps} />
-      {/* <List {...flatListProps} /> */}
       {showPagination && <PaginationComponent {...paginationProps} />}
     </React.Fragment>
   );

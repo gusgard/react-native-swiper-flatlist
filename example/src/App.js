@@ -22,7 +22,7 @@ export default class App extends PureComponent {
           <SwiperFlatList
             autoplay
             autoplayDelay={3}
-            index={3}
+            // index={3} // FIX THIS
             autoplayLoop
             data={items}
             renderItem={this.renderItemComponent}
