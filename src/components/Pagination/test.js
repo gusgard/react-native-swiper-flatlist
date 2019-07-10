@@ -1,25 +1,23 @@
-import { shallow } from 'enzyme';
 import React from 'react';
+import { render } from 'react-native-testing-library';
 
 import Pagination from './index';
 
-const items = [1, 2, 3, 4, 5];
-
 describe('pagination', () => {
   it('renders correctly', () => {
-    const wrapper = shallow(<Pagination scrollToIndex={() => undefined} data={items} />);
-    expect(wrapper).toMatchSnapshot();
+    const { toJSON } = render(<Pagination scrollToIndex={() => undefined} size={5} />);
+    expect(toJSON()).toMatchSnapshot();
   });
   it('renders all props', () => {
-    const wrapper = shallow(
+    const { toJSON } = render(
       <Pagination
         scrollToIndex={() => undefined}
         paginationIndex={1}
         paginationActiveColor="black"
         paginationDefaultColor="white"
-        data={items}
+        size={5}
       />,
     );
-    expect(wrapper).toMatchSnapshot();
+    expect(toJSON()).toMatchSnapshot();
   });
 });

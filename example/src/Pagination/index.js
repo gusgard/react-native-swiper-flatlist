@@ -7,7 +7,7 @@ import styles from './styles';
 export default class Pagination extends PureComponent {
   static propTypes = {
     scrollToIndex: PropTypes.func.isRequired,
-    data: PropTypes.array,
+    size: PropTypes.number.isRequired,
     paginationIndex: PropTypes.number,
     paginationActiveColor: PropTypes.string,
     paginationDefaultColor: PropTypes.string,
@@ -22,7 +22,7 @@ export default class Pagination extends PureComponent {
 
   render() {
     const {
-      data,
+      size,
       paginationIndex,
       scrollToIndex,
       paginationDefaultColor,
@@ -30,7 +30,7 @@ export default class Pagination extends PureComponent {
     } = this.props;
     return (
       <View style={styles.paginationContainer}>
-        {data.map((_, index) => (
+      {Array.from({ length: size }).map((_, index) => (
           <TouchableOpacity
             style={[
               styles.pagination,

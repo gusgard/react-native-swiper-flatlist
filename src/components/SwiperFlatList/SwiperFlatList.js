@@ -5,6 +5,7 @@ import { FlatList } from 'react-native';
 
 import Pagination from '../Pagination';
 
+const MILLISECONDS = 1000;
 const SwiperFlatList = ({
   vertical,
   showPagination,
@@ -22,7 +23,7 @@ const SwiperFlatList = ({
   autoplay,
   autoplayLoop,
   onMomentumScrollEnd,
-  // onChangeItem,
+  autoplayInvertDirection,
   ...props
 }) => {
   let _data;
@@ -37,26 +38,63 @@ const SwiperFlatList = ({
   // Items to render in the initial batch.
   const _initialNumToRender = renderAll ? _data.length : 1;
   const [paginationIndex, setPaginationIndex] = React.useState(index);
+  const flatListElement = React.useRef(null);
 
-  const _autoplay = _index => {
-    if (this.autoplayTimer) {
-      clearTimeout(this.autoplayTimer);
-    }
-    const isEnd = _index === _data.length - 1;
-
-    if (autoplayLoop || !isEnd) {
-      this.autoplayTimer = setTimeout(() => {
-        const nextIndex = (_index + 1) % _data.length;
-        _scrollToIndex(nextIndex, !isEnd);
-      }, autoplayDelay * 1000);
-    }
-    if (isEnd) {
-      // When scroll to the end and animated is false need to restart the autoplay
-      setTimeout(() => {
-        this.autoplayTimer = setTimeout(() => _scrollToIndex(1, true), autoplayDelay * 1000);
-      }, autoplayDelay * 1000);
-    }
+  const _scrollToIndex = (_index, _animated = true) => {
+    //   const { autoplay } = this.props;
+    //   if (autoplay && Platform.OS === 'android') {
+    //     this._autoplay(index);
+    //   }
+    const params = { animated: _animated, index: _index };
+    setPaginationIndex(() => {
+      // console.log('flatListElement', flatListElement, _index);
+      if (flatListElement && flatListElement.current) {
+        flatListElement.current.scrollToIndex(params);
+      }
+      return _index;
+    });
   };
+
+  React.useEffect(() => {
+    console.log('change index', index);
+    if (index !== 0) {
+      // Update the index that comes from "<SwiperFlatList index={2} />"
+      setTimeout(() => {
+        _scrollToIndex(index, false);
+      }, 300);
+    }
+  }, [index]);
+
+  React.useEffect(() => {
+    const isNotTheLastItem = autoplayInvertDirection
+      ? paginationIndex !== _data.length - 1
+      : paginationIndex !== 0;
+    const shouldContinuoWithAutoplay = autoplay && isNotTheLastItem;
+    let autoplayTimer;
+    if (shouldContinuoWithAutoplay || autoplayLoop) {
+      autoplayTimer = setTimeout(() => {
+        const nextIncrement = autoplayInvertDirection ? -1 : +1;
+
+        let nextIndex = (paginationIndex + nextIncrement) % _data.length;
+        if (autoplayInvertDirection && nextIndex < 0) {
+          nextIndex = _data.length - 1;
+        }
+
+        // When reach the end disable animated
+        _scrollToIndex(nextIndex, isNotTheLastItem);
+      }, autoplayDelay * MILLISECONDS);
+    }
+    // https://upmostly.com/tutorials/settimeout-in-react-components-using-hooks
+    return () => clearTimeout(autoplayTimer);
+  }, [paginationIndex]);
+  // const _autoplay = _index => {
+  //   if (isEnd) {
+  //     // When scroll to the end and animated is false need to restart the autoplay
+  //     setTimeout(() => {
+  //       this.autoplayTimer = setTimeout(() => _scrollToIndex(1, true), autoplayDelay * 1000);
+  //     }, autoplayDelay * 1000);
+  //   }
+  // };
   const _onMomentumScrollEnd = e => {
     const { contentOffset, layoutMeasurement } = e.nativeEvent;
     let _index;
@@ -67,17 +105,12 @@ const SwiperFlatList = ({
       _index = Math.round(contentOffset.x / layoutMeasurement.width);
     }
 
-    if (autoplay) {
-      _autoplay(_index);
-    }
     setPaginationIndex(_index);
 
     if (onMomentumScrollEnd) {
       onMomentumScrollEnd({ index: _index }, e);
     }
   };
-
-  const flatListElement = React.useRef(null);
 
   const flatListProps = {
     ref: flatListElement,
@@ -104,21 +137,6 @@ const SwiperFlatList = ({
 
   // console.log(paginationIndex);
 
-  const _scrollToIndex = (_index, _animated = true) => {
-    //   const { autoplay } = this.props;
-    //   if (autoplay && Platform.OS === 'android') {
-    //     this._autoplay(index);
-    //   }
-    const params = { animated: _animated, index: _index };
-    setPaginationIndex(() => {
-      // console.log('flatListElement', flatListElement, _index);
-      if (flatListElement && flatListElement.current) {
-        flatListElement.current.scrollToIndex(params);
-      }
-      return _index;
-    });
-  };
-
   const paginationProps = {
     size: _data.length,
     paginationIndex: paginationIndex,
@@ -136,44 +154,6 @@ const SwiperFlatList = ({
     </React.Fragment>
   );
 };
-
-// componentDidMount() {
-//   const { autoplay, index } = this.props;
-//   if (autoplay) {
-//     this._autoplay(index);
-//   }
-
-//   if (index !== 0) {
-//     this._scrollToIndex(index, false);
-//   }
-// }
-
-// componentWillUnmount() {
-//   if (this.autoplayTimer) {
-//     clearTimeout(this.autoplayTimer);
-//   }
-// }
-
-// _onMomentumScrollEnd = e => {
-//   const { autoplay, vertical, onMomentumScrollEnd } = this.props;
-//   const { contentOffset, layoutMeasurement } = e.nativeEvent;
-//   let index;
-//   if (vertical) {
-//     index = Math.round(contentOffset.y / layoutMeasurement.height);
-//   } else {
-//     // Divide the horizontal offset by the width of the view to see which page is visible
-//     index = Math.round(contentOffset.x / layoutMeasurement.width);
-//   }
-
-//   if (autoplay) {
-//     this._autoplay(index);
-//   }
-//   this.setState({ paginationIndex: index });
-
-//   if (onMomentumScrollEnd) {
-//     onMomentumScrollEnd({ index }, e);
-//   }
-// };
 
 // _onScrollToIndexFailed = info => {
 //   setTimeout(() => this._scrollToIndex(info.index, false));
@@ -211,7 +191,7 @@ SwiperFlatList.propTypes = {
   // Autoplay
   autoplayDelay: PropTypes.number,
   autoplay: PropTypes.bool,
-  // autoplayDirection: PropTypes.bool,
+  autoplayInvertDirection: PropTypes.bool,
   autoplayLoop: PropTypes.bool,
 };
 
@@ -219,7 +199,7 @@ SwiperFlatList.defaultProps = {
   index: 0,
   data: [],
   autoplayDelay: 3,
-  // autoplayDirection: true,
+  autoplayInvertDirection: false,
   autoplayLoop: false,
   autoplay: false,
   showPagination: false,

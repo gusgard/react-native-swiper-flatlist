@@ -8,108 +8,122 @@ exports[`pagination renders all props 1`] = `
         "bottom": 0,
         "flexDirection": "row",
         "justifyContent": "center",
-        "left": 187.5,
         "marginVertical": 16.675,
         "position": "absolute",
-        "right": 187.5,
+        "width": "100%",
       },
       Object {},
     ]
   }
 >
-  <TouchableOpacity
-    activeOpacity={0.2}
-    key="0"
-    onPress={[Function]}
+  <View
+    accessible={true}
+    clickable={true}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
-          "borderRadius": 25,
-          "height": 28.125,
-          "marginHorizontal": 18.75,
-          "width": 28.125,
-        },
-        Object {},
-        Object {
-          "backgroundColor": "white",
-        },
-      ]
+      Object {
+        "backgroundColor": "white",
+        "borderRadius": 25,
+        "height": 28.125,
+        "marginHorizontal": 18.75,
+        "opacity": 1,
+        "width": 28.125,
+      }
     }
   />
-  <TouchableOpacity
-    activeOpacity={0.2}
-    key="1"
-    onPress={[Function]}
+  <View
+    accessible={true}
+    clickable={true}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
-          "borderRadius": 25,
-          "height": 28.125,
-          "marginHorizontal": 18.75,
-          "width": 28.125,
-        },
-        Object {},
-        Object {
-          "backgroundColor": "black",
-        },
-      ]
+      Object {
+        "backgroundColor": "black",
+        "borderRadius": 25,
+        "height": 28.125,
+        "marginHorizontal": 18.75,
+        "opacity": 1,
+        "width": 28.125,
+      }
     }
   />
-  <TouchableOpacity
-    activeOpacity={0.2}
-    key="2"
-    onPress={[Function]}
+  <View
+    accessible={true}
+    clickable={true}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
-          "borderRadius": 25,
-          "height": 28.125,
-          "marginHorizontal": 18.75,
-          "width": 28.125,
-        },
-        Object {},
-        Object {
-          "backgroundColor": "white",
-        },
-      ]
+      Object {
+        "backgroundColor": "white",
+        "borderRadius": 25,
+        "height": 28.125,
+        "marginHorizontal": 18.75,
+        "opacity": 1,
+        "width": 28.125,
+      }
     }
   />
-  <TouchableOpacity
-    activeOpacity={0.2}
-    key="3"
-    onPress={[Function]}
+  <View
+    accessible={true}
+    clickable={true}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
-          "borderRadius": 25,
-          "height": 28.125,
-          "marginHorizontal": 18.75,
-          "width": 28.125,
-        },
-        Object {},
-        Object {
-          "backgroundColor": "white",
-        },
-      ]
+      Object {
+        "backgroundColor": "white",
+        "borderRadius": 25,
+        "height": 28.125,
+        "marginHorizontal": 18.75,
+        "opacity": 1,
+        "width": 28.125,
+      }
     }
   />
-  <TouchableOpacity
-    activeOpacity={0.2}
-    key="4"
-    onPress={[Function]}
+  <View
+    accessible={true}
+    clickable={true}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
-          "borderRadius": 25,
-          "height": 28.125,
-          "marginHorizontal": 18.75,
-          "width": 28.125,
-        },
-        Object {},
-        Object {
-          "backgroundColor": "white",
-        },
-      ]
+      Object {
+        "backgroundColor": "white",
+        "borderRadius": 25,
+        "height": 28.125,
+        "marginHorizontal": 18.75,
+        "opacity": 1,
+        "width": 28.125,
+      }
     }
   />
 </View>
@@ -123,108 +137,122 @@ exports[`pagination renders correctly 1`] = `
         "bottom": 0,
         "flexDirection": "row",
         "justifyContent": "center",
-        "left": 187.5,
         "marginVertical": 16.675,
         "position": "absolute",
-        "right": 187.5,
+        "width": "100%",
       },
       Object {},
     ]
   }
 >
-  <TouchableOpacity
-    activeOpacity={0.2}
-    key="0"
-    onPress={[Function]}
+  <View
+    accessible={true}
+    clickable={true}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
-          "borderRadius": 25,
-          "height": 28.125,
-          "marginHorizontal": 18.75,
-          "width": 28.125,
-        },
-        Object {},
-        Object {
-          "backgroundColor": "#FFFFFF",
-        },
-      ]
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "borderRadius": 25,
+        "height": 28.125,
+        "marginHorizontal": 18.75,
+        "opacity": 1,
+        "width": 28.125,
+      }
     }
   />
-  <TouchableOpacity
-    activeOpacity={0.2}
-    key="1"
-    onPress={[Function]}
+  <View
+    accessible={true}
+    clickable={true}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
-          "borderRadius": 25,
-          "height": 28.125,
-          "marginHorizontal": 18.75,
-          "width": 28.125,
-        },
-        Object {},
-        Object {
-          "backgroundColor": "gray",
-        },
-      ]
+      Object {
+        "backgroundColor": "gray",
+        "borderRadius": 25,
+        "height": 28.125,
+        "marginHorizontal": 18.75,
+        "opacity": 1,
+        "width": 28.125,
+      }
     }
   />
-  <TouchableOpacity
-    activeOpacity={0.2}
-    key="2"
-    onPress={[Function]}
+  <View
+    accessible={true}
+    clickable={true}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
-          "borderRadius": 25,
-          "height": 28.125,
-          "marginHorizontal": 18.75,
-          "width": 28.125,
-        },
-        Object {},
-        Object {
-          "backgroundColor": "gray",
-        },
-      ]
+      Object {
+        "backgroundColor": "gray",
+        "borderRadius": 25,
+        "height": 28.125,
+        "marginHorizontal": 18.75,
+        "opacity": 1,
+        "width": 28.125,
+      }
     }
   />
-  <TouchableOpacity
-    activeOpacity={0.2}
-    key="3"
-    onPress={[Function]}
+  <View
+    accessible={true}
+    clickable={true}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
-          "borderRadius": 25,
-          "height": 28.125,
-          "marginHorizontal": 18.75,
-          "width": 28.125,
-        },
-        Object {},
-        Object {
-          "backgroundColor": "gray",
-        },
-      ]
+      Object {
+        "backgroundColor": "gray",
+        "borderRadius": 25,
+        "height": 28.125,
+        "marginHorizontal": 18.75,
+        "opacity": 1,
+        "width": 28.125,
+      }
     }
   />
-  <TouchableOpacity
-    activeOpacity={0.2}
-    key="4"
-    onPress={[Function]}
+  <View
+    accessible={true}
+    clickable={true}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
-          "borderRadius": 25,
-          "height": 28.125,
-          "marginHorizontal": 18.75,
-          "width": 28.125,
-        },
-        Object {},
-        Object {
-          "backgroundColor": "gray",
-        },
-      ]
+      Object {
+        "backgroundColor": "gray",
+        "borderRadius": 25,
+        "height": 28.125,
+        "marginHorizontal": 18.75,
+        "opacity": 1,
+        "width": 28.125,
+      }
     }
   />
 </View>

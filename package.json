@@ -40,9 +40,6 @@
     "babel-eslint": "^10.0.2",
     "babel-jest": "24.8.0",
     "babel-preset-react-native": "4.0.1",
-    "enzyme": "^3.6.0",
-    "enzyme-adapter-react-16": "^1.5.0",
-    "enzyme-to-json": "^3.3.4",
     "eslint": "^4.9.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-config-prettier": "^6.0.0",
@@ -58,20 +55,16 @@
     "pre-commit": "^1.2.2",
     "prettier": "^1.14.3",
     "prettier-eslint": "^9.0.0",
-    "react": "*",
-    "react-dom": "*",
-    "react-native": "*"
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "react-test-renderer": "16.8.6",
+    "react-native": "*",
+    "react-native-testing-library": "^1.10.0"
   },
   "jest": {
     "preset": "react-native",
-    "setupFilesAfterEnv": [
-      "./enzyme.js"
-    ],
     "modulePathIgnorePatterns": [
       "<rootDir>/example/node_modules/"
-    ],
-    "snapshotSerializers": [
-      "./node_modules/enzyme-to-json/serializer"
     ]
   },
   "pre-commit": {

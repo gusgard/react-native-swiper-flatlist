@@ -19,7 +19,7 @@ export default class App extends PureComponent {
     return (
       <View style={styles.container}>
         <View style={styles.container}>
-          <SwiperFlatList
+          {/* <SwiperFlatList
             autoplay
             autoplayDelay={1}
             // index={3} // FIX THIS
@@ -28,15 +28,16 @@ export default class App extends PureComponent {
             renderItem={this.renderItemComponent}
             showPagination
             // vertical={true}
-          />
+          /> */}
         </View>
         <View style={styles.container}>
-          {/* <SwiperFlatList
-            autoplay
-            autoplayDelay={1.5}
-            autoplayLoop
+          <SwiperFlatList
+            // autoplay
+            // autoplayDelay={1.5}
+            // autoplayLoop
             index={3}
             showPagination
+            autoplayInvertDirection
             PaginationComponent={Pagination}
           >
             <View style={[styles.child, { backgroundColor: 'tomato' }]}>
@@ -51,7 +52,7 @@ export default class App extends PureComponent {
             <View style={[styles.child, { backgroundColor: 'teal' }]}>
               <Text style={styles.text}>4</Text>
             </View>
-          </SwiperFlatList> */}
+          </SwiperFlatList>
         </View>
       </View>
     );
