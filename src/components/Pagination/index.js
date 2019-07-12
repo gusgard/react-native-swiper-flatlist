@@ -44,7 +44,7 @@ const Pagination = ({
               : { backgroundColor: paginationDefaultColor },
           ]}
           key={index}
-          onPress={() => scrollToIndex(index)}
+          onPress={() => scrollToIndex({ index })}
         />
       ))}
     </View>

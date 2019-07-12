@@ -1,5 +1,5 @@
-import React, { PureComponent } from 'react';
-import { Text, Dimensions, Image, StyleSheet, View } from 'react-native';
+import React from 'react';
+import { Alert, TouchableOpacity, Text, Dimensions, Image, StyleSheet, View } from 'react-native';
 import SwiperFlatList from 'react-native-swiper-flatlist';
 
 import Pagination from './Pagination';
@@ -12,10 +12,21 @@ const image = index => ({ image: newImage[index % newImage.length] });
 
 const items = Array.from(Array(5)).map((_, index) => image(index));
 
-export default class App extends PureComponent {
-  renderItemComponent = ({ item }) => <Image style={styles.image} source={item.image} />;
-
-  render() {
+export default () =>  {
+  const scrollRef = React.useRef(null);
+  const goToLastIndex =() => {
+    scrollRef.current.goToLastIndex();
+  }
+  const goToFirstIndex =() => {
+    scrollRef.current.goToFirstIndex();
+  }
+  const getCurrentIndex =() => {
+    const currentIndex = scrollRef.current.getCurrentIndex();
+    Alert.alert(`the current index is ${currentIndex}`)
+  }
+  const onChangeIndex = (index) => {
+    console.log('index', index)
+  }
     return (
       <View style={styles.container}>
         <View style={styles.container}>
@@ -25,38 +36,39 @@ export default class App extends PureComponent {
             // index={3} // FIX THIS
             autoplayLoop
             data={items}
-            renderItem={this.renderItemComponent}
+            renderItem={({ item }) => <Image style={styles.image} source={item.image} />}
             showPagination
             // vertical={true}
           /> */}
         </View>
         <View style={styles.container}>
           <SwiperFlatList
-            // autoplay
+            // autoplay // BREAK EVERYTHING..
             // autoplayDelay={1.5}
             // autoplayLoop
-            index={3}
+            // index={3}
             showPagination
             autoplayInvertDirection
             PaginationComponent={Pagination}
+            ref={scrollRef}
+            onChangeIndex={onChangeIndex}
           >
-            <View style={[styles.child, { backgroundColor: 'tomato' }]}>
-              <Text style={styles.text}>1</Text>
-            </View>
-            <View style={[styles.child, { backgroundColor: 'thistle' }]}>
-              <Text style={styles.text}>2</Text>
-            </View>
-            <View style={[styles.child, { backgroundColor: 'skyblue' }]}>
-              <Text style={styles.text}>3</Text>
-            </View>
-            <View style={[styles.child, { backgroundColor: 'teal' }]}>
-              <Text style={styles.text}>4</Text>
-            </View>
+          <TouchableOpacity style={[styles.child, { backgroundColor: 'tomato' }]} onPress={goToLastIndex}>
+              <Text style={styles.smallText}>0 - Go to last index</Text>
+            </TouchableOpacity>
+          <TouchableOpacity style={[styles.child, { backgroundColor: 'tomato' }]} onPress={getCurrentIndex}>
+              <Text style={styles.smallText}>1 - Press to get the current index</Text>
+            </TouchableOpacity>
+          {/* <TouchableOpacity style={[styles.child, { backgroundColor: 'skyblue' }]} onPress={getCurrentIndex}>
+              <Text style={styles.smallText}>2 - Press to get the current index</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={[styles.child, { backgroundColor: 'teal' }]} onPress={goToFirstIndex}>
+              <Text style={styles.smallText}>3 - Go to last index</Text>
+            </TouchableOpacity> */}
           </SwiperFlatList>
         </View>
       </View>
     );
-  }
 }
 
 const styles = StyleSheet.create({
@@ -75,6 +87,10 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: width * 0.5,
+    textAlign: 'center',
+  },
+  smallText: {
+    fontSize: width * 0.1,
     textAlign: 'center',
   },
 });

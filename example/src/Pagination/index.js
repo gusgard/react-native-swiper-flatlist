@@ -39,7 +39,7 @@ export default class Pagination extends PureComponent {
                 : { backgroundColor: paginationDefaultColor },
             ]}
             key={index}
-            onPress={() => scrollToIndex(index)}
+            onPress={() => scrollToIndex({index})}
           />
         ))}
       </View>
