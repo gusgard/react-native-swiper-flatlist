@@ -59,12 +59,12 @@ export default () =>  {
           <TouchableOpacity style={[styles.child, { backgroundColor: 'tomato' }]} onPress={getCurrentIndex}>
               <Text style={styles.smallText}>1 - Press to get the current index</Text>
             </TouchableOpacity>
-          {/* <TouchableOpacity style={[styles.child, { backgroundColor: 'skyblue' }]} onPress={getCurrentIndex}>
+          <TouchableOpacity style={[styles.child, { backgroundColor: 'skyblue' }]} onPress={getCurrentIndex}>
               <Text style={styles.smallText}>2 - Press to get the current index</Text>
             </TouchableOpacity>
             <TouchableOpacity style={[styles.child, { backgroundColor: 'teal' }]} onPress={goToFirstIndex}>
               <Text style={styles.smallText}>3 - Go to last index</Text>
-            </TouchableOpacity> */}
+            </TouchableOpacity>
           </SwiperFlatList>
         </View>
       </View>
