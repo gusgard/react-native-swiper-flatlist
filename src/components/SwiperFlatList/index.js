@@ -52,10 +52,12 @@ export default class SwiperFlatList extends PureComponent {
     PaginationComponent: Pagination,
   };
 
-  componentWillMount() {
-    this.setup(this.props);
-    this.setState({ paginationIndex: this.props.index });
+  constructor(props) {
+    super(props);
+    this.setup(props);
+    this.state = { paginationIndex: props.index };
   }
+
   componentDidMount() {
     const { autoplay, index } = this.props;
     if (autoplay) {
@@ -67,8 +69,8 @@ export default class SwiperFlatList extends PureComponent {
     }
   }
 
-  componentWillUpdate(nextProps) {
-    this.setup(nextProps);
+  componentDidUpdate() {
+    this.setup(this.props);
   }
 
   componentWillUnmount() {
