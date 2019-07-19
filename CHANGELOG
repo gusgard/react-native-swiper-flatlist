@@ -1,0 +1,17 @@
+Version 2.0.0
+
+Breaking change 
+scrollToIndex   | (index: `number`, animated: `bool`)
+is now
+ scrollToIndex   | { index: `number`, animated: `bool`} 
+
+
+TODO:
+Add typescript?
+get previous index
+fix autoplay -> https://github.com/gusgard/react-native-swiper-flatlist/issues/22
+swipe to the right at the end -> https://github.com/gusgard/react-native-swiper-flatlist/issues/29
+on change https://github.com/gusgard/react-native-swiper-flatlist/issues/41
+goToLastIndex: () => {
+goToFirstIndex: 
+// add code to expo and with export option

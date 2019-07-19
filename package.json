@@ -36,15 +36,15 @@
   },
   "devDependencies": {
     "@types/jest": "^24.0.15",
-    "@types/react-native": "^0.60.0",
+    "@types/react-native": "^0.60.2",
     "babel-eslint": "^10.0.2",
     "babel-jest": "24.8.0",
     "babel-preset-react-native": "4.0.1",
     "eslint": "^4.9.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-flowtype": "^3.11.1",
-    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-flowtype": "^3.12.1",
+    "eslint-plugin-import": "^2.18.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.11.1",
@@ -57,9 +57,9 @@
     "prettier-eslint": "^9.0.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",
-    "react-test-renderer": "16.8.6",
-    "react-native": "*",
-    "react-native-testing-library": "^1.10.0"
+    "react-native": "0.60.4",
+    "react-native-testing-library": "^1.11.1",
+    "react-test-renderer": "16.8.6"
   },
   "jest": {
     "preset": "react-native",
