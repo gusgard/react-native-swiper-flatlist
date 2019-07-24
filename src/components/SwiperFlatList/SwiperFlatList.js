@@ -50,8 +50,6 @@ const SwiperFlatList = React.forwardRef(
     const flatListElement = React.useRef(null);
 
     const _onChangeIndex = ({ index: _index, prevIndex: _prevIndex }) => {
-      // console.log('_onChangeIndex');
-      // console.log({ _index, paginationIndex, _prevIndex, prevIndex });
       onChangeIndex?.({ index: _index, prevIndex: _prevIndex });
     };
     // const _scrollToIndex = ({ index: _index, animated = true }) => {
@@ -72,7 +70,6 @@ const SwiperFlatList = React.forwardRef(
       const newParams = { animated, index: indexToScroll };
 
       setTmpPrevIndex(paginationIndex); //TODO:
-      // setPaginationIndex(indexToScroll);
       flatListElement?.current?.scrollToIndex(newParams);
     };
 
@@ -82,6 +79,11 @@ const SwiperFlatList = React.forwardRef(
       },
       getCurrentIndex: () => {
         return paginationIndex;
+      },
+      getPrevIndex: () => {
+        console.log('not working correctly!');
+
+        return prevIndex;
       },
       // add to readme
       goToLastIndex: () => {
@@ -94,10 +96,10 @@ const SwiperFlatList = React.forwardRef(
     }));
 
     React.useEffect(() => {
-      const isNotTheLastItem = autoplayInvertDirection
-        ? paginationIndex !== _data.length - 1
-        : paginationIndex !== 0;
-      const shouldContinuoWithAutoplay = autoplay && isNotTheLastItem;
+      const isLastIndexEnd = autoplayInvertDirection
+        ? paginationIndex === 0
+        : paginationIndex === _data.length - 1;
+      const shouldContinuoWithAutoplay = autoplay && !isLastIndexEnd;
       let autoplayTimer;
       if (shouldContinuoWithAutoplay || autoplayLoop) {
         autoplayTimer = setTimeout(() => {
@@ -109,7 +111,7 @@ const SwiperFlatList = React.forwardRef(
           }
 
           // When reach the end disable animated
-          _scrollToIndex({ index: nextIndex, animated: isNotTheLastItem });
+          _scrollToIndex({ index: nextIndex, animated: !isLastIndexEnd });
         }, autoplayDelay * MILLISECONDS);
       }
       // https://upmostly.com/tutorials/settimeout-in-react-components-using-hooks
@@ -128,7 +130,13 @@ const SwiperFlatList = React.forwardRef(
       // -------
       if (paginationIndex !== _index) {
         // TODO:
-        console.warn('REMOVE _INDEX if this console is never show ANDROID');
+        console.warn('REMOVE _INDEX if this console is never show ANDROID', {
+          paginationIndex,
+          _index,
+          tmpPrevIndex,
+          prevIndex,
+        });
+        // _index = paginationIndex;
       }
       let _prevIndex = prevIndex;
       if (tmpPrevIndex !== undefined) {
@@ -136,14 +144,14 @@ const SwiperFlatList = React.forwardRef(
       }
       setTmpPrevIndex(undefined); //TODO:
 
-      // console.log({ _index, _prevIndex, prevIndex });
+      console.log({ _index, _prevIndex, prevIndex });
 
       onMomentumScrollEnd?.({ index: _index }, e);
       _onChangeIndex({ index: _index, prevIndex: _prevIndex }); // consider prev index
     };
 
     if (this.__onViewableItemsChanged === undefined) {
-      this.__onViewableItemsChanged = ({ changed, viewableItems }) => {
+      this.__onViewableItemsChanged = ({ changed }) => {
         const newItem = changed?.[0];
         if (newItem !== undefined) {
           const nextIndex = newItem.index;
@@ -172,8 +180,6 @@ const SwiperFlatList = React.forwardRef(
       initialNumToRender: _initialNumToRender,
       initialScrollIndex: index, // used with onScrollToIndexFailed
       viewabilityConfig: {
-        // viewAreaCoveragePercentThreshold: 55,
-        // minimumViewTime: 200,
         itemVisiblePercentThreshold: 60,
       },
       onViewableItemsChanged: this.__onViewableItemsChanged,
