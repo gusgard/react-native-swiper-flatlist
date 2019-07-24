@@ -12,25 +12,25 @@ const image = index => ({ image: newImage[index % newImage.length] });
 
 const items = Array.from(Array(5)).map((_, index) => image(index));
 
-export default () =>  {
+export default () => {
   const scrollRef = React.useRef(null);
-  const goToLastIndex =() => {
+  const goToLastIndex = () => {
     scrollRef.current.goToLastIndex();
-  }
-  const goToFirstIndex =() => {
+  };
+  const goToFirstIndex = () => {
     scrollRef.current.goToFirstIndex();
-  }
-  const getCurrentIndex =() => {
+  };
+  const getCurrentIndex = () => {
     const currentIndex = scrollRef.current.getCurrentIndex();
-    Alert.alert(`the current index is ${currentIndex}`)
-  }
-  const onChangeIndex = (index) => {
-    console.log('index', index)
-  }
-    return (
+    Alert.alert(`the current index is ${currentIndex}`);
+  };
+  const onChangeIndex = ({ index, prevIndex }) => {
+    console.log({ index, prevIndex });
+  };
+  return (
+    <View style={styles.container}>
       <View style={styles.container}>
-        <View style={styles.container}>
-          {/* <SwiperFlatList
+        {/* <SwiperFlatList
             autoplay
             autoplayDelay={1}
             // index={3} // FIX THIS
@@ -40,36 +40,49 @@ export default () =>  {
             showPagination
             // vertical={true}
           /> */}
-        </View>
-        <View style={styles.container}>
-          <SwiperFlatList
-            // autoplay // BREAK EVERYTHING..
-            // autoplayDelay={1.5}
-            // autoplayLoop
-            // index={3}
-            showPagination
-            autoplayInvertDirection
-            PaginationComponent={Pagination}
-            ref={scrollRef}
-            onChangeIndex={onChangeIndex}
-          >
-          <TouchableOpacity style={[styles.child, { backgroundColor: 'tomato' }]} onPress={goToLastIndex}>
-              <Text style={styles.smallText}>0 - Go to last index</Text>
-            </TouchableOpacity>
-          <TouchableOpacity style={[styles.child, { backgroundColor: 'tomato' }]} onPress={getCurrentIndex}>
-              <Text style={styles.smallText}>1 - Press to get the current index</Text>
-            </TouchableOpacity>
-          <TouchableOpacity style={[styles.child, { backgroundColor: 'skyblue' }]} onPress={getCurrentIndex}>
-              <Text style={styles.smallText}>2 - Press to get the current index</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={[styles.child, { backgroundColor: 'teal' }]} onPress={goToFirstIndex}>
-              <Text style={styles.smallText}>3 - Go to last index</Text>
-            </TouchableOpacity>
-          </SwiperFlatList>
-        </View>
       </View>
-    );
-}
+      <View style={styles.container}>
+        <SwiperFlatList
+          autoplay // BREAK EVERYTHING..
+          // autoplayDelay={1.5}
+          // autoplayLoop
+          // index={3}
+          // vertical={true}
+          showPagination
+          autoplayInvertDirection
+          PaginationComponent={Pagination}
+          ref={scrollRef}
+          onChangeIndex={onChangeIndex}
+        >
+          <TouchableOpacity
+            style={[styles.child, { backgroundColor: 'salmon' }]}
+            onPress={goToLastIndex}
+          >
+            <Text style={styles.smallText}>0 - Go to last index</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.child, { backgroundColor: 'tomato' }]}
+            onPress={getCurrentIndex}
+          >
+            <Text style={styles.smallText}>1 - Press to get the current index</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.child, { backgroundColor: 'skyblue' }]}
+            onPress={getCurrentIndex}
+          >
+            <Text style={styles.smallText}>2 - Press to get the current index</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.child, { backgroundColor: 'teal' }]}
+            onPress={goToFirstIndex}
+          >
+            <Text style={styles.smallText}>3 - Go to last index</Text>
+          </TouchableOpacity>
+        </SwiperFlatList>
+      </View>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {

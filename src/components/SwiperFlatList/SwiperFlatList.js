@@ -45,8 +45,15 @@ const SwiperFlatList = React.forwardRef(
     // Items to render in the initial batch.
     const _initialNumToRender = renderAll ? size : 1;
     const [paginationIndex, setPaginationIndex] = React.useState(index);
+    const [prevIndex, setPrevIndex] = React.useState(index);
+    const [tmpPrevIndex, setTmpPrevIndex] = React.useState(index);
     const flatListElement = React.useRef(null);
 
+    const _onChangeIndex = ({ index: _index, prevIndex: _prevIndex }) => {
+      // console.log('_onChangeIndex');
+      // console.log({ _index, paginationIndex, _prevIndex, prevIndex });
+      onChangeIndex?.({ index: _index, prevIndex: _prevIndex });
+    };
     // const _scrollToIndex = ({ index: _index, animated = true }) => {
     const _scrollToIndex = params => {
       //   const { autoplay } = this.props;
@@ -64,11 +71,9 @@ const SwiperFlatList = React.forwardRef(
       const { index: indexToScroll, animated = true } = params;
       const newParams = { animated, index: indexToScroll };
 
-      setPaginationIndex(() => {
-        flatListElement?.current?.scrollToIndex(newParams);
-        onChangeIndex?.(indexToScroll); // consider prev index
-        return indexToScroll;
-      });
+      setTmpPrevIndex(paginationIndex); //TODO:
+      // setPaginationIndex(indexToScroll);
+      flatListElement?.current?.scrollToIndex(newParams);
     };
 
     React.useImperativeHandle(ref, () => ({
@@ -111,6 +116,7 @@ const SwiperFlatList = React.forwardRef(
       return () => clearTimeout(autoplayTimer);
     }, [paginationIndex]);
     const _onMomentumScrollEnd = e => {
+      // -------
       const { contentOffset, layoutMeasurement } = e.nativeEvent;
       let _index;
       if (vertical) {
@@ -119,14 +125,36 @@ const SwiperFlatList = React.forwardRef(
         // Divide the horizontal offset by the width of the view to see which page is visible
         _index = Math.round(contentOffset.x / layoutMeasurement.width);
       }
+      // -------
+      if (paginationIndex !== _index) {
+        // TODO:
+        console.warn('REMOVE _INDEX if this console is never show ANDROID');
+      }
+      let _prevIndex = prevIndex;
+      if (tmpPrevIndex !== undefined) {
+        _prevIndex = tmpPrevIndex;
+      }
+      setTmpPrevIndex(undefined); //TODO:
 
-      setPaginationIndex(_index);
-
-      console.log(e);
+      // console.log({ _index, _prevIndex, prevIndex });
 
       onMomentumScrollEnd?.({ index: _index }, e);
-      onChangeIndex?.(_index); // consider prev index
+      _onChangeIndex({ index: _index, prevIndex: _prevIndex }); // consider prev index
     };
+
+    if (this.__onViewableItemsChanged === undefined) {
+      this.__onViewableItemsChanged = ({ changed, viewableItems }) => {
+        const newItem = changed?.[0];
+        if (newItem !== undefined) {
+          const nextIndex = newItem.index;
+          if (newItem.isViewable) {
+            setPaginationIndex(nextIndex);
+          } else {
+            setPrevIndex(nextIndex);
+          }
+        }
+      };
+    }
 
     const flatListProps = {
       ref: flatListElement,
@@ -143,6 +171,12 @@ const SwiperFlatList = React.forwardRef(
       renderItem: _renderItem,
       initialNumToRender: _initialNumToRender,
       initialScrollIndex: index, // used with onScrollToIndexFailed
+      viewabilityConfig: {
+        // viewAreaCoveragePercentThreshold: 55,
+        // minimumViewTime: 200,
+        itemVisiblePercentThreshold: 60,
+      },
+      onViewableItemsChanged: this.__onViewableItemsChanged,
     };
 
     const paginationProps = {

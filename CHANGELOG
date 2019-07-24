@@ -8,10 +8,15 @@ is now
 
 TODO:
 Add typescript?
-get previous index
 fix autoplay -> https://github.com/gusgard/react-native-swiper-flatlist/issues/22
 swipe to the right at the end -> https://github.com/gusgard/react-native-swiper-flatlist/issues/29
-on change https://github.com/gusgard/react-native-swiper-flatlist/issues/41
+    NO
+// add code to expo and with export option
+
 goToLastIndex: () => {
 goToFirstIndex: 
-// add code to expo and with export option
+const onChangeIndex = ({ index, prevIndex }) => {
+    on change https://github.com/gusgard/react-native-swiper-flatlist/issues/41
+
+get previous index OK
+    explain that when user reaches the 50% of the screen we chagne the index

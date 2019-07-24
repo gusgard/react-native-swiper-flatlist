@@ -16,6 +16,7 @@
   "keywords": [
     "swiper flatlist",
     "swiper",
+    "swiper hooks",
     "swiper component",
     "react native",
     "react-native",
@@ -60,6 +61,9 @@
     "react-native": "0.60.4",
     "react-native-testing-library": "^1.11.1",
     "react-test-renderer": "16.8.6"
+  },
+  "peerDependencies": {
+    "react-native": ">=0.59.0"
   },
   "jest": {
     "preset": "react-native",
