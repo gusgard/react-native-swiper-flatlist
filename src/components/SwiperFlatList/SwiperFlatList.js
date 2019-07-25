@@ -5,6 +5,9 @@ import { FlatList } from 'react-native';
 import Pagination from '../Pagination';
 
 const MILLISECONDS = 1000;
+const FIRST_INDEX = 0;
+const ITEM_VISIBLE_PERCENT_THRESHOLD = 60;
+
 const SwiperFlatList = React.forwardRef(
   (
     {
@@ -52,6 +55,7 @@ const SwiperFlatList = React.forwardRef(
     const _onChangeIndex = ({ index: _index, prevIndex: _prevIndex }) => {
       onChangeIndex?.({ index: _index, prevIndex: _prevIndex });
     };
+
     // const _scrollToIndex = ({ index: _index, animated = true }) => {
     const _scrollToIndex = params => {
       //   const { autoplay } = this.props;
@@ -82,6 +86,8 @@ const SwiperFlatList = React.forwardRef(
       },
       getPrevIndex: () => {
         console.log('not working correctly!');
+        console.log(this);
+        console.log(ref);
 
         return prevIndex;
       },
@@ -91,13 +97,13 @@ const SwiperFlatList = React.forwardRef(
       },
       // add to readme
       goToFirstIndex: () => {
-        _scrollToIndex({ index: 0 });
+        _scrollToIndex({ index: FIRST_INDEX });
       },
     }));
 
     React.useEffect(() => {
       const isLastIndexEnd = autoplayInvertDirection
-        ? paginationIndex === 0
+        ? paginationIndex === FIRST_INDEX
         : paginationIndex === _data.length - 1;
       const shouldContinuoWithAutoplay = autoplay && !isLastIndexEnd;
       let autoplayTimer;
@@ -106,7 +112,7 @@ const SwiperFlatList = React.forwardRef(
           const nextIncrement = autoplayInvertDirection ? -1 : +1;
 
           let nextIndex = (paginationIndex + nextIncrement) % _data.length;
-          if (autoplayInvertDirection && nextIndex < 0) {
+          if (autoplayInvertDirection && nextIndex < FIRST_INDEX) {
             nextIndex = _data.length - 1;
           }
 
@@ -150,9 +156,9 @@ const SwiperFlatList = React.forwardRef(
       _onChangeIndex({ index: _index, prevIndex: _prevIndex }); // consider prev index
     };
 
-    if (this.__onViewableItemsChanged === undefined) {
-      this.__onViewableItemsChanged = ({ changed }) => {
-        const newItem = changed?.[0];
+    const _onViewableItemsChanged = React.useMemo(
+      () => ({ changed }) => {
+        const newItem = changed?.[FIRST_INDEX];
         if (newItem !== undefined) {
           const nextIndex = newItem.index;
           if (newItem.isViewable) {
@@ -161,8 +167,9 @@ const SwiperFlatList = React.forwardRef(
             setPrevIndex(nextIndex);
           }
         }
-      };
-    }
+      },
+      [],
+    );
 
     const flatListProps = {
       ref: flatListElement,
@@ -180,9 +187,9 @@ const SwiperFlatList = React.forwardRef(
       initialNumToRender: _initialNumToRender,
       initialScrollIndex: index, // used with onScrollToIndexFailed
       viewabilityConfig: {
-        itemVisiblePercentThreshold: 60,
+        itemVisiblePercentThreshold: ITEM_VISIBLE_PERCENT_THRESHOLD,
       },
-      onViewableItemsChanged: this.__onViewableItemsChanged,
+      onViewableItemsChanged: _onViewableItemsChanged,
     };
 
     const paginationProps = {
@@ -240,7 +247,7 @@ SwiperFlatList.propTypes = {
 };
 
 SwiperFlatList.defaultProps = {
-  index: 0,
+  index: FIRST_INDEX,
   data: [],
   autoplayDelay: 3,
   autoplayInvertDirection: false,
