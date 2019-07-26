@@ -12,8 +12,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     bottom: 0,
     width: '100%',
-    // left: width * 0.25,
-    // right: width * 0.25,
   },
   pagination: {
     width: horizontal.small,

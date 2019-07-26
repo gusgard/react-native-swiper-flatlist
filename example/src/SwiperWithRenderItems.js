@@ -22,7 +22,6 @@ export default () => {
       data={items}
       renderItem={({ item }) => <Image style={styles.image} source={item.image} />}
       showPagination
-      // vertical
     />
   );
 };
