@@ -5,8 +5,6 @@ scrollToIndex   | (index: `number`, animated: `bool`)
 is now
  scrollToIndex   | { index: `number`, animated: `bool`} 
 
->= 0.59 react native note
-
 TODO:
 fix autoplay -> https://github.com/gusgard/react-native-swiper-flatlist/issues/22
 

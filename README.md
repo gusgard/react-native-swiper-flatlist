@@ -21,6 +21,15 @@ npm install react-native-swiper-flatlist --save
 ```
 
 
+## Notice 
+
+Version 2.x was re-implemented using React Hooks so it only works with version 0.59 or above
+
+| react-native-swiper-flatlist | react-native |
+| ---------------------------- | ------------ |
+| 1.x                          | <= 0.58      |
+| 2.x                          | >= 0.59      |
+
 ## Example
 
 ### Expo
