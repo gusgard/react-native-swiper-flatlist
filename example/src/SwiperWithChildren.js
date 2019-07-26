@@ -63,7 +63,7 @@ export default () => {
         style={[styles.child, { backgroundColor: 'teal' }]}
         onPress={goToFirstIndex}
       >
-        <Text style={styles.smallText}>4 - Go to last index</Text>
+        <Text style={styles.smallText}>4 - Go to first index</Text>
       </TouchableOpacity>
     </SwiperFlatList>
   );
