@@ -1,0 +1,39 @@
+========================================
+version 2.0.0
+
+Breaking change 
+```
+scrollToIndex(index: `number`, animated: `bool`)
+is now
+scrollToIndex({ index: `number`, animated: `bool`})
+```
+
+Added new methods:
+* getCurrentIndex
+* getPrevIndex
+* onChangeIndex
+* goToFirstIndex
+* goToLastIndex
+
+========================================
+version 2.0.1
+
+TODO:
+* Refactor SwiperWithChildren into something more smaller
+* Examples in expo
+* Use https://github.com/callstack/eslint-config-callstack
+
+========================================
+
+TODO:
+* Detox branch
+* Add typescript
+* Add types (check old fork)
+
+
+TO REVIEW:
+
+* Swipe to the right at the end - https://github.com/gusgard/react-native-swiper-flatlist/issues/29
+
+
+

@@ -1,25 +1,25 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, TouchableOpacity, View, ViewPropTypes } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 
-import { colors, vertical, horizontal } from '../../themes';
+const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
-  container: {
+  paginationContainer: {
     position: 'absolute',
     flexDirection: 'row',
-    marginVertical: vertical.xxSmall,
+    marginVertical: height * 0.0125,
     justifyContent: 'center',
-    bottom: 0,
-    width: '100%',
-    // left: width * 0.25,
-    // right: width * 0.25,
+    top: 0,
+    left: width * 0.25,
+    right: width * 0.25,
   },
   pagination: {
-    width: horizontal.small,
-    height: horizontal.small,
-    borderRadius: 25,
-    marginHorizontal: horizontal.xSmall,
+    width: width * 0.0375,
+    height: width * 0.0375,
+    borderRadius: 2,
+    marginHorizontal: width * 0.025,
   },
 });
 
@@ -29,16 +29,13 @@ const Pagination = ({
   scrollToIndex,
   paginationDefaultColor,
   paginationActiveColor,
-  paginationStyle,
-  paginationStyleItem,
 }) => {
   return (
-    <View style={[styles.container, paginationStyle]}>
+    <View style={styles.paginationContainer}>
       {Array.from({ length: size }).map((_, index) => (
         <TouchableOpacity
           style={[
             styles.pagination,
-            paginationStyleItem,
             paginationIndex === index
               ? { backgroundColor: paginationActiveColor }
               : { backgroundColor: paginationDefaultColor },
@@ -50,22 +47,20 @@ const Pagination = ({
     </View>
   );
 };
+
 Pagination.propTypes = {
   scrollToIndex: PropTypes.func.isRequired,
   size: PropTypes.number.isRequired,
   paginationIndex: PropTypes.number,
   paginationActiveColor: PropTypes.string,
   paginationDefaultColor: PropTypes.string,
-  paginationStyle: ViewPropTypes.style,
-  paginationStyleItem: ViewPropTypes.style,
 };
 
 Pagination.defaultProps = {
+  data: [],
   paginationIndex: 0,
-  paginationActiveColor: colors.white,
-  paginationDefaultColor: colors.gray,
-  paginationStyle: {},
-  paginationStyleItem: {},
+  paginationActiveColor: 'black',
+  paginationDefaultColor: 'white',
 };
 
 export default Pagination;

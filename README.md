@@ -21,6 +21,15 @@ npm install react-native-swiper-flatlist --save
 ```
 
 
+## Notice 
+
+Version 2.x was re-implemented using React Hooks so it only works with version 0.59 or above
+
+| react-native-swiper-flatlist | react-native |
+| ---------------------------- | ------------ |
+| 1.x                          | <= 0.58      |
+| 2.x                          | >= 0.59      |
+
 ## Example
 
 ### Expo
@@ -88,40 +97,44 @@ const styles = StyleSheet.create({
 
 ## Props
 
-| Prop                   |                      Default                      |         Type          | Description                                                          |
-| :--------------------- | :-----------------------------------------------: | :-------------------: | :------------------------------------------------------------------- |
-| data                   |        _not required if children is used_         |        `array`        | Data to use in renderItem                                            |
-| children               |                         -                         |        `node`         | Children elements                                                    |
-| renderItem             |        _not required if children is used_         |        `func`         | Takes an item from data and renders it into the list                 |
-| onMomentumScrollEnd    |                         -                         |        `func`         | Called after scroll end and the first parameter is the current index |
-| vertical               |                       false                       |        `bool`         | Show vertical swiper                                                 |
-| index                  |                         0                         |       `number`        | Index to start                                                       |
-| renderAll              |                       false                       |        `bool`         | Render all the items before display it                               |
-| **Pagination**         |
-| showPagination         |                       false                       |        `bool`         | Show pagination                                                      |
-| paginationDefaultColor |                       gray                        |       `string`        | Pagination color                                                     |
-| paginationActiveColor  |                       white                       |       `string`        | Pagination color                                                     |
-| paginationStyle        |                        {}                         | `ViewPropTypes.style` | Style object for container                                           |
-| paginationStyleItem    |                        {}                         | `ViewPropTypes.style` | Style object for item (dot)                                          |
-| PaginationComponent    | [Component](./src/components/Pagination/index.js) |        `node`         | Overwrite Pagination component                                       |
-| **Autoplay**           |
-| autoplay               |                       false                       |        `bool`         | Change index automatically                                           |
-| autoplayDelay          |                         3                         |       `number`        | Delay between every page                                             |
-| autoplayLoop           |                       false                       |        `bool`         | Continue playing after reach end                                     |
+| Prop                    |                      Default                      |         Type          | Description                                                          |
+| :---------------------- | :-----------------------------------------------: | :-------------------: | :------------------------------------------------------------------- |
+| data                    |        _not required if children is used_         |        `array`        | Data to use in renderItem                                            |
+| children                |                         -                         |        `node`         | Children elements                                                    |
+| renderItem              |        _not required if children is used_         |        `func`         | Takes an item from data and renders it into the list                 |
+| onMomentumScrollEnd     |                         -                         |        `func`         | Called after scroll end and the first parameter is the current index |
+| vertical                |                       false                       |        `bool`         | Show vertical swiper                                                 |
+| index                   |                         0                         |       `number`        | Index to start                                                       |
+| renderAll               |                       false                       |        `bool`         | Render all the items before display it                               |
+| **Pagination**          |
+| showPagination          |                       false                       |        `bool`         | Show pagination                                                      |
+| paginationDefaultColor  |                       gray                        |       `string`        | Pagination color                                                     |
+| paginationActiveColor   |                       white                       |       `string`        | Pagination color                                                     |
+| paginationStyle         |                        {}                         | `ViewPropTypes.style` | Style object for container                                           |
+| paginationStyleItem     |                        {}                         | `ViewPropTypes.style` | Style object for item (dot)                                          |
+| PaginationComponent     | [Component](./src/components/Pagination/index.js) |        `node`         | Overwrite Pagination component                                       |
+| **Autoplay**            |
+| autoplay                |                       false                       |        `bool`         | Change index automatically                                           |
+| autoplayDelay           |                         3                         |       `number`        | Delay between every page in seconds                                  |
+| autoplayLoop            |                       false                       |        `bool`         | Continue playing after reach end                                     |
+| autoplayInvertDirection |                       false                       |        `bool`         | Invert auto play direction                                           |
 
 **More props**
 
 This is a wrapper around [Flatlist](http://facebook.github.io/react-native/docs/flatlist.html#props), all their `props` works well and the inherited `props` too (from [ScrollView](http://facebook.github.io/react-native/docs/scrollview#props) and [VirtualizedList](http://facebook.github.io/react-native/docs/virtualizedlist#props))
 
-<!--
-autoplayDirection: PropTypes.bool.isRequired,  -->
 
 ## Functions
 
-| Name            | Params                              | Use                                                |
-| :-------------- | :---------------------------------- | :------------------------------------------------- |
-| scrollToIndex   | (index: `number`, animated: `bool`) | Forces the scroll of the swiper to a precise index |
-| getCurrentIndex | -                                   | Returns the current index inside the swiper        |
+| Name            | Params                                  | Use                                                                                                 |
+| :-------------- | :-------------------------------------- | :-------------------------------------------------------------------------------------------------- |
+| scrollToIndex   | { index: `number`, animated: `bool?`}   | Scroll to the index                                                                                 |
+| getCurrentIndex | -                                       | Returns the current index                                                                           |
+| getPrevIndex    | -                                       | Returns the previous index                                                                          |
+| onChangeIndex   | { index: `number`, prevIndex: `number`} | Executed every time the index change, the index change when the user reaches 60% of the next screen |
+| goToFirstIndex  | -                                       | Go to the first index                                                                               |
+| goToLastIndex   | -                                       | Go to the last index                                                                                |
+
 
 
 ## Limitations

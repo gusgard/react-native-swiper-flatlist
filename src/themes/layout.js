@@ -1,6 +1,6 @@
 import { Dimensions } from 'react-native';
 
-export const { width, height } = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 
 export const horizontal = {
   xxSmall: width * 0.0125,

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react-native-swiper-flatlist": "1.0.11"
+  }
+}

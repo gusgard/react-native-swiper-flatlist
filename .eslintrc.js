@@ -1,5 +1,7 @@
 module.exports = {
+  // root: true,
   extends: [
+    // '@react-native-community',
     'airbnb',
     'plugin:flowtype/recommended',
     'plugin:react/recommended',
@@ -11,9 +13,9 @@ module.exports = {
     'plugin:import/errors',
     'plugin:import/warnings',
   ],
-  plugins: ['flowtype', 'react', 'prettier', 'react-native'],
+  plugins: ['flowtype', 'react', 'prettier', 'react-native', 'react-hooks'],
   parserOptions: {
-    ecmaVersion: 2016,
+    ecmaVersion: 2019,
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,

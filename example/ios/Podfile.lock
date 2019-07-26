@@ -11,77 +11,77 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
-  - React (0.60.0):
-    - React-Core (= 0.60.0)
-    - React-DevSupport (= 0.60.0)
-    - React-RCTActionSheet (= 0.60.0)
-    - React-RCTAnimation (= 0.60.0)
-    - React-RCTBlob (= 0.60.0)
-    - React-RCTImage (= 0.60.0)
-    - React-RCTLinking (= 0.60.0)
-    - React-RCTNetwork (= 0.60.0)
-    - React-RCTSettings (= 0.60.0)
-    - React-RCTText (= 0.60.0)
-    - React-RCTVibration (= 0.60.0)
-    - React-RCTWebSocket (= 0.60.0)
-  - React-Core (0.60.0):
+  - React (0.60.4):
+    - React-Core (= 0.60.4)
+    - React-DevSupport (= 0.60.4)
+    - React-RCTActionSheet (= 0.60.4)
+    - React-RCTAnimation (= 0.60.4)
+    - React-RCTBlob (= 0.60.4)
+    - React-RCTImage (= 0.60.4)
+    - React-RCTLinking (= 0.60.4)
+    - React-RCTNetwork (= 0.60.4)
+    - React-RCTSettings (= 0.60.4)
+    - React-RCTText (= 0.60.4)
+    - React-RCTVibration (= 0.60.4)
+    - React-RCTWebSocket (= 0.60.4)
+  - React-Core (0.60.4):
     - Folly (= 2018.10.22.00)
-    - React-cxxreact (= 0.60.0)
-    - React-jsiexecutor (= 0.60.0)
-    - yoga (= 0.60.0.React)
-  - React-cxxreact (0.60.0):
+    - React-cxxreact (= 0.60.4)
+    - React-jsiexecutor (= 0.60.4)
+    - yoga (= 0.60.4.React)
+  - React-cxxreact (0.60.4):
     - boost-for-react-native (= 1.63.0)
     - DoubleConversion
     - Folly (= 2018.10.22.00)
     - glog
-    - React-jsinspector (= 0.60.0)
-  - React-DevSupport (0.60.0):
-    - React-Core (= 0.60.0)
-    - React-RCTWebSocket (= 0.60.0)
-  - React-fishhook (0.60.0)
-  - React-jsi (0.60.0):
+    - React-jsinspector (= 0.60.4)
+  - React-DevSupport (0.60.4):
+    - React-Core (= 0.60.4)
+    - React-RCTWebSocket (= 0.60.4)
+  - React-fishhook (0.60.4)
+  - React-jsi (0.60.4):
     - boost-for-react-native (= 1.63.0)
     - DoubleConversion
     - Folly (= 2018.10.22.00)
     - glog
-    - React-jsi/Default (= 0.60.0)
-  - React-jsi/Default (0.60.0):
+    - React-jsi/Default (= 0.60.4)
+  - React-jsi/Default (0.60.4):
     - boost-for-react-native (= 1.63.0)
     - DoubleConversion
     - Folly (= 2018.10.22.00)
     - glog
-  - React-jsiexecutor (0.60.0):
+  - React-jsiexecutor (0.60.4):
     - DoubleConversion
     - Folly (= 2018.10.22.00)
     - glog
-    - React-cxxreact (= 0.60.0)
-    - React-jsi (= 0.60.0)
-  - React-jsinspector (0.60.0)
-  - React-RCTActionSheet (0.60.0):
-    - React-Core (= 0.60.0)
-  - React-RCTAnimation (0.60.0):
-    - React-Core (= 0.60.0)
-  - React-RCTBlob (0.60.0):
-    - React-Core (= 0.60.0)
-    - React-RCTNetwork (= 0.60.0)
-    - React-RCTWebSocket (= 0.60.0)
-  - React-RCTImage (0.60.0):
-    - React-Core (= 0.60.0)
-    - React-RCTNetwork (= 0.60.0)
-  - React-RCTLinking (0.60.0):
-    - React-Core (= 0.60.0)
-  - React-RCTNetwork (0.60.0):
-    - React-Core (= 0.60.0)
-  - React-RCTSettings (0.60.0):
-    - React-Core (= 0.60.0)
-  - React-RCTText (0.60.0):
-    - React-Core (= 0.60.0)
-  - React-RCTVibration (0.60.0):
-    - React-Core (= 0.60.0)
-  - React-RCTWebSocket (0.60.0):
-    - React-Core (= 0.60.0)
-    - React-fishhook (= 0.60.0)
-  - yoga (0.60.0.React)
+    - React-cxxreact (= 0.60.4)
+    - React-jsi (= 0.60.4)
+  - React-jsinspector (0.60.4)
+  - React-RCTActionSheet (0.60.4):
+    - React-Core (= 0.60.4)
+  - React-RCTAnimation (0.60.4):
+    - React-Core (= 0.60.4)
+  - React-RCTBlob (0.60.4):
+    - React-Core (= 0.60.4)
+    - React-RCTNetwork (= 0.60.4)
+    - React-RCTWebSocket (= 0.60.4)
+  - React-RCTImage (0.60.4):
+    - React-Core (= 0.60.4)
+    - React-RCTNetwork (= 0.60.4)
+  - React-RCTLinking (0.60.4):
+    - React-Core (= 0.60.4)
+  - React-RCTNetwork (0.60.4):
+    - React-Core (= 0.60.4)
+  - React-RCTSettings (0.60.4):
+    - React-Core (= 0.60.4)
+  - React-RCTText (0.60.4):
+    - React-Core (= 0.60.4)
+  - React-RCTVibration (0.60.4):
+    - React-Core (= 0.60.4)
+  - React-RCTWebSocket (0.60.4):
+    - React-Core (= 0.60.4)
+    - React-fishhook (= 0.60.4)
+  - yoga (0.60.4.React)
 
 DEPENDENCIES:
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)

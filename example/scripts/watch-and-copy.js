@@ -13,7 +13,7 @@ function copyAndWatch(source, destination, fileGlob) {
     });
 
     console.log(`Watching "${source}"`);
-    watch(source, filename => {
+    watch(source, { recursive: true }, (evt, filename) => {
       const localPath = filename.split(source).pop();
       if (matchesFile(localPath, fileGlob)) {
         const destinationPath = `${destination}${localPath}`;
