@@ -30,8 +30,6 @@ export default () => {
   };
   return (
     <SwiperFlatList
-      autoplay
-      autoplayLoop
       showPagination
       PaginationComponent={Pagination}
       ref={scrollRef}

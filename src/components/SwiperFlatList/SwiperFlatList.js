@@ -53,6 +53,7 @@ const SwiperFlatList = React.forwardRef(
     const [paginationIndex, setPaginationIndex] = React.useState(index);
     const [prevIndex, setPrevIndex] = React.useState(index);
     const [paginationIndexes, setPaginationIndexes] = React.useState({ index, prevIndex: index });
+    const [ignoreOnMomentumScrollEnd, setIgnoreOnMomentumScrollEnd] = React.useState(false);
     const flatListElement = React.useRef(null);
 
     const _onChangeIndex = ({ index: _index, prevIndex: _prevIndex }) => {
@@ -72,6 +73,7 @@ const SwiperFlatList = React.forwardRef(
       const newParams = { animated, index: indexToScroll };
 
       setPaginationIndexes(prevState => {
+        setIgnoreOnMomentumScrollEnd(true);
         return { index: indexToScroll, prevIndex: prevState.index };
       });
       // When execute "scrollToIndex", we ignore the method "onMomentumScrollEnd"
@@ -99,17 +101,11 @@ const SwiperFlatList = React.forwardRef(
       scrollToIndex: (...args) => {
         _scrollToIndex(...args);
       },
-      getCurrentIndex: () => {
-        return paginationIndex;
-      },
-      getPrevIndex: () => {
-        return prevIndex;
-      },
-      // add to readme
+      getCurrentIndex: () => paginationIndex,
+      getPrevIndex: () => prevIndex,
       goToLastIndex: () => {
         _scrollToIndex({ index: size - 1 });
       },
-      // add to readme
       goToFirstIndex: () => {
         _scrollToIndex({ index: FIRST_INDEX });
       },
@@ -138,8 +134,11 @@ const SwiperFlatList = React.forwardRef(
       return () => clearTimeout(autoplayTimer);
     }, [paginationIndex]);
     const _onMomentumScrollEnd = e => {
-      // -------
       // NOTE: Method not executed when call "flatListElement?.current?.scrollToIndex"
+      if (ignoreOnMomentumScrollEnd) {
+        setIgnoreOnMomentumScrollEnd(false);
+        return;
+      }
       const { contentOffset, layoutMeasurement } = e.nativeEvent;
       let _index;
       if (vertical) {
@@ -148,18 +147,13 @@ const SwiperFlatList = React.forwardRef(
         // Divide the horizontal offset by the width of the view to see which page is visible
         _index = Math.round(contentOffset.x / layoutMeasurement.width);
       }
-      // -------
       if (paginationIndex !== _index) {
-        // TODO:
-        // TODO:
-        console.warn('REMOVE _INDEX if this console is never show ANDROID', {
-          paginationIndex,
-          _index,
-          prevIndex,
-        });
-        // _index = paginationIndex;
+        const wrongIndexes = { paginationIndex, _index, prevIndex };
+        console.warn('Wrong index, please create an issue in github', wrongIndexes);
+        _index = paginationIndex;
       }
       onMomentumScrollEnd?.({ index: _index }, e);
+
       _onChangeIndex({ index: _index, prevIndex });
     };
 
