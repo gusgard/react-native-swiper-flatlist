@@ -5,13 +5,10 @@ scrollToIndex   | (index: `number`, animated: `bool`)
 is now
  scrollToIndex   | { index: `number`, animated: `bool`} 
 
+>= 0.59 react native note
 
 TODO:
-Add typescript?
 fix autoplay -> https://github.com/gusgard/react-native-swiper-flatlist/issues/22
-swipe to the right at the end -> https://github.com/gusgard/react-native-swiper-flatlist/issues/29
-    NO
-// add code to expo and with export option
 
 
 ========================================
@@ -31,9 +28,23 @@ get previous index OK
 version 2.0.1
 
 examples.... in expo....
+    // add code to expo and with export option
+
+add https://github.com/callstack/eslint-config-callstack
+
+========================================
+version 2.0.2
+
+Add typescript?
 
 
 
+
+
+TO REVIEW:
+
+swipe to the right at the end
+    https://github.com/gusgard/react-native-swiper-flatlist/issues/29
 
 
 
