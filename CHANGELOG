@@ -1,49 +1,39 @@
-Version 2.0.0
-
-Breaking change 
-scrollToIndex   | (index: `number`, animated: `bool`)
-is now
- scrollToIndex   | { index: `number`, animated: `bool`} 
-
-TODO:
-fix autoplay -> https://github.com/gusgard/react-native-swiper-flatlist/issues/22
-
-
 ========================================
 version 2.0.0
 
-android?
-expo folder import
-goToLastIndex: () => {
-goToFirstIndex: 
-const onChangeIndex = ({ index, prevIndex }) => {
-    on change https://github.com/gusgard/react-native-swiper-flatlist/issues/41
+Breaking change 
+```
+scrollToIndex(index: `number`, animated: `bool`)
+is now
+scrollToIndex({ index: `number`, animated: `bool`})
+```
 
-get previous index OK
-    explain that when user reaches the 50% of the screen we chagne the index
+Added new methods:
+* getCurrentIndex
+* getPrevIndex
+* onChangeIndex
+* goToFirstIndex
+* goToLastIndex
 
 ========================================
 version 2.0.1
 
-refactor swiperwithchioldren into something more smaller
-examples.... in expo....
-    // add code to expo and with export option
-
-add https://github.com/callstack/eslint-config-callstack
+TODO:
+* Refactor SwiperWithChildren into something more smaller
+* Examples in expo
+* Use https://github.com/callstack/eslint-config-callstack
 
 ========================================
-version 2.0.2
 
-Add typescript?
-
-
-
+TODO:
+* Detox branch
+* Add typescript
+* Add types (check old fork)
 
 
 TO REVIEW:
 
-swipe to the right at the end
-    https://github.com/gusgard/react-native-swiper-flatlist/issues/29
+* Swipe to the right at the end - https://github.com/gusgard/react-native-swiper-flatlist/issues/29
 
 
 

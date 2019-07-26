@@ -126,14 +126,14 @@ This is a wrapper around [Flatlist](http://facebook.github.io/react-native/docs/
 
 ## Functions
 
-| Name            | Params                                  | Use                                  |
-| :-------------- | :-------------------------------------- | :----------------------------------- |
-| scrollToIndex   | { index: `number`, animated: `bool?`}   | Scroll to the index                  |
-| getCurrentIndex | -                                       | Returns the current index            |
-| getPrevIndex    | -                                       | Returns the previous index           |
-| onChangeIndex   | { index: `number`, prevIndex: `number`} | Executed every time the index change |
-| goToFirstIndex  | -                                       | Go to the first index                |
-| goToLastIndex   | -                                       | Go to the last index                 |
+| Name            | Params                                  | Use                                                                                                 |
+| :-------------- | :-------------------------------------- | :-------------------------------------------------------------------------------------------------- |
+| scrollToIndex   | { index: `number`, animated: `bool?`}   | Scroll to the index                                                                                 |
+| getCurrentIndex | -                                       | Returns the current index                                                                           |
+| getPrevIndex    | -                                       | Returns the previous index                                                                          |
+| onChangeIndex   | { index: `number`, prevIndex: `number`} | Executed every time the index change, the index change when the user reaches 60% of the next screen |
+| goToFirstIndex  | -                                       | Go to the first index                                                                               |
+| goToLastIndex   | -                                       | Go to the last index                                                                                |
 
 
 
