@@ -188,6 +188,8 @@ const SwiperFlatList = React.forwardRef(
       initialNumToRender: _initialNumToRender,
       initialScrollIndex: index, // used with onScrollToIndexFailed
       viewabilityConfig: {
+        // https://facebook.github.io/react-native/docs/flatlist#minimumviewtime
+        minimumViewTime: 200,
         itemVisiblePercentThreshold: ITEM_VISIBLE_PERCENT_THRESHOLD,
       },
       onViewableItemsChanged: _onViewableItemsChanged,

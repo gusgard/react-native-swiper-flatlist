@@ -49,6 +49,7 @@ exports[`swiper flatlist renders children 1`] = `
   viewabilityConfig={
     Object {
       "itemVisiblePercentThreshold": 60,
+      "minimumViewTime": 200,
     }
   }
   viewabilityConfigCallbackPairs={
@@ -57,6 +58,7 @@ exports[`swiper flatlist renders children 1`] = `
         "onViewableItemsChanged": [Function],
         "viewabilityConfig": Object {
           "itemVisiblePercentThreshold": 60,
+          "minimumViewTime": 200,
         },
       },
     ]
@@ -141,6 +143,7 @@ exports[`swiper flatlist renders correctly 1`] = `
   viewabilityConfig={
     Object {
       "itemVisiblePercentThreshold": 60,
+      "minimumViewTime": 200,
     }
   }
   viewabilityConfigCallbackPairs={
@@ -149,6 +152,7 @@ exports[`swiper flatlist renders correctly 1`] = `
         "onViewableItemsChanged": [Function],
         "viewabilityConfig": Object {
           "itemVisiblePercentThreshold": 60,
+          "minimumViewTime": 200,
         },
       },
     ]
