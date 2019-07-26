@@ -14,6 +14,9 @@ export default () => {
   const goToFirstIndex = () => {
     scrollRef.current.goToFirstIndex();
   };
+  const goToSecondIndex = () => {
+    scrollRef.current.scrollToIndex({ index: 1 });
+  };
   const getCurrentIndex = () => {
     const currentIndex = scrollRef.current.getCurrentIndex();
     Alert.alert(`the current index is ${currentIndex}`);
@@ -27,6 +30,8 @@ export default () => {
   };
   return (
     <SwiperFlatList
+      autoplay
+      autoplayLoop
       showPagination
       PaginationComponent={Pagination}
       ref={scrollRef}
@@ -50,12 +55,17 @@ export default () => {
       >
         <Text style={styles.smallText}>2 - Press to get the current index</Text>
       </TouchableOpacity>
-
+      <TouchableOpacity
+        style={[styles.child, { backgroundColor: 'skyblue' }]}
+        onPress={goToSecondIndex}
+      >
+        <Text style={styles.smallText}>3 - Go to the second index</Text>
+      </TouchableOpacity>
       <TouchableOpacity
         style={[styles.child, { backgroundColor: 'teal' }]}
         onPress={goToFirstIndex}
       >
-        <Text style={styles.smallText}>3 - Go to last index</Text>
+        <Text style={styles.smallText}>4 - Go to last index</Text>
       </TouchableOpacity>
     </SwiperFlatList>
   );

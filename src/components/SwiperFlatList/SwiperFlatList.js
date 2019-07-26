@@ -12,23 +12,26 @@ const SwiperFlatList = React.forwardRef(
   (
     {
       vertical,
-      showPagination,
       children,
+      data,
+      renderItem,
+      renderAll,
+      index,
+      // Pagination
+      showPagination,
       PaginationComponent,
       paginationActiveColor,
       paginationDefaultColor,
       paginationStyle,
       paginationStyleItem,
-      data,
-      renderItem,
-      renderAll,
-      index,
+      // Autoplay
       autoplayDelay,
       autoplay,
       autoplayLoop,
-      onMomentumScrollEnd,
       autoplayInvertDirection,
+      // Functions
       onChangeIndex,
+      onMomentumScrollEnd,
       ...props
     },
     ref,

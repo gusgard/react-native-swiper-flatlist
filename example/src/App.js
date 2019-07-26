@@ -7,9 +7,7 @@ import SwiperWithChildren from './SwiperWithChildren';
 export default () => {
   return (
     <View style={styles.container}>
-      <View style={styles.container}>
-        <SwiperWithRenderItems />
-      </View>
+      <View style={styles.container}>{/* <SwiperWithRenderItems /> */}</View>
       <View style={styles.container}>
         <SwiperWithChildren />
       </View>
