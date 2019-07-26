@@ -16,7 +16,7 @@ Added new methods:
 * goToLastIndex
 
 ========================================
-version 2.0.1
+version 2.0.x
 
 TODO:
 * Refactor SwiperWithChildren into something more smaller
