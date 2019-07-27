@@ -17,18 +17,21 @@ swipe to the right at the end -> https://github.com/gusgard/react-native-swiper-
 ========================================
 version 2.0.0
 
+android?
+expo folder import
 goToLastIndex: () => {
 goToFirstIndex: 
 const onChangeIndex = ({ index, prevIndex }) => {
     on change https://github.com/gusgard/react-native-swiper-flatlist/issues/41
 
-
-========================================
-version 2.1.0
-
 get previous index OK
     explain that when user reaches the 50% of the screen we chagne the index
-    doesnt work well
+
+========================================
+version 2.0.1
+
+examples.... in expo....
+
 
 
 

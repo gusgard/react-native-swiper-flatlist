@@ -15,7 +15,7 @@ export default () => {
   return (
     <SwiperFlatList
       autoplay
-      autoplayDelay={1}
+      autoplayDelay={5}
       index={3}
       autoplayLoop
       autoplayInvertDirection

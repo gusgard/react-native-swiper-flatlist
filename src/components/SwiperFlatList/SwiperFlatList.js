@@ -49,22 +49,17 @@ const SwiperFlatList = React.forwardRef(
     const _initialNumToRender = renderAll ? size : 1;
     const [paginationIndex, setPaginationIndex] = React.useState(index);
     const [prevIndex, setPrevIndex] = React.useState(index);
-    const [tmpPrevIndex, setTmpPrevIndex] = React.useState(index);
+    const [paginationIndexes, setPaginationIndexes] = React.useState({ index, prevIndex: index });
     const flatListElement = React.useRef(null);
 
     const _onChangeIndex = ({ index: _index, prevIndex: _prevIndex }) => {
       onChangeIndex?.({ index: _index, prevIndex: _prevIndex });
     };
 
-    // const _scrollToIndex = ({ index: _index, animated = true }) => {
     const _scrollToIndex = params => {
-      //   const { autoplay } = this.props;
-      //   if (autoplay && Platform.OS === 'android') {
-      //     this._autoplay(index);
-      //   }
       if (typeof params !== 'object') {
         console.error(
-          'Expected an object for "scrollToIndex", for example: scrollToIndex({ index: 1 })',
+          'Expected an object for "scrollToIndex", for example: scrollToIndex({ index: 1, animated: true })',
         );
         // NOTE: remove in future versions.
         return;
@@ -73,9 +68,29 @@ const SwiperFlatList = React.forwardRef(
       const { index: indexToScroll, animated = true } = params;
       const newParams = { animated, index: indexToScroll };
 
-      setTmpPrevIndex(paginationIndex); //TODO:
+      setPaginationIndexes(prevState => {
+        return { index: indexToScroll, prevIndex: prevState.index };
+      });
+      // When execute "scrollToIndex", we ignore the method "onMomentumScrollEnd"
+      // because it not working on Android
+      // https://github.com/facebook/react-native/issues/21718
       flatListElement?.current?.scrollToIndex(newParams);
     };
+
+    React.useEffect(() => {
+      const next = {
+        index: paginationIndexes.index,
+        prevIndex: paginationIndexes.prevIndex,
+      };
+      if (paginationIndex !== next.index) {
+        setPaginationIndex(next.index);
+      }
+      if (prevIndex !== next.prevIndex) {
+        setPrevIndex(next.prevIndex);
+      }
+      _onChangeIndex({ index: next.index, prevIndex: next.prevIndex });
+      // only consider "paginationIndexes"
+    }, [paginationIndexes]);
 
     React.useImperativeHandle(ref, () => ({
       scrollToIndex: (...args) => {
@@ -85,10 +100,6 @@ const SwiperFlatList = React.forwardRef(
         return paginationIndex;
       },
       getPrevIndex: () => {
-        console.log('not working correctly!');
-        console.log(this);
-        console.log(ref);
-
         return prevIndex;
       },
       // add to readme
@@ -125,6 +136,7 @@ const SwiperFlatList = React.forwardRef(
     }, [paginationIndex]);
     const _onMomentumScrollEnd = e => {
       // -------
+      // NOTE: Method not executed when call "flatListElement?.current?.scrollToIndex"
       const { contentOffset, layoutMeasurement } = e.nativeEvent;
       let _index;
       if (vertical) {
@@ -136,24 +148,16 @@ const SwiperFlatList = React.forwardRef(
       // -------
       if (paginationIndex !== _index) {
         // TODO:
+        // TODO:
         console.warn('REMOVE _INDEX if this console is never show ANDROID', {
           paginationIndex,
           _index,
-          tmpPrevIndex,
           prevIndex,
         });
         // _index = paginationIndex;
       }
-      let _prevIndex = prevIndex;
-      if (tmpPrevIndex !== undefined) {
-        _prevIndex = tmpPrevIndex;
-      }
-      setTmpPrevIndex(undefined); //TODO:
-
-      console.log({ _index, _prevIndex, prevIndex });
-
       onMomentumScrollEnd?.({ index: _index }, e);
-      _onChangeIndex({ index: _index, prevIndex: _prevIndex }); // consider prev index
+      _onChangeIndex({ index: _index, prevIndex });
     };
 
     const _onViewableItemsChanged = React.useMemo(
@@ -190,6 +194,7 @@ const SwiperFlatList = React.forwardRef(
         itemVisiblePercentThreshold: ITEM_VISIBLE_PERCENT_THRESHOLD,
       },
       onViewableItemsChanged: _onViewableItemsChanged,
+      // debug: true, // for debug
     };
 
     const paginationProps = {
