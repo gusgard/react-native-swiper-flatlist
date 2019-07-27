@@ -139,8 +139,8 @@ This is a wrapper around [Flatlist](http://facebook.github.io/react-native/docs/
 
 ## Limitations
 
-Note: Vertical pagination is not supported on Android.
-[Doc](https://github.com/facebook/react-native/blob/a48da14800013659e115bf2b58e31aa396e678e5/Libraries/Components/ScrollView/ScrollView.js#L274)
+* Vertical pagination is not supported on Android. [Doc](https://github.com/facebook/react-native/blob/a48da14800013659e115bf2b58e31aa396e678e5/Libraries/Components/ScrollView/ScrollView.js#L274)
+* `react-native-web` is not supported, due to the lack of support of some `props` used in this library. [Expo example](https://snack.expo.io/@gusgard/react-native-web-example-with-swiper)
 
 ## Author
 
