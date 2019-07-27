@@ -27,7 +27,7 @@
   "scripts": {
     "lint": "eslint index.js src",
     "lint:fix": "eslint index.js src --fix",
-    "test": "jest && eslint index.js src",
+    "test": "jest -u",
     "test:watch": "jest --watch",
     "start": "echo ----- Check example folder  ----- 👻",
     "publish": "npm publish"

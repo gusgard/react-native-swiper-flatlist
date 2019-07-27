@@ -37,6 +37,7 @@ exports[`swiper flatlist renders children 1`] = `
   onScrollBeginDrag={[Function]}
   onScrollEndDrag={[Function]}
   onScrollToIndexFailed={[Function]}
+  onViewableItemsChanged={[Function]}
   pagingEnabled={true}
   removeClippedSubviews={false}
   renderItem={[Function]}
@@ -45,7 +46,21 @@ exports[`swiper flatlist renders children 1`] = `
   showsVerticalScrollIndicator={false}
   stickyHeaderIndices={Array []}
   updateCellsBatchingPeriod={50}
-  viewabilityConfigCallbackPairs={Array []}
+  viewabilityConfig={
+    Object {
+      "itemVisiblePercentThreshold": 60,
+    }
+  }
+  viewabilityConfigCallbackPairs={
+    Array [
+      Object {
+        "onViewableItemsChanged": [Function],
+        "viewabilityConfig": Object {
+          "itemVisiblePercentThreshold": 60,
+        },
+      },
+    ]
+  }
   windowSize={21}
 >
   <View>
@@ -114,6 +129,7 @@ exports[`swiper flatlist renders correctly 1`] = `
   onScrollBeginDrag={[Function]}
   onScrollEndDrag={[Function]}
   onScrollToIndexFailed={[Function]}
+  onViewableItemsChanged={[Function]}
   pagingEnabled={true}
   removeClippedSubviews={false}
   renderItem={[Function]}
@@ -122,7 +138,21 @@ exports[`swiper flatlist renders correctly 1`] = `
   showsVerticalScrollIndicator={false}
   stickyHeaderIndices={Array []}
   updateCellsBatchingPeriod={50}
-  viewabilityConfigCallbackPairs={Array []}
+  viewabilityConfig={
+    Object {
+      "itemVisiblePercentThreshold": 60,
+    }
+  }
+  viewabilityConfigCallbackPairs={
+    Array [
+      Object {
+        "onViewableItemsChanged": [Function],
+        "viewabilityConfig": Object {
+          "itemVisiblePercentThreshold": 60,
+        },
+      },
+    ]
+  }
   windowSize={21}
 >
   <View>
