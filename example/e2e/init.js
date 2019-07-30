@@ -4,7 +4,8 @@ const adapter = require('detox/runners/jest/adapter');
 const specReporter = require('detox/runners/jest/specReporter');
 
 // Set the default timeout
-jest.setTimeout(1200000);
+// jest.setTimeout(120000);
+jest.setTimeout(540000);
 jasmine.getEnv().addReporter(adapter);
 
 // This takes care of generating status logs on a per-spec basis. By default, jest only reports at file-level.
