@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, TouchableOpacity, Text, Dimensions, StyleSheet } from 'react-native';
+import { Alert, View, Image, Dimensions, StyleSheet } from 'react-native';
 import SwiperFlatList from 'react-native-swiper-flatlist';
 
 import Pagination from './Pagination';
@@ -26,45 +26,42 @@ export default () => {
     Alert.alert(`the previous index is ${prevIndex}`);
   };
   const onChangeIndex = ({ index, prevIndex }) => {
-    console.log({ index, prevIndex });
+    console.log(new Date(), { index, prevIndex });
   };
   return (
     <SwiperFlatList
+      autoplay
+      autoplayLoop
+      autoplayDelay={5}
       showPagination
-      PaginationComponent={Pagination}
       ref={scrollRef}
       onChangeIndex={onChangeIndex}
     >
-      <TouchableOpacity
-        style={[styles.child, { backgroundColor: 'salmon' }]}
-        onPress={goToLastIndex}
-      >
-        <Text style={styles.smallText}>0 - Go to last index</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={[styles.child, { backgroundColor: 'skyblue' }]}
-        onPress={getPrevIndex}
-      >
-        <Text style={styles.smallText}>1 - Press to get the previous index</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={[styles.child, { backgroundColor: 'tomato' }]}
-        onPress={getCurrentIndex}
-      >
-        <Text style={styles.smallText}>2 - Press to get the current index</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={[styles.child, { backgroundColor: 'skyblue' }]}
-        onPress={goToSecondIndex}
-      >
-        <Text style={styles.smallText}>3 - Go to the second index</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={[styles.child, { backgroundColor: 'teal' }]}
-        onPress={goToFirstIndex}
-      >
-        <Text style={styles.smallText}>4 - Go to first index</Text>
-      </TouchableOpacity>
+      <View style={styles.child}>
+        <Image
+          source={{
+            uri: 'https://app.tutiixx.com/wp-content/uploads/2018/12/tshirt-banner.jpg',
+          }}
+          style={{ width: null, height: null, flex: 1 }}
+        />
+      </View>
+      <View style={styles.child}>
+        <Image
+          source={{
+            uri:
+              'https://s3.envato.com/files/216320406/BEE-1797-Fashion%20Sale%20Banners_01_Preview3.jpg',
+          }}
+          style={{ width: null, height: null, flex: 1 }}
+        />
+      </View>
+      <View style={styles.child}>
+        <Image
+          source={{
+            uri: 'https://s3.envato.com/files/168119903/BEE-1096-Fashion%20Banners_01_preview4.jpg',
+          }}
+          style={{ width: null, height: null, flex: 1 }}
+        />
+      </View>
     </SwiperFlatList>
   );
 };

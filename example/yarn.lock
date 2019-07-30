@@ -5108,12 +5108,12 @@ react-is@^16.8.1, react-is@^16.8.4, react-is@^16.8.6:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
 
-react-native-swiper-flatlist@*:
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/react-native-swiper-flatlist/-/react-native-swiper-flatlist-1.0.10.tgz#4c0abced1b52e970a2c6ccb240d24531bd212890"
-  integrity sha512-rQiv/8Ru2u+clXLDxgdzeP22vuq0xiiM/LeBWQboSbni/OHRjMevqyPewiIOHEqQPMZv4G+MJw9VMArOXOBUTQ==
+react-native-swiper-flatlist@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-swiper-flatlist/-/react-native-swiper-flatlist-2.0.1.tgz#4b7bda7a343e7ccc734b291ea376d59c919929d1"
+  integrity sha512-opUTLG5ZfPgc0WqgAHU4SEy/Nox4bBBrhL1E12Ic+JciXhdSa4HHortkdJKWcKEglCqL9s/RTWfEjVywJly3Dw==
   dependencies:
-    prop-types "^15.6.2"
+    prop-types "^15.7.2"
 
 react-native@0.60.4:
   version "0.60.4"
