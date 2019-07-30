@@ -3,5 +3,6 @@
   "prettier.printWidth": 100,
   "prettier.eslintIntegration": true,
   "prettier.trailingComma": "all",
+  "javascript.validate.enable": false,
   "workbench.editor.labelFormat": "short"
 }

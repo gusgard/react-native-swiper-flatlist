@@ -139,22 +139,10 @@ const SwiperFlatList = React.forwardRef(
         setIgnoreOnMomentumScrollEnd(false);
         return;
       }
-      const { contentOffset, layoutMeasurement } = e.nativeEvent;
-      let _index;
-      if (vertical) {
-        _index = Math.round(contentOffset.y / layoutMeasurement.height);
-      } else {
-        // Divide the horizontal offset by the width of the view to see which page is visible
-        _index = Math.round(contentOffset.x / layoutMeasurement.width);
-      }
-      if (paginationIndex !== _index) {
-        const wrongIndexes = { paginationIndex, _index, prevIndex };
-        console.warn('Wrong index, please create an issue in github', wrongIndexes);
-        _index = paginationIndex;
-      }
-      onMomentumScrollEnd?.({ index: _index }, e);
 
-      _onChangeIndex({ index: _index, prevIndex });
+      onMomentumScrollEnd?.({ index: paginationIndex }, e);
+
+      _onChangeIndex({ index: paginationIndex, prevIndex });
     };
 
     const _onViewableItemsChanged = React.useMemo(
@@ -262,6 +250,8 @@ SwiperFlatList.defaultProps = {
   renderAll: false,
   PaginationComponent: Pagination,
   onChangeIndex: undefined,
+  // ----
+  onMomentumScrollEnd: undefined,
 };
 
 export default SwiperFlatList;
