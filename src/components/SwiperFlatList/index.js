@@ -82,7 +82,7 @@ export default class SwiperFlatList extends PureComponent {
   setup = props => {
     const { children, data, renderItem, renderAll } = props;
     if (children) {
-      this._data = children;
+      this._data = Array.isArray(children) ? children : [children];
       this._renderItem = this.renderChildren;
     } else if (data) {
       this._data = data;
