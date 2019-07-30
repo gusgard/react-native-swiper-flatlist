@@ -23,6 +23,7 @@
     "@react-native-community/eslint-config": "^0.0.3",
     "babel-jest": "^24.8.0",
     "concurrently": "4.1.1",
+    "detox": "^13.3.1",
     "eslint": "^6.0.1",
     "fs-extra": "8.1.0",
     "jest": "^24.8.0",
@@ -34,5 +35,22 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "detox": {
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/SwiperFlatListExample.app",
+        "build": "xcodebuild -workspace ios/SwiperFlatListExample.xcworkspace -scheme SwiperFlatListExample -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+        "type": "ios.simulator",
+        "name": "iPhone 7"
+      },
+      "ios.sim.release": {
+        "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/SwiperFlatListExample.app",
+        "build": "xcodebuild -workspace ios/SwiperFlatListExample.xcworkspace -scheme SwiperFlatListExample -configuration Release -sdk iphonesimulator -derivedDataPath ios/build",
+        "type": "ios.simulator",
+        "name": "iPhone 7"
+      }
+    },
+    "test-runner": "jest"
   }
 }
