@@ -31,7 +31,7 @@ install:
 - gem install xcpretty
 
 script:
-- cd example
+# - cd example
 - yarn install
 - detox build --configuration ios.sim.debug
 - detox test --configuration ios.sim.debug --cleanup
@@ -41,6 +41,7 @@ sudo: false
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.17.3
   - export PATH=$HOME/.yarn/bin:$PATH
+before_script: cd example
 
 notifications:
   email:
