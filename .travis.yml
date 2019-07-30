@@ -10,6 +10,11 @@ env:
   global:
   - NODE_VERSION=stable
 
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
 install:
 - brew tap wix/brew
 - brew install applesimutils
@@ -21,6 +26,7 @@ install:
 
 - npm install -g react-native-cli
 - npm install -g detox-cli
+- npm install -g yarn
 
 script:
 - cd example
