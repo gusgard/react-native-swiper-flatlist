@@ -9,7 +9,9 @@ function copyAndWatch(source, destination, fileGlob) {
   rimraf(destination, () => {
     console.log(`Copying "${source}" to "${destination}"`);
     fs.copy(source, destination, err => {
-      if (err) console.error(err);
+      if (err) {
+        console.error(err);
+      }
     });
 
     console.log(`Watching "${source}"`);
@@ -19,7 +21,9 @@ function copyAndWatch(source, destination, fileGlob) {
         const destinationPath = `${destination}${localPath}`;
         console.log(`Copying "${filename}" to "${destinationPath}"`);
         fs.copy(filename, destinationPath, err => {
-          if (err) console.error(err);
+          if (err) {
+            console.error(err);
+          }
         });
       }
     });
@@ -27,7 +31,9 @@ function copyAndWatch(source, destination, fileGlob) {
 }
 
 function matchesFile(filename, fileGlob) {
-  if (fileGlob == null) return true;
+  if (fileGlob == null) {
+    return true;
+  }
   return minimatch(path.basename(filename), fileGlob);
 }
 

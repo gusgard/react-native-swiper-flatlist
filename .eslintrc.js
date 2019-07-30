@@ -65,6 +65,15 @@ module.exports = {
     'react/prefer-stateless-function': 'off',
     'react/sort-comp': 'off',
   },
+  settings: {
+    'import/resolver': {
+      reactnative: {},
+    },
+    react: {
+      pragma: 'React', // Pragma to use, default to "React"
+      version: '99', // React version, default to the latest React stable release
+    },
+  },
   globals: {
     it: false,
     describe: false,

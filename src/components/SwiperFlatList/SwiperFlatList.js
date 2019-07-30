@@ -32,6 +32,8 @@ const SwiperFlatList = React.forwardRef(
       // Functions
       onChangeIndex,
       onMomentumScrollEnd,
+      onViewableItemsChanged,
+      viewabilityConfig,
       ...props
     },
     ref,
@@ -56,9 +58,12 @@ const SwiperFlatList = React.forwardRef(
     const [ignoreOnMomentumScrollEnd, setIgnoreOnMomentumScrollEnd] = React.useState(false);
     const flatListElement = React.useRef(null);
 
-    const _onChangeIndex = ({ index: _index, prevIndex: _prevIndex }) => {
-      onChangeIndex?.({ index: _index, prevIndex: _prevIndex });
-    };
+    const _onChangeIndex = React.useCallback(
+      ({ index: _index, prevIndex: _prevIndex }) => {
+        onChangeIndex?.({ index: _index, prevIndex: _prevIndex });
+      },
+      [onChangeIndex],
+    );
 
     const _scrollToIndex = params => {
       if (typeof params !== 'object') {
@@ -95,6 +100,7 @@ const SwiperFlatList = React.forwardRef(
       }
       _onChangeIndex({ index: next.index, prevIndex: next.prevIndex });
       // only consider "paginationIndexes"
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [paginationIndexes]);
 
     React.useImperativeHandle(ref, () => ({
@@ -132,6 +138,7 @@ const SwiperFlatList = React.forwardRef(
       }
       // https://upmostly.com/tutorials/settimeout-in-react-components-using-hooks
       return () => clearTimeout(autoplayTimer);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [paginationIndex]);
     const _onMomentumScrollEnd = e => {
       // NOTE: Method not executed when call "flatListElement?.current?.scrollToIndex"
@@ -139,26 +146,15 @@ const SwiperFlatList = React.forwardRef(
         setIgnoreOnMomentumScrollEnd(false);
         return;
       }
-      const { contentOffset, layoutMeasurement } = e.nativeEvent;
-      let _index;
-      if (vertical) {
-        _index = Math.round(contentOffset.y / layoutMeasurement.height);
-      } else {
-        // Divide the horizontal offset by the width of the view to see which page is visible
-        _index = Math.round(contentOffset.x / layoutMeasurement.width);
-      }
-      if (paginationIndex !== _index) {
-        const wrongIndexes = { paginationIndex, _index, prevIndex };
-        console.warn('Wrong index, please create an issue in github', wrongIndexes);
-        _index = paginationIndex;
-      }
-      onMomentumScrollEnd?.({ index: _index }, e);
 
-      _onChangeIndex({ index: _index, prevIndex });
+      onMomentumScrollEnd?.({ index: paginationIndex }, e);
+
+      _onChangeIndex({ index: paginationIndex, prevIndex });
     };
 
     const _onViewableItemsChanged = React.useMemo(
-      () => ({ changed }) => {
+      () => params => {
+        const { changed } = params;
         const newItem = changed?.[FIRST_INDEX];
         if (newItem !== undefined) {
           const nextIndex = newItem.index;
@@ -168,6 +164,7 @@ const SwiperFlatList = React.forwardRef(
             setPrevIndex(nextIndex);
           }
         }
+        onViewableItemsChanged?.(params);
       },
       [],
     );
@@ -191,6 +188,7 @@ const SwiperFlatList = React.forwardRef(
         // https://facebook.github.io/react-native/docs/flatlist#minimumviewtime
         minimumViewTime: 200,
         itemVisiblePercentThreshold: ITEM_VISIBLE_PERCENT_THRESHOLD,
+        ...viewabilityConfig,
       },
       onViewableItemsChanged: _onViewableItemsChanged,
       // debug: true, // for debug
@@ -217,7 +215,6 @@ const SwiperFlatList = React.forwardRef(
 
 SwiperFlatList.propTypes = {
   data: PropTypes.array,
-  onMomentumScrollEnd: PropTypes.func,
   vertical: PropTypes.bool,
   index: PropTypes.number,
   renderAll: PropTypes.bool,
@@ -248,6 +245,11 @@ SwiperFlatList.propTypes = {
   autoplay: PropTypes.bool,
   autoplayInvertDirection: PropTypes.bool,
   autoplayLoop: PropTypes.bool,
+
+  // Optionals
+  onMomentumScrollEnd: PropTypes.func,
+  onViewableItemsChanged: PropTypes.func,
+  viewabilityConfig: PropTypes.object,
 };
 
 SwiperFlatList.defaultProps = {
@@ -262,6 +264,10 @@ SwiperFlatList.defaultProps = {
   renderAll: false,
   PaginationComponent: Pagination,
   onChangeIndex: undefined,
+  // Optionals
+  onMomentumScrollEnd: undefined,
+  onViewableItemsChanged: undefined,
+  viewabilityConfig: {},
 };
 
 export default SwiperFlatList;

@@ -8,7 +8,6 @@ const { width, height } = Dimensions.get('window');
 
 const newImage = [lion, fox, cat, background, element];
 const image = index => ({ image: newImage[index % newImage.length] });
-
 const items = Array.from(Array(5)).map((_, index) => image(index));
 
 export default () => {

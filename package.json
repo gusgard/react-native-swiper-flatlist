@@ -25,8 +25,8 @@
     "flatlist swiper"
   ],
   "scripts": {
-    "lint": "eslint index.js src",
-    "lint:fix": "eslint index.js src --fix",
+    "lint": "eslint index.js src example/scripts example/src",
+    "lint:fix": "yarn lint --fix",
     "test": "yarn ci",
     "test:watch": "jest --watch",
     "ci": "yarn lint && yarn jest",
@@ -37,7 +37,8 @@
     "prop-types": "^15.7.2"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.15",
+    "@react-native-community/eslint-config": "^0.0.5",
+    "@types/jest": "^24.0.16",
     "@types/react-native": "^0.60.2",
     "babel-eslint": "^10.0.2",
     "babel-jest": "24.8.0",
@@ -45,11 +46,13 @@
     "eslint": "^4.9.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-flowtype": "^3.12.1",
-    "eslint-plugin-import": "^2.18.1",
+    "eslint-import-resolver-reactnative": "^1.0.2",
+    "eslint-plugin-detox": "^1.0.0",
+    "eslint-plugin-flowtype": "^3.12.2",
+    "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.6.1",
     "eslint-plugin-react-native": "^3.3.0",
     "jest": "24.8.0",
