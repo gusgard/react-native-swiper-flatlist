@@ -8,6 +8,9 @@ describe('Example', () => {
   //   await expect(element(by.text('World!!!'))).toBeVisible();
   // });
 
+  it('should see screen', async () => {
+    await expect(element(by.id('containerSwiper'))).toBeVisible();
+  });
   it('should swipe screens', async () => {
     await element(by.id('containerSwiper')).swipe('left');
     await element(by.id('containerSwiper')).swipe('left');
