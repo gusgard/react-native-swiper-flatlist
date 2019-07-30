@@ -37,6 +37,7 @@ script:
 - yarn install
 - cd ios
 - pod install
+- cd ..
 - detox build --configuration ios.sim.debug
 - detox test --configuration ios.sim.debug --cleanup
 
