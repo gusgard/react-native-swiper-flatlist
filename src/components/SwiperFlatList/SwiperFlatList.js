@@ -56,9 +56,12 @@ const SwiperFlatList = React.forwardRef(
     const [ignoreOnMomentumScrollEnd, setIgnoreOnMomentumScrollEnd] = React.useState(false);
     const flatListElement = React.useRef(null);
 
-    const _onChangeIndex = ({ index: _index, prevIndex: _prevIndex }) => {
-      onChangeIndex?.({ index: _index, prevIndex: _prevIndex });
-    };
+    const _onChangeIndex = React.useCallback(
+      ({ index: _index, prevIndex: _prevIndex }) => {
+        onChangeIndex?.({ index: _index, prevIndex: _prevIndex });
+      },
+      [onChangeIndex],
+    );
 
     const _scrollToIndex = params => {
       if (typeof params !== 'object') {
@@ -95,6 +98,7 @@ const SwiperFlatList = React.forwardRef(
       }
       _onChangeIndex({ index: next.index, prevIndex: next.prevIndex });
       // only consider "paginationIndexes"
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [paginationIndexes]);
 
     React.useImperativeHandle(ref, () => ({
@@ -132,6 +136,7 @@ const SwiperFlatList = React.forwardRef(
       }
       // https://upmostly.com/tutorials/settimeout-in-react-components-using-hooks
       return () => clearTimeout(autoplayTimer);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [paginationIndex]);
     const _onMomentumScrollEnd = e => {
       // NOTE: Method not executed when call "flatListElement?.current?.scrollToIndex"
