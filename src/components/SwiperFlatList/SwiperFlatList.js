@@ -32,6 +32,8 @@ const SwiperFlatList = React.forwardRef(
       // Functions
       onChangeIndex,
       onMomentumScrollEnd,
+      onViewableItemsChanged,
+      viewabilityConfig,
       ...props
     },
     ref,
@@ -151,7 +153,8 @@ const SwiperFlatList = React.forwardRef(
     };
 
     const _onViewableItemsChanged = React.useMemo(
-      () => ({ changed }) => {
+      () => params => {
+        const { changed } = params;
         const newItem = changed?.[FIRST_INDEX];
         if (newItem !== undefined) {
           const nextIndex = newItem.index;
@@ -161,6 +164,7 @@ const SwiperFlatList = React.forwardRef(
             setPrevIndex(nextIndex);
           }
         }
+        onViewableItemsChanged?.(params);
       },
       [],
     );
@@ -184,6 +188,7 @@ const SwiperFlatList = React.forwardRef(
         // https://facebook.github.io/react-native/docs/flatlist#minimumviewtime
         minimumViewTime: 200,
         itemVisiblePercentThreshold: ITEM_VISIBLE_PERCENT_THRESHOLD,
+        ...viewabilityConfig,
       },
       onViewableItemsChanged: _onViewableItemsChanged,
       // debug: true, // for debug
@@ -210,7 +215,6 @@ const SwiperFlatList = React.forwardRef(
 
 SwiperFlatList.propTypes = {
   data: PropTypes.array,
-  onMomentumScrollEnd: PropTypes.func,
   vertical: PropTypes.bool,
   index: PropTypes.number,
   renderAll: PropTypes.bool,
@@ -241,6 +245,11 @@ SwiperFlatList.propTypes = {
   autoplay: PropTypes.bool,
   autoplayInvertDirection: PropTypes.bool,
   autoplayLoop: PropTypes.bool,
+
+  // Optionals
+  onMomentumScrollEnd: PropTypes.func,
+  onViewableItemsChanged: PropTypes.func,
+  viewabilityConfig: PropTypes.object,
 };
 
 SwiperFlatList.defaultProps = {
@@ -255,8 +264,10 @@ SwiperFlatList.defaultProps = {
   renderAll: false,
   PaginationComponent: Pagination,
   onChangeIndex: undefined,
-  // ----
+  // Optionals
   onMomentumScrollEnd: undefined,
+  onViewableItemsChanged: undefined,
+  viewabilityConfig: {},
 };
 
 export default SwiperFlatList;
