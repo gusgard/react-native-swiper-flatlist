@@ -47,6 +47,12 @@
       },
       "ios.sim.release": {
         "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/SwiperFlatListExample.app",
+        "build": "xcodebuild -workspace ios/SwiperFlatListExample.xcworkspace -scheme SwiperFlatListExample -configuration Release -sdk iphonesimulator -derivedDataPath ios/build",
+        "type": "ios.simulator",
+        "name": "iPhone Xʀ"
+      },
+      "ios.sim.release.ci": {
+        "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/SwiperFlatListExample.app",
         "build": "set -o pipefail && export CODE_SIGNING_REQUIRED=NO && export RCT_NO_LAUNCH_PACKAGER=true && xcodebuild -workspace ios/SwiperFlatListExample.xcworkspace -scheme SwiperFlatListExample -configuration Release -sdk iphonesimulator -derivedDataPath ios/build | xcpretty",
         "type": "ios.simulator",
         "name": "iPhone Xʀ"
