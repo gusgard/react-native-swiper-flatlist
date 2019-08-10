@@ -32,14 +32,15 @@ install:
 
 script:
 - pwd
+- yarn ci
 - cd example
 - pwd
 - yarn install
 - cd ios
 - pod install
 - cd ..
-- yarn build:ios
-- yarn e2e:ios
+- yarn build:ios:ci
+- yarn e2e:ios:ci
 
 
 sudo: false

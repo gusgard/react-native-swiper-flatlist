@@ -71,7 +71,7 @@
   "jest": {
     "preset": "react-native",
     "modulePathIgnorePatterns": [
-      "<rootDir>/example/node_modules/"
+      "<rootDir>/example/"
     ]
   },
   "pre-commit": {
