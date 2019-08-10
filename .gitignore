@@ -40,3 +40,7 @@ yarn-error.log
 buck-out/
 \.buckd/
 *.keystore
+
+
+example/e2e
+example/artifacts

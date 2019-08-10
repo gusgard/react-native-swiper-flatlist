@@ -10,12 +10,17 @@
     "ios": "react-native run-ios --simulator='iPhone X'",
     "postinstall": "rm -rf node_modules/react-native-swiper-flatlist/node_modules/react-native",
     "watch": "node ./scripts/watch-and-copy.js",
-    "start:watch": "concurrently 'npm run watch' 'npm run start'"
+    "start:watch": "concurrently 'npm run watch' 'npm run start'",
+    "e2e:ios:build-test": "yarn build:ios && yarn e2e:ios",
+    "e2e:ios": "yarn detox test --configuration ios.sim.release --cleanup --debug-synchronization --take-screenshots all --record-logs all --coverage",
+    "e2e:ios:ci": "yarn detox test --configuration ios.sim.release --workers 3 --debug-synchronization",
+    "build:ios": "yarn detox build --configuration ios.sim.release",
+    "build:ios:ci": "yarn detox build --configuration ios.sim.release"
   },
   "dependencies": {
     "react": "16.8.6",
     "react-native": "0.60.4",
-    "react-native-swiper-flatlist": "2.0.1"
+    "react-native-swiper-flatlist": "2.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -23,6 +28,7 @@
     "@react-native-community/eslint-config": "^0.0.3",
     "babel-jest": "^24.8.0",
     "concurrently": "4.1.1",
+    "detox": "^14.0.1",
     "eslint": "^6.0.1",
     "fs-extra": "8.1.0",
     "jest": "^24.8.0",
@@ -34,5 +40,22 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "detox": {
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/SwiperFlatListExample.app",
+        "build": "xcodebuild -workspace ios/SwiperFlatListExample.xcworkspace -scheme SwiperFlatListExample -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build | xcpretty",
+        "type": "ios.simulator",
+        "name": "iPhone 7"
+      },
+      "ios.sim.release": {
+        "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/SwiperFlatListExample.app",
+        "build": "set -o pipefail && export CODE_SIGNING_REQUIRED=NO && export RCT_NO_LAUNCH_PACKAGER=true && xcodebuild -workspace ios/SwiperFlatListExample.xcworkspace -scheme SwiperFlatListExample -configuration Release -sdk iphonesimulator -derivedDataPath ios/build | xcpretty",
+        "type": "ios.simulator",
+        "name": "iPhone Xʀ"
+      }
+    },
+    "test-runner": "jest"
   }
 }
