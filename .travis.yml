@@ -39,9 +39,10 @@ script:
 - pod install
 - cd ..
 - yarn build:ios
+- yarn e2e:ios-ci
 # - detox build --configuration ios.sim.release
 # - detox test --configuration ios.sim.debug --cleanup
-- yarn startAndRunDetox
+# - yarn startAndRunDetox
 
 
 # add TEAM BUILD ID
