@@ -11,7 +11,11 @@
     "postinstall": "rm -rf node_modules/react-native-swiper-flatlist/node_modules/react-native",
     "watch": "node ./scripts/watch-and-copy.js",
     "start:watch": "concurrently 'npm run watch' 'npm run start'",
-    "startAndRunDetox": "concurrently 'yarn start' 'yarn detox test --configuration ios.sim.release --cleanup'"
+    "e2e:ios": "detox test --configuration ios.sim.release --cleanup --debug-synchronization",
+    "e2e:ios-ci": "detox test --configuration ios.sim.release --workers 3 --debug-synchronization --take-screenshots all --record-logs all -- --coverage",
+    "build:ios": "detox build --configuration ios.sim.release",
+    "startAndRunDetox.old": "concurrently 'yarn start' 'yarn e2e:ios'",
+    "startAndRunDetox": "concurrently 'yarn start' 'yarn e2e:ios-ci'"
   },
   "dependencies": {
     "react": "16.8.6",
@@ -45,13 +49,13 @@
         "type": "ios.simulator",
         "name": "iPhone 7"
       },
-      "ios.sim.release": {
+      "ios.sim.release.old": {
         "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/SwiperFlatListExample.app",
         "build": "xcodebuild -workspace ios/SwiperFlatListExample.xcworkspace -scheme SwiperFlatListExample -configuration Release -sdk iphonesimulator -derivedDataPath ios/build",
         "type": "ios.simulator",
         "name": "iPhone Xʀ"
       },
-      "ios.sim.release.ci": {
+      "ios.sim.release": {
         "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/SwiperFlatListExample.app",
         "build": "set -o pipefail && export CODE_SIGNING_REQUIRED=NO && export RCT_NO_LAUNCH_PACKAGER=true && xcodebuild -workspace ios/SwiperFlatListExample.xcworkspace -scheme SwiperFlatListExample -configuration Release -sdk iphonesimulator -derivedDataPath ios/build | xcpretty",
         "type": "ios.simulator",
