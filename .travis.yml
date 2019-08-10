@@ -32,6 +32,7 @@ install:
 
 script:
 - pwd
+- yarn install
 - yarn ci
 - cd example
 - pwd
