@@ -38,7 +38,7 @@ script:
 - cd ios
 - pod install
 - cd ..
-- detox build --configuration ios.sim.debug
+- detox build --configuration ios.sim.release
 # - detox test --configuration ios.sim.debug --cleanup
 - yarn startAndRunDetox
 
