@@ -178,7 +178,7 @@ const SwiperFlatList = React.forwardRef(
     );
 
     const flatListProps = {
-      scrollEnabled: scrollEnabled,
+      scrollEnabled,
       ref: flatListElement,
       keyExtractor: (_item, _index) => _index.toString(),
       horizontal: !vertical,
