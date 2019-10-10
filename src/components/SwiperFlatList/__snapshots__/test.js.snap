@@ -135,6 +135,7 @@ exports[`swiper flatlist renders correctly 1`] = `
   pagingEnabled={true}
   removeClippedSubviews={false}
   renderItem={[Function]}
+  scrollEnabled={true}
   scrollEventThrottle={50}
   showsHorizontalScrollIndicator={false}
   showsVerticalScrollIndicator={false}
