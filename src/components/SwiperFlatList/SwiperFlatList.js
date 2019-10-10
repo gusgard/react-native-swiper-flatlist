@@ -259,6 +259,7 @@ SwiperFlatList.propTypes = {
   onMomentumScrollEnd: PropTypes.func,
   onViewableItemsChanged: PropTypes.func,
   viewabilityConfig: PropTypes.object,
+  disableGesture: PropTypes.bool,
 };
 
 SwiperFlatList.defaultProps = {
