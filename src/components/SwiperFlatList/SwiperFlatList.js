@@ -34,6 +34,7 @@ const SwiperFlatList = React.forwardRef(
       onMomentumScrollEnd,
       onViewableItemsChanged,
       viewabilityConfig,
+      disableGesture,
       ...props
     },
     ref,
@@ -57,6 +58,7 @@ const SwiperFlatList = React.forwardRef(
     const [paginationIndexes, setPaginationIndexes] = React.useState({ index, prevIndex: index });
     const [ignoreOnMomentumScrollEnd, setIgnoreOnMomentumScrollEnd] = React.useState(false);
     const flatListElement = React.useRef(null);
+    const [scrollEnabled, setScrollEnabled] = React.useState(!disableGesture);
 
     const _onChangeIndex = React.useCallback(
       ({ index: _index, prevIndex: _prevIndex }) => {
@@ -105,15 +107,21 @@ const SwiperFlatList = React.forwardRef(
 
     React.useImperativeHandle(ref, () => ({
       scrollToIndex: (...args) => {
+        setScrollEnabled(true);
         _scrollToIndex(...args);
+        setScrollEnabled(!disableGesture);
       },
       getCurrentIndex: () => paginationIndex,
       getPrevIndex: () => prevIndex,
       goToLastIndex: () => {
+        setScrollEnabled(true);
         _scrollToIndex({ index: size - 1 });
+        setScrollEnabled(!disableGesture);
       },
       goToFirstIndex: () => {
+        setScrollEnabled(true);
         _scrollToIndex({ index: FIRST_INDEX });
+        setScrollEnabled(!disableGesture);
       },
     }));
 
@@ -170,6 +178,7 @@ const SwiperFlatList = React.forwardRef(
     );
 
     const flatListProps = {
+      scrollEnabled,
       ref: flatListElement,
       keyExtractor: (_item, _index) => _index.toString(),
       horizontal: !vertical,
@@ -250,6 +259,7 @@ SwiperFlatList.propTypes = {
   onMomentumScrollEnd: PropTypes.func,
   onViewableItemsChanged: PropTypes.func,
   viewabilityConfig: PropTypes.object,
+  disableGesture: PropTypes.bool,
 };
 
 SwiperFlatList.defaultProps = {
@@ -268,6 +278,7 @@ SwiperFlatList.defaultProps = {
   onMomentumScrollEnd: undefined,
   onViewableItemsChanged: undefined,
   viewabilityConfig: {},
+  disableGesture: false,
 };
 
 export default SwiperFlatList;
