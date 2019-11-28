@@ -29,7 +29,32 @@ const Pagination = ({
   paginationActiveColor,
   paginationStyle,
   paginationStyleItem,
+  renderRightButton,
+  renderLeftButton,
 }) => {
+  if (renderRightButton && renderLeftButton) {
+    return (
+      <View style={[styles.container, paginationStyle]}>
+        {Array.from({ length: size }).map((_, index) => (
+          <>
+            {renderLeftButton()}
+              <View
+                  style={[
+                    styles.pagination,
+                    paginationStyleItem,
+                    paginationIndex === index
+                      ? { backgroundColor: paginationActiveColor }
+                      : { backgroundColor: paginationDefaultColor },
+                  ]}
+                  key={index}
+                  onPress={() => scrollToIndex({ index })}
+                />
+          {renderRightButton()}
+          </>
+        )}
+      </View>
+    )
+  }
   return (
     <View style={[styles.container, paginationStyle]}>
       {Array.from({ length: size }).map((_, index) => (
@@ -56,6 +81,8 @@ Pagination.propTypes = {
   paginationDefaultColor: PropTypes.string,
   paginationStyle: ViewPropTypes.style,
   paginationStyleItem: ViewPropTypes.style,
+  renderRightButton: PropTypes.func,
+  renderLeftButton: PropTypes.func,
 };
 
 Pagination.defaultProps = {
