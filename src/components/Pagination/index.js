@@ -10,14 +10,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginVertical: vertical.xxSmall,
     justifyContent: 'center',
+    alignItems: 'center',
     bottom: 0,
     width: '100%',
   },
   pagination: {
-    width: horizontal.small,
-    height: horizontal.small,
-    borderRadius: 25,
-    marginHorizontal: horizontal.xSmall,
+    bottom: 0,
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    marginLeft: 3,
+    marginRight: 3,
+    marginTop: 3,
   },
 });
 
@@ -31,13 +35,13 @@ const Pagination = ({
   paginationStyleItem,
   renderRightButton,
   renderLeftButton,
+  hasButton,
 }) => {
-  if (renderRightButton && renderLeftButton) {
+  if (hasButton) {
     return (
       <View style={[styles.container, paginationStyle]}>
+        {renderLeftButton()}
         {Array.from({ length: size }).map((_, index) => (
-          <>
-            {renderLeftButton()}
               <View
                   style={[
                     styles.pagination,
@@ -49,9 +53,8 @@ const Pagination = ({
                   key={index}
                   onPress={() => scrollToIndex({ index })}
                 />
-          {renderRightButton()}
-          </>
-        )}
+        ))}
+        {renderRightButton()}
       </View>
     )
   }
