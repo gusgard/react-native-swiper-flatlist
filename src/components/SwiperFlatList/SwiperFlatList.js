@@ -35,6 +35,9 @@ const SwiperFlatList = React.forwardRef(
       onViewableItemsChanged,
       viewabilityConfig,
       disableGesture,
+      renderRightButton,
+      renderLeftButton,
+      hasButton,
       ...props
     },
     ref,
@@ -211,6 +214,9 @@ const SwiperFlatList = React.forwardRef(
       paginationDefaultColor,
       paginationStyle,
       paginationStyleItem,
+      renderRightButton,
+      renderLeftButton,
+      hasButton,
     };
 
     return (
