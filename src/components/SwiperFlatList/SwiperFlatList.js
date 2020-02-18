@@ -105,10 +105,9 @@ const SwiperFlatList = React.forwardRef(
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [paginationIndexes]);
 
-
     React.useEffect(() => {
       _onChangeIndex({ index: paginationIndex, prevIndex: prevIndex });
-    },[paginationIndex,prevIndex]);
+    }, [paginationIndex, prevIndex]);
 
     React.useImperativeHandle(ref, () => ({
       scrollToIndex: (...args) => {
