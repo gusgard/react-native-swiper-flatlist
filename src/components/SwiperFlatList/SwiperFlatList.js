@@ -28,6 +28,7 @@ const SwiperFlatList = React.forwardRef(
       autoplayDelay,
       autoplay,
       autoplayLoop,
+      autoplayLoopAnimation,
       autoplayInvertDirection,
       // Functions
       onChangeIndex,
@@ -144,8 +145,12 @@ const SwiperFlatList = React.forwardRef(
             nextIndex = _data.length - 1;
           }
 
-          // When reach the end disable animated
-          _scrollToIndex({ index: nextIndex, animated: !isLastIndexEnd });
+          // Disable end loop animation unless `autoplayLoopAnimation` prop configured
+          let animate = !isLastIndexEnd 
+            ? true 
+            : autoplayLoopAnimation;
+
+          _scrollToIndex({ index: nextIndex, animated: animate });
         }, autoplayDelay * MILLISECONDS);
       }
       // https://upmostly.com/tutorials/settimeout-in-react-components-using-hooks
@@ -258,6 +263,7 @@ SwiperFlatList.propTypes = {
   autoplay: PropTypes.bool,
   autoplayInvertDirection: PropTypes.bool,
   autoplayLoop: PropTypes.bool,
+  autoplayLoopAnimation: PropTypes.bool,
 
   // Optionals
   onMomentumScrollEnd: PropTypes.func,
@@ -272,6 +278,7 @@ SwiperFlatList.defaultProps = {
   autoplayDelay: 3,
   autoplayInvertDirection: false,
   autoplayLoop: false,
+  autoplayLoopAnimation: false,
   autoplay: false,
   showPagination: false,
   vertical: false,

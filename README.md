@@ -117,8 +117,9 @@ const styles = StyleSheet.create({
 | autoplay                |                       false                       |        `bool`         | Change index automatically                                           |
 | autoplayDelay           |                         3                         |       `number`        | Delay between every page in seconds                                  |
 | autoplayLoop            |                       false                       |        `bool`         | Continue playing after reach end                                     |
-| autoplayInvertDirection |                       false                       |        `bool`         | Invert auto play direction        
-| disableGesture |                       false                       |        `bool`         | Disable swipe gesture                                          |
+| autoplayLoopAnimation   |                       false                       |        `bool`         | Enable loop animation                                                |
+| autoplayInvertDirection |                       false                       |        `bool`         | Invert auto play direction                                           |
+| disableGesture          |                       false                       |        `bool`         | Disable swipe gesture                                                |
 
 **More props**
 
