@@ -146,9 +146,7 @@ const SwiperFlatList = React.forwardRef(
           }
 
           // Disable end loop animation unless `autoplayLoopAnimation` prop configured
-          let animate = !isLastIndexEnd 
-            ? true 
-            : autoplayLoopAnimation;
+          let animate = !isLastIndexEnd ? true : autoplayLoopAnimation;
 
           _scrollToIndex({ index: nextIndex, animated: animate });
         }, autoplayDelay * MILLISECONDS);
