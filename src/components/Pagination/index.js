@@ -45,7 +45,7 @@ const Pagination = ({
           key={index}
           onPress={() => {
             scrollToIndex({ index });
-            onPaginationPressed();
+            onPaginationPressed?.();
           }}
         />
       ))}
