@@ -112,6 +112,7 @@ const styles = StyleSheet.create({
 | paginationActiveColor   |                       white                       |       `string`        | Pagination color                                                     |
 | paginationStyle         |                        {}                         | `ViewPropTypes.style` | Style object for container                                           |
 | paginationStyleItem     |                        {}                         | `ViewPropTypes.style` | Style object for item (dot)                                          |
+| onPaginationPressed     |                         -                         |        `func`         | Called after scroll to new index when pagination item pressed        |
 | PaginationComponent     | [Component](./src/components/Pagination/index.js) |        `node`         | Overwrite Pagination component                                       |
 | **Autoplay**            |
 | autoplay                |                       false                       |        `bool`         | Change index automatically                                           |
