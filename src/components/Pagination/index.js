@@ -29,7 +29,7 @@ const Pagination = ({
   paginationActiveColor,
   paginationStyle,
   paginationStyleItem,
-  onPaginationPressed,
+  onPaginationIndexSelected,
 }) => {
   return (
     <View style={[styles.container, paginationStyle]}>
@@ -45,7 +45,7 @@ const Pagination = ({
           key={index}
           onPress={() => {
             scrollToIndex({ index });
-            onPaginationPressed?.();
+            onPaginationIndexSelected?.();
           }}
         />
       ))}
@@ -60,7 +60,7 @@ Pagination.propTypes = {
   paginationDefaultColor: PropTypes.string,
   paginationStyle: ViewPropTypes.style,
   paginationStyleItem: ViewPropTypes.style,
-  onPaginationPressed: PropTypes.func,
+  onPaginationIndexSelected: PropTypes.func,
 };
 
 Pagination.defaultProps = {
@@ -69,7 +69,7 @@ Pagination.defaultProps = {
   paginationDefaultColor: colors.gray,
   paginationStyle: {},
   paginationStyleItem: {},
-  onPaginationPressed: undefined,
+  onPaginationIndexSelected: undefined,
 };
 
 export default Pagination;

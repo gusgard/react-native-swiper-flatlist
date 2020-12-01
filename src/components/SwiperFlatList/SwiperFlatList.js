@@ -24,7 +24,7 @@ const SwiperFlatList = React.forwardRef(
       paginationDefaultColor,
       paginationStyle,
       paginationStyleItem,
-      onPaginationPressed,
+      onPaginationIndexSelected,
       // Autoplay
       autoplayDelay,
       autoplay,
@@ -219,7 +219,7 @@ const SwiperFlatList = React.forwardRef(
       paginationDefaultColor,
       paginationStyle,
       paginationStyleItem,
-      onPaginationPressed,
+      onPaginationIndexSelected,
     };
 
     return (
@@ -257,7 +257,7 @@ SwiperFlatList.propTypes = {
   paginationDefaultColor: Pagination.propTypes.paginationDefaultColor,
   paginationStyle: Pagination.propTypes.paginationStyle,
   paginationStyleItem: Pagination.propTypes.paginationStyleItem,
-  onPaginationPressed: Pagination.propTypes.onPaginationPressed,
+  onPaginationIndexSelected: Pagination.propTypes.onPaginationIndexSelected,
 
   // Autoplay
   autoplayDelay: PropTypes.number,
