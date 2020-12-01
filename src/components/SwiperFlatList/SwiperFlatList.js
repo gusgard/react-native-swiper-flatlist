@@ -24,12 +24,12 @@ const SwiperFlatList = React.forwardRef(
       paginationDefaultColor,
       paginationStyle,
       paginationStyleItem,
-      onPaginationIndexSelected,
+      onPaginationSelectedIndex,
       // Autoplay
       autoplayDelay,
       autoplay,
       autoplayLoop,
-      autoplayLoopAnimation,
+      autoplayLoopKeepAnimation,
       autoplayInvertDirection,
       // Functions
       onChangeIndex,
@@ -146,8 +146,8 @@ const SwiperFlatList = React.forwardRef(
             nextIndex = _data.length - 1;
           }
 
-          // Disable end loop animation unless `autoplayLoopAnimation` prop configured
-          let animate = !isLastIndexEnd ? true : autoplayLoopAnimation;
+          // Disable end loop animation unless `autoplayLoopKeepAnimation` prop configured
+          const animate = !isLastIndexEnd || autoplayLoopKeepAnimation;
 
           _scrollToIndex({ index: nextIndex, animated: animate });
         }, autoplayDelay * MILLISECONDS);
@@ -219,7 +219,7 @@ const SwiperFlatList = React.forwardRef(
       paginationDefaultColor,
       paginationStyle,
       paginationStyleItem,
-      onPaginationIndexSelected,
+      onPaginationSelectedIndex,
     };
 
     return (
@@ -257,14 +257,14 @@ SwiperFlatList.propTypes = {
   paginationDefaultColor: Pagination.propTypes.paginationDefaultColor,
   paginationStyle: Pagination.propTypes.paginationStyle,
   paginationStyleItem: Pagination.propTypes.paginationStyleItem,
-  onPaginationIndexSelected: Pagination.propTypes.onPaginationIndexSelected,
+  onPaginationSelectedIndex: Pagination.propTypes.onPaginationSelectedIndex,
 
   // Autoplay
   autoplayDelay: PropTypes.number,
   autoplay: PropTypes.bool,
   autoplayInvertDirection: PropTypes.bool,
   autoplayLoop: PropTypes.bool,
-  autoplayLoopAnimation: PropTypes.bool,
+  autoplayLoopKeepAnimation: PropTypes.bool,
 
   // Optionals
   onMomentumScrollEnd: PropTypes.func,
@@ -279,7 +279,7 @@ SwiperFlatList.defaultProps = {
   autoplayDelay: 3,
   autoplayInvertDirection: false,
   autoplayLoop: false,
-  autoplayLoopAnimation: false,
+  autoplayLoopKeepAnimation: false,
   autoplay: false,
   showPagination: false,
   vertical: false,

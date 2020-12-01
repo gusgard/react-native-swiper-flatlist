@@ -112,13 +112,13 @@ const styles = StyleSheet.create({
 | paginationActiveColor     |                       white                       |       `string`        | Pagination color                                                     |
 | paginationStyle           |                        {}                         | `ViewPropTypes.style` | Style object for container                                           |
 | paginationStyleItem       |                        {}                         | `ViewPropTypes.style` | Style object for item (dot)                                          |
-| onPaginationIndexSelected |                         -                         |        `func`         | Called after scroll to item when pagination index selected           |
+| onPaginationSelectedIndex |                         -                         |        `func`         | Executed when the user presses the pagination index, similar properties onChangeIndex  |
 | PaginationComponent       | [Component](./src/components/Pagination/index.js) |        `node`         | Overwrite Pagination component                                       |
 | **Autoplay**              |
 | autoplay                  |                       false                       |        `bool`         | Change index automatically                                           |
 | autoplayDelay             |                         3                         |       `number`        | Delay between every page in seconds                                  |
 | autoplayLoop              |                       false                       |        `bool`         | Continue playing after reach end                                     |
-| autoplayLoopAnimation     |                       false                       |        `bool`         | Enable loop animation                                                |
+| autoplayLoopKeepAnimation |                       false                       |        `bool`         | Show animation when reach the end of the list                        |
 | autoplayInvertDirection   |                       false                       |        `bool`         | Invert auto play direction                                           |
 | disableGesture            |                       false                       |        `bool`         | Disable swipe gesture                                                |
 
