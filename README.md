@@ -20,7 +20,8 @@ or
 npm install react-native-swiper-flatlist --save
 ```
 
-## Notice
+
+## Notice 
 
 Version 2.x was re-implemented using React Hooks so it only works with version 0.59 or above
 
@@ -47,7 +48,13 @@ export default class App extends PureComponent {
   render() {
     return (
       <View style={styles.container}>
-        <SwiperFlatList autoplay autoplayDelay={2} autoplayLoop index={2} showPagination>
+        <SwiperFlatList
+          autoplay
+          autoplayDelay={2}
+          autoplayLoop
+          index={2}
+          showPagination
+        >
           <View style={[styles.child, { backgroundColor: 'tomato' }]}>
             <Text style={styles.text}>1</Text>
           </View>
@@ -71,21 +78,22 @@ export const { width, height } = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: 'white'
   },
   child: {
     height: height * 0.5,
     width,
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   text: {
     fontSize: width * 0.5,
-    textAlign: 'center',
-  },
+    textAlign: 'center'
+  }
 });
 ```
 
 [Code example](./example/README.md)
+
 
 ## Props
 
@@ -118,6 +126,7 @@ const styles = StyleSheet.create({
 
 This is a wrapper around [Flatlist](http://facebook.github.io/react-native/docs/flatlist.html#props), all their `props` works well and the inherited `props` too (from [ScrollView](http://facebook.github.io/react-native/docs/scrollview#props) and [VirtualizedList](http://facebook.github.io/react-native/docs/virtualizedlist#props))
 
+
 ## Functions
 
 | Name            | Params                                  | Use                                                                                                 |
@@ -129,10 +138,12 @@ This is a wrapper around [Flatlist](http://facebook.github.io/react-native/docs/
 | goToFirstIndex  | -                                       | Go to the first index                                                                               |
 | goToLastIndex   | -                                       | Go to the last index                                                                                |
 
+
+
 ## Limitations
 
-- Vertical pagination is not supported on Android. [Doc](https://github.com/facebook/react-native/blob/a48da14800013659e115bf2b58e31aa396e678e5/Libraries/Components/ScrollView/ScrollView.js#L274)
-- `react-native-web` is not supported, due to the lack of support of some `props` used in this library. [Expo example](https://snack.expo.io/@gusgard/react-native-web-example-with-swiper)
+* Vertical pagination is not supported on Android. [Doc](https://github.com/facebook/react-native/blob/a48da14800013659e115bf2b58e31aa396e678e5/Libraries/Components/ScrollView/ScrollView.js#L274)
+* `react-native-web` is not supported, due to the lack of support of some `props` used in this library. [Expo example](https://snack.expo.io/@gusgard/react-native-web-example-with-swiper)
 
 ## Author
 
