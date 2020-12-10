@@ -14,6 +14,12 @@ describe('swiper flatlist', () => {
     );
     expect(toJSON()).toMatchSnapshot();
   });
+  it('renders empty data correctly', () => {
+    const { toJSON } = render(
+      <SwiperFlatList renderItem={({ item }) => <Image source={item.thumbnail} />} data={[]} />,
+    );
+    expect(toJSON()).toMatchSnapshot();
+  });
   it('renders children', () => {
     const { toJSON } = render(
       <SwiperFlatList>
