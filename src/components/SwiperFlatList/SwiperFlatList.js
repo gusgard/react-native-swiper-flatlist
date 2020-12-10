@@ -139,6 +139,11 @@ const SwiperFlatList = React.forwardRef(
       let autoplayTimer;
       if (shouldContinuoWithAutoplay || autoplayLoop) {
         autoplayTimer = setTimeout(() => {
+          if (_data.length < 1) {
+            // avoid nextIndex being set to NaN
+            return;
+          }
+
           const nextIncrement = autoplayInvertDirection ? -1 : +1;
 
           let nextIndex = (paginationIndex + nextIncrement) % _data.length;
