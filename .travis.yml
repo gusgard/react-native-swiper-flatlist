@@ -5,7 +5,7 @@ osx_image: xcode11.6
 branches:
   only:
   - master
-  - run-detox
+  - test/add-more-detox-tests
 
 env:
   global:
