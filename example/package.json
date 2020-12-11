@@ -20,7 +20,7 @@
   "dependencies": {
     "react": "16.8.6",
     "react-native": "0.60.4",
-    "react-native-swiper-flatlist": "2.0.2"
+    "react-native-swiper-flatlist": "2.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -53,7 +53,7 @@
         "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/SwiperFlatListExample.app",
         "build": "set -o pipefail && export CODE_SIGNING_REQUIRED=NO && export RCT_NO_LAUNCH_PACKAGER=true && xcodebuild -workspace ios/SwiperFlatListExample.xcworkspace -scheme SwiperFlatListExample -configuration Release -sdk iphonesimulator -derivedDataPath ios/build | xcpretty",
         "type": "ios.simulator",
-        "name": "iPhone Xʀ"
+        "name": "iPhone 11"
       }
     },
     "test-runner": "jest"
