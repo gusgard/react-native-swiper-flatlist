@@ -35,32 +35,11 @@ const Pagination = ({
   paginationStyleItem,
   paginationRenderRight,
   paginationRenderLeft,
-  hasButton,
   onPaginationSelectedIndex,
 }) => {
-  if (hasButton) {
-    return (
-      <View style={[styles.container, paginationStyle]}>
-        {paginationRenderLeft()}
-        {Array.from({ length: size }).map((_, index) => (
-          <View
-            style={[
-              styles.pagination,
-              paginationStyleItem,
-              paginationIndex === index
-                ? { backgroundColor: paginationActiveColor }
-                : { backgroundColor: paginationDefaultColor },
-            ]}
-            key={index}
-            onPress={() => scrollToIndex({ index })}
-          />
-        ))}
-        {paginationRenderRight()}
-      </View>
-    );
-  }
   return (
     <View style={[styles.container, paginationStyle]}>
+      {paginationRenderLeft?.()}
       {Array.from({ length: size }).map((_, index) => (
         <TouchableOpacity
           style={[
@@ -77,6 +56,7 @@ const Pagination = ({
           }}
         />
       ))}
+      {paginationRenderRight?.()}
     </View>
   );
 };
