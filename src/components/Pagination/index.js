@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, TouchableOpacity, View, ViewPropTypes } from 'react-native';
 
-import { colors, vertical, horizontal } from '../../themes';
+import { colors, vertical } from '../../themes';
 
 const styles = StyleSheet.create({
   container: {
