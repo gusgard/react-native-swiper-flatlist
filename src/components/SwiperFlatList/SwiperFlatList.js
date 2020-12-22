@@ -37,6 +37,7 @@ const SwiperFlatList = React.forwardRef(
       onViewableItemsChanged,
       viewabilityConfig,
       disableGesture,
+      e2eId,
       ...props
     },
     ref,
@@ -225,6 +226,7 @@ const SwiperFlatList = React.forwardRef(
       paginationStyle,
       paginationStyleItem,
       onPaginationSelectedIndex,
+      e2eId
     };
 
     return (
@@ -276,6 +278,7 @@ SwiperFlatList.propTypes = {
   onViewableItemsChanged: PropTypes.func,
   viewabilityConfig: PropTypes.object,
   disableGesture: PropTypes.bool,
+  e2eId: PropTypes.string,
 };
 
 SwiperFlatList.defaultProps = {
@@ -296,6 +299,7 @@ SwiperFlatList.defaultProps = {
   onViewableItemsChanged: undefined,
   viewabilityConfig: {},
   disableGesture: false,
+  e2eId: undefined,
 };
 
 export default SwiperFlatList;

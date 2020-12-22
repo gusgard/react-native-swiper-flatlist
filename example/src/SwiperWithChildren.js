@@ -31,9 +31,10 @@ export default () => {
   return (
     <SwiperFlatList
       showPagination
-      PaginationComponent={Pagination}
+      // PaginationComponent={Pagination}
       ref={scrollRef}
       onChangeIndex={onChangeIndex}
+      e2eId="containerSwiper"
     >
       <TouchableOpacity
         style={[styles.child, { backgroundColor: 'salmon' }]}

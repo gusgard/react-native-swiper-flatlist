@@ -7,7 +7,7 @@
     "test": "jest",
     "lint": "eslint .",
     "android": "react-native run-android && adb reverse tcp:8081 tcp:8081",
-    "ios": "react-native run-ios --simulator='iPhone 12'",
+    "ios": "react-native run-ios --simulator='iPhone 11 Pro'",
     "postinstall": "rm -rf node_modules/react-native-swiper-flatlist/node_modules/react-native",
     "watch": "node ./scripts/watch-and-copy.js",
     "start:watch": "concurrently 'npm run watch' 'npm run start'",

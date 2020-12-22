@@ -30,11 +30,13 @@ const Pagination = ({
   paginationStyle,
   paginationStyleItem,
   onPaginationSelectedIndex,
+  e2eId,
 }) => {
   return (
     <View style={[styles.container, paginationStyle]}>
       {Array.from({ length: size }).map((_, index) => (
         <TouchableOpacity
+          testID={`${e2eId}_pagination_${index}`}
           style={[
             styles.pagination,
             paginationStyleItem,
@@ -61,6 +63,7 @@ Pagination.propTypes = {
   paginationStyle: ViewPropTypes.style,
   paginationStyleItem: ViewPropTypes.style,
   onPaginationSelectedIndex: PropTypes.func,
+  e2eId: PropTypes.string,
 };
 
 Pagination.defaultProps = {
@@ -70,6 +73,7 @@ Pagination.defaultProps = {
   paginationStyle: {},
   paginationStyleItem: {},
   onPaginationSelectedIndex: undefined,
+  e2eId: '',
 };
 
 export default Pagination;
