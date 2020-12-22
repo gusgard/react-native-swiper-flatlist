@@ -9,7 +9,7 @@ branches:
 
 env:
   global:
-  - NODE_VERSION=stable
+  - NODE_VERSION=14
 
 cache:
   yarn: true
@@ -25,8 +25,7 @@ install:
 - nvm use $NODE_VERSION
 - nvm alias default $NODE_VERSION
 
-- npm install -g react-native-cli
-- npm install -g detox-cli
+- npm install -g react-native-cli detox-cli
 # - npm install -g yarn
 - gem install xcpretty
 
@@ -52,4 +51,5 @@ before_install:
 notifications:
   email:
     on_success: never
-    on_failure: always
+    # on_failure: always
+    on_failure: never
