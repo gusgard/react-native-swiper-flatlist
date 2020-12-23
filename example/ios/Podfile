@@ -8,10 +8,10 @@ target 'SwiperFlatListExample' do
 
   use_react_native!(:path => config["reactNativePath"])
 
-  target 'SwiperFlatListExampleTests' do
-    inherit! :complete
-    # Pods for testing
-  end
+  # target 'SwiperFlatListExampleTests' do
+  #   inherit! :complete
+  #   # Pods for testing
+  # end
 
   # Enables Flipper.
   #
@@ -23,11 +23,11 @@ target 'SwiperFlatListExample' do
   end
 end
 
-target 'SwiperFlatListExample-tvOS' do
-  # Pods for SwiperFlatListExample-tvOS
+# target 'SwiperFlatListExample-tvOS' do
+#   # Pods for SwiperFlatListExample-tvOS
 
-  target 'SwiperFlatListExample-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-end
+#   target 'SwiperFlatListExample-tvOSTests' do
+#     inherit! :search_paths
+#     # Pods for testing
+#   end
+# end
