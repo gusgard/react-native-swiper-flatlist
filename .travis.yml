@@ -40,7 +40,7 @@ script:
 - cd ios
 - pod install
 - cd ..
-- travis_wait yarn build:ios:ci
+- travis_wait 30 yarn build:ios:ci
 - yarn e2e:ios:ci
 
 
