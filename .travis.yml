@@ -9,7 +9,7 @@ branches:
 
 env:
   global:
-  - NODE_VERSION=14
+  - NODE_VERSION=12
 
 cache:
   yarn: true
