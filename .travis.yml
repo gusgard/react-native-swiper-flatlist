@@ -41,7 +41,7 @@ script:
 - pod install
 - cd ..
 # travis_wait 30 yarn build:ios:ci
-- travis_wait 30 yarn detox build --configuration ios.sim.release
+- travis_wait 60 yarn detox build --configuration ios.sim.release
 - yarn detox clean-framework-cache && yarn detox build-framework-cache
 - yarn detox test --configuration ios.sim.release
 # - yarn e2e:ios:ci
