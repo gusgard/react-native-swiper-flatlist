@@ -42,5 +42,5 @@ buck-out/
 *.keystore
 
 
-example/e2e
+# example/e2e
 example/artifacts
