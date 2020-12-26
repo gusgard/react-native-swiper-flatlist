@@ -11,7 +11,6 @@
     "postinstall": "rm -rf node_modules/react-native-swiper-flatlist/node_modules/react-native",
     "watch": "node ./scripts/watch-and-copy.js",
     "start:watch": "concurrently 'npm run watch' 'npm run start'",
-    "//test:android-release-ci": "detox test --configuration android.emu.release -l verbose --workers 2 --headless --record-logs all --take-screenshots all",
     "e2e:ios:build-test": "yarn build:ios && yarn e2e:ios",
     "e2e:ios": "yarn detox test --configuration ios.sim.debug --cleanup --debug-synchronization --take-screenshots all --record-logs all --coverage",
     "e2e:ios:ci": "yarn detox test --configuration ios.sim.release --workers 3 --debug-synchronization",
