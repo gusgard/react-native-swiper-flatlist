@@ -37,7 +37,7 @@ describe('Example', () => {
     await element(by.id('container_swiper')).swipe('left');
     await element(by.id('container_swiper')).swipe('left');
   });
-/*
+
   it('should tap pagination', async () => {
     await element(by.id(PAGINATION.ZERO)).tap();
     await expect(element(by.text(TEXT_IN_SCREENS.ZERO))).toBeVisible();
@@ -113,6 +113,5 @@ describe('Example', () => {
     await expect(element(by.text(TEXT_IN_SCREENS.ZERO))).toBeVisible();
   });
 
-  */
   // https://github.com/wix/Detox/blob/master/docs/APIRef.ActionsOnElement.md#swipedirection-speed-percentage
 });
