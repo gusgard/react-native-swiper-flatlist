@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-native-testing-library';
 
-import Pagination from './index';
+import { Pagination } from './Pagination';
 
 describe('pagination', () => {
   it('renders correctly', () => {

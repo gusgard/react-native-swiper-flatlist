@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FlatList } from 'react-native';
 
-import Pagination from '../Pagination';
+import { Pagination } from '../Pagination/Pagination';
 
 const MILLISECONDS = 1000;
 const FIRST_INDEX = 0;
@@ -265,13 +265,22 @@ SwiperFlatList.propTypes = {
   // Pagination
   showPagination: PropTypes.bool,
   PaginationComponent: PropTypes.func,
-  paginationActiveColor: Pagination.propTypes.paginationActiveColor,
-  paginationDefaultColor: Pagination.propTypes.paginationDefaultColor,
-  paginationStyle: Pagination.propTypes.paginationStyle,
-  paginationStyleItem: Pagination.propTypes.paginationStyleItem,
-  paginationStyleItemActive: Pagination.propTypes.paginationStyleItemActive,
-  paginationStyleItemInactive: Pagination.propTypes.paginationStyleItemInactive,
-  onPaginationSelectedIndex: Pagination.propTypes.onPaginationSelectedIndex,
+
+  // paginationActiveColor: Pagination.propTypes.paginationActiveColor,
+  // paginationDefaultColor: Pagination.propTypes.paginationDefaultColor,
+  // paginationStyle: Pagination.propTypes.paginationStyle,
+  // paginationStyleItem: Pagination.propTypes.paginationStyleItem,
+  // paginationStyleItemActive: Pagination.propTypes.paginationStyleItemActive,
+  // paginationStyleItemInactive: Pagination.propTypes.paginationStyleItemInactive,
+  // onPaginationSelectedIndex: Pagination.propTypes.onPaginationSelectedIndex,
+
+  paginationActiveColor: PropTypes.any,
+  paginationDefaultColor: PropTypes.any,
+  paginationStyle: PropTypes.any,
+  paginationStyleItem: PropTypes.any,
+  paginationStyleItemActive: PropTypes.any,
+  paginationStyleItemInactive: PropTypes.any,
+  onPaginationSelectedIndex: PropTypes.any,
 
   // Autoplay
   autoplayDelay: PropTypes.number,

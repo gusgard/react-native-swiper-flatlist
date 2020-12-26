@@ -1,2 +1,2 @@
 export { default as SwiperFlatList } from './SwiperFlatList/SwiperFlatList';
-export { default as Pagination } from './Pagination';
+export { Pagination } from './Pagination/Pagination';

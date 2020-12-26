@@ -25,7 +25,7 @@
     "flatlist swiper"
   ],
   "scripts": {
-    "lint": "yarn eslint index.js src example/scripts example/src",
+    "lint": "yarn eslint index.js src example/scripts example/src --ext .js,.ts,.tsx",
     "lint:ts": "yarn tsc",
     "lint:fix": "yarn lint --fix",
     "test": "yarn ci",
