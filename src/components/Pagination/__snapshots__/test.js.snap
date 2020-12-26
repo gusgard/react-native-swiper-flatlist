@@ -37,6 +37,7 @@ exports[`pagination renders all props 1`] = `
         "width": 28.125,
       }
     }
+    testID="_pagination_0"
   />
   <View
     accessible={true}
@@ -59,6 +60,7 @@ exports[`pagination renders all props 1`] = `
         "width": 28.125,
       }
     }
+    testID="_pagination_1"
   />
   <View
     accessible={true}
@@ -81,6 +83,7 @@ exports[`pagination renders all props 1`] = `
         "width": 28.125,
       }
     }
+    testID="_pagination_2"
   />
   <View
     accessible={true}
@@ -103,6 +106,7 @@ exports[`pagination renders all props 1`] = `
         "width": 28.125,
       }
     }
+    testID="_pagination_3"
   />
   <View
     accessible={true}
@@ -125,6 +129,7 @@ exports[`pagination renders all props 1`] = `
         "width": 28.125,
       }
     }
+    testID="_pagination_4"
   />
 </View>
 `;
@@ -166,6 +171,7 @@ exports[`pagination renders correctly 1`] = `
         "width": 28.125,
       }
     }
+    testID="_pagination_0"
   />
   <View
     accessible={true}
@@ -188,6 +194,7 @@ exports[`pagination renders correctly 1`] = `
         "width": 28.125,
       }
     }
+    testID="_pagination_1"
   />
   <View
     accessible={true}
@@ -210,6 +217,7 @@ exports[`pagination renders correctly 1`] = `
         "width": 28.125,
       }
     }
+    testID="_pagination_2"
   />
   <View
     accessible={true}
@@ -232,6 +240,7 @@ exports[`pagination renders correctly 1`] = `
         "width": 28.125,
       }
     }
+    testID="_pagination_3"
   />
   <View
     accessible={true}
@@ -254,6 +263,7 @@ exports[`pagination renders correctly 1`] = `
         "width": 28.125,
       }
     }
+    testID="_pagination_4"
   />
 </View>
 `;
