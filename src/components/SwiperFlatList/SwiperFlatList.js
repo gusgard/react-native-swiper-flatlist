@@ -24,6 +24,8 @@ const SwiperFlatList = React.forwardRef(
       paginationDefaultColor,
       paginationStyle,
       paginationStyleItem,
+      paginationStyleItemActive,
+      paginationStyleItemInactive,
       onPaginationSelectedIndex,
       // Autoplay
       autoplayDelay,
@@ -37,6 +39,7 @@ const SwiperFlatList = React.forwardRef(
       onViewableItemsChanged,
       viewabilityConfig,
       disableGesture,
+      e2eId,
       ...props
     },
     ref,
@@ -214,6 +217,7 @@ const SwiperFlatList = React.forwardRef(
       },
       onViewableItemsChanged: _onViewableItemsChanged,
       // debug: true, // for debug
+      testID: e2eId,
     };
 
     const paginationProps = {
@@ -224,7 +228,10 @@ const SwiperFlatList = React.forwardRef(
       paginationDefaultColor,
       paginationStyle,
       paginationStyleItem,
+      paginationStyleItemActive,
+      paginationStyleItemInactive,
       onPaginationSelectedIndex,
+      e2eId,
     };
 
     return (
@@ -262,6 +269,8 @@ SwiperFlatList.propTypes = {
   paginationDefaultColor: Pagination.propTypes.paginationDefaultColor,
   paginationStyle: Pagination.propTypes.paginationStyle,
   paginationStyleItem: Pagination.propTypes.paginationStyleItem,
+  paginationStyleItemActive: Pagination.propTypes.paginationStyleItemActive,
+  paginationStyleItemInactive: Pagination.propTypes.paginationStyleItemInactive,
   onPaginationSelectedIndex: Pagination.propTypes.onPaginationSelectedIndex,
 
   // Autoplay
@@ -276,6 +285,7 @@ SwiperFlatList.propTypes = {
   onViewableItemsChanged: PropTypes.func,
   viewabilityConfig: PropTypes.object,
   disableGesture: PropTypes.bool,
+  e2eId: PropTypes.string,
 };
 
 SwiperFlatList.defaultProps = {
@@ -296,6 +306,7 @@ SwiperFlatList.defaultProps = {
   onViewableItemsChanged: undefined,
   viewabilityConfig: {},
   disableGesture: false,
+  e2eId: undefined,
 };
 
 export default SwiperFlatList;

@@ -29,18 +29,23 @@ const Pagination = ({
   paginationActiveColor,
   paginationStyle,
   paginationStyleItem,
+  paginationStyleItemActive,
+  paginationStyleItemInactive,
   onPaginationSelectedIndex,
+  e2eId,
 }) => {
   return (
     <View style={[styles.container, paginationStyle]}>
       {Array.from({ length: size }).map((_, index) => (
         <TouchableOpacity
+          testID={`${e2eId}_pagination_${index}`}
           style={[
             styles.pagination,
             paginationStyleItem,
             paginationIndex === index
               ? { backgroundColor: paginationActiveColor }
               : { backgroundColor: paginationDefaultColor },
+            paginationIndex === index ? paginationStyleItemActive : paginationStyleItemInactive,
           ]}
           key={index}
           onPress={() => {
@@ -60,7 +65,10 @@ Pagination.propTypes = {
   paginationDefaultColor: PropTypes.string,
   paginationStyle: ViewPropTypes.style,
   paginationStyleItem: ViewPropTypes.style,
+  paginationStyleItemActive: ViewPropTypes.style,
+  paginationStyleItemInactive: ViewPropTypes.style,
   onPaginationSelectedIndex: PropTypes.func,
+  e2eId: PropTypes.string,
 };
 
 Pagination.defaultProps = {
@@ -69,7 +77,10 @@ Pagination.defaultProps = {
   paginationDefaultColor: colors.gray,
   paginationStyle: {},
   paginationStyleItem: {},
+  paginationStyleItemActive: {},
+  paginationStyleItemInactive: {},
   onPaginationSelectedIndex: undefined,
+  e2eId: '',
 };
 
 export default Pagination;

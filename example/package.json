@@ -7,55 +7,58 @@
     "test": "jest",
     "lint": "eslint .",
     "android": "react-native run-android && adb reverse tcp:8081 tcp:8081",
-    "ios": "react-native run-ios --simulator='iPhone X'",
+    "ios": "react-native run-ios --simulator='iPhone 11 Pro'",
     "postinstall": "rm -rf node_modules/react-native-swiper-flatlist/node_modules/react-native",
     "watch": "node ./scripts/watch-and-copy.js",
     "start:watch": "concurrently 'npm run watch' 'npm run start'",
+    "//test:android-release-ci": "detox test --configuration android.emu.release -l verbose --workers 2 --headless --record-logs all --take-screenshots all",
     "e2e:ios:build-test": "yarn build:ios && yarn e2e:ios",
-    "e2e:ios": "yarn detox test --configuration ios.sim.release --cleanup --debug-synchronization --take-screenshots all --record-logs all --coverage",
+    "e2e:ios": "yarn detox test --configuration ios.sim.debug --cleanup --debug-synchronization --take-screenshots all --record-logs all --coverage",
     "e2e:ios:ci": "yarn detox test --configuration ios.sim.release --workers 3 --debug-synchronization",
-    "build:ios": "yarn detox build --configuration ios.sim.release",
+    "build:ios": "yarn detox build --configuration ios.sim.debug",
     "build:ios:ci": "yarn detox build --configuration ios.sim.release"
   },
   "dependencies": {
-    "react": "16.8.6",
-    "react-native": "0.60.4",
-    "react-native-swiper-flatlist": "2.0.2"
+    "jest-circus": "^26.6.3",
+    "react": "16.13.1",
+    "react-native": "0.63.4",
+    "react-native-swiper-flatlist": "2.0.7"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/runtime": "^7.5.5",
-    "@react-native-community/eslint-config": "^0.0.3",
-    "babel-jest": "^24.8.0",
+    "@babel/core": "^7.8.4",
+    "@babel/runtime": "^7.8.4",
+    "@react-native-community/eslint-config": "^1.1.0",
+    "babel-jest": "^25.1.0",
     "concurrently": "4.1.1",
-    "detox": "^14.0.1",
-    "eslint": "^6.0.1",
+    "detox": "^17.14.5",
+    "eslint": "^6.5.1",
     "fs-extra": "8.1.0",
-    "jest": "^24.8.0",
-    "metro-react-native-babel-preset": "^0.55.0",
+    "jest": "^26.6.3",
+    "metro-react-native-babel-preset": "^0.59.0",
     "minimatch": "3.0.4",
     "node-watch": "0.6.2",
-    "react-test-renderer": "16.8.6",
+    "react-test-renderer": "16.13.1",
     "rimraf": "^2.5.4"
   },
   "jest": {
     "preset": "react-native"
   },
-  "detox": {
+  "detox2": {
     "configurations": {
       "ios.sim.debug": {
         "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/SwiperFlatListExample.app",
-        "build": "xcodebuild -workspace ios/SwiperFlatListExample.xcworkspace -scheme SwiperFlatListExample -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build | xcpretty",
+        "build": "xcodebuild -workspace ios/SwiperFlatListExample.xcworkspace -scheme SwiperFlatListExample -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
         "type": "ios.simulator",
-        "name": "iPhone 7"
+        "name": "iPhone 11"
       },
       "ios.sim.release": {
         "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/SwiperFlatListExample.app",
-        "build": "set -o pipefail && export CODE_SIGNING_REQUIRED=NO && export RCT_NO_LAUNCH_PACKAGER=true && xcodebuild -workspace ios/SwiperFlatListExample.xcworkspace -scheme SwiperFlatListExample -configuration Release -sdk iphonesimulator -derivedDataPath ios/build | xcpretty",
+        "build": "set -o pipefail && export CODE_SIGNING_REQUIRED=NO && export RCT_NO_LAUNCH_PACKAGER=true && xcodebuild -workspace ios/SwiperFlatListExample.xcworkspace -scheme SwiperFlatListExample -configuration Release -sdk iphonesimulator -derivedDataPath ios/build -UseNewBuildSystem=NO",
         "type": "ios.simulator",
-        "name": "iPhone Xʀ"
+        "name": "iPhone 11"
       }
     },
+    "runnerConfig": "e2e/config.json",
     "test-runner": "jest"
   }
 }
