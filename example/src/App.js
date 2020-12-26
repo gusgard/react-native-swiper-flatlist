@@ -10,9 +10,7 @@ export default () => {
       <View style={styles.container}>
         <SwiperWithRenderItems />
       </View>
-      <View style={styles.container} testID="containerSwiper">
         <SwiperWithChildren />
-      </View>
     </SafeAreaView>
   );
 };

@@ -29,6 +29,8 @@ const Pagination = ({
   paginationActiveColor,
   paginationStyle,
   paginationStyleItem,
+  paginationStyleItemActive,
+  paginationStyleItemInactive,
   onPaginationSelectedIndex,
   e2eId,
 }) => {
@@ -43,6 +45,7 @@ const Pagination = ({
             paginationIndex === index
               ? { backgroundColor: paginationActiveColor }
               : { backgroundColor: paginationDefaultColor },
+            paginationIndex === index ? paginationStyleItemActive : paginationStyleItemInactive,
           ]}
           key={index}
           onPress={() => {
@@ -62,6 +65,8 @@ Pagination.propTypes = {
   paginationDefaultColor: PropTypes.string,
   paginationStyle: ViewPropTypes.style,
   paginationStyleItem: ViewPropTypes.style,
+  paginationStyleItemActive: ViewPropTypes.style,
+  paginationStyleItemInactive: ViewPropTypes.style,
   onPaginationSelectedIndex: PropTypes.func,
   e2eId: PropTypes.string,
 };
@@ -72,6 +77,8 @@ Pagination.defaultProps = {
   paginationDefaultColor: colors.gray,
   paginationStyle: {},
   paginationStyleItem: {},
+  paginationStyleItemActive: {},
+  paginationStyleItemInactive: {},
   onPaginationSelectedIndex: undefined,
   e2eId: '',
 };
