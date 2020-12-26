@@ -22,6 +22,9 @@ const styles = StyleSheet.create({
   },
 });
 
+// TODO: delete me
+// TODO: delete me
+// TODO: delete me
 const Pagination = ({
   size,
   paginationIndex,

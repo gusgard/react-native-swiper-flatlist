@@ -89,30 +89,32 @@ const styles = StyleSheet.create({
 
 ## Props
 
-| Prop                      |                      Default                      |         Type          | Description                                                                           |
-| :------------------------ | :-----------------------------------------------: | :-------------------: | :------------------------------------------------------------------------------------ |
-| data                      |        _not required if children is used_         |        `array`        | Data to use in renderItem                                                             |
-| children                  |                         -                         |        `node`         | Children elements                                                                     |
-| renderItem                |        _not required if children is used_         |        `func`         | Takes an item from data and renders it into the list                                  |
-| onMomentumScrollEnd       |                         -                         |        `func`         | Called after scroll end and the first parameter is the current index                  |
-| vertical                  |                       false                       |        `bool`         | Show vertical swiper                                                                  |
-| index                     |                         0                         |       `number`        | Index to start                                                                        |
-| renderAll                 |                       false                       |        `bool`         | Render all the items before display it                                                |
-| **Pagination**            |
-| showPagination            |                       false                       |        `bool`         | Show pagination                                                                       |
-| paginationDefaultColor    |                       gray                        |       `string`        | Pagination color                                                                      |
-| paginationActiveColor     |                       white                       |       `string`        | Pagination color                                                                      |
-| paginationStyle           |                        {}                         | `ViewPropTypes.style` | Style object for container                                                            |
-| paginationStyleItem       |                        {}                         | `ViewPropTypes.style` | Style object for item (dot)                                                           |
-| onPaginationSelectedIndex |                         -                         |        `func`         | Executed when the user presses the pagination index, similar properties onChangeIndex |
-| PaginationComponent       | [Component](./src/components/Pagination/index.js) |        `node`         | Overwrite Pagination component                                                        |
-| **Autoplay**              |
-| autoplay                  |                       false                       |        `bool`         | Change index automatically                                                            |
-| autoplayDelay             |                         3                         |       `number`        | Delay between every page in seconds                                                   |
-| autoplayLoop              |                       false                       |        `bool`         | Continue playing after reach end                                                      |
-| autoplayLoopKeepAnimation |                       false                       |        `bool`         | Show animation when reach the end of the list                                         |
-| autoplayInvertDirection   |                       false                       |        `bool`         | Invert auto play direction                                                            |
-| disableGesture            |                       false                       |        `bool`         | Disable swipe gesture                                                                 |
+| Prop                        |                      Default                      |         Type          | Description                                                                           |
+| :-------------------------- | :-----------------------------------------------: | :-------------------: | :------------------------------------------------------------------------------------ |
+| data                        |        _not required if children is used_         |        `array`        | Data to use in renderItem                                                             |
+| children                    |                         -                         |        `node`         | Children elements                                                                     |
+| renderItem                  |        _not required if children is used_         |        `func`         | Takes an item from data and renders it into the list                                  |
+| onMomentumScrollEnd         |                         -                         |        `func`         | Called after scroll end and the first parameter is the current index                  |
+| vertical                    |                       false                       |        `bool`         | Show vertical swiper                                                                  |
+| index                       |                         0                         |       `number`        | Index to start                                                                        |
+| renderAll                   |                       false                       |        `bool`         | Render all the items before display it                                                |
+| **Pagination**              |
+| showPagination              |                       false                       |        `bool`         | Show pagination                                                                       |
+| paginationDefaultColor      |                       gray                        |       `string`        | Pagination color                                                                      |
+| paginationActiveColor       |                       white                       |       `string`        | Pagination color                                                                      |
+| paginationStyle             |                        {}                         | `ViewPropTypes.style` | Style object for the container                                                        |
+| paginationStyleItem         |                        {}                         | `ViewPropTypes.style` | Style object for the item (dot)                                                       |
+| paginationStyleItemActive   |                        {}                         | `ViewPropTypes.style` | Style object for the active item (dot)                                                |
+| paginationStyleItemInactive |                        {}                         | `ViewPropTypes.style` | Style object for the inactive item (dot)                                              |
+| onPaginationSelectedIndex   |                         -                         |        `func`         | Executed when the user presses the pagination index, similar properties onChangeIndex |
+| PaginationComponent         | [Component](./src/components/Pagination/index.js) |        `node`         | Overwrite Pagination component                                                        |
+| **Autoplay**                |
+| autoplay                    |                       false                       |        `bool`         | Change index automatically                                                            |
+| autoplayDelay               |                         3                         |       `number`        | Delay between every page in seconds                                                   |
+| autoplayLoop                |                       false                       |        `bool`         | Continue playing after reach end                                                      |
+| autoplayLoopKeepAnimation   |                       false                       |        `bool`         | Show animation when reach the end of the list                                         |
+| autoplayInvertDirection     |                       false                       |        `bool`         | Invert auto play direction                                                            |
+| disableGesture              |                       false                       |        `bool`         | Disable swipe gesture                                                                 |
 
 **More props**
 
