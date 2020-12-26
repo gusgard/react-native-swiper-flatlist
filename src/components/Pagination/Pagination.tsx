@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   },
 });
 
-type Props = {
+export type PaginationProps = {
   scrollToIndex: (item: {index: number}) => void;
   size: number;
   paginationIndex: number;
@@ -34,7 +34,7 @@ type Props = {
   e2eId: string;
 };
 
-export const Pagination: React.FC<Props> = ({
+export const Pagination: React.FC<PaginationProps> = ({
   size,
   paginationIndex = 0,
   scrollToIndex,
