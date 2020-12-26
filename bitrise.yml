@@ -5,8 +5,6 @@ project_type: react-native
 trigger_map:
 - push_branch: master
   workflow: primary
-- push_branch: test/add-more-detox-tests
-  workflow: primary
 - push_branch: "*"
   workflow: primary
 - pull_request_target_branch: master
