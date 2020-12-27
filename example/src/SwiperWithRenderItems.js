@@ -1,8 +1,9 @@
 import React from 'react';
 import { Dimensions, Image, StyleSheet } from 'react-native';
-import SwiperFlatList from 'react-native-swiper-flatlist';
+import { SwiperFlatList } from 'react-native-swiper-flatlist';
 
 import { fox, cat, background, element, lion } from './images';
+import { CustomPagination } from './CustomPagination';
 
 const { width, height } = Dimensions.get('window');
 
@@ -21,6 +22,7 @@ export default () => {
       data={items}
       renderItem={({ item }) => <Image style={styles.image} source={item.image} />}
       showPagination
+      PaginationComponent={CustomPagination}
     />
   );
 };

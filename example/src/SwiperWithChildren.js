@@ -1,8 +1,6 @@
 import React from 'react';
 import { Alert, TouchableOpacity, Text, Dimensions, StyleSheet } from 'react-native';
-import SwiperFlatList from 'react-native-swiper-flatlist';
-
-import Pagination from './Pagination';
+import { SwiperFlatList } from 'react-native-swiper-flatlist';
 
 const { width, height } = Dimensions.get('window');
 
@@ -31,7 +29,6 @@ export default () => {
   return (
     <SwiperFlatList
       showPagination
-      // PaginationComponent={Pagination}
       ref={scrollRef}
       onChangeIndex={onChangeIndex}
       e2eId="container_swiper"
