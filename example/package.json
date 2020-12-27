@@ -11,17 +11,17 @@
     "postinstall": "rm -rf node_modules/react-native-swiper-flatlist/node_modules/react-native",
     "watch": "node ./scripts/watch-and-copy.js",
     "start:watch": "concurrently 'npm run watch' 'npm run start'",
-    "e2e:ios:build-test": "yarn build:ios && yarn e2e:ios",
-    "e2e:ios": "yarn detox test --configuration ios.sim.debug --cleanup --debug-synchronization --take-screenshots all --record-logs all --coverage",
-    "e2e:ios:ci": "yarn detox test --configuration ios.sim.release --workers 3 --debug-synchronization",
-    "build:ios": "yarn detox build --configuration ios.sim.debug",
-    "build:ios:ci": "yarn detox build --configuration ios.sim.release"
+    "e2e:ios:build": "yarn detox build --configuration ios.sim.debug",
+    "e2e:ios:test": "yarn detox test --configuration ios.sim.debug --cleanup --debug-synchronization --take-screenshots all --record-logs all --coverage",
+    "e2e:ios:build-test": "yarn e2e:ios:build && yarn e2e:ios:test",
+    "e2e:ios:test:ci": "yarn detox test --configuration ios.sim.release --workers 3 --debug-synchronization",
+    "e2e:ios:build:ci": "yarn detox build --configuration ios.sim.release"
   },
   "dependencies": {
     "jest-circus": "^26.6.3",
     "react": "16.13.1",
     "react-native": "0.63.4",
-    "react-native-swiper-flatlist": "git+ssh://git@github.com:gusgard/react-native-swiper-flatlist.git#2035e86de1b68ff9ae51d19437501c558ff5421d"
+    "react-native-swiper-flatlist": "2.0.7"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
