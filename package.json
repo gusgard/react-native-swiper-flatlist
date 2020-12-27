@@ -42,7 +42,6 @@
     "@types/react-test-renderer": "^17.0.0",
     "babel-jest": "24.8.0",
     "eslint-plugin-detox": "^1.0.0",
-    "babel-preset-react-native": "4.0.1",
     "eslint": "^7.16.0",
     "eslint-plugin-import": "^2.18.2",
     "jest": "24.8.0",
