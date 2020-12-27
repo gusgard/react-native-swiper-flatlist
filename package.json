@@ -34,9 +34,6 @@
     "start": "echo ----- Check example folder  ----- 👻",
     "publish": "npm publish"
   },
-  "dependencies": {
-    "prop-types": "^15.7.2"
-  },
   "devDependencies": {
     "@react-native-community/eslint-config": "^0.0.5",
     "@types/jest": "^26.0.19",
@@ -76,7 +73,8 @@
     "preset": "react-native",
     "moduleFileExtensions": ["ts", "tsx", "js", "json", "node"],
     "modulePathIgnorePatterns": [
-      "<rootDir>/example/"
+      "<rootDir>/example/",
+      "<rootDir>/ts-build/"
     ]
   },
   "pre-commit": {
