@@ -43,24 +43,24 @@ type SwiperFlatListProps<T> = {
   e2eId?: string;
 };
 
-//   // Only is allowed children or data not both
-//   // children(props, propName) {
-//   //   const { data } = props;
-//   //   if (!props[propName] && !data) {
-//   //     return new Error('Invalid props, `data` or `children` is required');
-//   //   }
-//   //   if (data && data.length !== 0 && !props.renderItem) {
-//   //     return new Error('Invalid props, `renderItem` is required');
-//   //   }
-//   //   return undefined;
-//   // },
+// Only is allowed children or data not both
+// children(props, propName) {
+//   const { data } = props;
+//   if (!props[propName] && !data) {
+//     return new Error('Invalid props, `data` or `children` is required');
+//   }
+//   if (data && data.length !== 0 && !props.renderItem) {
+//     return new Error('Invalid props, `renderItem` is required');
+//   }
+//   return undefined;
+// },
 
 type RefProps = any;
-type SwiperType = any;
 type ScrollToIndex = { index: number; animated?: boolean };
 
-const SwiperFlatList = React.forwardRef<RefProps, SwiperFlatListProps<SwiperType>>(
-  (
+// const SwiperFlatList = React.forwardRef<RefProps, SwiperFlatListProps<SwiperType>>(
+const SwiperFlatList = React.forwardRef(
+  <T1 extends unknown>(
     {
       vertical = false,
       children,
@@ -92,10 +92,10 @@ const SwiperFlatList = React.forwardRef<RefProps, SwiperFlatListProps<SwiperType
       disableGesture = false,
       e2eId,
       ...props
-    },
-    ref,
+    }: SwiperFlatListProps<T1>,
+    ref: RefProps,
   ) => {
-    let _data: SwiperType[] = [];
+    let _data: unknown[] = [];
     let _renderItem: FlatListProps<any>['renderItem'];
 
     if (children) {
