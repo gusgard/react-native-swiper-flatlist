@@ -3,5 +3,13 @@
   "prettier.printWidth": 100,
   "prettier.trailingComma": "all",
   "javascript.validate.enable": false,
-  "workbench.editor.labelFormat": "short"
+  "workbench.editor.labelFormat": "short",
+  "prettier.singleQuote": true,
+  "prettier.semi": true,
+  "breadcrumbs.enabled": true,
+  "eslint.packageManager": "yarn",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.tslint": true,
+    "source.fixAll.eslint": true
+  }
 }

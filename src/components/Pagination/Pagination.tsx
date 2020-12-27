@@ -1,6 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { StyleSheet, TouchableOpacity, View, ViewPropTypes } from 'react-native';
+import { StyleSheet, TouchableOpacity, View, ViewStyle } from 'react-native';
 
 import { colors, vertical, horizontal } from '../../themes';
 
@@ -21,18 +20,32 @@ const styles = StyleSheet.create({
   },
 });
 
-const Pagination = ({
+export type PaginationProps = {
+  scrollToIndex: (item: { index: number }) => void;
+  size: number;
+  paginationIndex?: number;
+  paginationActiveColor?: string;
+  paginationDefaultColor?: string;
+  paginationStyle?: ViewStyle;
+  paginationStyleItem?: ViewStyle;
+  paginationStyleItemActive?: ViewStyle;
+  paginationStyleItemInactive?: ViewStyle;
+  onPaginationSelectedIndex?: () => void;
+  e2eId?: string;
+};
+
+export const Pagination: React.FC<PaginationProps> = ({
   size,
-  paginationIndex,
+  paginationIndex = 0,
   scrollToIndex,
-  paginationDefaultColor,
-  paginationActiveColor,
-  paginationStyle,
-  paginationStyleItem,
-  paginationStyleItemActive,
-  paginationStyleItemInactive,
+  paginationDefaultColor = colors.gray,
+  paginationActiveColor = colors.white,
+  paginationStyle = {},
+  paginationStyleItem = {},
+  paginationStyleItemActive = {},
+  paginationStyleItemInactive = {},
   onPaginationSelectedIndex,
-  e2eId,
+  e2eId = '',
 }) => {
   return (
     <View style={[styles.container, paginationStyle]}>
@@ -57,30 +70,3 @@ const Pagination = ({
     </View>
   );
 };
-Pagination.propTypes = {
-  scrollToIndex: PropTypes.func.isRequired,
-  size: PropTypes.number.isRequired,
-  paginationIndex: PropTypes.number,
-  paginationActiveColor: PropTypes.string,
-  paginationDefaultColor: PropTypes.string,
-  paginationStyle: ViewPropTypes.style,
-  paginationStyleItem: ViewPropTypes.style,
-  paginationStyleItemActive: ViewPropTypes.style,
-  paginationStyleItemInactive: ViewPropTypes.style,
-  onPaginationSelectedIndex: PropTypes.func,
-  e2eId: PropTypes.string,
-};
-
-Pagination.defaultProps = {
-  paginationIndex: 0,
-  paginationActiveColor: colors.white,
-  paginationDefaultColor: colors.gray,
-  paginationStyle: {},
-  paginationStyleItem: {},
-  paginationStyleItemActive: {},
-  paginationStyleItemInactive: {},
-  onPaginationSelectedIndex: undefined,
-  e2eId: '',
-};
-
-export default Pagination;

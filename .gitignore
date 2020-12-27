@@ -44,3 +44,4 @@ buck-out/
 
 example/e2e/coverage
 example/artifacts
+ts-build/

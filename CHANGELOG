@@ -16,19 +16,12 @@ Added new methods:
 * goToLastIndex
 
 ========================================
-version 2.0.x
 
 TODO:
 * Refactor SwiperWithChildren into something more smaller
 * Examples in expo
-* Use https://github.com/callstack/eslint-config-callstack
 
 ========================================
-
-TODO:
-* Detox branch
-* Add typescript
-* Add types (check old fork)
 
 
 TO REVIEW:
