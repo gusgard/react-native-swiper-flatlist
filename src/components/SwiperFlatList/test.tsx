@@ -2,7 +2,7 @@ import React from 'react';
 import { Image } from 'react-native';
 import { render } from 'react-native-testing-library';
 
-import SwiperFlatList from './SwiperFlatList';
+import { SwiperFlatList } from './SwiperFlatList';
 
 type Item = {
   id: number;

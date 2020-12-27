@@ -1,66 +1,20 @@
 import React from 'react';
-import { FlatList, ViewabilityConfig, FlatListProps } from 'react-native';
+import { FlatList, FlatListProps, Platform } from 'react-native';
 
-import { Pagination, PaginationProps } from '../Pagination/Pagination';
+import { Pagination } from '../Pagination/Pagination';
+import { SwiperFlatListProps } from './SwiperFlatListProps';
 
 const MILLISECONDS = 1000;
 const FIRST_INDEX = 0;
 const ITEM_VISIBLE_PERCENT_THRESHOLD = 60;
 
-type SwiperFlatListProps<T> = {
-  children?: React.ReactNode | React.ReactNode[];
-  data?: T[];
-  vertical?: boolean;
-  index?: number;
-  renderAll?: boolean;
-  renderItem?: FlatListProps<T>['renderItem'];
-  onChangeIndex?: (item: { index: number; prevIndex: number }) => void;
-
-  // Pagination
-  showPagination?: boolean;
-  PaginationComponent?: any; //react node
-  paginationActiveColor?: PaginationProps['paginationActiveColor'];
-  paginationDefaultColor?: PaginationProps['paginationDefaultColor'];
-  paginationStyle?: PaginationProps['paginationStyle'];
-  paginationStyleItem?: PaginationProps['paginationStyleItem'];
-  paginationStyleItemActive?: PaginationProps['paginationStyleItemActive'];
-  paginationStyleItemInactive?: PaginationProps['paginationStyleItemInactive'];
-  onPaginationSelectedIndex?: PaginationProps['onPaginationSelectedIndex'];
-
-  // Autoplay
-  autoplayDelay?: number;
-  autoplay?: boolean;
-  autoplayInvertDirection?: boolean;
-  autoplayLoop?: boolean;
-  autoplayLoopKeepAnimation?: boolean;
-
-  // Optionals
-  // onMomentumScrollEnd: ScrollViewProps['onMomentumScrollEnd'];
-  onMomentumScrollEnd?: (item: { index: number }, event: any) => void;
-  onViewableItemsChanged?: FlatListProps<unknown>['onViewableItemsChanged'];
-  viewabilityConfig?: ViewabilityConfig;
-  disableGesture?: boolean;
-  e2eId?: string;
-};
-
-// Only is allowed children or data not both
-// children(props, propName) {
-//   const { data } = props;
-//   if (!props[propName] && !data) {
-//     return new Error('Invalid props, `data` or `children` is required');
-//   }
-//   if (data && data.length !== 0 && !props.renderItem) {
-//     return new Error('Invalid props, `renderItem` is required');
-//   }
-//   return undefined;
-// },
-
+// TODO: figure out how to use forwardRef with generics
 type RefProps = any;
 type T1 = any;
 type ScrollToIndex = { index: number; animated?: boolean };
 
 // const SwiperFlatList = React.forwardRef<RefProps, SwiperFlatListProps<SwiperType>>(
-const SwiperFlatList = React.forwardRef(
+export const SwiperFlatList = React.forwardRef(
   // <T1 extends any>(
   (
     {
@@ -285,6 +239,16 @@ const SwiperFlatList = React.forwardRef(
       e2eId,
     };
 
+    if (Platform.OS === 'web') {
+      console.error(
+        'react-native-web is not supported, due to the lack of support of some `props` used in this library',
+      );
+      console.error(
+        '[Expo example](https://snack.expo.io/@gusgard/react-native-web-example-with-swiper',
+      );
+      return null;
+    }
+
     return (
       <React.Fragment>
         <FlatList {...flatListProps} />
@@ -293,5 +257,3 @@ const SwiperFlatList = React.forwardRef(
     );
   },
 );
-
-export default SwiperFlatList;

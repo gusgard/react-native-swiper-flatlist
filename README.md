@@ -39,40 +39,43 @@ Version 3.x was re-implemented using Typescript
 
 ### Code
 
-```js
-import React, { PureComponent } from 'react';
+```jsx
+import React from 'react';
 import { Text, Dimensions, Image, StyleSheet, View } from 'react-native';
 
-import SwiperFlatList from 'react-native-swiper-flatlist';
+import { SwiperFlatList } from 'react-native-swiper-flatlist';
 
-export default class App extends PureComponent {
-  render() {
-    return (
-      <View style={styles.container}>
-        <SwiperFlatList autoplay autoplayDelay={2} autoplayLoop index={2} showPagination>
-          <View style={[styles.child, { backgroundColor: 'tomato' }]}>
-            <Text style={styles.text}>1</Text>
-          </View>
-          <View style={[styles.child, { backgroundColor: 'thistle' }]}>
-            <Text style={styles.text}>2</Text>
-          </View>
-          <View style={[styles.child, { backgroundColor: 'skyblue' }]}>
-            <Text style={styles.text}>3</Text>
-          </View>
-          <View style={[styles.child, { backgroundColor: 'teal' }]}>
-            <Text style={styles.text}>4</Text>
-          </View>
-        </SwiperFlatList>
-      </View>
-    );
-  }
-}
+const App = () => {
+  return (
+    <View style={styles.container}>
+      <SwiperFlatList
+        autoplay
+        autoplayDelay={2}
+        autoplayLoop
+        index={2}
+        showPagination>
+        <View style={[styles.child, { backgroundColor: 'tomato' }]}>
+          <Text style={styles.text}>1</Text>
+        </View>
+        <View style={[styles.child, { backgroundColor: 'thistle' }]}>
+          <Text style={styles.text}>2</Text>
+        </View>
+        <View style={[styles.child, { backgroundColor: 'skyblue' }]}>
+          <Text style={styles.text}>3</Text>
+        </View>
+        <View style={[styles.child, { backgroundColor: 'teal' }]}>
+          <Text style={styles.text}>4</Text>
+        </View>
+      </SwiperFlatList>
+    </View>
+  );
+};
 
-export const { width, height } = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 0.5,
     backgroundColor: 'white',
   },
   child: {
@@ -85,6 +88,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
+
+export default App;
 ```
 
 [Code example](./example/README.md)
@@ -95,28 +100,28 @@ const styles = StyleSheet.create({
 | :-------------------------- | :-----------------------------------------------: | :-------------------: | :------------------------------------------------------------------------------------ |
 | data                        |        _not required if children is used_         |        `array`        | Data to use in renderItem                                                             |
 | children                    |                         -                         |        `node`         | Children elements                                                                     |
-| renderItem                  |        _not required if children is used_         |        `func`         | Takes an item from data and renders it into the list                                  |
-| onMomentumScrollEnd         |                         -                         |        `func`         | Called after scroll end and the first parameter is the current index                  |
-| vertical                    |                       false                       |        `bool`         | Show vertical swiper                                                                  |
+| renderItem                  |        _not required if children is used_         |        `FlatListProps<T>['renderItem']`         | Takes an item from data and renders it into the list                                  |
+| onMomentumScrollEnd         |                         -                         |        `(item: { index: number }, event: any)`         | Called after scroll end and the first parameter is the current index                  |
+| vertical                    |                       false                       |        `boolean`         | Show vertical swiper                                                                  |
 | index                       |                         0                         |       `number`        | Index to start                                                                        |
-| renderAll                   |                       false                       |        `bool`         | Render all the items before display it                                                |
+| renderAll                   |                       false                       |        `boolean`         | Render all the items before display it                                                |
 | **Pagination**              |
-| showPagination              |                       false                       |        `bool`         | Show pagination                                                                       |
+| showPagination              |                       false                       |        `boolean`         | Show pagination                                                                       |
 | paginationDefaultColor      |                       gray                        |       `string`        | Pagination color                                                                      |
 | paginationActiveColor       |                       white                       |       `string`        | Pagination color                                                                      |
-| paginationStyle             |                        {}                         | `ViewPropTypes.style` | Style object for the container                                                        |
-| paginationStyleItem         |                        {}                         | `ViewPropTypes.style` | Style object for the item (dot)                                                       |
-| paginationStyleItemActive   |                        {}                         | `ViewPropTypes.style` | Style object for the active item (dot)                                                |
-| paginationStyleItemInactive |                        {}                         | `ViewPropTypes.style` | Style object for the inactive item (dot)                                              |
-| onPaginationSelectedIndex   |                         -                         |        `func`         | Executed when the user presses the pagination index, similar properties onChangeIndex |
+| paginationStyle             |                        {}                         | `ViewStyle` | Style object for the container                                                        |
+| paginationStyleItem         |                        {}                         | `ViewStyle` | Style object for the item (dot)                                                       |
+| paginationStyleItemActive   |                        {}                         | `ViewStyle` | Style object for the active item (dot)                                                |
+| paginationStyleItemInactive |                        {}                         | `ViewStyle` | Style object for the inactive item (dot)                                              |
+| onPaginationSelectedIndex   |                         -                         |        `() => void`         | Executed when the user presses the pagination index, similar properties onChangeIndex |
 | PaginationComponent         | [Component](./src/components/Pagination/index.js) |        `node`         | Overwrite Pagination component                                                        |
 | **Autoplay**                |
-| autoplay                    |                       false                       |        `bool`         | Change index automatically                                                            |
+| autoplay                    |                       false                       |        `boolean`         | Change index automatically                                                            |
 | autoplayDelay               |                         3                         |       `number`        | Delay between every page in seconds                                                   |
-| autoplayLoop                |                       false                       |        `bool`         | Continue playing after reach end                                                      |
-| autoplayLoopKeepAnimation   |                       false                       |        `bool`         | Show animation when reach the end of the list                                         |
-| autoplayInvertDirection     |                       false                       |        `bool`         | Invert auto play direction                                                            |
-| disableGesture              |                       false                       |        `bool`         | Disable swipe gesture                                                                 |
+| autoplayLoop                |                       false                       |        `boolean`         | Continue playing after reach end                                                      |
+| autoplayLoopKeepAnimation   |                       false                       |        `boolean`         | Show animation when reach the end of the list                                         |
+| autoplayInvertDirection     |                       false                       |        `boolean`         | Invert auto play direction                                                            |
+| disableGesture              |                       false                       |        `boolean`         | Disable swipe gesture                                                                 |
 
 **More props**
 
@@ -126,12 +131,12 @@ This is a wrapper around [Flatlist](http://facebook.github.io/react-native/docs/
 
 | Name            | Params                                  | Use                                                                                                 |
 | :-------------- | :-------------------------------------- | :-------------------------------------------------------------------------------------------------- |
-| scrollToIndex   | { index: `number`, animated: `bool?`}   | Scroll to the index                                                                                 |
-| getCurrentIndex | -                                       | Returns the current index                                                                           |
-| getPrevIndex    | -                                       | Returns the previous index                                                                          |
-| onChangeIndex   | { index: `number`, prevIndex: `number`} | Executed every time the index change, the index change when the user reaches 60% of the next screen |
-| goToFirstIndex  | -                                       | Go to the first index                                                                               |
-| goToLastIndex   | -                                       | Go to the last index                                                                                |
+| scrollToIndex   | `({ index: number, animated?: boolean}) => void`   | Scroll to the index                                                                                 |
+| getCurrentIndex | `() => number`                                       | Returns the current index                                                                           |
+| getPrevIndex    | `() => number`                                       | Returns the previous index                                                                          |
+| onChangeIndex   | `({ index: number, prevIndex: number}) => void` | Executed every time the index change, the index change when the user reaches 60% of the next screen |
+| goToFirstIndex  | `() => void`                                       | Go to the first index                                                                               |
+| goToLastIndex   | `() => void`                                       | Go to the last index                                                                                |
 
 ## Limitations
 
