@@ -23,6 +23,7 @@ npm install react-native-swiper-flatlist --save
 ## Notice
 
 Version 2.x was re-implemented using React Hooks so it only works with version 0.59 or above
+
 Version 3.x was re-implemented using Typescript
 
 | react-native-swiper-flatlist | react-native |
@@ -129,7 +130,7 @@ This is a wrapper around [Flatlist](http://facebook.github.io/react-native/docs/
 
 ## Functions
 
-| Name            | Params                                  | Use                                                                                                 |
+| Name            | Type                                  | Use                                                                                                 |
 | :-------------- | :-------------------------------------- | :-------------------------------------------------------------------------------------------------- |
 | scrollToIndex   | `({ index: number, animated?: boolean}) => void`   | Scroll to the index                                                                                 |
 | getCurrentIndex | `() => number`                                       | Returns the current index                                                                           |
