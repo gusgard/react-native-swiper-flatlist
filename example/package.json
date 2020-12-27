@@ -21,7 +21,7 @@
     "jest-circus": "^26.6.3",
     "react": "16.13.1",
     "react-native": "0.63.4",
-    "react-native-swiper-flatlist": "2.0.7"
+    "react-native-swiper-flatlist": "git+ssh://git@github.com:gusgard/react-native-swiper-flatlist.git#2035e86de1b68ff9ae51d19437501c558ff5421d"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",

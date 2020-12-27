@@ -17,7 +17,8 @@ const items: Item[] = [
 describe('swiper flatlist', () => {
   it('renders correctly', () => {
     const { toJSON } = render(
-      <SwiperFlatList<typeof items>
+      <SwiperFlatList
+        // <SwiperFlatList<typeof items>
         renderItem={({ item }) => <Image source={item.thumbnail} />}
         data={items}
       />,
@@ -26,7 +27,8 @@ describe('swiper flatlist', () => {
   });
   it('renders empty data correctly', () => {
     const { toJSON } = render(
-      <SwiperFlatList<typeof items>
+      <SwiperFlatList
+        // <SwiperFlatList<Item[]>
         renderItem={({ item }) => <Image source={item.thumbnail} />}
         data={[]}
       />,

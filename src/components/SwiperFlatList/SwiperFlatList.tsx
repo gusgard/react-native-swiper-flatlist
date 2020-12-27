@@ -56,11 +56,13 @@ type SwiperFlatListProps<T> = {
 // },
 
 type RefProps = any;
+type T1 = any;
 type ScrollToIndex = { index: number; animated?: boolean };
 
 // const SwiperFlatList = React.forwardRef<RefProps, SwiperFlatListProps<SwiperType>>(
 const SwiperFlatList = React.forwardRef(
-  <T1 extends unknown>(
+  // <T1 extends any>(
+  (
     {
       vertical = false,
       children,
