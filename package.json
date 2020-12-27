@@ -44,7 +44,6 @@
     "eslint-plugin-detox": "^1.0.0",
     "babel-preset-react-native": "4.0.1",
     "eslint": "^7.16.0",
-    "eslint-import-resolver-reactnative": "^1.0.2",
     "eslint-plugin-import": "^2.18.2",
     "jest": "24.8.0",
     "metro-react-native-babel-preset": "^0.55.0",
