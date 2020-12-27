@@ -1,0 +1,246 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`swiper flatlist renders children 1`] = `
+<RCTScrollView
+  data={
+    Array [
+      <Image
+        source={
+          Object {
+            "uri": "https://...",
+          }
+        }
+      />,
+      <Image
+        source={
+          Object {
+            "uri": "https://...",
+          }
+        }
+      />,
+    ]
+  }
+  disableVirtualization={false}
+  getItem={[Function]}
+  getItemCount={[Function]}
+  horizontal={true}
+  initialNumToRender={1}
+  initialScrollIndex={0}
+  keyExtractor={[Function]}
+  maxToRenderPerBatch={10}
+  numColumns={1}
+  onContentSizeChange={[Function]}
+  onEndReachedThreshold={2}
+  onLayout={[Function]}
+  onMomentumScrollEnd={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEndDrag={[Function]}
+  onScrollToIndexFailed={[Function]}
+  onViewableItemsChanged={[Function]}
+  pagingEnabled={true}
+  removeClippedSubviews={false}
+  renderItem={[Function]}
+  scrollEnabled={true}
+  scrollEventThrottle={50}
+  showsHorizontalScrollIndicator={false}
+  showsVerticalScrollIndicator={false}
+  stickyHeaderIndices={Array []}
+  updateCellsBatchingPeriod={50}
+  viewabilityConfig={
+    Object {
+      "itemVisiblePercentThreshold": 60,
+      "minimumViewTime": 200,
+    }
+  }
+  viewabilityConfigCallbackPairs={
+    Array [
+      Object {
+        "onViewableItemsChanged": [Function],
+        "viewabilityConfig": Object {
+          "itemVisiblePercentThreshold": 60,
+          "minimumViewTime": 200,
+        },
+      },
+    ]
+  }
+  windowSize={21}
+>
+  <View>
+    <View
+      onLayout={[Function]}
+      style={
+        Array [
+          Object {
+            "flexDirection": "row",
+          },
+          null,
+        ]
+      }
+    >
+      <Image
+        source={
+          Object {
+            "uri": "https://...",
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "width": 0,
+        }
+      }
+    />
+  </View>
+</RCTScrollView>
+`;
+
+exports[`swiper flatlist renders correctly 1`] = `
+<RCTScrollView
+  data={
+    Array [
+      Object {
+        "id": 1,
+        "thumbnail": Object {
+          "uri": "https://...",
+        },
+      },
+      Object {
+        "id": 2,
+        "thumbnail": Object {
+          "uri": "https://...",
+        },
+      },
+    ]
+  }
+  disableVirtualization={false}
+  getItem={[Function]}
+  getItemCount={[Function]}
+  horizontal={true}
+  initialNumToRender={1}
+  initialScrollIndex={0}
+  keyExtractor={[Function]}
+  maxToRenderPerBatch={10}
+  numColumns={1}
+  onContentSizeChange={[Function]}
+  onEndReachedThreshold={2}
+  onLayout={[Function]}
+  onMomentumScrollEnd={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEndDrag={[Function]}
+  onScrollToIndexFailed={[Function]}
+  onViewableItemsChanged={[Function]}
+  pagingEnabled={true}
+  removeClippedSubviews={false}
+  renderItem={[Function]}
+  scrollEnabled={true}
+  scrollEventThrottle={50}
+  showsHorizontalScrollIndicator={false}
+  showsVerticalScrollIndicator={false}
+  stickyHeaderIndices={Array []}
+  updateCellsBatchingPeriod={50}
+  viewabilityConfig={
+    Object {
+      "itemVisiblePercentThreshold": 60,
+      "minimumViewTime": 200,
+    }
+  }
+  viewabilityConfigCallbackPairs={
+    Array [
+      Object {
+        "onViewableItemsChanged": [Function],
+        "viewabilityConfig": Object {
+          "itemVisiblePercentThreshold": 60,
+          "minimumViewTime": 200,
+        },
+      },
+    ]
+  }
+  windowSize={21}
+>
+  <View>
+    <View
+      onLayout={[Function]}
+      style={
+        Array [
+          Object {
+            "flexDirection": "row",
+          },
+          null,
+        ]
+      }
+    >
+      <Image
+        source={
+          Object {
+            "uri": "https://...",
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "width": 0,
+        }
+      }
+    />
+  </View>
+</RCTScrollView>
+`;
+
+exports[`swiper flatlist renders empty data correctly 1`] = `
+<RCTScrollView
+  data={Array []}
+  disableVirtualization={false}
+  getItem={[Function]}
+  getItemCount={[Function]}
+  horizontal={true}
+  initialNumToRender={1}
+  initialScrollIndex={0}
+  keyExtractor={[Function]}
+  maxToRenderPerBatch={10}
+  numColumns={1}
+  onContentSizeChange={[Function]}
+  onEndReachedThreshold={2}
+  onLayout={[Function]}
+  onMomentumScrollEnd={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEndDrag={[Function]}
+  onScrollToIndexFailed={[Function]}
+  onViewableItemsChanged={[Function]}
+  pagingEnabled={true}
+  removeClippedSubviews={false}
+  renderItem={[Function]}
+  scrollEnabled={true}
+  scrollEventThrottle={50}
+  showsHorizontalScrollIndicator={false}
+  showsVerticalScrollIndicator={false}
+  stickyHeaderIndices={Array []}
+  updateCellsBatchingPeriod={50}
+  viewabilityConfig={
+    Object {
+      "itemVisiblePercentThreshold": 60,
+      "minimumViewTime": 200,
+    }
+  }
+  viewabilityConfigCallbackPairs={
+    Array [
+      Object {
+        "onViewableItemsChanged": [Function],
+        "viewabilityConfig": Object {
+          "itemVisiblePercentThreshold": 60,
+          "minimumViewTime": 200,
+        },
+      },
+    ]
+  }
+  windowSize={21}
+>
+  <View />
+</RCTScrollView>
+`;

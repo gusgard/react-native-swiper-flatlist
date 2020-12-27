@@ -26,11 +26,10 @@
   ],
   "scripts": {
     "lint": "yarn eslint index.js src example/scripts example/src --ext .js,.ts,.tsx",
-    "lint:ts": "yarn tsc",
     "lint:fix": "yarn lint --fix",
-    "test": "yarn ci",
+    "test": "jest",
     "test:watch": "jest --watch",
-    "ci": "yarn lint && yarn jest",
+    "lint-and-test": "yarn tsc && yarn lint && yarn jest",
     "start": "echo ----- Check example folder  ----- 👻",
     "publish": "npm publish"
   },

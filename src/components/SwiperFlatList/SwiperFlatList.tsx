@@ -7,40 +7,40 @@ const MILLISECONDS = 1000;
 const FIRST_INDEX = 0;
 const ITEM_VISIBLE_PERCENT_THRESHOLD = 60;
 
-type SwiperFlatListProps = {
-  data: any[]; // react node
-  vertical: boolean;
-  index: number;
-  renderAll: boolean;
-  renderItem: FlatListProps<unknown>['renderItem'];
-  // renderItem: any; // react node
-  onChangeIndex: (item: { index: number; prevIndex: number }) => void;
+type SwiperFlatListProps<T> = {
+  children?: React.ReactNode | React.ReactNode[];
+  data?: T[];
+  vertical?: boolean;
+  index?: number;
+  renderAll?: boolean;
+  renderItem?: FlatListProps<T>['renderItem'];
+  onChangeIndex?: (item: { index: number; prevIndex: number }) => void;
 
   // Pagination
-  showPagination: boolean;
-  PaginationComponent: any; //react node
-  paginationActiveColor: PaginationProps['paginationActiveColor'];
-  paginationDefaultColor: PaginationProps['paginationDefaultColor'];
-  paginationStyle: PaginationProps['paginationStyle'];
-  paginationStyleItem: PaginationProps['paginationStyleItem'];
-  paginationStyleItemActive: PaginationProps['paginationStyleItemActive'];
-  paginationStyleItemInactive: PaginationProps['paginationStyleItemInactive'];
-  onPaginationSelectedIndex: PaginationProps['onPaginationSelectedIndex'];
+  showPagination?: boolean;
+  PaginationComponent?: any; //react node
+  paginationActiveColor?: PaginationProps['paginationActiveColor'];
+  paginationDefaultColor?: PaginationProps['paginationDefaultColor'];
+  paginationStyle?: PaginationProps['paginationStyle'];
+  paginationStyleItem?: PaginationProps['paginationStyleItem'];
+  paginationStyleItemActive?: PaginationProps['paginationStyleItemActive'];
+  paginationStyleItemInactive?: PaginationProps['paginationStyleItemInactive'];
+  onPaginationSelectedIndex?: PaginationProps['onPaginationSelectedIndex'];
 
   // Autoplay
-  autoplayDelay: number;
-  autoplay: boolean;
-  autoplayInvertDirection: boolean;
-  autoplayLoop: boolean;
-  autoplayLoopKeepAnimation: boolean;
+  autoplayDelay?: number;
+  autoplay?: boolean;
+  autoplayInvertDirection?: boolean;
+  autoplayLoop?: boolean;
+  autoplayLoopKeepAnimation?: boolean;
 
   // Optionals
   // onMomentumScrollEnd: ScrollViewProps['onMomentumScrollEnd'];
-  onMomentumScrollEnd: (item: { index: number }, event: any) => void;
-  onViewableItemsChanged: FlatListProps<unknown>['onViewableItemsChanged'];
-  viewabilityConfig: ViewabilityConfig;
-  disableGesture: boolean;
-  e2eId: string;
+  onMomentumScrollEnd?: (item: { index: number }, event: any) => void;
+  onViewableItemsChanged?: FlatListProps<unknown>['onViewableItemsChanged'];
+  viewabilityConfig?: ViewabilityConfig;
+  disableGesture?: boolean;
+  e2eId?: string;
 };
 
 //   // Only is allowed children or data not both
@@ -56,9 +56,10 @@ type SwiperFlatListProps = {
 //   // },
 
 type RefProps = any;
+type SwiperType = any;
 type ScrollToIndex = { index: number; animated?: boolean };
 
-const SwiperFlatList = React.forwardRef<RefProps, SwiperFlatListProps>(
+const SwiperFlatList = React.forwardRef<RefProps, SwiperFlatListProps<SwiperType>>(
   (
     {
       vertical = false,
@@ -94,7 +95,7 @@ const SwiperFlatList = React.forwardRef<RefProps, SwiperFlatListProps>(
     },
     ref,
   ) => {
-    let _data = [];
+    let _data: SwiperType[] = [];
     let _renderItem: FlatListProps<any>['renderItem'];
 
     if (children) {
@@ -106,7 +107,6 @@ const SwiperFlatList = React.forwardRef<RefProps, SwiperFlatListProps>(
       _renderItem = renderItem;
     } else {
       console.error('Invalid props, `data` or `children` is required');
-      // return new Error('Invalid props, `data` or `children` is required');
     }
     const size = _data.length;
     // Items to render in the initial batch.
@@ -209,6 +209,7 @@ const SwiperFlatList = React.forwardRef<RefProps, SwiperFlatListProps>(
       return () => clearTimeout(autoplayTimer);
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [paginationIndex]);
+
     const _onMomentumScrollEnd: FlatListProps<unknown>['onMomentumScrollEnd'] = (event) => {
       // NOTE: Method not executed when call "flatListElement?.current?.scrollToIndex"
       if (ignoreOnMomentumScrollEnd) {
