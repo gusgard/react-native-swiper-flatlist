@@ -1,26 +1,26 @@
-const {device, expect, element, by, waitFor} = require('detox');
+const { device, expect, element, by, waitFor } = require('detox');
 
 const TEXT_IN_SCREENS = {
   ZERO: '0 - Go to last index',
-  ONE:'1 - Press to get the previous index',
-  TWO:'2 - Press to get the current index',
+  ONE: '1 - Press to get the previous index',
+  TWO: '2 - Press to get the current index',
   THREE: '3 - Go to the second index',
-  FOURTH: '4 - Go to first index'
-}
+  FOURTH: '4 - Go to first index',
+};
 const SCREENS = {
   ZERO: 'container_swiper_screen_0',
-  ONE:'container_swiper_screen_1',
-  TWO:'container_swiper_screen_2',
-  THREE:'container_swiper_screen_3',
-  FOURTH:'container_swiper_screen_4',
-}
+  ONE: 'container_swiper_screen_1',
+  TWO: 'container_swiper_screen_2',
+  THREE: 'container_swiper_screen_3',
+  FOURTH: 'container_swiper_screen_4',
+};
 const PAGINATION = {
   ZERO: 'container_swiper_pagination_0',
-  ONE:'container_swiper_pagination_1',
-  TWO:'container_swiper_pagination_2',
-  THREE:'container_swiper_pagination_3',
-  FOURTH:'container_swiper_pagination_4',
-}
+  ONE: 'container_swiper_pagination_1',
+  TWO: 'container_swiper_pagination_2',
+  THREE: 'container_swiper_pagination_3',
+  FOURTH: 'container_swiper_pagination_4',
+};
 
 describe('Example', () => {
   beforeEach(async () => {
@@ -36,6 +36,13 @@ describe('Example', () => {
     await element(by.id('container_swiper')).swipe('left');
     await element(by.id('container_swiper')).swipe('left');
     await element(by.id('container_swiper')).swipe('left');
+    await element(by.id('container_swiper')).swipe('left');
+
+    await element(by.id('container_swiper')).swipe('right');
+    await element(by.id('container_swiper')).swipe('right');
+    await element(by.id('container_swiper')).swipe('right');
+    await element(by.id('container_swiper')).swipe('right');
+    await element(by.id('container_swiper')).swipe('right');
   });
 
   it('should tap pagination', async () => {
@@ -65,7 +72,7 @@ describe('Example', () => {
     await element(by.id(PAGINATION.ONE)).tap();
     await element(by.id(SCREENS.ONE)).tap();
     await expect(element(by.text('the previous index is 0'))).toBeVisible();
-    await element(by.label("OK")).atIndex(0).tap();
+    await element(by.label('OK')).atIndex(0).tap();
     await expect(element(by.text(TEXT_IN_SCREENS.ONE))).toBeVisible();
 
     // getPrevIndex 2
@@ -73,7 +80,7 @@ describe('Example', () => {
     await element(by.id(PAGINATION.ONE)).tap();
     await element(by.id(SCREENS.ONE)).tap();
     await expect(element(by.text('the previous index is 2'))).toBeVisible();
-    await element(by.label("OK")).atIndex(0).tap();
+    await element(by.label('OK')).atIndex(0).tap();
     await expect(element(by.text(TEXT_IN_SCREENS.ONE))).toBeVisible();
 
     // getPrevIndex 3
@@ -81,7 +88,7 @@ describe('Example', () => {
     await element(by.id(PAGINATION.ONE)).tap();
     await element(by.id(SCREENS.ONE)).tap();
     await expect(element(by.text('the previous index is 3'))).toBeVisible();
-    await element(by.label("OK")).atIndex(0).tap();
+    await element(by.label('OK')).atIndex(0).tap();
     await expect(element(by.text(TEXT_IN_SCREENS.ONE))).toBeVisible();
 
     // getPrevIndex 4
@@ -89,7 +96,7 @@ describe('Example', () => {
     await element(by.id(PAGINATION.ONE)).tap();
     await element(by.id(SCREENS.ONE)).tap();
     await expect(element(by.text('the previous index is 4'))).toBeVisible();
-    await element(by.label("OK")).atIndex(0).tap();
+    await element(by.label('OK')).atIndex(0).tap();
     await expect(element(by.text(TEXT_IN_SCREENS.ONE))).toBeVisible();
   });
 
@@ -97,7 +104,7 @@ describe('Example', () => {
     await element(by.id(PAGINATION.TWO)).tap();
     await element(by.id(SCREENS.TWO)).tap();
     await expect(element(by.text('the current index is 2'))).toBeVisible();
-    await element(by.label("OK")).atIndex(0).tap();
+    await element(by.label('OK')).atIndex(0).tap();
     await expect(element(by.text(TEXT_IN_SCREENS.TWO))).toBeVisible();
   });
 
