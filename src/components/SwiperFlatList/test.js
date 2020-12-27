@@ -5,7 +5,10 @@ import { render } from 'react-native-testing-library';
 import SwiperFlatList from './SwiperFlatList';
 
 const logo = { uri: 'https://...' };
-const items = [{ id: 1, thumbnail: logo }, { id: 2, thumbnail: logo }];
+const items = [
+  { id: 1, thumbnail: logo },
+  { id: 2, thumbnail: logo },
+];
 
 describe('swiper flatlist', () => {
   it('renders correctly', () => {

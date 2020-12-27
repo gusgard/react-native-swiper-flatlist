@@ -8,7 +8,7 @@ function copyAndWatch(source, destination, fileGlob) {
   console.log(`Cleaning "${destination}"`);
   rimraf(destination, () => {
     console.log(`Copying "${source}" to "${destination}"`);
-    fs.copy(source, destination, err => {
+    fs.copy(source, destination, (err) => {
       if (err) {
         console.error(err);
       }
@@ -20,7 +20,7 @@ function copyAndWatch(source, destination, fileGlob) {
       if (matchesFile(localPath, fileGlob)) {
         const destinationPath = `${destination}${localPath}`;
         console.log(`Copying "${filename}" to "${destinationPath}"`);
-        fs.copy(filename, destinationPath, err => {
+        fs.copy(filename, destinationPath, (err) => {
           if (err) {
             console.error(err);
           }

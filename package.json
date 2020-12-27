@@ -35,29 +35,21 @@
     "publish": "npm publish"
   },
   "devDependencies": {
-    "@react-native-community/eslint-config": "^0.0.5",
+    "@react-native-community/eslint-config": "^2.0.0",
     "@types/jest": "^26.0.19",
     "@types/react": "^17.0.0",
     "@types/react-native": "^0.63.42",
     "@types/react-test-renderer": "^17.0.0",
-    "babel-eslint": "^10.0.2",
     "babel-jest": "24.8.0",
+    "eslint-plugin-detox": "^1.0.0",
     "babel-preset-react-native": "4.0.1",
-    "eslint": "^4.9.0",
-    "eslint-config-airbnb": "^17.1.1",
-    "eslint-config-prettier": "^6.0.0",
+    "eslint": "^7.16.0",
     "eslint-import-resolver-reactnative": "^1.0.2",
-    "eslint-plugin-flowtype": "^3.12.2",
     "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^1.6.1",
-    "eslint-plugin-react-native": "^3.3.0",
     "jest": "24.8.0",
     "metro-react-native-babel-preset": "^0.55.0",
     "pre-commit": "^1.2.2",
-    "prettier": "^1.14.3",
+    "prettier": "^2.2.1",
     "prettier-eslint": "^9.0.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",
@@ -71,7 +63,13 @@
   },
   "jest": {
     "preset": "react-native",
-    "moduleFileExtensions": ["ts", "tsx", "js", "json", "node"],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json",
+      "node"
+    ],
     "modulePathIgnorePatterns": [
       "<rootDir>/example/",
       "<rootDir>/ts-build/"
