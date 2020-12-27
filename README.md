@@ -3,7 +3,7 @@
 ![platforms](https://img.shields.io/badge/platforms-Android%20|%20iOS-brightgreen.svg)
 [![npm](https://img.shields.io/npm/v/react-native-swiper-flatlist.svg)](https://www.npmjs.com/package/react-native-swiper-flatlist)
 [![npm](https://img.shields.io/npm/dm/react-native-swiper-flatlist.svg)](https://www.npmjs.com/package/react-native-swiper-flatlist)
-[![travis](https://travis-ci.org/gusgard/react-native-swiper-flatlist.svg?branch=master)](https://travis-ci.org/gusgard/react-native-swiper-flatlist)
+[![Build Status](https://app.bitrise.io/app/dfeb47a453df37dd/status.svg?token=54NHsU_G5kGTSZpdEejqLA&branch=master)](https://app.bitrise.io/app/dfeb47a453df37dd)
 ![license](https://img.shields.io/npm/l/react-native-swiper-flatlist.svg)
 
 ![Demo](https://raw.githubusercontent.com/gusgard/react-native-swiper-flatlist/master/demo.gif)
