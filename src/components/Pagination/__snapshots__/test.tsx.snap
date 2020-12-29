@@ -5,12 +5,13 @@ exports[`pagination renders all props 1`] = `
   style={
     Array [
       Object {
+        "alignSelf": "center",
         "bottom": 0,
         "flexDirection": "row",
+        "height": 28.125,
         "justifyContent": "center",
         "marginVertical": 16.675,
         "position": "absolute",
-        "width": "100%",
       },
       Object {},
     ]
@@ -139,12 +140,13 @@ exports[`pagination renders correctly 1`] = `
   style={
     Array [
       Object {
+        "alignSelf": "center",
         "bottom": 0,
         "flexDirection": "row",
+        "height": 28.125,
         "justifyContent": "center",
         "marginVertical": 16.675,
         "position": "absolute",
-        "width": "100%",
       },
       Object {},
     ]

@@ -9,8 +9,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginVertical: vertical.xxSmall,
     justifyContent: 'center',
+    alignSelf: 'center',
     bottom: 0,
-    width: '100%',
+    height: horizontal.small,
   },
   pagination: {
     width: horizontal.small,
