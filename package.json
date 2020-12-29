@@ -68,14 +68,12 @@
       "node"
     ],
     "modulePathIgnorePatterns": [
-      "<rootDir>/example/",
-      "<rootDir>/ts-build/"
+      "<rootDir>/example/"
     ]
   },
   "pre-commit": {
     "run": [
-      "lint",
-      "test"
+      "lint-and-test"
     ]
   }
 }
