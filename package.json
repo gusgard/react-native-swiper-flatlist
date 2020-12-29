@@ -1,29 +1,10 @@
 {
   "name": "react-native-swiper-flatlist",
-  "version": "3.0.0",
+  "version": "3.0.3",
   "main": "index.ts",
   "license": "Apache-2.0",
-  "author": "Gustavo Gard <gusgard.it@gmail.com> (https://gusgard.com)",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gusgard/react-native-swiper-flatlist.git"
-  },
   "description": "React native swiper flatlist component",
-  "bugs": {
-    "url": "https://github.com/gusgard/react-native-swiper-flatlist/issues"
-  },
-  "homepage": "https://github.com/gusgard/react-native-swiper-flatlist#readme",
-  "keywords": [
-    "swiper flatlist",
-    "swiper",
-    "swiper hooks",
-    "swiper component",
-    "react native",
-    "react-native",
-    "react",
-    "flatlist",
-    "flatlist swiper"
-  ],
+  "author": "Gustavo Gard <gusgard.it@gmail.com>",
   "scripts": {
     "lint": "yarn eslint index.ts src example/scripts example/src --ext .js,.ts,.tsx",
     "lint:fix": "yarn lint --fix",
@@ -40,8 +21,8 @@
     "@types/react-native": "^0.63.42",
     "@types/react-test-renderer": "^17.0.0",
     "babel-jest": "24.8.0",
-    "eslint-plugin-detox": "^1.0.0",
     "eslint": "^7.16.0",
+    "eslint-plugin-detox": "^1.0.0",
     "eslint-plugin-import": "^2.18.2",
     "jest": "24.8.0",
     "metro-react-native-babel-preset": "^0.55.0",
@@ -68,14 +49,47 @@
       "node"
     ],
     "modulePathIgnorePatterns": [
-      "<rootDir>/example/",
-      "<rootDir>/ts-build/"
+      "<rootDir>/example/"
     ]
   },
   "pre-commit": {
     "run": [
-      "lint",
-      "test"
+      "lint-and-test"
     ]
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gusgard/react-native-swiper-flatlist.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gusgard/react-native-swiper-flatlist/issues"
+  },
+  "homepage": "https://github.com/gusgard/react-native-swiper-flatlist#readme",
+  "keywords": [
+    "react-native-swiper",
+    "react-native-swiper-flatlist",
+    "swiper flatlist",
+    "swiper",
+    "hooks",
+    "typescript",
+    "component",
+    "react native",
+    "react-native",
+    "flatlist",
+    "flatlist swiper",
+    "react",
+    "native",
+    "carousel",
+    "slider",
+    "scrollview",
+    "images",
+    "infinite",
+    "scroll",
+    "scrolling",
+    "images",
+    "cards",
+    "stack",
+    "android",
+    "ios"
+  ]
 }

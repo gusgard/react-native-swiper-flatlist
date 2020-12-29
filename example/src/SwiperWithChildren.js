@@ -31,7 +31,7 @@ export default () => {
       showPagination
       ref={scrollRef}
       onChangeIndex={onChangeIndex}
-      e2eId="container_swiper"
+      e2eID="container_swiper"
     >
       <TouchableOpacity
         style={[styles.child, { backgroundColor: 'salmon' }]}
