@@ -28,8 +28,8 @@ Version 3.x was re-implemented using Typescript
 
 | react-native-swiper-flatlist | react-native | Detox tests                                                                                                                                                       |
 | ---------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1.x                          | <= 0.58      | [![Build Status](https://travis-ci.org/gusgard/react-native-swiper-flatlist.svg?branch=v1)](https://travis-ci.org/gusgard/react-native-swiper-flatlist)           |
-| 2.x                          | >= 0.59      | [![Build Status](https://travis-ci.org/gusgard/react-native-swiper-flatlist.svg?branch=v2)](https://travis-ci.org/gusgard/react-native-swiper-flatlist)           |
+| 1.x                          | <= 0.58      | [![Build Status](https://travis-ci.org/gusgard/react-native-swiper-flatlist.svg?branch=v1)](https://travis-ci.org/github/gusgard/react-native-swiper-flatlist/builds/565267550)           |
+| 2.x                          | >= 0.59      | [![Build Status](https://travis-ci.org/gusgard/react-native-swiper-flatlist.svg?branch=v1)](https://travis-ci.org/github/gusgard/react-native-swiper-flatlist/builds/749156790)           |
 | 3.x                          | >= 0.59      | [![Build Status](https://app.bitrise.io/app/dfeb47a453df37dd/status.svg?token=54NHsU_G5kGTSZpdEejqLA&branch=master)](https://app.bitrise.io/app/dfeb47a453df37dd) |
 
 ## Examples
