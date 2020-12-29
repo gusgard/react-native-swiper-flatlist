@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, FlatListProps, Platform } from 'react-native';
+import { FlatList, FlatListProps, Platform, Text } from 'react-native';
 
 import { Pagination } from '../Pagination/Pagination';
 import { SwiperFlatListProps } from './SwiperFlatListProps';
@@ -195,8 +195,9 @@ export const SwiperFlatList = React.forwardRef(
       [onViewableItemsChanged],
     );
 
-    const keyExtractor: FlatListProps<any>['keyExtractor'] = (_item, _index) => _index.toString();
-    const onScrollToIndexFailed: FlatListProps<any>['onScrollToIndexFailed'] = (info) =>
+    const keyExtractor: FlatListProps<unknown>['keyExtractor'] = (_item, _index) =>
+      _index.toString();
+    const onScrollToIndexFailed: FlatListProps<unknown>['onScrollToIndexFailed'] = (info) =>
       setTimeout(() => _scrollToIndex({ index: info.index, animated: false }));
 
     const flatListProps = {
@@ -246,7 +247,7 @@ export const SwiperFlatList = React.forwardRef(
       console.error(
         '[Expo example](https://snack.expo.io/@gusgard/react-native-web-example-with-swiper',
       );
-      return null;
+      return <Text>It does not work with react-native-web</Text>;
     }
 
     return (
