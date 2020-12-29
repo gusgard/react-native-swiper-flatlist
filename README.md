@@ -26,11 +26,11 @@ Version 2.x was re-implemented using React Hooks so it only works with version 0
 
 Version 3.x was re-implemented using Typescript
 
-| react-native-swiper-flatlist | react-native |
-| ---------------------------- | ------------ |
-| 1.x                          | <= 0.58      |
-| 2.x                          | >= 0.59      |
-| 3.x                          | >= 0.59      |
+| react-native-swiper-flatlist | react-native | Detox tests                                                                                                                                                       |
+| ---------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1.x                          | <= 0.58      | [![Build Status](https://travis-ci.org/gusgard/react-native-swiper-flatlist.svg?branch=v1)](https://travis-ci.org/gusgard/react-native-swiper-flatlist)           |
+| 2.x                          | >= 0.59      | [![Build Status](https://travis-ci.org/gusgard/react-native-swiper-flatlist.svg?branch=v2)](https://travis-ci.org/gusgard/react-native-swiper-flatlist)           |
+| 3.x                          | >= 0.59      | [![Build Status](https://app.bitrise.io/app/dfeb47a453df37dd/status.svg?token=54NHsU_G5kGTSZpdEejqLA&branch=master)](https://app.bitrise.io/app/dfeb47a453df37dd) |
 
 ## Examples
 
