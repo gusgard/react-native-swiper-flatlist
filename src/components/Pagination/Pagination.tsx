@@ -31,7 +31,7 @@ export type PaginationProps = {
   paginationStyleItemActive?: ViewStyle;
   paginationStyleItemInactive?: ViewStyle;
   onPaginationSelectedIndex?: () => void;
-  e2eId?: string;
+  e2eID?: string;
 };
 
 export const Pagination: React.FC<PaginationProps> = ({
@@ -45,13 +45,13 @@ export const Pagination: React.FC<PaginationProps> = ({
   paginationStyleItemActive = {},
   paginationStyleItemInactive = {},
   onPaginationSelectedIndex,
-  e2eId = '',
+  e2eID = '',
 }) => {
   return (
     <View style={[styles.container, paginationStyle]}>
       {Array.from({ length: size }).map((_, index) => (
         <TouchableOpacity
-          testID={`${e2eId}_pagination_${index}`}
+          testID={`${e2eID}_pagination_${index}`}
           style={[
             styles.pagination,
             paginationStyleItem,

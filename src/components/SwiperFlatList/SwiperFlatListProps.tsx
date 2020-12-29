@@ -34,5 +34,5 @@ export type SwiperFlatListProps<T> = Partial<FlatListProps<T>> & {
   onViewableItemsChanged?: FlatListProps<T>['onViewableItemsChanged'];
   viewabilityConfig?: ViewabilityConfig;
   disableGesture?: boolean;
-  e2eId?: string;
+  e2eID?: string;
 };

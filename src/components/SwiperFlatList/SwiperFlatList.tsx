@@ -46,7 +46,7 @@ export const SwiperFlatList = React.forwardRef(
       onViewableItemsChanged,
       viewabilityConfig = {},
       disableGesture = false,
-      e2eId,
+      e2eID,
       ...props
     }: SwiperFlatListProps<T1>,
     ref: RefProps,
@@ -222,7 +222,7 @@ export const SwiperFlatList = React.forwardRef(
       },
       onViewableItemsChanged: _onViewableItemsChanged,
       // debug: true, // for debug
-      testID: e2eId,
+      testID: e2eID,
     };
 
     const paginationProps = {
@@ -236,7 +236,7 @@ export const SwiperFlatList = React.forwardRef(
       paginationStyleItemActive,
       paginationStyleItemInactive,
       onPaginationSelectedIndex,
-      e2eId,
+      e2eID,
     };
 
     if (Platform.OS === 'web') {
