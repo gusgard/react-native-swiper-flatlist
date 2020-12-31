@@ -32,6 +32,7 @@ export type PaginationProps = {
   paginationStyleItemActive?: ViewStyle;
   paginationStyleItemInactive?: ViewStyle;
   onPaginationSelectedIndex?: () => void;
+  disablePaginationPress?: boolean;
   e2eID?: string;
 };
 
@@ -46,6 +47,7 @@ export const Pagination: React.FC<PaginationProps> = ({
   paginationStyleItemActive = {},
   paginationStyleItemInactive = {},
   onPaginationSelectedIndex,
+  disablePaginationPress = false,
   e2eID = '',
 }) => {
   return (
@@ -66,6 +68,7 @@ export const Pagination: React.FC<PaginationProps> = ({
             scrollToIndex({ index });
             onPaginationSelectedIndex?.();
           }}
+          disabled={disablePaginationPress}
         />
       ))}
     </View>

@@ -11,6 +11,7 @@ export type SwiperFlatListProps<T> = Partial<FlatListProps<T>> &
     | 'paginationStyleItemActive'
     | 'paginationStyleItemInactive'
     | 'onPaginationSelectedIndex'
+    | 'disablePaginationPress'
   > & {
     children?: React.ReactNode | React.ReactNode[];
     data?: T[];
