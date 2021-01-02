@@ -4,7 +4,7 @@
   "main": "index.ts",
   "license": "Apache-2.0",
   "description": "React native swiper flatlist component",
-  "author": "Gustavo Gard <gusgard.it@gmail.com>",
+  "author": "Gustavo Gard <gusgard.it@gmail.com> (https://github.com/gusgard)",
   "scripts": {
     "lint": "yarn eslint index.ts src example/scripts example/src --ext .js,.ts,.tsx",
     "lint:fix": "yarn lint --fix",
@@ -91,5 +91,12 @@
     "stack",
     "android",
     "ios"
+  ],
+   "contributors": [
+    {
+      "name": "Gustavo Gard",
+      "email": "gusgard.it@gmail.com",
+      "url": "https://github.com/gusgard"
+    }
   ]
 }

@@ -22,7 +22,7 @@ const PAGINATION = {
   FOURTH: 'container_swiper_pagination_4',
 };
 
-describe('Example', () => {
+describe('example with children', () => {
   beforeEach(async () => {
     await device.reloadReactNative();
   });

@@ -31,6 +31,7 @@ export default () => {
       showPagination
       ref={scrollRef}
       onChangeIndex={onChangeIndex}
+      // TODO: rename it to children eg: "container_swiper_children"
       e2eID="container_swiper"
     >
       <TouchableOpacity
@@ -38,35 +39,35 @@ export default () => {
         onPress={goToLastIndex}
         testID="container_swiper_screen_0"
       >
-        <Text style={styles.smallText}>0 - Go to last index</Text>
+        <Text style={styles.text}>0 - Go to last index</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={[styles.child, { backgroundColor: 'skyblue' }]}
         onPress={getPrevIndex}
         testID="container_swiper_screen_1"
       >
-        <Text style={styles.smallText}>1 - Press to get the previous index</Text>
+        <Text style={styles.text}>1 - Press to get the previous index</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={[styles.child, { backgroundColor: 'tomato' }]}
         onPress={getCurrentIndex}
         testID="container_swiper_screen_2"
       >
-        <Text style={styles.smallText}>2 - Press to get the current index</Text>
+        <Text style={styles.text}>2 - Press to get the current index</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={[styles.child, { backgroundColor: 'skyblue' }]}
         onPress={goToSecondIndex}
         testID="container_swiper_screen_3"
       >
-        <Text style={styles.smallText}>3 - Go to the second index</Text>
+        <Text style={styles.text}>3 - Go to the second index</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={[styles.child, { backgroundColor: 'teal' }]}
         onPress={goToFirstIndex}
         testID="container_swiper_screen_4"
       >
-        <Text style={styles.smallText}>4 - Go to first index</Text>
+        <Text style={styles.text}>4 - Go to first index</Text>
       </TouchableOpacity>
     </SwiperFlatList>
   );
@@ -78,7 +79,7 @@ const styles = StyleSheet.create({
     width,
     justifyContent: 'center',
   },
-  smallText: {
+  text: {
     fontSize: width * 0.1,
     textAlign: 'center',
   },

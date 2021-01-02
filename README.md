@@ -26,11 +26,11 @@ Version 2.x was re-implemented using React Hooks so it only works with version 0
 
 Version 3.x was re-implemented using Typescript
 
-| react-native-swiper-flatlist | react-native | Detox tests                                                                                                                                                       |
-| ---------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1.x                          | <= 0.58      | [![Build Status](https://travis-ci.org/gusgard/react-native-swiper-flatlist.svg?branch=v1)](https://travis-ci.org/github/gusgard/react-native-swiper-flatlist/builds/565267550)           |
-| 2.x                          | >= 0.59      | [![Build Status](https://travis-ci.org/gusgard/react-native-swiper-flatlist.svg?branch=v1)](https://travis-ci.org/github/gusgard/react-native-swiper-flatlist/builds/749156790)           |
-| 3.x                          | >= 0.59      | [![Build Status](https://app.bitrise.io/app/dfeb47a453df37dd/status.svg?token=54NHsU_G5kGTSZpdEejqLA&branch=master)](https://app.bitrise.io/app/dfeb47a453df37dd) |
+| react-native-swiper-flatlist | react-native | Detox tests                                                                                                                                                                     |
+| ---------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1.x                          | <= 0.58      | [![Build Status](https://travis-ci.org/gusgard/react-native-swiper-flatlist.svg?branch=v1)](https://travis-ci.org/github/gusgard/react-native-swiper-flatlist/builds/565267550) |
+| 2.x                          | >= 0.59      | [![Build Status](https://travis-ci.org/gusgard/react-native-swiper-flatlist.svg?branch=v1)](https://travis-ci.org/github/gusgard/react-native-swiper-flatlist/builds/749156790) |
+| 3.x                          | >= 0.59      | [![Build Status](https://app.bitrise.io/app/dfeb47a453df37dd/status.svg?token=54NHsU_G5kGTSZpdEejqLA&branch=master)](https://app.bitrise.io/app/dfeb47a453df37dd)               |
 
 ## Examples
 
@@ -44,53 +44,81 @@ Version 3.x was re-implemented using Typescript
 
 ### Code
 
+Using `renderItems` and `data`, [try me on Expo](https://snack.expo.io/@gusgard/react-native-swiper-flatlist-simple-with-renderitems-and-data)
+
 ```jsx
 import React from 'react';
-import { Text, Dimensions, Image, StyleSheet, View } from 'react-native';
-
+import { Text, Dimensions, StyleSheet, View } from 'react-native';
 import { SwiperFlatList } from 'react-native-swiper-flatlist';
 
-const App = () => {
-  return (
-    <View style={styles.container}>
-      <SwiperFlatList autoplay autoplayDelay={2} autoplayLoop index={2} showPagination>
-        <View style={[styles.child, { backgroundColor: 'tomato' }]}>
-          <Text style={styles.text}>1</Text>
-        </View>
-        <View style={[styles.child, { backgroundColor: 'thistle' }]}>
-          <Text style={styles.text}>2</Text>
-        </View>
-        <View style={[styles.child, { backgroundColor: 'skyblue' }]}>
-          <Text style={styles.text}>3</Text>
-        </View>
-        <View style={[styles.child, { backgroundColor: 'teal' }]}>
-          <Text style={styles.text}>4</Text>
-        </View>
-      </SwiperFlatList>
-    </View>
-  );
-};
+const colors = ['tomato', 'thistle', 'skyblue', 'teal'];
 
-const { width, height } = Dimensions.get('window');
+const App = () => (
+  <View style={styles.container}>
+    <SwiperFlatList
+      autoplay
+      autoplayDelay={2}
+      autoplayLoop
+      index={2}
+      showPagination
+      data={colors}
+      renderItem={({ item }) => (
+        <View style={[styles.child, { backgroundColor: item }]}>
+          <Text style={styles.text}>{item}</Text>
+        </View>
+      )}
+    />
+  </View>
+);
 
+const { width } = Dimensions.get('window');
 const styles = StyleSheet.create({
-  container: {
-    flex: 0.5,
-    backgroundColor: 'white',
-  },
-  child: {
-    height: height * 0.5,
-    width,
-    justifyContent: 'center',
-  },
-  text: {
-    fontSize: width * 0.5,
-    textAlign: 'center',
-  },
+  container: { flex: 1, backgroundColor: 'white' },
+  child: { width, justifyContent: 'center' },
+  text: { fontSize: width * 0.5, textAlign: 'center' },
 });
 
 export default App;
 ```
+
+Using `children`, [try me on Expo](https://snack.expo.io/@gusgard/react-native-swiper-flatlist-simple-with-children)
+
+```jsx
+import React from 'react';
+import { Text, Dimensions, StyleSheet, View } from 'react-native';
+import { SwiperFlatList } from 'react-native-swiper-flatlist';
+
+const App = () => (
+  <View style={styles.container}>
+    <SwiperFlatList autoplay autoplayDelay={2} autoplayLoop index={2} showPagination>
+      <View style={[styles.child, { backgroundColor: 'tomato' }]}>
+        <Text style={styles.text}>1</Text>
+      </View>
+      <View style={[styles.child, { backgroundColor: 'thistle' }]}>
+        <Text style={styles.text}>2</Text>
+      </View>
+      <View style={[styles.child, { backgroundColor: 'skyblue' }]}>
+        <Text style={styles.text}>3</Text>
+      </View>
+      <View style={[styles.child, { backgroundColor: 'teal' }]}>
+        <Text style={styles.text}>4</Text>
+      </View>
+    </SwiperFlatList>
+  </View>
+);
+
+const { width } = Dimensions.get('window');
+
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: 'white' },
+  child: { width, justifyContent: 'center' },
+  text: { fontSize: width * 0.5, textAlign: 'center' },
+});
+
+export default App;
+```
+
+### Example project with Detox tests
 
 [Code example](./example/README.md)
 
