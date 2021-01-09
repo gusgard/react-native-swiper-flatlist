@@ -6,4 +6,9 @@ module.exports = {
     rules: {
     'react-native/no-inline-styles': OFF,
   },
+  globals: {
+    describe: false,
+    it: false,
+    beforeEach: false,
+  },
 };
