@@ -69,6 +69,7 @@ export const SwiperFlatList = React.forwardRef(
     const _initialNumToRender = renderAll ? size : 1;
     const [paginationIndex, setPaginationIndex] = React.useState(index);
     const [prevIndex, setPrevIndex] = React.useState(index);
+    // https://twitter.com/dan_abramov/status/1083330668522864640?lang=en
     const [paginationIndexes, setPaginationIndexes] = React.useState({ index, prevIndex: index });
     const [ignoreOnMomentumScrollEnd, setIgnoreOnMomentumScrollEnd] = React.useState(false);
     const flatListElement = React.useRef<FlatList<unknown>>(null);
@@ -79,6 +80,8 @@ export const SwiperFlatList = React.forwardRef(
         onChangeIndex?.({ index: _index, prevIndex: _prevIndex });
       },
       [onChangeIndex],
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      // [],
     );
 
     const _scrollToIndex = (params: ScrollToIndex) => {
@@ -106,14 +109,21 @@ export const SwiperFlatList = React.forwardRef(
       if (prevIndex !== next.prevIndex) {
         setPrevIndex(next.prevIndex);
       }
+      // console.log('-----');
+
       _onChangeIndex({ index: next.index, prevIndex: next.prevIndex });
       // only consider "paginationIndexes"
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [paginationIndexes]);
+    }, [paginationIndexes.index, paginationIndexes.prevIndex]);
 
     React.useEffect(() => {
+      // console.log('holas');
+
       _onChangeIndex({ index: paginationIndex, prevIndex: prevIndex });
-    }, [paginationIndex, prevIndex, _onChangeIndex]);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [paginationIndex, prevIndex]);
+    // }, []);
+    // }, [paginationIndex]);
 
     React.useImperativeHandle(ref, () => ({
       scrollToIndex: (item: ScrollToIndex) => {
@@ -174,8 +184,6 @@ export const SwiperFlatList = React.forwardRef(
       }
 
       onMomentumScrollEnd?.({ index: paginationIndex }, event);
-
-      //_onChangeIndex({ index: paginationIndex, prevIndex });
     };
 
     const _onViewableItemsChanged = React.useMemo<FlatListProps<unknown>['onViewableItemsChanged']>(
@@ -192,7 +200,8 @@ export const SwiperFlatList = React.forwardRef(
         }
         onViewableItemsChanged?.(params);
       },
-      [onViewableItemsChanged],
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      [],
     );
 
     const keyExtractor: FlatListProps<unknown>['keyExtractor'] = (_item, _index) =>
