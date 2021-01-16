@@ -1,9 +1,22 @@
 import { ViewStyle } from 'react-native';
 
 export type PaginationProps = {
+  /**
+   * Scroll to the index
+   *
+   */
   scrollToIndex: (item: { index: number }) => void;
+  /**
+   * Size of pagination
+   *
+   */
   size: number;
-  paginationIndex: number;
+  /**
+   * Selected pagination index
+   * Defaults to '0'
+   *
+   */
+  paginationIndex?: number;
   /**
    * Pagination color
    * Defaults to 'white'
@@ -42,10 +55,12 @@ export type PaginationProps = {
   paginationStyleItemInactive?: ViewStyle;
   /**
    * Executed when the user presses the pagination index, similar properties onChangeIndex
+   *
    */
   onPaginationSelectedIndex?: () => void;
   /**
    * TestID for automation testing
+   *
    */
   e2eID?: string;
 };
