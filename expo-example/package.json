@@ -1,6 +1,7 @@
 {
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
+    "postinstall": "cp -r ../example/src ./src",
     "start:watch": "node ../example/scripts/watch-and-copy.js",
     "start": "expo start",
     "android": "expo start --android",
