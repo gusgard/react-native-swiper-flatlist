@@ -1,4 +1,4 @@
-import { SwiperFlatList as SwiperFlatListBase } from './SwiperFlatList';
+const { SwiperFlatList: SwiperFlatListBase } = require('./SwiperFlatList.tsx');
 
 try {
   require('./global.css');
