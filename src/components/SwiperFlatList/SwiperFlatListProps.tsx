@@ -1,5 +1,5 @@
 import { ViewabilityConfig, FlatListProps } from 'react-native';
-import { PaginationProps } from '../Pagination/Pagination';
+import { PaginationProps } from '../Pagination/PaginationProps';
 
 export type SwiperFlatListProps<T> = Partial<FlatListProps<T>> &
   Pick<
