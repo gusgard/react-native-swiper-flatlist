@@ -1,7 +1,8 @@
 {
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "postinstall": "cp -r ../example/src ./src",
+    "copy:src": "cp -r ../src/* ./node_modules/react-native-swiper-flatlist/src",
+    "postinstall": "yarn copy:src && cp -r ../example/src ./src",
     "start:watch": "node ../example/scripts/watch-and-copy.js",
     "start": "expo start",
     "android": "expo start --android",
@@ -10,7 +11,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "react-native-swiper-flatlist": "*",
+    "react-native-swiper-flatlist": "3.0.12",
     "expo": "~40.0.0",
     "expo-status-bar": "~1.0.3",
     "react": "16.13.1",

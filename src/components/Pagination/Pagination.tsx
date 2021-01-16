@@ -1,7 +1,8 @@
 import React from 'react';
-import { StyleSheet, TouchableOpacity, View, ViewStyle } from 'react-native';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
 
 import { colors, vertical, horizontal } from '../../themes';
+import { PaginationProps } from './PaginationProps';
 
 const styles = StyleSheet.create({
   container: {
@@ -20,20 +21,6 @@ const styles = StyleSheet.create({
     marginHorizontal: horizontal.xSmall,
   },
 });
-
-export type PaginationProps = {
-  scrollToIndex: (item: { index: number }) => void;
-  size: number;
-  paginationIndex?: number;
-  paginationActiveColor?: string;
-  paginationDefaultColor?: string;
-  paginationStyle?: ViewStyle;
-  paginationStyleItem?: ViewStyle;
-  paginationStyleItemActive?: ViewStyle;
-  paginationStyleItemInactive?: ViewStyle;
-  onPaginationSelectedIndex?: () => void;
-  e2eID?: string;
-};
 
 export const Pagination: React.FC<PaginationProps> = ({
   size,
