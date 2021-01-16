@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, FlatListProps, Platform, Text } from 'react-native';
+import { FlatList, FlatListProps, Platform, Dimensions } from 'react-native';
 
 import { Pagination } from '../Pagination/Pagination';
 import { SwiperFlatListProps } from './SwiperFlatListProps';
@@ -13,6 +13,15 @@ type RefProps = any;
 type T1 = any;
 type ScrollToIndex = { index: number; animated?: boolean };
 type ScrollToIndexInternal = { useOnChangeIndex: boolean };
+
+const { width: WIDTH, height: HEIGHT } = Dimensions.get('window');
+
+if (Platform.OS === 'web') {
+  try {
+    // FIX https://github.com/necolas/react-native-web/issues/1299#issuecomment-717428165
+    require('./react-native-web.css');
+  } catch (error) {}
+}
 
 // const SwiperFlatList = React.forwardRef<RefProps, SwiperFlatListProps<SwiperType>>(
 export const SwiperFlatList = React.forwardRef(
@@ -228,6 +237,22 @@ export const SwiperFlatList = React.forwardRef(
       testID: e2eID,
     };
 
+    if (Platform.OS === 'web') {
+      if (props.getItemLayout === undefined) {
+        // NOTE: should we pass height/width for getItemLayout?
+        const ITEM_DIMENSION = vertical ? HEIGHT : WIDTH;
+        flatListProps.getItemLayout = (__data, ItemIndex: number) => {
+          return {
+            length: ITEM_DIMENSION,
+            offset: ITEM_DIMENSION * ItemIndex,
+            index: ItemIndex,
+          };
+        };
+      }
+
+      (flatListProps as any).dataSet = { 'paging-enabled-fix': true };
+    }
+
     const scrollToIndexForPagination = (params: ScrollToIndex) => {
       _scrollToIndex(params, { useOnChangeIndex: false });
     };
@@ -245,16 +270,6 @@ export const SwiperFlatList = React.forwardRef(
       onPaginationSelectedIndex,
       e2eID,
     };
-
-    if (Platform.OS === 'web') {
-      console.error(
-        'react-native-web is not supported, due to the lack of support of some `props` used in this library',
-      );
-      console.error(
-        '[Expo example](https://snack.expo.io/@gusgard/react-native-web-example-with-swiper',
-      );
-      return <Text>It does not work with react-native-web</Text>;
-    }
 
     return (
       <React.Fragment>

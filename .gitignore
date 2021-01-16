@@ -44,3 +44,8 @@ buck-out/
 
 example/e2e/coverage
 example/artifacts
+
+
+expo-example/.expo/*
+expo-example/web-build/
+expo-example/src/

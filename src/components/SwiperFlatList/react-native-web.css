@@ -1,0 +1,4 @@
+/* Fix for height https://github.com/necolas/react-native-web/issues/1299#issuecomment-717428165 */
+[data-paging-enabled-fix] > div > div > div {
+  height: 100%;
+}
