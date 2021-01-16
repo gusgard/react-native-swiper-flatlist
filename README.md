@@ -1,6 +1,8 @@
 # :point_up_2: Swiper FlatList component
 
-![platforms](https://img.shields.io/badge/platforms-Android%20|%20iOS|%20web-brightgreen.svg)
+[![supports iOS](https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff)]
+[![supports Android](https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff)]
+[![supports web](https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff)]
 [![npm](https://img.shields.io/npm/v/react-native-swiper-flatlist.svg)](https://www.npmjs.com/package/react-native-swiper-flatlist)
 [![npm](https://img.shields.io/npm/dm/react-native-swiper-flatlist.svg)](https://www.npmjs.com/package/react-native-swiper-flatlist)
 [![Build Status](https://app.bitrise.io/app/dfeb47a453df37dd/status.svg?token=54NHsU_G5kGTSZpdEejqLA&branch=master)](https://app.bitrise.io/app/dfeb47a453df37dd)
@@ -44,7 +46,7 @@ Version 3.x was re-implemented using Typescript
 
 ### Code
 
-Using `renderItems` and `data`, [try me on Expo](https://snack.expo.io/@gusgard/react-native-swiper-flatlist-simple-with-renderitems-and-data)
+Using `renderItems` and `data`, [![run in expo snack](https://img.shields.io/badge/snack-Try%20now-4630EB.svg?style=flat-square&logo=EXPO&labelColor=000&logoColor=FFF&logoWidth=20)](https://snack.expo.io/@gusgard/react-native-swiper-flatlist-simple-with-renderitems-and-data)
 
 ```jsx
 import React from 'react';
@@ -81,7 +83,7 @@ const styles = StyleSheet.create({
 export default App;
 ```
 
-Using `children`, [try me on Expo](https://snack.expo.io/@gusgard/react-native-swiper-flatlist-simple-with-children)
+Using `children`, [![run in expo snack](https://img.shields.io/badge/snack-Try%20now-4630EB.svg?style=flat-square&logo=EXPO&labelColor=000&logoColor=FFF&logoWidth=20)](https://snack.expo.io/@gusgard/react-native-swiper-flatlist-simple-with-children)
 
 ```jsx
 import React from 'react';
