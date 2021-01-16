@@ -1,6 +1,6 @@
 {
   "name": "react-native-swiper-flatlist",
-  "version": "3.0.7-rc.2",
+  "version": "3.0.9",
   "main": "index.ts",
   "license": "Apache-2.0",
   "description": "React native swiper flatlist component",
@@ -12,7 +12,8 @@
     "test:watch": "jest --watch",
     "lint-and-test": "yarn tsc && yarn lint && yarn jest",
     "start": "echo ----- Check example folder  ----- 👻",
-    "publish": "npm publish"
+    "publish": "npm publish",
+    "publish:beta": "npm publish --tag beta"
   },
   "devDependencies": {
     "@react-native-community/eslint-config": "^2.0.0",

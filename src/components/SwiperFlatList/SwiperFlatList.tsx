@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, FlatListProps, Platform } from 'react-native';
+import { FlatList, FlatListProps, Platform, Dimensions } from 'react-native';
 
 import { Pagination } from '../Pagination/Pagination';
 import { SwiperFlatListProps } from './SwiperFlatListProps';
@@ -14,14 +14,13 @@ type T1 = any;
 type ScrollToIndex = { index: number; animated?: boolean };
 type ScrollToIndexInternal = { useOnChangeIndex: boolean };
 
+const { width: WIDTH, height: HEIGHT } = Dimensions.get('window');
+
 if (Platform.OS === 'web') {
   try {
-    require('./global.css');
-  } catch (error) {
-    console.log('fail global...');
-    console.log(error);
-  }
-  // FIX https://github.com/necolas/react-native-web/issues/1299#issuecomment-717428165
+    // FIX https://github.com/necolas/react-native-web/issues/1299#issuecomment-717428165
+    require('./react-native-web.css');
+  } catch (error) {}
 }
 
 // const SwiperFlatList = React.forwardRef<RefProps, SwiperFlatListProps<SwiperType>>(
@@ -236,8 +235,23 @@ export const SwiperFlatList = React.forwardRef(
       onViewableItemsChanged: _onViewableItemsChanged,
       // debug: true, // for debug
       testID: e2eID,
-      dataSet: { 'paging-enabled-fix': true },
     };
+
+    if (Platform.OS === 'web') {
+      if (props.getItemLayout === undefined) {
+        // NOTE: should we pass height/width for getItemLayout?
+        const ITEM_DIMENSION = vertical ? HEIGHT : WIDTH;
+        flatListProps.getItemLayout = (__data, ItemIndex: number) => {
+          return {
+            length: ITEM_DIMENSION,
+            offset: ITEM_DIMENSION * ItemIndex,
+            index: ItemIndex,
+          };
+        };
+      }
+
+      (flatListProps as any).dataSet = { 'paging-enabled-fix': true };
+    }
 
     const scrollToIndexForPagination = (params: ScrollToIndex) => {
       _scrollToIndex(params, { useOnChangeIndex: false });
