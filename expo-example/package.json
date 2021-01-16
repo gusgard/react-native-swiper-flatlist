@@ -11,7 +11,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "react-native-swiper-flatlist": "*",
+    "react-native-swiper-flatlist": "3.0.12",
     "expo": "~40.0.0",
     "expo-status-bar": "~1.0.3",
     "react": "16.13.1",

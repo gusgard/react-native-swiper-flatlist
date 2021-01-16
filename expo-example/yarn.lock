@@ -4479,10 +4479,10 @@ react-native-safe-area-context@3.1.9:
   resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-3.1.9.tgz#48864ea976b0fa57142a2cc523e1fd3314e7247e"
   integrity sha512-wmcGbdyE/vBSL5IjDPReoJUEqxkZsywZw5gPwsVUV1NBpw5eTIdnL6Y0uNKHE25Z661moxPHQz6kwAkYQyorxA==
 
-react-native-swiper-flatlist@*:
-  version "3.0.11"
-  resolved "https://registry.yarnpkg.com/react-native-swiper-flatlist/-/react-native-swiper-flatlist-3.0.11.tgz#498397f5c51b07687e6eece4f1d84d330bc7713f"
-  integrity sha512-W2tQYtZzxqE+liZrKOOn13XA0PYEuLyCTDq3Iee7FHhRT/F87SFxVcc69RA8ufuZmh/yhqx+uMA05L4HO6Pg0g==
+react-native-swiper-flatlist@3.0.12:
+  version "3.0.12"
+  resolved "https://registry.yarnpkg.com/react-native-swiper-flatlist/-/react-native-swiper-flatlist-3.0.12.tgz#b4d51fc45cb344161bb1002f709309bd2d667de8"
+  integrity sha512-0NyRBvH9h0DJyWRdTdNwRbIHRydw5WFpvl5waNdVUSbiuSsRHGk6WFpKbaSHrFIpJAgwpqRlLBQxZuj2nyR+pQ==
 
 react-native-web@~0.13.12:
   version "0.13.18"
