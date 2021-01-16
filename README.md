@@ -1,6 +1,6 @@
 # :point_up_2: Swiper FlatList component
 
-![platforms](https://img.shields.io/badge/platforms-Android%20|%20iOS-brightgreen.svg)
+![platforms](https://img.shields.io/badge/platforms-Android%20|%20iOS|%20web-brightgreen.svg)
 [![npm](https://img.shields.io/npm/v/react-native-swiper-flatlist.svg)](https://www.npmjs.com/package/react-native-swiper-flatlist)
 [![npm](https://img.shields.io/npm/dm/react-native-swiper-flatlist.svg)](https://www.npmjs.com/package/react-native-swiper-flatlist)
 [![Build Status](https://app.bitrise.io/app/dfeb47a453df37dd/status.svg?token=54NHsU_G5kGTSZpdEejqLA&branch=master)](https://app.bitrise.io/app/dfeb47a453df37dd)
@@ -169,7 +169,6 @@ This is a wrapper around [Flatlist](http://facebook.github.io/react-native/docs/
 ## Limitations
 
 - Vertical pagination is not supported on Android. [Doc](https://github.com/facebook/react-native/blob/a48da14800013659e115bf2b58e31aa396e678e5/Libraries/Components/ScrollView/ScrollView.js#L274)
-- `react-native-web` is not supported, due to the lack of support of some `props` used in this library. [Expo example](https://snack.expo.io/@gusgard/react-native-web-example-with-swiper)
 
 ## Author
 
