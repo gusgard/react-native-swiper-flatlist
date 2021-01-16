@@ -19,7 +19,7 @@ const { width: WIDTH, height: HEIGHT } = Dimensions.get('window');
 if (Platform.OS === 'web') {
   try {
     // FIX https://github.com/necolas/react-native-web/issues/1299#issuecomment-717428165
-    require('./react-native-web.css');
+   // require('./react-native-web.css');
   } catch (error) {}
 }
 
