@@ -22,7 +22,7 @@ const SCREENS = {
 //   fourth: 'container_swiper_renderItem_pagination_4',
 // };
 
-const DELAY = 2 * 1000;
+const DELAY = 2.5 * 1000;
 
 describe('example with renderItems and data', () => {
   beforeEach(async () => {
