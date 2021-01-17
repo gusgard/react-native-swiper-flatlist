@@ -22,7 +22,7 @@ const SCREENS = {
 //   fourth: 'container_swiper_renderItem_pagination_4',
 // };
 
-const DELAY = 1.9 * 1000;
+const DELAY = 2 * 1000;
 
 describe('example with renderItems and data', () => {
   beforeEach(async () => {
@@ -44,7 +44,7 @@ describe('example with renderItems and data', () => {
     await expect(element(by.id(SCREENS.fourth))).toBeNotVisible();
 
     // after 2s => screen with one
-    await new Promise((_) => setTimeout(_, DELAY));
+    await new Promise((_) => setTimeout(_, 2500));
 
     await expect(element(by.id(SCREENS.zero))).toBeNotVisible();
     await expect(element(by.id(SCREENS.one))).toBeVisible();
