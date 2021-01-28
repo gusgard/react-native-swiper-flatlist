@@ -26,7 +26,7 @@ npm install react-native-swiper-flatlist --save
 
 Version 2.x was re-implemented using React Hooks so it only works with version 0.59 or above
 
-Version 3.x was re-implemented using Typescript
+Version 3.x was re-implemented using Typescript and it works with react-native-web
 
 | react-native-swiper-flatlist | react-native | Detox tests                                                                                                                                                                     |
 | ---------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
