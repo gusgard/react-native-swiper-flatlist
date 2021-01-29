@@ -6092,10 +6092,10 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz#5b3531bd76a645a4c9fb6e693ed36419e3301339"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
 
-react-native-swiper-flatlist@3.0.11:
-  version "3.0.11"
-  resolved "https://registry.yarnpkg.com/react-native-swiper-flatlist/-/react-native-swiper-flatlist-3.0.11.tgz#498397f5c51b07687e6eece4f1d84d330bc7713f"
-  integrity sha512-W2tQYtZzxqE+liZrKOOn13XA0PYEuLyCTDq3Iee7FHhRT/F87SFxVcc69RA8ufuZmh/yhqx+uMA05L4HO6Pg0g==
+react-native-swiper-flatlist@*:
+  version "3.0.13"
+  resolved "https://registry.yarnpkg.com/react-native-swiper-flatlist/-/react-native-swiper-flatlist-3.0.13.tgz#6f7f58aa0a751dcfb642978b1a9cab197bf08bb6"
+  integrity sha512-tz3ZxubSc+XyaBGn5kVFh7wiD5W4BWf0ztyTDtM56axvPINRif223S+ElpVkZXLdttaIN/6bvqA0oYU2yRnroA==
 
 react-native@0.63.4:
   version "0.63.4"

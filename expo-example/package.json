@@ -2,7 +2,7 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "copy:src": "cp -r ../src/* ./node_modules/react-native-swiper-flatlist/src",
-    "postinstall": "yarn copy:src && cp -r ../example/src ./src",
+    "postinstall": "yarn copy:src && cp -r ../example/src ./src && rm -rf node_modules/react-native-swiper-flatlist/node_modules/react-native",
     "start:watch": "node ../example/scripts/watch-and-copy.js",
     "start": "expo start",
     "android": "expo start --android",

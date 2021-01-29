@@ -2,14 +2,13 @@ import React from 'react';
 import { FlatList, FlatListProps, Platform, Dimensions } from 'react-native';
 
 import { Pagination } from '../Pagination/Pagination';
-import { SwiperFlatListProps } from './SwiperFlatListProps';
+import { SwiperFlatListProps, SwiperFlatListRefProps } from './SwiperFlatListProps';
 
 const MILLISECONDS = 1000;
 const FIRST_INDEX = 0;
 const ITEM_VISIBLE_PERCENT_THRESHOLD = 60;
 
 // TODO: figure out how to use forwardRef with generics
-type RefProps = any;
 type T1 = any;
 type ScrollToIndex = { index: number; animated?: boolean };
 type ScrollToIndexInternal = { useOnChangeIndex: boolean };
@@ -52,7 +51,7 @@ export const SwiperFlatList = React.forwardRef(
       e2eID,
       ...props
     }: SwiperFlatListProps<T1>,
-    ref: RefProps,
+    ref: React.Ref<SwiperFlatListRefProps>,
   ) => {
     let _data: unknown[] = [];
     let _renderItem: FlatListProps<any>['renderItem'];
@@ -272,3 +271,9 @@ export const SwiperFlatList = React.forwardRef(
     );
   },
 );
+
+// https://gist.github.com/Venryx/7cff24b17867da305fff12c6f8ef6f96
+type Handle<T> = T extends React.ForwardRefExoticComponent<React.RefAttributes<infer T2>>
+  ? T2
+  : never;
+export type SwiperFlatList = Handle<typeof SwiperFlatList>;
