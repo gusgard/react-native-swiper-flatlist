@@ -5,32 +5,31 @@ import { SwiperFlatList } from 'react-native-swiper-flatlist';
 const { width, height } = Dimensions.get('window');
 
 export default () => {
-  const scrollRef = React.useRef(null);
+  const scrollRef = React.useRef<SwiperFlatList>(null);
   const goToLastIndex = () => {
-    scrollRef.current.goToLastIndex();
+    scrollRef.current?.goToLastIndex();
   };
   const goToFirstIndex = () => {
-    scrollRef.current.goToFirstIndex();
+    scrollRef.current?.goToFirstIndex();
   };
   const goToSecondIndex = () => {
-    scrollRef.current.scrollToIndex({ index: 1 });
+    scrollRef.current?.scrollToIndex({ index: 1 });
   };
   const getCurrentIndex = () => {
-    const currentIndex = scrollRef.current.getCurrentIndex();
+    const currentIndex = scrollRef.current?.getCurrentIndex();
     Alert.alert(`the current index is ${currentIndex}`);
   };
   const getPrevIndex = () => {
-    const prevIndex = scrollRef.current.getPrevIndex();
+    const prevIndex = scrollRef.current?.getPrevIndex();
     Alert.alert(`the previous index is ${prevIndex}`);
-  };
-  const onChangeIndex = ({ index, prevIndex }) => {
-    console.log({ index, prevIndex });
   };
   return (
     <SwiperFlatList
       showPagination
       ref={scrollRef}
-      onChangeIndex={onChangeIndex}
+      onChangeIndex={({ index, prevIndex }) => {
+        console.log({ index, prevIndex });
+      }}
       // TODO: rename it to children eg: "container_swiper_children"
       e2eID="container_swiper"
     >

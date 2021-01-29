@@ -1,6 +1,15 @@
 import { ViewabilityConfig, FlatListProps } from 'react-native';
 import { PaginationProps } from '../Pagination/PaginationProps';
 
+type ScrollToIndex = { index: number; animated?: boolean }; // DUPLICATED
+export type SwiperFlatListRefProps = {
+  getCurrentIndex: () => number;
+  getPrevIndex: () => number;
+  scrollToIndex: (item: ScrollToIndex) => void;
+  goToLastIndex: () => void;
+  goToFirstIndex: () => void;
+};
+
 export type SwiperFlatListProps<T> = Partial<FlatListProps<T>> & {
   /**
    * Children elements
