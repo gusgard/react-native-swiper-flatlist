@@ -17,7 +17,9 @@
     "e2e:ios:build-test": "yarn e2e:ios:build && yarn e2e:ios:test",
     "e2e:ios:test:ci": "yarn detox test --configuration ios.sim.release --workers 3 --debug-synchronization",
     "e2e:ios:build:ci": "yarn detox build --configuration ios.sim.release",
-    "e2e:ios:build-test:ci": "yarn e2e:ios:build:ci && yarn e2e:ios:test:ci"
+    "e2e:ios:build-test:ci": "yarn e2e:ios:build:ci && yarn e2e:ios:test:ci",
+    "e2e:android:build:ci": "yarn detox build --configuration android.emu.release",
+    "e2e:android:test:ci": "yarn detox test --configuration android.emu.release"
   },
   "dependencies": {
     "jest-circus": "^26.6.3",

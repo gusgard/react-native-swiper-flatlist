@@ -150,15 +150,22 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+        releaseSigningConfig {
+            storeFile rootProject.file("app/ct-detox.keystore")
+            storePassword "ct-detox"
+            keyAlias "ct-detox"
+            keyPassword "ct-detox"
+        }
     }
     buildTypes {
-        debug {
+        debug { 
             signingConfig signingConfigs.debug
         }
         release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
-            signingConfig signingConfigs.debug
+            // signingConfig signingConfigs.debug
+            signingConfig signingConfigs.releaseSigningConfig
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
