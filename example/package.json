@@ -23,7 +23,7 @@
     "jest-circus": "^26.6.3",
     "react": "16.13.1",
     "react-native": "0.63.4",
-    "react-native-swiper-flatlist": "3.0.14"
+    "react-native-swiper-flatlist": "3.0.15"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
