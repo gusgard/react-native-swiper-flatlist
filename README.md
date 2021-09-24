@@ -34,6 +34,8 @@ Version 3.x was re-implemented using Typescript and it works with react-native-w
 | 2.x                          | >= 0.59      | [![Build Status](https://travis-ci.org/gusgard/react-native-swiper-flatlist.svg?branch=v1)](https://travis-ci.org/github/gusgard/react-native-swiper-flatlist/builds/749156790) |
 | 3.x                          | >= 0.59      | [![Build Status](https://app.bitrise.io/app/dfeb47a453df37dd/status.svg?token=54NHsU_G5kGTSZpdEejqLA&branch=master)](https://app.bitrise.io/app/dfeb47a453df37dd)               |
 
+Note: we are using the feature `export type` available in `babel v7.9.0` https://github.com/babel/babel/pull/11171, you might have this issue with React Native between 0.60 and 0.63, please update `babel` to at least to `v7.9.0`
+
 ## Examples
 
 [Expo example with renderItems, children and more](https://snack.expo.io/@gusgard/react-native-swiper-flatlist)
