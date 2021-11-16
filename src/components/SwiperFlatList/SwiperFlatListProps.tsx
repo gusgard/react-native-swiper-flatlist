@@ -154,5 +154,6 @@ export type SwiperFlatListProps<T> = Partial<FlatListProps<T>> & {
     | 'paginationStyleItemActive'
     | 'paginationStyleItemInactive'
     | 'onPaginationSelectedIndex'
+    | 'paginationTapDisabled'
   >;
 //#endregion Pagination
