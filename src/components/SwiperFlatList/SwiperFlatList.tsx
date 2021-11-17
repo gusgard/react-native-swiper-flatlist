@@ -36,6 +36,7 @@ export const SwiperFlatList = React.forwardRef(
       paginationStyleItemActive,
       paginationStyleItemInactive,
       onPaginationSelectedIndex,
+      paginationTapDisabled = false,
       // Autoplay
       autoplayDelay = 3,
       autoplay = false,
@@ -260,6 +261,7 @@ export const SwiperFlatList = React.forwardRef(
       paginationStyleItemActive,
       paginationStyleItemInactive,
       onPaginationSelectedIndex,
+      paginationTapDisabled,
       e2eID,
     };
 

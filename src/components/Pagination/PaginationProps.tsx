@@ -59,6 +59,11 @@ export type PaginationProps = {
    */
   onPaginationSelectedIndex?: () => void;
   /**
+   * Prevents tapping pagination dots
+   * Defaults to false
+   */
+  paginationTapDisabled?: boolean;
+  /**
    * TestID for automation testing
    *
    */
