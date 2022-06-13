@@ -167,7 +167,7 @@ export const SwiperFlatList = React.forwardRef(
       // https://upmostly.com/tutorials/settimeout-in-react-components-using-hooks
       return () => clearTimeout(autoplayTimer);
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [currentIndexes.index, _data.length]);
+    }, [autoplay, currentIndexes.index, _data.length]);
 
     const _onMomentumScrollEnd: FlatListProps<unknown>['onMomentumScrollEnd'] = (event) => {
       // NOTE: Method not executed when call "flatListElement?.current?.scrollToIndex"
