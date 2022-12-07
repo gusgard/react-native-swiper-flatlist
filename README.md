@@ -44,7 +44,7 @@ Note: we are using the feature `export type` available in `babel v7.9.0` https:/
 
 [React Native example with renderItems and custom pagination](./example/src/SwiperWithRenderItems.js)
 
-[React Native example with children](./example/src/SwiperWithChildren.js)
+[React Native example with children](./example/src/SwiperWithChildren.tsx)
 
 ### Code
 
