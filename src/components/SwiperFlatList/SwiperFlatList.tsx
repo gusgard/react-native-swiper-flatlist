@@ -150,6 +150,11 @@ export const SwiperFlatList = React.forwardRef(
             // avoid nextIndex being set to NaN
             return;
           }
+          
+          if (!autoplay) {
+            // disabled if autoplay is off
+            return;
+          }
 
           const nextIncrement = autoplayInvertDirection ? -1 : +1;
 
