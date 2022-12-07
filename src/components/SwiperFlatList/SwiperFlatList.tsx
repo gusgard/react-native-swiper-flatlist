@@ -74,7 +74,7 @@ export const SwiperFlatList = React.forwardRef(
     const [ignoreOnMomentumScrollEnd, setIgnoreOnMomentumScrollEnd] = React.useState(false);
     const flatListElement = React.useRef<FlatList<unknown>>(null);
     const [scrollEnabled, setScrollEnabled] = React.useState(!disableGesture);
-    
+
     React.useEffect(() => {
       setScrollEnabled(!disableGesture);
     }, [disableGesture]);
@@ -154,7 +154,7 @@ export const SwiperFlatList = React.forwardRef(
             // avoid nextIndex being set to NaN
             return;
           }
-          
+
           if (!autoplay) {
             // disabled if autoplay is off
             return;
