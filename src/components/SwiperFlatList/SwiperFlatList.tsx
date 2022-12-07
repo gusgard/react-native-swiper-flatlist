@@ -74,6 +74,10 @@ export const SwiperFlatList = React.forwardRef(
     const [ignoreOnMomentumScrollEnd, setIgnoreOnMomentumScrollEnd] = React.useState(false);
     const flatListElement = React.useRef<FlatList<unknown>>(null);
     const [scrollEnabled, setScrollEnabled] = React.useState(!disableGesture);
+    
+    React.useEffect(() => {
+      setScrollEnabled(!disableGesture);
+    }, [disableGesture]);
 
     const _onChangeIndex = React.useCallback(
       ({ index: _index, prevIndex: _prevIndex }: { index: number; prevIndex: number }) => {
