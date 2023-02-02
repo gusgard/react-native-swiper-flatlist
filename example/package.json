@@ -22,7 +22,7 @@
   "dependencies": {
     "react": "18.2.0",
     "react-native": "0.71.2",
-    "react-native-swiper-flatlist": "3.0.15"
+    "react-native-swiper-flatlist": "3.0.18"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
