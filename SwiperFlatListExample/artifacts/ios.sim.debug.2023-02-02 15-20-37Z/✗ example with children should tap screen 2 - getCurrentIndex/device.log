@@ -1,0 +1,53 @@
+Timestamp               Ty Process[PID:TID]
+2023-02-02 12:20:58.499 Df log[31541:2680c3] (LoggingSupport) Sending stream request to diagnosticd
+2023-02-02 12:20:58.693 Db SpringBoard[14001:253efe] [com.apple.locationd.Motion:Motion] Ping timer fired, resetting watchdog
+2023-02-02 12:20:58.811 I  locationd[14020:264471] [com.apple.locationd.Core:Simulation] {"msg":"Nowhere to go; not preparing next location"}
+2023-02-02 12:20:58.811 Db locationd[14020:264471] [com.apple.locationd.Core:Simulation] {"msg":"Dealing with no more locations", "repeatBehavior":1}
+2023-02-02 12:20:58.811 Db locationd[14020:264471] [com.apple.locationd.Core:Simulation] {"msg":"Adjust next location timestamp", "originalTimestamp_s":"697044059.811432958", "delta_s":"0.079818010"}
+2023-02-02 12:20:58.811 Db locationd[14020:264471] [com.apple.locationd.Core:Simulation] {"msg":"Preparing next location"}
+2023-02-02 12:20:58.811 Db locationd[14020:264471] [com.apple.locationd.Core:Simulation] {"msg":"No more pending locations"}
+2023-02-02 12:20:58.811 Db locationd[14020:264471] [com.apple.locationd.Core:Simulation] {"msg":"Notify location is", "location":'00 00 00 00 FF FF 00 00 DD 0A 61 35 96 E4 42 40 76 E2 72 BC 02 9A 5E C0 00 00 00 00 00 00 14 40 00 00 00 00 00 00 00 00 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 83 14 F2 2D 06 C6 C4 41 00 00 00 00 00 00 00 00 00 00 F0 BF 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 F0 BF FF FF FF 7F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'}
+2023-02-02 12:20:58.811 Df locationd[14020:264471] [com.apple.locationd.Position:GeneralCLX] @ClxSimulated, Fix, 1, ll, 37.7858340, -122.4064170, acc, 5.00, course, -1.0, time, 697044059.9, deltaDistance, 0.0, deltaDistanceAccuracy, 1.9, odometer, 0.0, timestampGps, 697044059.9
+2023-02-02 12:20:58.812 Db locationd[14020:264471] [com.apple.locationd.Core:Simulation] {"msg":"Notification delay", "notificationDelay_s":"1.000000000"}
+2023-02-02 12:20:58.812 Db locationd[14020:264473] [com.apple.locationd.Core:Simulation] Sending through simulated location for simulated
+2023-02-02 12:20:58.812 A  locationd[14020:264473] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:20:58.812 Db locationd[14020:264473] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":3}
+2023-02-02 12:20:58.812 A  locationd[14020:264473] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:20:58.812 Db locationd[14020:264473] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":4}
+2023-02-02 12:20:58.812 A  locationd[14020:264473] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:20:58.813 Db locationd[14020:264473] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":40}
+2023-02-02 12:20:58.813 A  locationd[14020:264473] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:20:58.813 Db locationd[14020:264473] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":2}
+2023-02-02 12:20:58.813 A  locationd[14020:264473] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:20:58.813 Db locationd[14020:264473] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":1}
+2023-02-02 12:20:58.813 A  locationd[14020:264473] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:20:58.814 Db locationd[14020:264473] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":5}
+2023-02-02 12:20:58.814 A  locationd[14020:264473] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:20:58.814 Db locationd[14020:264473] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":0}
+2023-02-02 12:20:59.817 I  locationd[14020:264471] [com.apple.locationd.Core:Simulation] {"msg":"Nowhere to go; not preparing next location"}
+2023-02-02 12:20:59.817 Db locationd[14020:264471] [com.apple.locationd.Core:Simulation] {"msg":"Dealing with no more locations", "repeatBehavior":1}
+2023-02-02 12:20:59.817 Db locationd[14020:264471] [com.apple.locationd.Core:Simulation] {"msg":"Adjust next location timestamp", "originalTimestamp_s":"697044060.817566991", "delta_s":"0.079818010"}
+2023-02-02 12:20:59.817 Db locationd[14020:264471] [com.apple.locationd.Core:Simulation] {"msg":"Preparing next location"}
+2023-02-02 12:20:59.817 Db locationd[14020:264471] [com.apple.locationd.Core:Simulation] {"msg":"No more pending locations"}
+2023-02-02 12:20:59.817 Db locationd[14020:264471] [com.apple.locationd.Core:Simulation] {"msg":"Notify location is", "location":'00 00 00 00 FF FF 00 00 DD 0A 61 35 96 E4 42 40 76 E2 72 BC 02 9A 5E C0 00 00 00 00 00 00 14 40 00 00 00 00 00 00 00 00 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 83 DD 72 2E 06 C6 C4 41 00 00 00 00 00 00 00 00 00 00 F0 BF 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 F0 BF FF FF FF 7F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'}
+2023-02-02 12:20:59.817 Df locationd[14020:264471] [com.apple.locationd.Position:GeneralCLX] @ClxSimulated, Fix, 1, ll, 37.7858340, -122.4064170, acc, 5.00, course, -1.0, time, 697044060.9, deltaDistance, 0.0, deltaDistanceAccuracy, 1.9, odometer, 0.0, timestampGps, 697044060.9
+2023-02-02 12:20:59.817 Db locationd[14020:264472] [com.apple.locationd.Core:Simulation] Sending through simulated location for simulated
+2023-02-02 12:20:59.817 A  locationd[14020:264472] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:20:59.817 Db locationd[14020:264472] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":3}
+2023-02-02 12:20:59.817 A  locationd[14020:264472] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:20:59.818 Db locationd[14020:264472] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":4}
+2023-02-02 12:20:59.817 Db locationd[14020:264471] [com.apple.locationd.Core:Simulation] {"msg":"Notification delay", "notificationDelay_s":"1.000000000"}
+2023-02-02 12:20:59.818 A  locationd[14020:264472] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:20:59.818 Db locationd[14020:264472] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":40}
+2023-02-02 12:20:59.818 A  locationd[14020:264472] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:20:59.818 Db locationd[14020:264472] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":2}
+2023-02-02 12:20:59.818 A  locationd[14020:264472] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:20:59.818 Db locationd[14020:264472] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":1}
+2023-02-02 12:20:59.818 A  locationd[14020:264472] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:20:59.818 Db locationd[14020:264472] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":5}
+2023-02-02 12:20:59.818 A  locationd[14020:264472] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:20:59.818 Db locationd[14020:264472] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":0}
+2023-02-02 12:20:59.870 Db backboardd[14017:253f03] [com.apple.locationd.Motion:Motion] Ping timer fired, resetting watchdog
+2023-02-02 12:21:00.001 Df SpringBoard[14001:253efe] [com.apple.SpringBoard:StatusBarish] time is unchanged, still enabled
+2023-02-02 12:21:00.002 Df SpringBoard[14001:253efe] [com.apple.SpringBoard:StatusBarish] date is unchanged, still enabled
+

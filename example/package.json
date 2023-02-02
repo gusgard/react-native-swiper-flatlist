@@ -7,7 +7,7 @@
     "test": "jest",
     "lint": "eslint .",
     "android": "react-native run-android && adb reverse tcp:8081 tcp:8081",
-    "ios": "react-native run-ios --simulator='iPhone 11 Pro'",
+    "ios": "react-native run-ios --simulator='iPhone 14 Pro'",
     "postinstall": "yarn copy:src && rm -rf node_modules/react-native-swiper-flatlist/node_modules/react-native && npx pod-install",
     "copy:src": "cp -r ../src/* ./node_modules/react-native-swiper-flatlist/src",
     "watch": "node ./scripts/watch-and-copy.js",

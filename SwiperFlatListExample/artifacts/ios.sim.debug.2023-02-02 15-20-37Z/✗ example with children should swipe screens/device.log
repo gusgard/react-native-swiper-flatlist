@@ -1,0 +1,86 @@
+Timestamp               Ty Process[PID:TID]
+2023-02-02 12:20:48.684 Df log[31439:267e82] (LoggingSupport) Sending stream request to diagnosticd
+2023-02-02 12:20:48.693 Db SpringBoard[14001:253efe] [com.apple.locationd.Motion:Motion] Ping timer fired, resetting watchdog
+2023-02-02 12:20:48.714 Db lsd[14039:264a8c] [com.apple.coreservicesstore:default] Creating dispatch_data for XPC coder with length 4440064
+2023-02-02 12:20:48.741 I  locationd[14020:264473] [com.apple.locationd.Core:Simulation] {"msg":"Nowhere to go; not preparing next location"}
+2023-02-02 12:20:48.741 Db locationd[14020:264473] [com.apple.locationd.Core:Simulation] {"msg":"Dealing with no more locations", "repeatBehavior":1}
+2023-02-02 12:20:48.741 Db locationd[14020:264473] [com.apple.locationd.Core:Simulation] {"msg":"Adjust next location timestamp", "originalTimestamp_s":"697044049.741881013", "delta_s":"0.079818010"}
+2023-02-02 12:20:48.741 Db locationd[14020:264473] [com.apple.locationd.Core:Simulation] {"msg":"Preparing next location"}
+2023-02-02 12:20:48.741 Db locationd[14020:264473] [com.apple.locationd.Core:Simulation] {"msg":"No more pending locations"}
+2023-02-02 12:20:48.741 Db locationd[14020:264473] [com.apple.locationd.Core:Simulation] {"msg":"Notify location is", "location":'00 00 00 00 FF FF 00 00 DD 0A 61 35 96 E4 42 40 76 E2 72 BC 02 9A 5E C0 00 00 00 00 00 00 14 40 00 00 00 00 00 00 00 00 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 6F 2D E9 28 06 C6 C4 41 00 00 00 00 00 00 00 00 00 00 F0 BF 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 F0 BF FF FF FF 7F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'}
+2023-02-02 12:20:48.741 Df locationd[14020:264473] [com.apple.locationd.Position:GeneralCLX] @ClxSimulated, Fix, 1, ll, 37.7858340, -122.4064170, acc, 5.00, course, -1.0, time, 697044049.8, deltaDistance, 0.0, deltaDistanceAccuracy, 1.9, odometer, 0.0, timestampGps, 697044049.8
+2023-02-02 12:20:48.742 Db locationd[14020:264472] [com.apple.locationd.Core:Simulation] Sending through simulated location for simulated
+2023-02-02 12:20:48.742 A  locationd[14020:264472] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:20:48.742 Db locationd[14020:264472] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":3}
+2023-02-02 12:20:48.742 A  locationd[14020:264472] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:20:48.742 Db locationd[14020:264472] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":4}
+2023-02-02 12:20:48.742 Db locationd[14020:264473] [com.apple.locationd.Core:Simulation] {"msg":"Notification delay", "notificationDelay_s":"1.000000000"}
+2023-02-02 12:20:48.742 A  locationd[14020:264472] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:20:48.742 Db locationd[14020:264472] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":40}
+2023-02-02 12:20:48.742 A  locationd[14020:264472] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:20:48.742 Db locationd[14020:264472] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":2}
+2023-02-02 12:20:48.742 A  locationd[14020:264472] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:20:48.742 Db locationd[14020:264472] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":1}
+2023-02-02 12:20:48.743 A  locationd[14020:264472] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:20:48.743 Db locationd[14020:264472] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":5}
+2023-02-02 12:20:48.743 A  locationd[14020:264472] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:20:48.743 Db locationd[14020:264472] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":0}
+2023-02-02 12:20:48.793 Df lsd[14039:264a8c] [com.apple.launchservices:default] Writing identifiers file to /Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Containers/Shared/SystemGroup/C986B85B-7478-4AD1-A17E-26F573A02D38/Library/Caches/com.apple.lsdidentifiers.plist
+2023-02-02 12:20:48.811 I  UserEventAgent[14000:265d0f] [com.apple.xpc.activity:Internal] activity timer fired
+2023-02-02 12:20:48.812 Df apsd[14046:253f9c] [com.apple.CommonUtilities:Power] Releasing power assertion {identifier: APSCourier(tcpStream:dataReceived:)-NonCellular}
+2023-02-02 12:20:48.821 Db apsd[14046:253f9c] [com.apple.CommonUtilities:Power] (
+    "2   CommonUtilities                     0x00000001832a3d78 CUTMapObjectProperties + 8848",
+    "3   libsystem_blocks.dylib              0x00000001800b3f60 _ZN10HelperBaseI13GenericInlineE14disposeCaptureILNS1_16BlockCaptureKindE3EEEbjPh + 64",
+    "4   libsystem_blocks.dylib              0x00000001800b28e4 _ZN10HelperBaseI13GenericInlineE12destroyBlockEP12Block_layoutbPh + 168",
+    "5   libsystem_blocks.dylib              0x00000001800b20ac _call_dispose_helpers_excp + 68",
+    "6   libsystem_blocks.dylib              0x00000001800b2fb8 _Block_release + 280",
+    "7   libdispatch.dylib                   0x000000018014f16c _dispatch_source_handler_dispose + 32",
+    "8   libdispatch.dylib                   0x000000018014e1ac _dispatch_source_invoke + 1728",
+    "9   libdispatch.dylib                   0x0000000180144e8c _dispatch_main_queue_drain + 824",
+    "10  libdispatch.dylib                   0x0000000180144b44 _dispatch_main_queue_callback_4CF + 40",
+    "11  CoreFoundation
+2023-02-02 12:20:48.915 I  UserEventAgent[14000:265d0f] [com.apple.xpc.activity:Internal] evaluating activities
+2023-02-02 12:20:48.918 I  UserEventAgent[14000:265d0f] [com.apple.xpc.activity:Internal] Scheduling activity timer for [com.apple.siri.xpc_activity.context-collector-reelection (0x126f08c30)] in 41041 seconds
+2023-02-02 12:20:48.919 I  UserEventAgent[14000:265d0f] [com.apple.xpc.activity:Internal] Scheduling activity timer for [com.apple.suggestd.process-pending-geocodes (0x126e041b0)] in 41020 seconds
+2023-02-02 12:20:48.920 I  UserEventAgent[14000:265d0f] [com.apple.xpc.activity:Internal] Scheduling activity timer for [com.apple.siriactionsd.ShortcutsDailyMetricCheckIn (0x126f07390)] in 14093 seconds
+2023-02-02 12:20:48.924 I  UserEventAgent[14000:265d0f] [com.apple.xpc.activity:Internal] Scheduling activity timer for [com.apple.healthd.prune-database (0x128c08690)] in 12222 seconds
+2023-02-02 12:20:48.927 I  UserEventAgent[14000:265d0f] [com.apple.xpc.activity:Internal] Scheduling activity timer for [com.apple.mediaanalysisd.photos.ocr (0x128b0c150)] in 1421 seconds
+2023-02-02 12:20:48.927 I  UserEventAgent[14000:265d0f] [com.apple.xpc.activity:Internal] Scheduling activity timer for [com.apple.triald.client-trigger.wifi (0x128b0e690)] in 1199 seconds
+2023-02-02 12:20:48.927 I  UserEventAgent[14000:265d0f] [com.apple.xpc.activity:Internal] Scheduling activity timer for [com.apple.chronod.nextScheduledTimelineRefresh (0x126e055e0)] in 167 seconds
+2023-02-02 12:20:48.927 I  UserEventAgent[14000:265d0f] [com.apple.xpc.activity:Internal] Activity com.apple.proactiveeventtrackerd.mapreduce.heartbeat (0x128b0c6a0) is eligible to run.
+2023-02-02 12:20:48.927 I  UserEventAgent[14000:265d0f] [com.apple.xpc.activity:Internal] Activity com.apple.webbookmarksd.xpc.backupActivity (0x128b0cbf0) is eligible to run.
+2023-02-02 12:20:48.927 I  UserEventAgent[14000:265d0f] [com.apple.xpc.activity:Internal] Activity com.apple.email.searchableIndex.scheduler.budgeted (0x128b0a490) is eligible to run.
+2023-02-02 12:20:48.927 I  UserEventAgent[14000:265d0f] [com.apple.xpc.activity:Internal] Activity com.apple.ScreenTimeAgent.activity.hourly-usage-rollup (0x126d069a0) is eligible to run.
+2023-02-02 12:20:48.927 I  UserEventAgent[14000:265d0f] [com.apple.xpc.activity:Internal] Activity com.apple.cloudphotod.backup (0x128b0d8b0) is eligible to run.
+2023-02-02 12:20:48.927 I  UserEventAgent[14000:265d0f] [com.apple.xpc.activity:Internal] Scheduling activity timer for [com.apple.message.db.vacuum (0x126f09a10)] in 100 seconds
+2023-02-02 12:20:48.927 I  UserEventAgent[14000:265d0f] [com.apple.xpc.activity:Internal] Activity com.apple.icloud.fmfd.launch-on-reboot (0x128b0be20) is eligible to run.
+2023-02-02 12:20:48.927 I  UserEventAgent[14000:265d0f] [com.apple.xpc.activity:Internal] Activity com.apple.webbookmarksd.passwordIconsRepeatingCleanupActivityIdentifier (0x128b0cd00) is eligible to run.
+2023-02-02 12:20:48.927 I  UserEventAgent[14000:265d0f] [com.apple.xpc.activity:Internal] Scheduling activity timer for [com.apple.fontservicesd.subscription-support (0x128c068b0)] in 41 seconds
+2023-02-02 12:20:48.927 I  UserEventAgent[14000:265d0f] [com.apple.xpc.activity:Internal] Activity com.apple.siri.xpc_activity.sync.now (0x128a05dd0) is eligible to run.
+2023-02-02 12:20:48.927 I  UserEventAgent[14000:265d0f] [com.apple.xpc.activity:Internal] com.apple.siri.xpc_activity.sync.now state change 1 -> 2
+2023-02-02 12:20:48.928 Df UserEventAgent[14000:265d0f] [com.apple.xpc.activity:Activities] Initiating XPC Activity: com.apple.siri.xpc_activity.sync.now (0x128a05dd0)
+2023-02-02 12:20:49.746 I  locationd[14020:264473] [com.apple.locationd.Core:Simulation] {"msg":"Nowhere to go; not preparing next location"}
+2023-02-02 12:20:49.746 Db locationd[14020:264473] [com.apple.locationd.Core:Simulation] {"msg":"Dealing with no more locations", "repeatBehavior":1}
+2023-02-02 12:20:49.746 Db locationd[14020:264473] [com.apple.locationd.Core:Simulation] {"msg":"Adjust next location timestamp", "originalTimestamp_s":"697044050.746361017", "delta_s":"0.079818010"}
+2023-02-02 12:20:49.746 Db locationd[14020:264473] [com.apple.locationd.Core:Simulation] {"msg":"Preparing next location"}
+2023-02-02 12:20:49.746 Db locationd[14020:264473] [com.apple.locationd.Core:Simulation] {"msg":"No more pending locations"}
+2023-02-02 12:20:49.746 Db locationd[14020:264473] [com.apple.locationd.Core:Simulation] {"msg":"Notify location is", "location":'00 00 00 00 FF FF 00 00 DD 0A 61 35 96 E4 42 40 76 E2 72 BC 02 9A 5E C0 00 00 00 00 00 00 14 40 00 00 00 00 00 00 00 00 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 3C C0 69 29 06 C6 C4 41 00 00 00 00 00 00 00 00 00 00 F0 BF 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 F0 BF FF FF FF 7F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'}
+2023-02-02 12:20:49.746 Df locationd[14020:264473] [com.apple.locationd.Position:GeneralCLX] @ClxSimulated, Fix, 1, ll, 37.7858340, -122.4064170, acc, 5.00, course, -1.0, time, 697044050.8, deltaDistance, 0.0, deltaDistanceAccuracy, 1.9, odometer, 0.0, timestampGps, 697044050.8
+2023-02-02 12:20:49.746 Db locationd[14020:264473] [com.apple.locationd.Core:Simulation] {"msg":"Notification delay", "notificationDelay_s":"1.000000000"}
+2023-02-02 12:20:49.746 Db locationd[14020:264473] [com.apple.locationd.Core:Simulation] Sending through simulated location for simulated
+2023-02-02 12:20:49.746 A  locationd[14020:264473] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:20:49.746 Db locationd[14020:264473] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":3}
+2023-02-02 12:20:49.746 A  locationd[14020:264473] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:20:49.746 Db locationd[14020:264473] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":4}
+2023-02-02 12:20:49.747 A  locationd[14020:264473] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:20:49.747 Db locationd[14020:264473] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":40}
+2023-02-02 12:20:49.747 A  locationd[14020:264473] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:20:49.747 Db locationd[14020:264473] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":2}
+2023-02-02 12:20:49.747 A  locationd[14020:264473] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:20:49.747 Db locationd[14020:264473] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":1}
+2023-02-02 12:20:49.747 A  locationd[14020:264473] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:20:49.747 Db locationd[14020:264473] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":5}
+2023-02-02 12:20:49.747 A  locationd[14020:264473] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:20:49.747 Db locationd[14020:264473] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":0}
+2023-02-02 12:20:49.880 Db backboardd[14017:253f03] [com.apple.locationd.Motion:Motion] Ping timer fired, resetting watchdog
+

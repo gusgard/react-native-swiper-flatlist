@@ -1,0 +1,798 @@
+Timestamp               Ty Process[PID:TID]
+2023-02-02 12:27:34.665 Df log[34928:26df03] (LoggingSupport) Sending stream request to diagnosticd
+2023-02-02 12:27:34.728 Df mobileassetd[34554:26d446] [com.apple.mobileassetd:Notice] dataFillInstalledWithPurpose: Path to asset dir: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/ef9c121249635b32dd48da4e2e7030ef ... 27.asset
+2023-02-02 12:27:34.730 Db mobileassetd[34554:26d446] [com.apple.mobileassetd:Debug] getPathToAssetWithPurpose: URL to asset: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/55b5557e3f076ab7435bfdbef3361823 ... 93.asset
+2023-02-02 12:27:34.732 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754040 for unit 778 from database 0x12a008600
+2023-02-02 12:27:34.733 Db assistantd[34489:26dba0] [com.apple.containermanager:xpc] connection <0x600001321590/1/0> shared; cnt = 3
+2023-02-02 12:27:34.741 Db siriinferenced[34588:26d89b] [com.apple.siri.sirisuggestions:SiriSuggestionsPool] SuggestionPool:: Loaded SiriSuggestionsKit.DelegateOwnedSuggestionsRepository suggestions as [SiriSuggestionsKit.SuggestionDetails(suggestionId: "com.apple.siri.applaunch.suggestions.LaunchApp", description: "com.apple.siri.applaunch.suggestions.LaunchApp", resolverParams: ["app": SiriSuggestionsKit.ResolvableParameter], viewProvider: AppLaunchSuggestionsPlugin.AppViewProvider(catViewCallback: SiriSuggestionsKit.ViewCallbacksWrapper), actionIdKeyMapper: SiriSuggestionsKit.SimpleActionKeyMapper)] from provider: applaunch
+2023-02-02 12:27:34.764 I  locationd[34507:26d437] [com.apple.locationd.Core:Simulation] {"msg":"Nowhere to go; not preparing next location"}
+2023-02-02 12:27:34.764 Db locationd[34507:26d437] [com.apple.locationd.Core:Simulation] {"msg":"Dealing with no more locations", "repeatBehavior":1}
+2023-02-02 12:27:34.764 Db locationd[34507:26d437] [com.apple.locationd.Core:Simulation] {"msg":"Adjust next location timestamp", "originalTimestamp_s":"697044455.764920950", "delta_s":"0.027486086"}
+2023-02-02 12:27:34.764 Db locationd[34507:26d437] [com.apple.locationd.Core:Simulation] {"msg":"Preparing next location"}
+2023-02-02 12:27:34.764 Db locationd[34507:26d437] [com.apple.locationd.Core:Simulation] {"msg":"No more pending locations"}
+2023-02-02 12:27:34.764 Db locationd[34507:26d437] [com.apple.locationd.Core:Simulation] {"msg":"Notify location is", "location":'00 00 00 00 FF FF 00 00 DD 0A 61 35 96 E4 42 40 76 E2 72 BC 02 9A 5E C0 00 00 00 00 00 00 14 40 00 00 00 00 00 00 00 00 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 98 6D E5 F3 06 C6 C4 41 00 00 00 00 00 00 00 00 00 00 F0 BF 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 F0 BF FF FF FF 7F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'}
+2023-02-02 12:27:34.765 Df locationd[34507:26d437] [com.apple.locationd.Position:GeneralCLX] @ClxSimulated, Fix, 1, ll, 37.7858340, -122.4064170, acc, 5.00, course, -1.0, time, 697044455.8, deltaDistance, 0.0, deltaDistanceAccuracy, 1.9, odometer, 0.0, timestampGps, 697044455.8
+2023-02-02 12:27:34.765 Db locationd[34507:26d437] [com.apple.locationd.Core:Simulation] {"msg":"Notification delay", "notificationDelay_s":"1.000000000"}
+2023-02-02 12:27:34.765 Db locationd[34507:26dec7] [com.apple.locationd.Core:Simulation] Sending through simulated location for simulated
+2023-02-02 12:27:34.765 A  locationd[34507:26dec7] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:27:34.765 Db locationd[34507:26dec7] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":3}
+2023-02-02 12:27:34.765 A  locationd[34507:26dec7] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:27:34.765 Db locationd[34507:26dec7] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":4}
+2023-02-02 12:27:34.765 A  locationd[34507:26dec7] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:27:34.765 Db locationd[34507:26dec7] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":40}
+2023-02-02 12:27:34.765 A  locationd[34507:26dec7] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:27:34.765 Db locationd[34507:26dec7] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":2}
+2023-02-02 12:27:34.765 A  locationd[34507:26dec7] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:27:34.765 Db locationd[34507:26dec7] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":1}
+2023-02-02 12:27:34.765 A  locationd[34507:26dec7] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:27:34.765 Db locationd[34507:26dec7] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":5}
+2023-02-02 12:27:34.765 A  locationd[34507:26dec7] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:27:34.765 Db locationd[34507:26dec7] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":0}
+2023-02-02 12:27:34.778 Db Spotlight[34601:26d5a0] [com.apple.defaults:User Defaults] found no value for key UseNewAXBundleLoader in CFPrefsSearchListSource<0x60000388cb80> (Domain: com.apple.Accessibility, Container: (null))
+2023-02-02 12:27:34.778 Db Spotlight[34601:26d5a0] [com.apple.defaults:User Defaults] found no value for key UseNewAXBundleLoader in CFPrefsSearchListSource<0x60000388cb80> (Domain: com.apple.Accessibility, Container: (null))
+2023-02-02 12:27:34.780 Df wcd[34502:26dd2a] [com.apple.apsd:connection] <APSConnection: 0x600000be8000> Flushing any queuedDelegateBlocks 0
+2023-02-02 12:27:34.781 Db containermanagerd[34525:26d938] [com.apple.containermanager:cache] [perPersonaClients] Cache hit: [7] <MCMClientIdentity: 0x600001394600; identifier = com.apple.assistantd, userIdentity = <MCMUserIdentity: 0x600002880080; posixUser = (502|unknown|/Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data), identifier = 502>, posixUser = (502|unknown|/Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data), posixPID = 34489, isSandboxed = 0, platform = 7, isSigned = YES, isSignatureValid = YES, isPlatformBinary = YES, sandboxContainerURL = [(null)], cached>
+2023-02-02 12:27:34.781 Db containermanagerd[34525:26d938] [com.apple.containermanager:query] message userIdentity: (null)
+2023-02-02 12:27:34.781 Db containermanagerd[34525:26d938] [com.apple.containermanager:query] userIdentity: (null)
+2023-02-02 12:27:34.781 I  containermanagerd[34525:26d938] [com.apple.containermanager:unspecified] createOrLookup; identity: <systemgroup.com.apple.nsurlstoragedresources(13);<502/20/502/2/502>;pf7>, createIfNecessary: 1, platform: 7, transient: 0, privileged: 0, clientBundleIdentifier: com.apple.assistantd
+2023-02-02 12:27:34.782 Df wcd[34502:26dd25] [com.apple.apsd:connection] <APSConnection: 0x600000be0620> Flushing any queuedDelegateBlocks 0
+2023-02-02 12:27:34.784 Db containermanagerd[34525:26d938] [com.apple.containermanager:cache] Retrieving cache entry; identifier = systemgroup.com.apple.nsurlstoragedresources, cache entry = (systemgroup.com.apple.nsurlstoragedresources|<MCMContainerPath: 0x600001e84280; [<MCMContainerClassPath: 0x600001994000; [/Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Containers]/[Shared]/[SystemGroup]>]/[systemgroup.com.apple.nsurlstoragedresources]/[(null)]>|1|EA3EC962-CC9A-42DB-AFF9-DB60191B190E|<MCMFSNode: 0x600003d99bc0; inode = 23806353, device = 16777232, ctime = 1675349069>|without metadata)
+2023-02-02 12:27:34.784 Df containermanagerd[34525:26d938] [com.apple.containermanager:fs] stat [/Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Containers/Shared/SystemGroup/systemgroup.com.apple.nsurlstoragedresources/.com.apple.mobile_container_manager.metadata.plist]: exists: 1, isDirectory: 0, fsNode: <MCMFSNode: 0x600003d99d00; inode = 23806353, device = 16777232, ctime = 1675349069>
+2023-02-02 12:27:34.785 I  containermanagerd[34525:26d938] [com.apple.containermanager:query] Found (systemgroup.com.apple.nsurlstoragedresources|<MCMContainerPath: 0x600001e84280; [<MCMContainerClassPath: 0x600001994000; [/Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Containers]/[Shared]/[SystemGroup]>]/[systemgroup.com.apple.nsurlstoragedresources]/[(null)]>|1|EA3EC962-CC9A-42DB-AFF9-DB60191B190E|<MCMFSNode: 0x600003d99d00; inode = 23806353, device = 16777232, ctime = 1675349069>|without metadata)
+2023-02-02 12:27:34.785 Df containermanagerd[34525:26d938] [com.apple.containermanager:query] Query result: count = 1, error = (null)
+2023-02-02 12:27:34.785 Df containermanagerd[34525:26d938] [com.apple.containermanager:xpc] [502] command=39, client=<com.apple.assistantd, u=<502/20/502/2/502>, uid=502, pid=34489, sandboxed=0, platform=7 (1/1/1) [(null)], cached>, error=(null)
+2023-02-02 12:27:34.786 A  brookcompaniond[34782:26db62] (CoreDuet) Duet: saveObjects async
+2023-02-02 12:27:34.787 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] BindingEvaluator::CreateWithBundleInfo(ID=com.apple.Maps, name=(null), CC=????, vers=(null))
+2023-02-02 12:27:34.787 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] BindingEvaluator::~BindingEvaluator(0x16d9c0b38)
+2023-02-02 12:27:34.787 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Running evaluator 0x16d9c0978
+2023-02-02 12:27:34.787 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Adding user preferences
+2023-02-02 12:27:34.787 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Adding weak binding
+2023-02-02 12:27:34.787 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] 0 bindings found
+2023-02-02 12:27:34.787 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Truncating a list of bindings to max 1 known-good ones.
+2023-02-02 12:27:34.788 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Adding and sorting bundles
+2023-02-02 12:27:34.789 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] +++ maps.app (B:0x108, C:0x0) (null)
+2023-02-02 12:27:34.789 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] 1 bindings found
+2023-02-02 12:27:34.790 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Truncating a list of bindings to max 1 known-good ones.
+2023-02-02 12:27:34.790 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] +++ maps.app (B:0x108, C:0x0) (null)
+2023-02-02 12:27:34.791 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Best binding found for evaluator 0x16d9c0be0: maps.app (B:0x108, C:0x0)
+2023-02-02 12:27:34.789 I  brookcompaniond[34782:26db62] [com.apple.coreduet.knowledge:] Process has access to preferences for Siri Learning toggles.
+2023-02-02 12:27:34.796 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] BindingEvaluator::~BindingEvaluator(0x16d9c0978)
+2023-02-02 12:27:34.796 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] BindingEvaluator::~BindingEvaluator(0x16d9c0be0)
+2023-02-02 12:27:34.798 Db mapspushd[34818:26dc80] [com.apple.launchservices:record] Invoking selector applicationStateWithContext:tableID:unitID:unitBytes: on <LSApplicationRecord 0x600003049d60> to get the value for property applicationState
+2023-02-02 12:27:34.799 Db mapspushd[34818:26dc80] [com.apple.launchservices:record] Invoking selector _rawBundleFlagsWithContext:tableID:unitID:unitBytes: on <LSApplicationRecord 0x600003049d60> to get the value for property _rawBundleFlags
+2023-02-02 12:27:34.799 A  mapspushd[34818:26dc80] (libsystem_containermanager.dylib) container_create_or_lookup_app_group_path_by_app_group_identifier
+2023-02-02 12:27:34.800 Df mapspushd[34818:26dc80] [com.apple.containermanager:unspecified] container_create_or_lookup_app_group_path_by_app_group_identifier: success
+2023-02-02 12:27:34.818 Db assistantd[34489:26dba0] [com.apple.containermanager:xpc] connection <0x600001321590/1/0> released; cnt = 2
+2023-02-02 12:27:34.819 Db assistantd[34489:26dba0] [com.apple.containermanager:xpc] connection <0x600001321590/1/0> will be canceled in 2 seconds; cnt = 2
+2023-02-02 12:27:34.819 Df assistantd[34489:26dba0] [com.apple.containermanager:unspecified] container_query_get_single_result: success
+2023-02-02 12:27:34.819 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] BindingEvaluator::CreateWithBundleInfo(ID=com.apple.Maps, name=(null), CC=????, vers=(null))
+2023-02-02 12:27:34.821 Db assistantd[34489:26dba0] [com.apple.containermanager:sandbox] container_object_sandbox_extension_activate(container, true)
+2023-02-02 12:27:34.821 Db assistantd[34489:26dba0] [com.apple.containermanager:sandbox] container_object_sandbox_extension_activate(container, true): no sandbox token in container
+2023-02-02 12:27:34.822 A  assistantd[34489:26dba0] (libsystem_containermanager.dylib) container_copy_object
+2023-02-02 12:27:34.822 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] BindingEvaluator::~BindingEvaluator(0x16d9c0b28)
+2023-02-02 12:27:34.823 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Running evaluator 0x16d9c0968
+2023-02-02 12:27:34.823 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Adding user preferences
+2023-02-02 12:27:34.823 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Adding weak binding
+2023-02-02 12:27:34.823 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] 0 bindings found
+2023-02-02 12:27:34.822 Df assistantd[34489:26dba0] [com.apple.containermanager:unspecified] container_system_group_path_for_identifier: success
+2023-02-02 12:27:34.824 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Truncating a list of bindings to max 1 known-good ones.
+2023-02-02 12:27:34.829 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Adding and sorting bundles
+2023-02-02 12:27:34.829 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] +++ maps.app (B:0x108, C:0x0) (null)
+2023-02-02 12:27:34.829 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] 1 bindings found
+2023-02-02 12:27:34.829 Df assistantd[34489:26dba0] [com.apple.CFNetwork:ATS] Task <C1E07867-6460-4FA0-BA0F-6A73EEF84A98>.<1> {strength 0, tls 4, sub 0, sig 1, ciphers 0, bundle 1, builtin 0}
+2023-02-02 12:27:34.829 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Truncating a list of bindings to max 1 known-good ones.
+2023-02-02 12:27:34.831 Db assistantd[34489:26dba0] [com.apple.defaults:User Defaults] found no value for key com.apple.CFNetwork.ForceIOPath in CFPrefsPlistSource<0x600003364500> (Domain: kCFPreferencesAnyApplication, User: kCFPreferencesCurrentUser, ByHost: No, Container: (null), Contents Need Refresh: No)
+2023-02-02 12:27:34.831 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] +++ maps.app (B:0x108, C:0x0) (null)
+2023-02-02 12:27:34.832 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Best binding found for evaluator 0x16d9c0bd0: maps.app (B:0x108, C:0x0)
+2023-02-02 12:27:34.832 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] BindingEvaluator::~BindingEvaluator(0x16d9c0968)
+2023-02-02 12:27:34.832 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] BindingEvaluator::~BindingEvaluator(0x16d9c0bd0)
+2023-02-02 12:27:34.833 Db mapspushd[34818:26dc80] [com.apple.launchservices:record] Invoking selector applicationStateWithContext:tableID:unitID:unitBytes: on <LSApplicationRecord 0x6000030401e0> to get the value for property applicationState
+2023-02-02 12:27:34.835 Db cfprefsd[34522:26dae5] [com.apple.defaults:cfprefsd] Process 34782 (brookcompaniond) sent a request related to { com.apple.suggestions, user: mobile, kCFPreferencesCurrentHost, /Library/Managed Preferences/mobile/com.apple.suggestions.plist, managed: 1 } (0x600000f09320)
+2023-02-02 12:27:34.835 E  cfprefsd[34522:26dae5] [com.apple.defaults:cfprefsd] Couldn't open parent path due to [2: No such file or directory]
+2023-02-02 12:27:34.836 Db cfprefsd[34522:26dae5] [com.apple.defaults:cfprefsd] Couldn't open /Library/Managed Preferences/mobile/com.apple.suggestions.plist due to No such file or directory
+2023-02-02 12:27:34.836 Db cfprefsd[34522:26dae5] [com.apple.defaults:cfprefsd] Process 34782 (brookcompaniond) sent a request related to { com.apple.suggestions, user: kCFPreferencesAnyUser, kCFPreferencesCurrentHost, /Library/Managed Preferences/com.apple.suggestions.plist, managed: 1 } (0x600000f09200)
+2023-02-02 12:27:34.837 E  cfprefsd[34522:26dae5] [com.apple.defaults:cfprefsd] Couldn't open parent path due to [2: No such file or directory]
+2023-02-02 12:27:34.837 Df searchd[34676:26d85a] [com.apple.spotlight:default] Purging, pcs:{(
+    NSFileProtectionCompleteUntilFirstUserAuthentication,
+    NSFileProtectionComplete,
+    NSFileProtectionCompleteUnlessOpen
+)}
+2023-02-02 12:27:34.837 Df searchd[34676:26d85a] [com.apple.spotlight:index] Merging the index for dataclass:NSFileProtectionCompleteUntilFirstUserAuthentication
+2023-02-02 12:27:34.838 Df searchd[34676:26d85a] [com.apple.spotlight:index] Merging the index for dataclass:NSFileProtectionComplete
+2023-02-02 12:27:34.838 Df searchd[34676:26d85a] [com.apple.spotlight:index] Merging the index for dataclass:NSFileProtectionCompleteUnlessOpen
+2023-02-02 12:27:34.838 Db searchd[34676:26d85a] [com.apple.corespotlight:index] Schedule merge on power
+2023-02-02 12:27:34.839 Df searchd[34676:26d85a] [com.apple.corespotlight:index] Scheduling maintenance for dataclass:NSFileProtectionCompleteUntilFirstUserAuthentication, forDarkWake:YES, description:searchutil forced maintenance
+2023-02-02 12:27:34.839 Db searchd[34676:26d85a] [com.apple.corespotlight:index] Schedule merge on power
+2023-02-02 12:27:34.839 Df searchd[34676:26d85a] [com.apple.corespotlight:index] Scheduling maintenance for dataclass:NSFileProtectionComplete, forDarkWake:YES, description:searchutil forced maintenance
+2023-02-02 12:27:34.839 Db searchd[34676:26d85a] [com.apple.corespotlight:index] Schedule merge on power
+2023-02-02 12:27:34.839 Df searchd[34676:26d85a] [com.apple.corespotlight:index] Scheduling maintenance for dataclass:NSFileProtectionCompleteUnlessOpen, forDarkWake:YES, description:searchutil forced maintenance
+2023-02-02 12:27:34.839 Df searchd[34676:26d85a] [com.apple.corespotlight:index] Registering XPC activity:com.apple.searchd.indexmaintenance.NSFileProtectionCompleteUntilFirstUserAuthentication
+2023-02-02 12:27:34.840 Df searchd[34676:26d85a] [com.apple.xpc.activity:Client] xpc_activity_register: com.apple.searchd.indexmaintenance.NSFileProtectionCompleteUntilFirstUserAuthentication, criteria: dictionary
+2023-02-02 12:27:34.840 Df searchd[34676:26d85a] [com.apple.xpc.activity:Client] _xpc_activity_register: com.apple.searchd.indexmaintenance.NSFileProtectionCompleteUntilFirstUserAuthentication (0x600002564460), 1
+2023-02-02 12:27:34.840 Df searchd[34676:26d85a] [com.apple.xpc.activity:Client] xpc_activity_set_criteria: com.apple.searchd.indexmaintenance.NSFileProtectionCompleteUntilFirstUserAuthentication (0x600002564460), dict
+2023-02-02 12:27:34.841 Df searchd[34676:26d85a] [com.apple.corespotlight:index] Registering XPC activity:com.apple.searchd.indexmaintenance.NSFileProtectionComplete
+2023-02-02 12:27:34.841 Df searchd[34676:26d85a] [com.apple.xpc.activity:Client] xpc_activity_register: com.apple.searchd.indexmaintenance.NSFileProtectionComplete, criteria: dictionary
+2023-02-02 12:27:34.841 Df searchd[34676:26d85a] [com.apple.xpc.activity:Client] _xpc_activity_register: com.apple.searchd.indexmaintenance.NSFileProtectionComplete (0x600002564500), 1
+2023-02-02 12:27:34.841 Df searchd[34676:26d85a] [com.apple.xpc.activity:Client] xpc_activity_set_criteria: com.apple.searchd.indexmaintenance.NSFileProtectionComplete (0x600002564500), dict
+2023-02-02 12:27:34.837 Db cfprefsd[34522:26dae5] [com.apple.defaults:cfprefsd] Couldn't open /Library/Managed Preferences/com.apple.suggestions.plist due to No such file or directory
+2023-02-02 12:27:34.845 Db cfprefsd[34522:26dae5] [com.apple.defaults:cfprefsd] Process 34782 (brookcompaniond) sent a request related to { com.apple.suggestions, user: mobile, kCFPreferencesAnyHost, /Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Preferences/com.apple.suggestions.plist, managed: 0 } (0x600000f186c0)
+2023-02-02 12:27:34.845 Db cfprefsd[34522:26dae5] [com.apple.defaults:cfprefsd] Process 34782 (brookcompaniond) read data for { com.apple.suggestions, mobile, kCFPreferencesAnyHost, /Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Preferences/com.apple.suggestions.plist, managed: 0 }, backed by /Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Preferences/com.apple.suggestions.plist
+2023-02-02 12:27:34.845 Db cfprefsd[34522:26dae5] [com.apple.defaults:cfprefsd] Process 34782 (brookcompaniond) sent a request related to { com.apple.suggestions, user: mobile, kCFPreferencesAnyHost, /Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Preferences/com.apple.suggestions.plist, managed: 0 } (0x600000f186c0)
+2023-02-02 12:27:34.845 Db cfprefsd[34522:26dae5] [com.apple.defaults:cfprefsd] Process 34782 (brookcompaniond) read data for { com.apple.suggestions, mobile, kCFPreferencesAnyHost, /Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Preferences/com.apple.suggestions.plist, managed: 0 }, backed by /Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Preferences/com.apple.suggestions.plist
+2023-02-02 12:27:34.846 Db cfprefsd[34522:26dae5] [com.apple.defaults:cfprefsd] Process 34782 (brookcompaniond) sent a request related to { com.apple.suggestions, user: mobile, kCFPreferencesCurrentHost, /Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Preferences/ByHost/com.apple.suggestions..plist, managed: 0 } (0x600000c14140)
+2023-02-02 12:27:34.846 E  cfprefsd[34522:26dae5] [com.apple.defaults:cfprefsd] Couldn't open parent path due to [2: No such file or directory]
+2023-02-02 12:27:34.846 Db cfprefsd[34522:26dae5] [com.apple.defaults:cfprefsd] Couldn't open /Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Preferences/ByHost/com.apple.suggestions..plist due to No such file or directory
+2023-02-02 12:27:34.848 Df searchd[34676:26d85a] [com.apple.corespotlight:index] Registering XPC activity:com.apple.searchd.indexmaintenance.NSFileProtectionCompleteUnlessOpen
+2023-02-02 12:27:34.848 Df searchd[34676:26d85a] [com.apple.xpc.activity:Client] xpc_activity_register: com.apple.searchd.indexmaintenance.NSFileProtectionCompleteUnlessOpen, criteria: dictionary
+2023-02-02 12:27:34.849 Df searchd[34676:26d85a] [com.apple.xpc.activity:Client] _xpc_activity_register: com.apple.searchd.indexmaintenance.NSFileProtectionCompleteUnlessOpen (0x6000025643c0), 1
+2023-02-02 12:27:34.849 Df searchd[34676:26d85a] [com.apple.xpc.activity:Client] xpc_activity_set_criteria: com.apple.searchd.indexmaintenance.NSFileProtectionCompleteUnlessOpen (0x6000025643c0), dict
+2023-02-02 12:27:34.849 Df searchd[34676:26d85a] [com.apple.xpc.activity:Client] xpc_activity_set_criteria, lower half: com.apple.searchd.indexmaintenance.NSFileProtectionCompleteUntilFirstUserAuthentication (0x600002564460), dict
+2023-02-02 12:27:34.849 Df searchd[34676:26d85a] [com.apple.xpc.activity:Client] _xpc_activity_set_criteria: com.apple.searchd.indexmaintenance.NSFileProtectionCompleteUntilFirstUserAuthentication (0x600002564460), dict
+2023-02-02 12:27:34.849 Df searchd[34676:26d85a] [com.apple.xpc.activity:Client] _xpc_activity_set_criteria: xpc_set_event com.apple.searchd.indexmaintenance.NSFileProtectionCompleteUntilFirstUserAuthentication, 2
+2023-02-02 12:27:34.853 Df UserEventAgent[34487:26d2f1] [com.apple.xpc.activity:Internal] Creating XPC Activity on XPC add event: com.apple.searchd.indexmaintenance.NSFileProtectionCompleteUntilFirstUserAuthentication
+2023-02-02 12:27:34.854 Df UserEventAgent[34487:26d2f1] [com.apple.xpc.activity:Internal] Created XPC Activity: com.apple.searchd.indexmaintenance.NSFileProtectionCompleteUntilFirstUserAuthentication (0x135d093c0)
+2023-02-02 12:27:34.854 Df UserEventAgent[34487:26d2f1] [com.apple.xpc.activity:Activities] Registered XPC Activity: com.apple.searchd.indexmaintenance.NSFileProtectionCompleteUntilFirstUserAuthentication (0x135d093c0)
+2023-02-02 12:27:34.854 I  UserEventAgent[34487:26d2f1] [com.apple.xpc.activity:Internal] com.apple.searchd.indexmaintenance.NSFileProtectionCompleteUntilFirstUserAuthentication: <dictionary: 0x600002b4ac40> { count = 6, transaction: 0, voucher = 0x0, contents =
+	"_SequenceNumber" => <uint64: 0xa03501b8c3b88727>: 2
+	"GracePeriod" => <int64: 0xa0b501b8c3f15337>: 604800
+	"PowerNap" => <bool: 0x1b313cdf0>: true
+	"Delay" => <int64: 0xa0b501b8c3b88737>: 0
+	"AllowBattery" => <bool: 0x1b313ce10>: false
+	"Priority" => <string: 0x600000155bc0> { length = 11, contents = "Maintenance" }
+}
+2023-02-02 12:27:34.857 Df searchd[34676:26d85a] [com.apple.xpc.activity:Client] xpc_activity_set_criteria: com.apple.searchd.indexmaintenance.NSFileProtectionCompleteUntilFirstUserAuthentication (0x600002564460), setting state now to 1
+2023-02-02 12:27:34.857 Df searchd[34676:26d85a] [com.apple.xpc.activity:Client] _xpc_activity_set_state: com.apple.searchd.indexmaintenance.NSFileProtectionCompleteUntilFirstUserAuthentication (0x600002564460), 1
+2023-02-02 12:27:34.857 Df searchd[34676:26d85a] [com.apple.xpc.activity:Client] xpc_activity_set_criteria, lower half: com.apple.searchd.indexmaintenance.NSFileProtectionCompleteUnlessOpen (0x6000025643c0), dict
+2023-02-02 12:27:34.857 Df searchd[34676:26d85a] [com.apple.xpc.activity:Client] _xpc_activity_set_criteria: com.apple.searchd.indexmaintenance.NSFileProtectionCompleteUnlessOpen (0x6000025643c0), dict
+2023-02-02 12:27:34.857 Df searchd[34676:26d85a] [com.apple.xpc.activity:Client] _xpc_activity_set_criteria: xpc_set_event com.apple.searchd.indexmaintenance.NSFileProtectionCompleteUnlessOpen, 2
+2023-02-02 12:27:34.860 Df UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Internal] Creating XPC Activity on XPC add event: com.apple.searchd.indexmaintenance.NSFileProtectionCompleteUnlessOpen
+2023-02-02 12:27:34.860 Df UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Internal] Created XPC Activity: com.apple.searchd.indexmaintenance.NSFileProtectionCompleteUnlessOpen (0x137805bc0)
+2023-02-02 12:27:34.861 Df UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Activities] Registered XPC Activity: com.apple.searchd.indexmaintenance.NSFileProtectionCompleteUnlessOpen (0x137805bc0)
+2023-02-02 12:27:34.861 I  UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Internal] com.apple.searchd.indexmaintenance.NSFileProtectionCompleteUnlessOpen: <dictionary: 0x600002b55560> { count = 6, transaction: 0, voucher = 0x0, contents =
+	"_SequenceNumber" => <uint64: 0xa03501b8c3b88727>: 2
+	"GracePeriod" => <int64: 0xa0b501b8c3f15337>: 604800
+	"PowerNap" => <bool: 0x1b313cdf0>: true
+	"Delay" => <int64: 0xa0b501b8c3b88737>: 0
+	"AllowBattery" => <bool: 0x1b313ce10>: false
+	"Priority" => <string: 0x60000015e3d0> { length = 11, contents = "Maintenance" }
+}
+2023-02-02 12:27:34.863 Df searchd[34676:26d85a] [com.apple.xpc.activity:Client] xpc_activity_set_criteria: com.apple.searchd.indexmaintenance.NSFileProtectionCompleteUnlessOpen (0x6000025643c0), setting state now to 1
+2023-02-02 12:27:34.863 Df searchd[34676:26d85a] [com.apple.xpc.activity:Client] _xpc_activity_set_state: com.apple.searchd.indexmaintenance.NSFileProtectionCompleteUnlessOpen (0x6000025643c0), 1
+2023-02-02 12:27:34.863 Df searchd[34676:26d85a] [com.apple.xpc.activity:Client] xpc_activity_set_criteria, lower half: com.apple.searchd.indexmaintenance.NSFileProtectionComplete (0x600002564500), dict
+2023-02-02 12:27:34.863 Df searchd[34676:26d85a] [com.apple.xpc.activity:Client] _xpc_activity_set_criteria: com.apple.searchd.indexmaintenance.NSFileProtectionComplete (0x600002564500), dict
+2023-02-02 12:27:34.863 Df searchd[34676:26d85a] [com.apple.xpc.activity:Client] _xpc_activity_set_criteria: xpc_set_event com.apple.searchd.indexmaintenance.NSFileProtectionComplete, 2
+2023-02-02 12:27:34.866 Df UserEventAgent[34487:26d2f1] [com.apple.xpc.activity:Internal] Creating XPC Activity on XPC add event: com.apple.searchd.indexmaintenance.NSFileProtectionComplete
+2023-02-02 12:27:34.866 Df UserEventAgent[34487:26d2f1] [com.apple.xpc.activity:Internal] Created XPC Activity: com.apple.searchd.indexmaintenance.NSFileProtectionComplete (0x137906990)
+2023-02-02 12:27:34.866 Df UserEventAgent[34487:26d2f1] [com.apple.xpc.activity:Activities] Registered XPC Activity: com.apple.searchd.indexmaintenance.NSFileProtectionComplete (0x137906990)
+2023-02-02 12:27:34.866 I  UserEventAgent[34487:26d2f1] [com.apple.xpc.activity:Internal] com.apple.searchd.indexmaintenance.NSFileProtectionComplete: <dictionary: 0x600002b60060> { count = 6, transaction: 0, voucher = 0x0, contents =
+	"_SequenceNumber" => <uint64: 0xa03501b8c3b88727>: 2
+	"GracePeriod" => <int64: 0xa0b501b8c3f15337>: 604800
+	"PowerNap" => <bool: 0x1b313cdf0>: true
+	"Delay" => <int64: 0xa0b501b8c3b88737>: 0
+	"AllowBattery" => <bool: 0x1b313ce10>: false
+	"Priority" => <string: 0x60000014da70> { length = 11, contents = "Maintenance" }
+}
+2023-02-02 12:27:34.882 Df searchd[34676:26d85a] [com.apple.xpc.activity:Client] xpc_activity_set_criteria: com.apple.searchd.indexmaintenance.NSFileProtectionComplete (0x600002564500), setting state now to 1
+2023-02-02 12:27:34.885 Df searchd[34676:26d85a] [com.apple.xpc.activity:Client] _xpc_activity_set_state: com.apple.searchd.indexmaintenance.NSFileProtectionComplete (0x600002564500), 1
+2023-02-02 12:27:34.913 Db searchd[34676:26d857] [com.apple.corespotlight:default] SDTransactionDone, com.apple.spotlight.commit.NSFileProtectionCompleteUntilFirstUserAuthentication
+2023-02-02 12:27:34.913 I  searchd[34676:26d857] [com.apple.corespotlight:index] Index NSFileProtectionCompleteUntilFirstUserAuthentication retry: 0 commit complete after 15.2847s
+2023-02-02 12:27:34.916 Df profiled[34667:26d889] [com.apple.ManagedConfiguration:File] Dictionary successfully written to /Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/UserConfigurationProfiles/UserSettings.plist
+2023-02-02 12:27:34.922 Df mobileassetd[34554:26d446] [com.apple.mobileassetd:Notice] dataFillInstalledWithPurpose: Path to asset dir: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/55b5557e3f076ab7435bfdbef3361823 ... 93.asset
+2023-02-02 12:27:34.922 Db mobileassetd[34554:26d446] [com.apple.mobileassetd:Debug] getPathToAssetWithPurpose: URL to asset: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/8ecde7d5192919d5fea391d18a21de72 ... de.asset
+2023-02-02 12:27:34.928 Db assistantd[34489:26dba0] [com.apple.defaults:User Defaults] found no value for key CFNetworkNWHTTPSProxyOverride in CFPrefsSearchListSource<0x600003360600> (Domain: kCFPreferencesAnyApplication, Container: (null))
+2023-02-02 12:27:34.929 I  assistantd[34489:26dba0] (CFNetwork) NW Proxies override 1 via os_feature
+2023-02-02 12:27:34.933 I  assistantd[34489:26dba0] [com.apple.network:connection] nw_connection_create_with_id [C2] create connection to Hostname#25852b44:443
+2023-02-02 12:27:34.933 Df assistantd[34489:26dba0] (CFNetwork) Connection 2: enabling TLS
+2023-02-02 12:27:34.933 Df assistantd[34489:26dba0] (CFNetwork) Connection 2: starting, TC(0x0)
+2023-02-02 12:27:34.933 Df assistantd[34489:26dba0] [com.apple.network:connection] [C2 2A850EA8-32EC-4127-B37A-62BB0664A773 api.smoot.apple.com:443 tcp, url hash: f2258e04, tls, definite, attribution: developer, context: com.apple.CFNetwork.NSURLSession.{A4DBEA46-9C22-49C4-8360-A2119779BD77}{Parsec}{Y}{1} (public), proc: F96798E5-E999-31C2-B448-EA2298D0034A] start
+2023-02-02 12:27:34.933 I  assistantd[34489:26dba0] [com.apple.network:connection] nw_endpoint_handler_start [C2 api.smoot.apple.com:443 initial parent-flow ((null))]
+2023-02-02 12:27:34.933 Df assistantd[34489:26dba0] [com.apple.network:connection] [C2 api.smoot.apple.com:443 initial parent-flow ((null))] event: path:start @0.000s
+2023-02-02 12:27:34.935 Db brookcompaniond[34782:26db62] [com.apple.defaults:User Defaults] CFPrefsManagedSource<0x600001ef8f00> (Domain: com.apple.suggestions, User: kCFPreferencesCurrentUser, ByHost: Yes, Container: (null), Contents Need Refresh: No) loaded: an empty base plist and no additional changes from the base plist
+2023-02-02 12:27:34.935 Db brookcompaniond[34782:26db62] [com.apple.defaults:User Defaults] CFPrefsManagedSource<0x600001ef8f80> (Domain: com.apple.suggestions, User: kCFPreferencesAnyUser, ByHost: Yes, Container: (null), Contents Need Refresh: No) loaded: an empty base plist and no additional changes from the base plist
+2023-02-02 12:27:34.935 Db brookcompaniond[34782:26db62] [com.apple.defaults:User Defaults] CFPrefsPlistSource<0x600001ef8e80> (Domain: com.apple.suggestions, User: kCFPreferencesCurrentUser, ByHost: No, Container: (null), Contents Need Refresh: No) loaded: a new base plist and no additional changes from the base plist
+2023-02-02 12:27:34.935 Db brookcompaniond[34782:26db62] [com.apple.defaults:User Defaults] CFPrefsPlistSource<0x600001ef9000> (Domain: com.apple.suggestions, User: kCFPreferencesCurrentUser, ByHost: No, Container: /Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data, Contents Need Refresh: No) loaded: a new base plist and no additional changes from the base plist
+2023-02-02 12:27:34.935 Db brookcompaniond[34782:26db62] [com.apple.defaults:User Defaults] CFPrefsPlistSource<0x600001ef9100> (Domain: com.apple.suggestions, User: kCFPreferencesCurrentUser, ByHost: Yes, Container: (null), Contents Need Refresh: No) loaded: an empty base plist and no additional changes from the base plist
+2023-02-02 12:27:34.935 Db brookcompaniond[34782:26db62] [com.apple.defaults:User Defaults] found no value for key SiriCanLearnFromAppBlacklist in CFPrefsSearchListSource<0x600001ef6780> (Domain: com.apple.suggestions, Container: (null))
+2023-02-02 12:27:34.936 Db mapspushd[34818:26dc80] [com.apple.launchservices:record] Invoking selector _rawBundleFlagsWithContext:tableID:unitID:unitBytes: on <LSApplicationRecord 0x6000030401e0> to get the value for property _rawBundleFlags
+2023-02-02 12:27:34.936 Db mapspushd[34818:26dc80] [com.apple.launchservices:record] Invoking selector _personasWithAttributesWithContext:tableID:unitID:unitBytes: on <LSApplicationRecord 0x6000030401e0> to get the value for property _personasWithAttributes
+2023-02-02 12:27:34.936 Db mapspushd[34818:26dc80] [com.apple.launchservices:record] Invoking selector _dataContainerURLFromDatabaseWithContext:tableID:unitID:unitBytes: on <LSApplicationRecord 0x6000030401e0> to get the value for property _dataContainerURLFromDatabase
+2023-02-02 12:27:34.938 Df profiled[34667:26d889] [com.apple.ManagedConfiguration:File] Attempting to write dictionary with 0 entries to path /Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/UserConfigurationProfiles/PublicInfo/NamespacedUserSettings.plist...
+2023-02-02 12:27:34.980 Df mobileassetd[34554:26d446] [com.apple.mobileassetd:Notice] dataFillInstalledWithPurpose: Path to asset dir: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/8ecde7d5192919d5fea391d18a21de72 ... de.asset
+2023-02-02 12:27:34.981 Db mobileassetd[34554:26d446] [com.apple.mobileassetd:Debug] getPathToAssetWithPurpose: URL to asset: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/db27d1ce3b9bdb1e8da4741c336d5c30 ... f0.asset
+2023-02-02 12:27:34.981 Df mobileassetd[34554:26d446] [com.apple.mobileassetd:Notice] dataFillInstalledWithPurpose: Path to asset dir: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/db27d1ce3b9bdb1e8da4741c336d5c30 ... f0.asset
+2023-02-02 12:27:34.982 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002751180 for unit 1088 from database 0x12a008600
+2023-02-02 12:27:34.982 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027510e0 for unit 1090 from database 0x12a008600
+2023-02-02 12:27:34.983 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 184
+2023-02-02 12:27:34.983 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027507c0 for unit 6fc from database 0x12a008600
+2023-02-02 12:27:34.984 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754380 for unit 1094 from database 0x12a008600
+2023-02-02 12:27:34.984 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754380 for unit 109c from database 0x12a008600
+2023-02-02 12:27:34.985 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 260
+2023-02-02 12:27:34.986 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027510e0 for unit 748 from database 0x12a008600
+2023-02-02 12:27:34.986 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002750d20 for unit 10c8 from database 0x12a008600
+2023-02-02 12:27:34.986 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027542a0 for unit 10d0 from database 0x12a008600
+2023-02-02 12:27:34.987 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 4
+2023-02-02 12:27:34.987 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754b40 for unit 648 from database 0x12a008600
+2023-02-02 12:27:34.987 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027511c0 for unit 1128 from database 0x12a008600
+2023-02-02 12:27:34.987 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754bc0 for unit 1130 from database 0x12a008600
+2023-02-02 12:27:34.988 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 4
+2023-02-02 12:27:34.988 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027511c0 for unit 648 from database 0x12a008600
+2023-02-02 12:27:34.988 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002750e60 for unit 1230 from database 0x12a008600
+2023-02-02 12:27:35.002 Db assistantd[34489:26dba0] [com.apple.network:connection] nw_endpoint_handler_path_change [C2 api.smoot.apple.com:443 waiting parent-flow (satisfied (Path is satisfied), interface: en0[802.11])]
+2023-02-02 12:27:35.003 Df assistantd[34489:26dba0] [com.apple.network:connection] [C2 api.smoot.apple.com:443 waiting parent-flow (satisfied (Path is satisfied), interface: en0[802.11])] event: path:satisfied @0.069s, uuid: F3B3407A-73D9-4F66-BA8F-32C8AF63603E
+2023-02-02 12:27:35.003 I  assistantd[34489:26dba0] [com.apple.network:connection] nw_connection_endpoint_report_on_nw_queue_block_invoke [C2 api.smoot.apple.com:443 waiting parent-flow (satisfied (Path is satisfied), interface: en0[802.11])] skipping state update
+2023-02-02 12:27:35.005 Db assistantd[34489:26dba0] [com.apple.network:] nw_endpoint_proxy_handler_should_use_proxy Looking up proxy for hostname: api.smoot.apple.com, ifindex: 0
+2023-02-02 12:27:35.008 Db assistantd[34489:26dba0] [com.apple.SystemConfiguration:SCPreferences] create <SCPreferences 0x152d0e940 [0x1ba9afc60]> {name = SCDynamicStoreCopyProxiesWithOptions, id = /Library/Managed Preferences/mobile/com.apple.SystemConfiguration.plist, path = /Library/Managed Preferences/mobile/com.apple.SystemConfiguration.plist}
+2023-02-02 12:27:35.011 Db assistantd[34489:26dba0] [com.apple.SystemConfiguration:SCPreferences] SCPreferences() access: /Library/Managed Preferences/mobile/com.apple.SystemConfiguration.plist, size=0
+2023-02-02 12:27:35.011 Db assistantd[34489:26dba0] [com.apple.SystemConfiguration:SCPreferences] release <SCPreferences 0x152d0e940 [0x1ba9afc60]> {name = SCDynamicStoreCopyProxiesWithOptions, id = /Library/Managed Preferences/mobile/com.apple.SystemConfiguration.plist, path = /Library/Managed Preferences/mobile/com.apple.SystemConfiguration.plist, accessed}
+2023-02-02 12:27:35.012 Db configd_sim[34517:26d314] [com.apple.SystemConfiguration:SCDynamicStore] copy    : 26115 : State:/Network/Global/Proxies
+2023-02-02 12:27:35.013 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] BindingEvaluator::CreateWithBundleInfo(ID=com.apple.Maps, name=(null), CC=????, vers=(null))
+2023-02-02 12:27:35.013 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] BindingEvaluator::~BindingEvaluator(0x16d9c0b28)
+2023-02-02 12:27:35.013 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Running evaluator 0x16d9c0968
+2023-02-02 12:27:35.013 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Adding user preferences
+2023-02-02 12:27:35.014 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Adding weak binding
+2023-02-02 12:27:35.014 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] 0 bindings found
+2023-02-02 12:27:35.014 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Truncating a list of bindings to max 1 known-good ones.
+2023-02-02 12:27:35.014 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Adding and sorting bundles
+2023-02-02 12:27:35.015 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] +++ maps.app (B:0x108, C:0x0) (null)
+2023-02-02 12:27:35.015 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] 1 bindings found
+2023-02-02 12:27:35.016 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Truncating a list of bindings to max 1 known-good ones.
+2023-02-02 12:27:35.016 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] +++ maps.app (B:0x108, C:0x0) (null)
+2023-02-02 12:27:35.016 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Best binding found for evaluator 0x16d9c0bd0: maps.app (B:0x108, C:0x0)
+2023-02-02 12:27:35.016 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] BindingEvaluator::~BindingEvaluator(0x16d9c0968)
+2023-02-02 12:27:35.019 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] BindingEvaluator::~BindingEvaluator(0x16d9c0bd0)
+2023-02-02 12:27:35.020 Db mapspushd[34818:26dc80] [com.apple.launchservices:record] Invoking selector applicationStateWithContext:tableID:unitID:unitBytes: on <LSApplicationRecord 0x600003049d60> to get the value for property applicationState
+2023-02-02 12:27:35.020 Db mapspushd[34818:26dc80] [com.apple.launchservices:record] Invoking selector _rawBundleFlagsWithContext:tableID:unitID:unitBytes: on <LSApplicationRecord 0x600003049d60> to get the value for property _rawBundleFlags
+2023-02-02 12:27:35.020 A  mapspushd[34818:26dc80] (libsystem_containermanager.dylib) container_create_or_lookup_app_group_path_by_app_group_identifier
+2023-02-02 12:27:35.020 Df mapspushd[34818:26dc80] [com.apple.containermanager:unspecified] container_create_or_lookup_app_group_path_by_app_group_identifier: success
+2023-02-02 12:27:35.021 Df profiled[34667:26d889] [com.apple.ManagedConfiguration:File] Dictionary successfully written to /Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/UserConfigurationProfiles/PublicInfo/NamespacedUserSettings.plist
+2023-02-02 12:27:35.021 Df profiled[34667:26d889] [com.apple.ManagedConfiguration:File] Attempting to write dictionary with 4 entries to path /Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles/Library/ConfigurationProfiles/MCSettingsEvents.plist...
+2023-02-02 12:27:35.024 Df profiled[34667:26d889] [com.apple.ManagedConfiguration:File] Dictionary successfully written to /Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles/Library/ConfigurationProfiles/MCSettingsEvents.plist
+2023-02-02 12:27:35.024 Df profiled[34667:26d889] [com.apple.ManagedConfiguration:MC] Sending settings changed notification.
+2023-02-02 12:27:35.030 Db locationd[34507:26d4de] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.030 Db locationd[34507:26d4de] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.030 Db SpringBoard[34488:26dc3e] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.031 Db SpringBoard[34488:26dc3e] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.033 Db itunesstored[34661:26d814] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.032 Db sharingd[34505:26d3df] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.033 Db itunescloudd[34675:26d862] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.034 Db PosterBoard[34562:26d5e2] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.033 Db itunesstored[34661:26d814] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.034 Db kbd[34613:26d682] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.035 Db nsurlsessiond[34528:26d41b] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.032 Db sharingd[34505:26d3df] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.035 Db sleepd[34509:26d3bb] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.033 Db itunescloudd[34675:26d862] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.034 Db routined[34493:26d386] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.033 Db securityd[34539:26d37c] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.035 Db PosterBoard[34562:26d5e2] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.034 Db kbd[34613:26d682] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.035 Db nsurlsessiond[34528:26d41b] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.035 Db sleepd[34509:26d3bb] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.034 Db routined[34493:26d386] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.033 Db securityd[34539:26d37c] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.057 Db mobileassetd[34554:26d446] [com.apple.mobileassetd:Debug] getPathToAssetWithPurpose: URL to asset: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/7eb77234309f6575b70ca60353384b24 ... 52.asset
+2023-02-02 12:27:35.058 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002751160 for unit 1238 from database 0x12a008600
+2023-02-02 12:27:35.058 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 184
+2023-02-02 12:27:35.058 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002750840 for unit 6fc from database 0x12a008600
+2023-02-02 12:27:35.059 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002751140 for unit 1274 from database 0x12a008600
+2023-02-02 12:27:35.059 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027505a0 for unit 127c from database 0x12a008600
+2023-02-02 12:27:35.059 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 4
+2023-02-02 12:27:35.059 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002751140 for unit 648 from database 0x12a008600
+2023-02-02 12:27:35.060 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754380 for unit 1280 from database 0x12a008600
+2023-02-02 12:27:35.063 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002750c20 for unit 1288 from database 0x12a008600
+2023-02-02 12:27:35.063 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 40
+2023-02-02 12:27:35.064 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027547a0 for unit 66c from database 0x12a008600
+2023-02-02 12:27:35.064 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027507c0 for unit 128c from database 0x12a008600
+2023-02-02 12:27:35.064 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027547a0 for unit 1294 from database 0x12a008600
+2023-02-02 12:27:35.065 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 348
+2023-02-02 12:27:35.065 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002750800 for unit 7a0 from database 0x12a008600
+2023-02-02 12:27:35.065 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027507c0 for unit 1298 from database 0x12a008600
+2023-02-02 12:27:35.065 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027505a0 for unit 12a0 from database 0x12a008600
+2023-02-02 12:27:35.065 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 472
+2023-02-02 12:27:35.067 Db siriinferenced[34588:26d89b] [com.apple.siri.sirisuggestions:SiriSuggestionsPool] SuggestionPool:: Loaded SiriSuggestionsKit.DelegateOwnedSuggestionsRepository suggestions as [SiriSuggestionsKit.SuggestionDetails(suggestionId: "calculatorArithmetic", description: "calculatorArithmetic", resolverParams: [:], viewProvider: SiriSuggestionsKit.ViewCallbacksWrapper, actionIdKeyMapper: SiriSuggestionsKit.SimpleActionKeyMapper), SiriSuggestionsKit.SuggestionDetails(suggestionId: "calculatorUnitConversion", description: "calculatorUnitConversion", resolverParams: [:], viewProvider: SiriSuggestionsKit.ViewCallbacksWrapper, actionIdKeyMapper: SiriSuggestionsKit.SimpleActionKeyMapper), SiriSuggestionsKit.SuggestionDetails(suggestionId: "knowledgeAnimalFact", description: "knowledgeAnimalFact", resolverParams: [:], viewProvider: SiriSuggestionsKit.ViewCallbacksWrapper, actionIdKeyMapper: SiriSuggestionsKit.SimpleActionKeyMapper), SiriSuggestionsKit.SuggestionDetails(suggestionId: "knowledgeAnimalSound", description: "knowledgeAnimalSound", resolverParams: [:], viewProvider: SiriSuggestionsKit.ViewCallbacksWrapper, actionIdKeyMapper: SiriSuggestionsKit.SimpleActionKeyMapper), SiriSuggestionsKit.SuggestionDetails(suggestionId: "knowledgeBuildingFact", description: "knowledgeBuildingFact", resolverParams: [:], viewProvider: SiriSuggestionsKit.ViewCallbacksWrapper, actionIdKeyMapper: SiriSuggestionsKit.SimpleActionKeyMapper), SiriSuggestionsKit.SuggestionDetails(suggestionId: "knowledgeCalendarFact", description: "knowledgeCalendarFact", resolverParams: [:], viewProvider: SiriSuggestionsKit.ViewCallbacksWrapper, actionIdKeyMapper: SiriSuggestionsKit.SimpleActionKeyMapper), SiriSuggestionsKit.SuggestionDetails(suggestionId: "knowledgeCelebrityFact", description: "knowledgeCelebrityFact", resolverParams: [:], viewProvider: SiriSuggestionsKit.ViewCallbacksWrapper, actionIdKeyMapper: SiriSuggestionsKit.SimpleActionKeyMapper), SiriSuggestionsKit.SuggestionDetails(suggestionId: "knowledgeDaylightSavingsTime", description: "knowledgeDaylightSavingsTime", resolverParams: [:], viewProvider: SiriSuggestionsKit.ViewCallbacksWrapper, actionIdKeyMapper: SiriSuggestionsKit.SimpleActionKeyMapper), SiriSuggestionsKit.SuggestionDetails(suggestionId: "knowledgeDictionaryLookup", description: "knowledgeDictionaryLookup", resolverParams: [:], viewProvider: SiriSuggestionsKit.ViewCallbacksWrapper, actionIdKeyMapper: SiriSuggestionsKit.SimpleActionKeyMapper), SiriSuggestionsKit.SuggestionDetails(suggestionId: "knowledgeEncyclopediaLookup", description: "knowledgeEncyclopediaLookup", resolverParams: [:], viewProvider: SiriSuggestionsKit.ViewCallbacksWrapper, actionIdKeyMapper: SiriSuggestionsKit.SimpleActionKeyMapper), SiriSuggestionsKit.SuggestionDetails(suggestionId: "knowledgeGeographyFact", description: "knowledgeGeographyFact", resolverParams: [:], viewProvider: SiriSuggestionsKit.ViewCallbacksWrapper, actionIdKeyMapper: SiriSuggestionsKit.SimpleActionKeyMapper), SiriSuggestionsKit.SuggestionDetails(suggestionId: "knowledgeMoonPhase", description: "knowledgeMoonPhase", resolverParams: [:], viewProvider: SiriSuggestionsKit.ViewCallbacksWrapper, actionIdKeyMapper: SiriSuggestionsKit.SimpleActionKeyMapper), SiriSuggestionsKit.SuggestionDetails(suggestionId: "knowledgeNutritionalFact", description: "knowledgeNutritionalFact", resolverParams: [:], viewProvider: SiriSuggestionsKit.ViewCallbacksWrapper, actionIdKeyMapper: SiriSuggestionsKit.SimpleActionKeyMapper), SiriSuggestionsKit.SuggestionDetails(suggestionId: "localSearch", description: "localSearch", resolverParams: [:], viewProvider: SiriSuggestionsKit.ViewCallbacksWrapper, actionIdKeyMapper: SiriSuggestionsKit.SimpleActionKeyMapper), SiriSuggestionsKit.SuggestionDetails(suggestionId: "localSearchBusinessHours", description: "localSearchBusinessHours", resolverParams: [:], viewProvider: SiriSuggestionsKit.ViewCallbacksWrapper, actionIdKeyMapper: SiriSuggestionsKit.SimpleActionKeyMapper), SiriSuggestionsKit.SuggestionDetails(suggestionId: "news", description: "news", resolverParams: [:], viewProvider: SiriSuggestionsKit.ViewCallbacksWrapper, actionIdKeyMapper: SiriSuggestionsKit.SimpleActionKeyMapper), SiriSuggestionsKit.SuggestionDetails(suggestionId: "weatherConditions", description: "weatherConditions", resolverParams: [:], viewProvider: SiriSuggestionsKit.ViewCallbacksWrapper, actionIdKeyMapper: SiriSuggestionsKit.SimpleActionKeyMapper), SiriSuggestionsKit.SuggestionDetails(suggestionId: "weatherSolarEvent", description: "weatherSolarEvent", resolverParams: ["solarEvent": SiriSuggestionsKit.ResolvableParameter], viewProvider: SiriSuggestionsKit.ViewCallbacksWrapper, actionIdKeyMapper: SiriSuggestionsKit.SimpleActionKeyMapper)] from provider: Information
+2023-02-02 12:27:35.068 Db siriinferenced[34588:26d89b] [com.apple.siri.sirilinkflow:SiriSuggestionsAutoShortcuts] Getting AutoShortcut Pooled Suggestions
+2023-02-02 12:27:35.069 Db assistantd[34489:26dba0] [com.apple.network:connection] nw_endpoint_flow_attach_protocols [C2 api.smoot.apple.com:443 in_progress parent-flow (satisfied (Path is satisfied), interface: en0[802.11])]
+2023-02-02 12:27:35.103 Db assistantd[34489:26dba0] [com.apple.network:connection] nw_endpoint_flow_attach_protocols [C2 api.smoot.apple.com:443 in_progress parent-flow (satisfied (Path is satisfied), interface: en0[802.11])] stopping after adding persistent application protocols
+2023-02-02 12:27:35.104 Df assistantd[34489:26dba0] [com.apple.network:connection] [C2 api.smoot.apple.com:443 in_progress parent-flow (satisfied (Path is satisfied), interface: en0[802.11])] event: flow:start_child @0.170s
+2023-02-02 12:27:35.104 Df assistantd[34489:26dba0] [com.apple.network:connection] nw_connection_report_state_with_handler_on_nw_queue [C2] reporting state preparing
+2023-02-02 12:27:35.105 I  assistantd[34489:26dba0] [com.apple.network:connection] nw_endpoint_handler_start [C2.1 api.smoot.apple.com:443 initial path ((null))]
+2023-02-02 12:27:35.105 Db assistantd[34489:26dba0] [com.apple.network:connection] nw_endpoint_flow_receive_report [C2 api.smoot.apple.com:443 in_progress parent-flow (satisfied (Path is satisfied), interface: en0[802.11])] received child report: [C2.1 api.smoot.apple.com:443 initial path ((null))]
+2023-02-02 12:27:35.105 Df assistantd[34489:26dba0] [com.apple.network:connection] [C2.1 api.smoot.apple.com:443 initial path ((null))] event: path:start @0.171s
+2023-02-02 12:27:35.105 Db assistantd[34489:26dba0] [com.apple.network:connection] nw_endpoint_handler_path_change [C2.1 api.smoot.apple.com:443 waiting path (satisfied (Path is satisfied), interface: en0[802.11])]
+2023-02-02 12:27:35.105 Db assistantd[34489:26dba0] [com.apple.network:connection] nw_endpoint_flow_receive_report [C2 api.smoot.apple.com:443 in_progress parent-flow (satisfied (Path is satisfied), interface: en0[802.11])] received child report: [C2.1 api.smoot.apple.com:443 waiting path (satisfied (Path is satisfied), interface: en0[802.11])]
+2023-02-02 12:27:35.106 Df assistantd[34489:26dba0] [com.apple.network:connection] [C2.1 api.smoot.apple.com:443 waiting path (satisfied (Path is satisfied), interface: en0[802.11])] event: path:satisfied @0.172s, uuid: F3B3407A-73D9-4F66-BA8F-32C8AF63603E
+2023-02-02 12:27:35.106 Db assistantd[34489:26dba0] [com.apple.network:] nw_endpoint_proxy_handler_should_use_proxy Looking up proxy for hostname: api.smoot.apple.com, ifindex: 0
+2023-02-02 12:27:35.106 Db assistantd[34489:26dba0] [com.apple.SystemConfiguration:SCPreferences] create <SCPreferences 0x152d0e940 [0x1ba9afc60]> {name = SCDynamicStoreCopyProxiesWithOptions, id = /Library/Managed Preferences/mobile/com.apple.SystemConfiguration.plist, path = /Library/Managed Preferences/mobile/com.apple.SystemConfiguration.plist}
+2023-02-02 12:27:35.107 Db assistantd[34489:26dba0] [com.apple.SystemConfiguration:SCPreferences] SCPreferences() access: /Library/Managed Preferences/mobile/com.apple.SystemConfiguration.plist, size=0
+2023-02-02 12:27:35.107 Db assistantd[34489:26dba0] [com.apple.SystemConfiguration:SCPreferences] release <SCPreferences 0x152d0e940 [0x1ba9afc60]> {name = SCDynamicStoreCopyProxiesWithOptions, id = /Library/Managed Preferences/mobile/com.apple.SystemConfiguration.plist, path = /Library/Managed Preferences/mobile/com.apple.SystemConfiguration.plist, accessed}
+2023-02-02 12:27:35.107 Db configd_sim[34517:26d314] [com.apple.SystemConfiguration:SCDynamicStore] copy    : 26115 : State:/Network/Global/Proxies
+2023-02-02 12:27:35.114 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] BindingEvaluator::CreateWithBundleInfo(ID=com.apple.Maps, name=(null), CC=????, vers=(null))
+2023-02-02 12:27:35.115 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] BindingEvaluator::~BindingEvaluator(0x16d9c0b28)
+2023-02-02 12:27:35.115 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Running evaluator 0x16d9c0968
+2023-02-02 12:27:35.115 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Adding user preferences
+2023-02-02 12:27:35.115 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Adding weak binding
+2023-02-02 12:27:35.115 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] 0 bindings found
+2023-02-02 12:27:35.115 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Truncating a list of bindings to max 1 known-good ones.
+2023-02-02 12:27:35.119 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Adding and sorting bundles
+2023-02-02 12:27:35.119 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] +++ maps.app (B:0x108, C:0x0) (null)
+2023-02-02 12:27:35.119 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] 1 bindings found
+2023-02-02 12:27:35.119 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Truncating a list of bindings to max 1 known-good ones.
+2023-02-02 12:27:35.120 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] +++ maps.app (B:0x108, C:0x0) (null)
+2023-02-02 12:27:35.120 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Best binding found for evaluator 0x16d9c0bd0: maps.app (B:0x108, C:0x0)
+2023-02-02 12:27:35.120 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] BindingEvaluator::~BindingEvaluator(0x16d9c0968)
+2023-02-02 12:27:35.120 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] BindingEvaluator::~BindingEvaluator(0x16d9c0bd0)
+2023-02-02 12:27:35.120 Db mapspushd[34818:26dc80] [com.apple.launchservices:record] Invoking selector applicationStateWithContext:tableID:unitID:unitBytes: on <LSApplicationRecord 0x600003049d60> to get the value for property applicationState
+2023-02-02 12:27:35.120 Db mapspushd[34818:26dc80] [com.apple.launchservices:record] Invoking selector _rawBundleFlagsWithContext:tableID:unitID:unitBytes: on <LSApplicationRecord 0x600003049d60> to get the value for property _rawBundleFlags
+2023-02-02 12:27:35.120 Db mapspushd[34818:26dc80] [com.apple.launchservices:record] Invoking selector _personasWithAttributesWithContext:tableID:unitID:unitBytes: on <LSApplicationRecord 0x600003049d60> to get the value for property _personasWithAttributes
+2023-02-02 12:27:35.121 Db mapspushd[34818:26dc80] [com.apple.launchservices:record] Invoking selector _dataContainerURLFromDatabaseWithContext:tableID:unitID:unitBytes: on <LSApplicationRecord 0x600003049d60> to get the value for property _dataContainerURLFromDatabase
+2023-02-02 12:27:35.122 Db brookcompaniond[34782:26de15] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.122 Db brookcompaniond[34782:26de15] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.123 Db assistantd[34489:26d610] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.123 Db assistantd[34489:26d610] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.124 Db searchd[34676:26da3d] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.124 Db searchd[34676:26da3d] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.128 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027547a0 for unit 81c from database 0x12a008600
+2023-02-02 12:27:35.128 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002750840 for unit 12a4 from database 0x12a008600
+2023-02-02 12:27:35.128 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027511c0 for unit 12ac from database 0x12a008600
+2023-02-02 12:27:35.129 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 400
+2023-02-02 12:27:35.129 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002750840 for unit 7d4 from database 0x12a008600
+2023-02-02 12:27:35.129 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754360 for unit 12b0 from database 0x12a008600
+2023-02-02 12:27:35.129 Df mobileassetd[34554:26d446] [com.apple.mobileassetd:Notice] dataFillInstalledWithPurpose: Path to asset dir: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/7eb77234309f6575b70ca60353384b24 ... 52.asset
+2023-02-02 12:27:35.129 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754bc0 for unit 12b8 from database 0x12a008600
+2023-02-02 12:27:35.130 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 184
+2023-02-02 12:27:35.130 Db mobileassetd[34554:26d446] [com.apple.mobileassetd:Debug] getPathToAssetWithPurpose: URL to asset: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/71fb6f37ccdf8d345964eba3ef212c07 ... 16.asset
+2023-02-02 12:27:35.131 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754380 for unit 6fc from database 0x12a008600
+2023-02-02 12:27:35.131 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027511c0 for unit 12bc from database 0x12a008600
+2023-02-02 12:27:35.131 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002750d20 for unit 12c4 from database 0x12a008600
+2023-02-02 12:27:35.131 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 308
+2023-02-02 12:27:35.133 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002750d20 for unit 778 from database 0x12a008600
+2023-02-02 12:27:35.134 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002750ec0 for unit 12c8 from database 0x12a008600
+2023-02-02 12:27:35.134 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027544a0 for unit 12d0 from database 0x12a008600
+2023-02-02 12:27:35.151 Db siriinferenced[34588:26d89b] [com.apple.siri.sirisuggestions:SiriSuggestionsPool] SuggestionPool:: Loaded SiriSuggestionsKit.DelegateOwnedSuggestionsRepository suggestions as [SiriSuggestionsKit.SuggestionDetails(suggestionId: "autoshortcutSuggestion", description: "A suggestion for running Auto Shortcuts in a given app", resolverParams: ["autoshortcut_phrase": SiriSuggestionsKit.ResolvableParameter, "autoshortcut_appId": SiriSuggestionsKit.ResolvableParameter], viewProvider: SiriLinkSuggestionsPlugin.AutoShortcutsSuggestionsViewProvider, actionIdKeyMapper: SiriSuggestionsKit.SimpleActionKeyMapper)] from provider: autoshortcuts
+2023-02-02 12:27:35.152 Db siriinferenced[34588:26d89b] [com.apple.siri.sirisuggestions:SiriSuggestionsPool] SuggestionPool:: Loaded SiriSuggestionsKit.DelegateOwnedSuggestionsRepository suggestions as [SiriSuggestionsKit.SuggestionDetails(suggestionId: "com.apple.siri.video.suggestions.FindVideo", description: "com.apple.siri.video.suggestions.FindVideo", resolverParams: [:], viewProvider: SiriSuggestionsKit.ViewCallbacksWrapper, actionIdKeyMapper: SiriSuggestionsKit.SimpleActionKeyMapper)] from provider: video
+2023-02-02 12:27:35.153 Db Spotlight[34601:26d6b8] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.153 Db Spotlight[34601:26d6b8] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.157 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] BindingEvaluator::CreateWithBundleInfo(ID=com.apple.Maps, name=(null), CC=????, vers=(null))
+2023-02-02 12:27:35.157 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] BindingEvaluator::~BindingEvaluator(0x16d9c0b28)
+2023-02-02 12:27:35.157 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Running evaluator 0x16d9c0968
+2023-02-02 12:27:35.157 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Adding user preferences
+2023-02-02 12:27:35.157 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Adding weak binding
+2023-02-02 12:27:35.157 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] 0 bindings found
+2023-02-02 12:27:35.157 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Truncating a list of bindings to max 1 known-good ones.
+2023-02-02 12:27:35.157 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Adding and sorting bundles
+2023-02-02 12:27:35.158 I  brookcompaniond[34782:26db62] [com.apple.coreduet.knowledge:] Starting saveObjects with 1 objects.
+2023-02-02 12:27:35.158 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] +++ maps.app (B:0x108, C:0x0) (null)
+2023-02-02 12:27:35.158 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] 1 bindings found
+2023-02-02 12:27:35.158 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Truncating a list of bindings to max 1 known-good ones.
+2023-02-02 12:27:35.159 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] +++ maps.app (B:0x108, C:0x0) (null)
+2023-02-02 12:27:35.159 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] Best binding found for evaluator 0x16d9c0bd0: maps.app (B:0x108, C:0x0)
+2023-02-02 12:27:35.159 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] BindingEvaluator::~BindingEvaluator(0x16d9c0968)
+2023-02-02 12:27:35.159 Db mapspushd[34818:26dc80] [com.apple.launchservices:binding] BindingEvaluator::~BindingEvaluator(0x16d9c0bd0)
+2023-02-02 12:27:35.159 Db mapspushd[34818:26dc80] [com.apple.launchservices:record] Invoking selector applicationStateWithContext:tableID:unitID:unitBytes: on <LSApplicationRecord 0x600003049d60> to get the value for property applicationState
+2023-02-02 12:27:35.160 Db mapspushd[34818:26dc80] [com.apple.launchservices:record] Invoking selector _rawBundleFlagsWithContext:tableID:unitID:unitBytes: on <LSApplicationRecord 0x600003049d60> to get the value for property _rawBundleFlags
+2023-02-02 12:27:35.160 A  mapspushd[34818:26dc80] (libsystem_containermanager.dylib) container_create_or_lookup_app_group_path_by_app_group_identifier
+2023-02-02 12:27:35.160 Df mapspushd[34818:26dc80] [com.apple.containermanager:unspecified] container_create_or_lookup_app_group_path_by_app_group_identifier: success
+2023-02-02 12:27:35.161 Db mapspushd[34818:26dc80] [com.apple.defaults:User Defaults] found no value for key ShareETAUserEnabled in CFPrefsManagedSource<0x600003d45b00> (Domain: com.apple.GEO, User: kCFPreferencesCurrentUser, ByHost: Yes, Container: (null), Contents Need Refresh: No)
+2023-02-02 12:27:35.161 Db mapspushd[34818:26dc80] [com.apple.defaults:User Defaults] found no value for key ShareETAUserEnabled in CFPrefsManagedSource<0x600003d45b80> (Domain: com.apple.GEO, User: kCFPreferencesAnyUser, ByHost: Yes, Container: (null), Contents Need Refresh: No)
+2023-02-02 12:27:35.162 Db brookcompaniond[34782:26db62] [com.apple.Biome:BiomeSource] Event donation to DiscoverabilitySignal stream: <BMDiscoverabilitySignalEvent 0x600003efc240> identifier: com.apple.health.handwashing.home-reminders, bundleID: com.apple.brook, context: off userInfo: (null)
+2023-02-02 12:27:35.163 Db parsecd[34810:26de3c] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.163 Db parsecd[34810:26de3c] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.164 Db nanoprefsyncd[34508:26dad4] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.164 Db nanoprefsyncd[34508:26dad4] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.165 Db dataaccessd[34596:26d5ae] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.165 Db cloudd[34545:26da23] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.165 Db cloudd[34545:26da23] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.166 Db dataaccessd[34596:26d5ae] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.166 Db promotedcontentd[34710:26d954] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.166 Db promotedcontentd[34710:26d954] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.167 Db medialibraryd[34682:26d85d] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.167 Db medialibraryd[34682:26d85d] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.168 Db coreidvd[34671:26d821] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.168 Db coreidvd[34671:26d821] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.168 Db triald[34576:26d576] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.169 Db triald[34576:26d576] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.169 Db calaccessd[34570:26d76e] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.169 Db calaccessd[34570:26d76e] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.169 Db passd[34511:26d4f6] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.170 Db passd[34511:26d4f6] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.170 Db healthd[34495:26d71b] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.170 Db healthd[34495:26d71b] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.170 Db pasted[34541:26d3d8] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.174 Db pasted[34541:26d3d8] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.177 Db adprivacyd[34597:26d5bb] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.177 Db adprivacyd[34597:26d5bb] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.178 Db swcd[34572:26d534] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.178 Db swcd[34572:26d534] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.179 Db carkitd[34559:26d49b] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.179 Db carkitd[34559:26d49b] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.181 Db callservicesd[34546:26d479] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.181 Db callservicesd[34546:26d479] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.182 Db contactsd[34549:26d40c] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.182 Db contactsd[34549:26d40c] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.183 Df mobileassetd[34554:26d446] [com.apple.mobileassetd:Notice] dataFillInstalledWithPurpose: Path to asset dir: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/71fb6f37ccdf8d345964eba3ef212c07 ... 16.asset
+2023-02-02 12:27:35.184 Db mobileassetd[34554:26d446] [com.apple.mobileassetd:Debug] getPathToAssetWithPurpose: URL to asset: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/acac607170ecaf9d5b40c9f86a6568dc ... 35.asset
+2023-02-02 12:27:35.185 E  brookcompaniond[34782:26de20] [com.apple.coreduet.knowledge:] XPC error: Error Domain=NSCocoaErrorDomain Code=4099 "The connection to service named com.apple.coreduetd.knowledge was invalidated: failed at lookup with error 3 - No such process." UserInfo={NSDebugDescription=The connection to service named com.apple.coreduetd.knowledge was invalidated: failed at lookup with error 3 - No such process.}
+2023-02-02 12:27:35.187 A  brookcompaniond[34782:26db62] (CoreDuet) Duet: saveObjects async
+2023-02-02 12:27:35.188 Db brookcompaniond[34782:26db62] [com.apple.defaults:User Defaults] found no value for key SiriCanLearnFromAppBlacklist in CFPrefsSearchListSource<0x600001ef6780> (Domain: com.apple.suggestions, Container: (null))
+2023-02-02 12:27:35.189 I  brookcompaniond[34782:26db62] [com.apple.coreduet.knowledge:] Starting saveObjects with 1 objects.
+2023-02-02 12:27:35.223 Db brookcompaniond[34782:26db62] [com.apple.locationd.Core:Client] {"msg":"-onClientEvent:supportInfo:", "event":1, "data":{
+}}
+2023-02-02 12:27:35.223 Db brookcompaniond[34782:26db62] [com.apple.locationd.Core:Client] {"msg":"-onClientEvent:supportInfo:", "event":27, "data":{
+    kCLConnectionMessageAuthorizedForWidgetUpdatesKey = 0;
+    kCLConnectionMessageCompensationKey = 0;
+    kCLConnectionMessageStatusKey = 0;
+}}
+2023-02-02 12:27:35.223 Df brookcompaniond[34782:26db62] [com.apple.locationd.Core:Core] {"msg":"state transition", "event":state_transition, "state":LocationManager, "id":"0x6000032f4110", "property":limitsPrecision, "old":0, "new":0}
+2023-02-02 12:27:35.223 Df brookcompaniond[34782:26db62] [com.apple.locationd.Core:Core] {"msg":"state transition", "event":state_transition, "state":LocationManager, "id":"0x6000032f4110", "property":previousAuthorizationStatus, "old":0, "new":0}
+2023-02-02 12:27:35.223 Df brookcompaniond[34782:26db62] [com.apple.locationd.Core:Core] {"msg":"state transition", "event":state_transition, "state":LocationManager, "id":"0x6000032f4110", "property":previousAuthorizationStatusValid, "old":0, "new":1}
+2023-02-02 12:27:35.223 Df brookcompaniond[34782:26db62] [com.apple.locationd.Core:Core] {"msg":"state transition", "event":state_transition, "state":LocationManager, "id":"0x6000032f4110", "property":isAuthorizedForWidgetUpdates, "old":0, "new":0}
+2023-02-02 12:27:35.223 Df brookcompaniond[34782:26db62] [com.apple.locationd.Core:Client] {"msg":"#CLLocationManager invoking #delegate", "self":"0x6000032f4110", "delegate":"0x600003ef1e30", "selector":locationManagerDidChangeAuthorization:, "authorizationStatus":0, "limitsPrecision":0, "isAuthorizedForWidgetUpdates":0}
+2023-02-02 12:27:35.224 Df brookcompaniond[34782:26db62] [Brook:daemon] -[BRKCompanionContextManager locationManagerDidChangeAuthorization:] 0
+2023-02-02 12:27:35.224 Df brookcompaniond[34782:26db62] [Brook:daemon] -[BRKCompanionContextManager locationManagerDidChangeAuthorization:] [_locationManager authorizationStatus] != kCLClientAuthorizationStatusAuthorizedAlways
+2023-02-02 12:27:35.224 Df brookcompaniond[34782:26db62] [Brook:daemon] -[BRKCompanionContextManager locationManagerDidChangeAuthorization:] DAEMON stopMonitoringForRegion: brook-home
+2023-02-02 12:27:35.224 Df brookcompaniond[34782:26db62] [Brook:daemon] -[BRKCompanionContextManager stopMonitoringHome]
+2023-02-02 12:27:35.224 Df brookcompaniond[34782:26db62] [Brook:daemon] -[BRKCompanionContextManager stopMonitoringIdentifier:] _locationManager stopMonitoringForRegion: brook-home
+2023-02-02 12:27:35.226 Df mobileassetd[34554:26d446] [com.apple.mobileassetd:Notice] dataFillInstalledWithPurpose: Path to asset dir: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/acac607170ecaf9d5b40c9f86a6568dc ... 35.asset
+2023-02-02 12:27:35.227 Db mobileassetd[34554:26d446] [com.apple.mobileassetd:Debug] getPathToAssetWithPurpose: URL to asset: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/b2b6f9cb9018ce7a64d66c2f451b35a7 ... 55.asset
+2023-02-02 12:27:35.190 Db mediaremoted[34492:26d55f] [com.apple.ManagedConfiguration:ProfileConnection] Received settings changed notification
+2023-02-02 12:27:35.232 Db mediaremoted[34492:26d55f] [com.apple.ManagedConfiguration:ProfileConnection] Invalidating cache
+2023-02-02 12:27:35.232 E  brookcompaniond[34782:26de15] [com.apple.coreduet.knowledge:] XPC error: Error Domain=NSCocoaErrorDomain Code=4099 "The connection to service named com.apple.coreduetd.knowledge was invalidated: failed at lookup with error 3 - No such process." UserInfo={NSDebugDescription=The connection to service named com.apple.coreduetd.knowledge was invalidated: failed at lookup with error 3 - No such process.}
+2023-02-02 12:27:35.232 E  brookcompaniond[34782:26de15] [com.apple.Biome:BiomeSource] Error persisting discoverability signal event to knowledge store Error Domain=NSCocoaErrorDomain Code=4099 "The connection to service named com.apple.coreduetd.knowledge was invalidated: failed at lookup with error 3 - No such process." UserInfo={NSDebugDescription=The connection to service named com.apple.coreduetd.knowledge was invalidated: failed at lookup with error 3 - No such process.}
+2023-02-02 12:27:35.233 A  brookcompaniond[34782:26db62] (CoreLocation) CL: CLLocationManager
+2023-02-02 12:27:35.233 Df brookcompaniond[34782:26db62] [com.apple.locationd.Core:Client] {"msg":"CLLocationManager", "event":activity, "_cmd":stopMonitoringForRegion:, "self":"0x6000032f4110", "region":CLCircularRegion (identifier:'brook-home', center:<+0.00000000,+0.00000000>, radius:0.00m)}
+2023-02-02 12:27:35.234 A  brookcompaniond[34782:26db62] (LocationSupport) CL: CLConnectionClient::sendMessage(cache)
+2023-02-02 12:27:35.234 Db brookcompaniond[34782:26db62] [com.apple.LocationSupport:Connection] {"msg":"CLConnectionClient::sendMessage(cache)", "event":activity}
+2023-02-02 12:27:35.234 Df mobileassetd[34554:26d446] [com.apple.mobileassetd:Notice] dataFillInstalledWithPurpose: Path to asset dir: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/b2b6f9cb9018ce7a64d66c2f451b35a7 ... 55.asset
+2023-02-02 12:27:35.235 Db mobileassetd[34554:26d446] [com.apple.mobileassetd:Debug] getPathToAssetWithPurpose: URL to asset: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/d851924e6045d104c40c33811cd5419d ... 62.asset
+2023-02-02 12:27:35.229 E  brookcompaniond[34782:26de20] [com.apple.Biome:BiomeSource] Error persisting discoverability signal event to knowledge store Error Domain=NSCocoaErrorDomain Code=4099 "The connection to service named com.apple.coreduetd.knowledge was invalidated: failed at lookup with error 3 - No such process." UserInfo={NSDebugDescription=The connection to service named com.apple.coreduetd.knowledge was invalidated: failed at lookup with error 3 - No such process.}
+2023-02-02 12:27:35.236 A  brookcompaniond[34782:26de20] (LocationSupport) CL: CLConnection::sendMessage
+2023-02-02 12:27:35.236 Db brookcompaniond[34782:26de20] [com.apple.LocationSupport:Connection] {"msg":"CLConnection::sendMessage", "event":activity, "name":kCLConnectionMessageRegionMonitoring}
+2023-02-02 12:27:35.236 A  locationd[34507:26d4de] CL: Incoming message
+2023-02-02 12:27:35.236 Df locationd[34507:26d4de] [com.apple.locationd.Core:Client] {"msg":"Incoming message", "event":activity, "name":kCLConnectionMessageRegionMonitoring, "this":"0x125f077b0", "registrationReceived":1}
+2023-02-02 12:27:35.237 Df brookcompaniond[34782:26de20] [com.apple.locationd.Core:Client] {"msg":"client about to be destroyed", "client":"0x1445084a0"}
+2023-02-02 12:27:35.231 Db mapspushd[34818:26de27] [com.apple.Maps.MapsSync:MapsSync] [Retryable:MapsSyncXPCServerMigrator] Succeeded (after 1 attempts).
+2023-02-02 12:27:35.237 Df locationd[34507:26d4de] [com.apple.locationd.Core:Client] #Warning Couldn't get value for key kCLConnectionMessageOnBehalfOfKey, com.apple.locationd.executable-/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/libexec/brookcompaniond/brook-home
+2023-02-02 12:27:35.238 Df locationd[34507:26d4de] [com.apple.locationd.Position:GeoFencing] Removing geographic fence []/com.apple.locationd.executable-/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/libexec/brookcompaniond/brook-home
+2023-02-02 12:27:35.238 Df locationd[34507:26d4de] [com.apple.locationd.Core:Client] Client [mobile]/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/libexec/brookcompaniond (0x125f077b0) is unsubscribing to notification kCLConnectionMessageRegionMonitoring
+2023-02-02 12:27:35.238 Df mobileassetd[34554:26d446] [com.apple.mobileassetd:Notice] dataFillInstalledWithPurpose: Path to asset dir: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/d851924e6045d104c40c33811cd5419d ... 62.asset
+2023-02-02 12:27:35.238 Df locationd[34507:26dec7] [com.apple.locationd.Position:GeoFencing] Fence:Remove fence com.apple.locationd.executable-/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/libexec/brookcompaniond/brook-home
+2023-02-02 12:27:35.238 Db mobileassetd[34554:26d446] [com.apple.mobileassetd:Debug] getPathToAssetWithPurpose: URL to asset: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/091248da8cd15aed5188039d58196e00 ... 53.asset
+2023-02-02 12:27:35.238 Db locationd[34507:26dec7] [com.apple.locationd.Position:GeoFencing] Removing fence com.apple.locationd.executable-/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/libexec/brookcompaniond/brook-home
+2023-02-02 12:27:35.238 Db locationd[34507:26d4de] [com.apple.locationd.Core:Core] client, '[mobile]/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/libexec/brookcompaniond', app's client cnt, 2, active, 0, spectator, 0, batchEnabled, 0, desiredAccuracy, inf, distanceFilter, inf
+2023-02-02 12:27:35.238 I  locationd[34507:26dec7] [com.apple.locationd.Position:GeoFencing] Fence: Removing fence com.apple.locationd.executable-/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/libexec/brookcompaniond/brook-home
+2023-02-02 12:27:35.238 Db locationd[34507:26d4de] [com.apple.locationd.Core:Core] currently 0 non-system location clients
+2023-02-02 12:27:35.238 Db locationd[34507:26dec7] [com.apple.locationd.Utility:Database] {"msg":"Preparing statement for database", "query":DELETE FROM GeoFences WHERE BundleId=? AND Name=? AND OnBehalfBundleId=?, "path":/Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Caches/locationd/consolidated.db}
+2023-02-02 12:27:35.238 Df locationd[34507:26d4de] [com.apple.locationd.Core:Core] {"msg":"#pla mark service inactive and try stop zone-monitoring", "Client":com.apple.locationd.executable-/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/libexec/brookcompaniond, "SpecifiedService":5, "ClientEntry":{
+    SupportedAuthorizationMask = 1;
+}}
+2023-02-02 12:27:35.238 Db locationd[34507:26dec7] [com.apple.locationd.Utility:Database] {"msg":"Prepared statement", "statement":"0x124ee8a00"}
+2023-02-02 12:27:35.238 Db locationd[34507:26d4de] [com.apple.locationd.Core:Core] client, '[mobile]/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/libexec/brookcompaniond', app's client cnt, 2, active, 0
+2023-02-02 12:27:35.238 Db locationd[34507:26dec7] [com.apple.locationd.Position:GeoFencing] Fence: Removing vertices, key, 1195871734
+2023-02-02 12:27:35.238 Db locationd[34507:26dec7] [com.apple.locationd.Utility:Database] {"msg":"Preparing statement for database", "query":DELETE FROM Vertices WHERE FenceForeignKey=?, "path":/Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Caches/locationd/consolidated.db}
+2023-02-02 12:27:35.238 Df locationd[34507:26d4de] [com.apple.locationd.Core:Core] {"msg":"#pla mark service inactive and try stop zone-monitoring", "Client":com.apple.locationd.executable-/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/libexec/brookcompaniond, "SpecifiedService":2, "ClientEntry":{
+    SupportedAuthorizationMask = 1;
+}}
+2023-02-02 12:27:35.238 Db locationd[34507:26dec7] [com.apple.locationd.Utility:Database] {"msg":"Prepared statement", "statement":"0x124ee8c00"}
+2023-02-02 12:27:35.239 Df locationd[34507:26dec7] [com.apple.locationd.Utility:Database] {"msg":"reduceFreePages", "path":/Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Caches/locationd/consolidated.db, "page_count":12, "freelist_count":0, "loadFactor":"1.000000"}
+2023-02-02 12:27:35.239 Df locationd[34507:26dec7] [com.apple.locationd.Utility:Database] {"msg":"reduceFreePages", "event":elapsed, "begin_mach":3002508981178, "end_mach":3002508981949, "elapsed_s":"0.000032125"}
+2023-02-02 12:27:35.239 Df locationd[34507:26dec7] [com.apple.locationd.Utility:Database] {"msg":"reduceFreePages", "path":/Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Caches/locationd/consolidated.db, "page_count":12, "freelist_count":0, "loadFactor":"1.000000"}
+2023-02-02 12:27:35.239 Df locationd[34507:26dec7] [com.apple.locationd.Utility:Database] {"msg":"reduceFreePages", "event":elapsed, "begin_mach":3002508982235, "end_mach":3002508982626, "elapsed_s":"0.000016292"}
+2023-02-02 12:27:35.239 Db locationd[34507:26dec7] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":FenceAuthorizationManager, "notification":1}
+2023-02-02 12:27:35.239 A  locationd[34507:26dec7] CL: CLFenceManager::onAuthorizationNotification
+2023-02-02 12:27:35.239 Db locationd[34507:26dec7] [com.apple.locationd.Core:Notifier] {"msg":"CLFenceManager::onAuthorizationNotification", "event":activity, "this":"0x127017600"}
+2023-02-02 12:27:35.239 Db locationd[34507:26dec7] [com.apple.locationd.Position:GeoFencing] Fence: Got fence removal notification for 1 fences
+2023-02-02 12:27:35.239 Db locationd[34507:26dec7] [com.apple.locationd.Position:GeoFencing] Fence: stopMonitoringFences_nl
+2023-02-02 12:27:35.239 Db locationd[34507:26dec7] [com.apple.locationd.Position:GeoFencing] Fence: stopMonitoringFences, fences, 1
+2023-02-02 12:27:35.239 Db locationd[34507:26dec7] [com.apple.locationd.Position:GeoFencing] Fence: state remove, 3369816555998493299, Fence, []/com.apple.locationd.executable-/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/libexec/brookcompaniond/brook-home, latitude, 179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.00000000, longitude, 179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368.00000000, refFrame, 0, distance, -1.0, eFistance, -1.0, lDown, -1.0, time, 697044455.2, ctime, -1.0, f<…>
+2023-02-02 12:27:35.239 Db locationd[34507:26dec7] [com.apple.locationd.Utility:Database] {"msg":"Preparing statement for database", "query":DELETE FROM Status WHERE Key=?, "path":/Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Caches/locationd/cache_encryptedC.db}
+2023-02-02 12:27:35.239 Db locationd[34507:26dec7] [com.apple.locationd.Utility:Database] {"msg":"Prepared statement", "statement":"0x124ef9000"}
+2023-02-02 12:27:35.240 I  mapspushd[34818:26de27] [com.apple.Maps.MapsSync:MapsSync] Starting MapsSync XPC server
+2023-02-02 12:27:35.240 Df locationd[34507:26dec7] [com.apple.locationd.Utility:Database] {"msg":"reduceFreePages", "path":/Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Caches/locationd/cache_encryptedC.db, "page_count":7, "freelist_count":0, "loadFactor":"1.000000"}
+2023-02-02 12:27:35.240 Db mapspushd[34818:26de27] [com.apple.CFBundle:resources] Resource lookup at CFBundle 0x14f604a80 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/MapsSync.framework> (not loaded)
+	Request       : DataModel_0_0_1 type: momd
+	Result        : file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/MapsSync.framework/DataModel_0_0_1.momd/
+2023-02-02 12:27:35.240 Df locationd[34507:26dec7] [com.apple.locationd.Utility:Database] {"msg":"reduceFreePages", "event":elapsed, "begin_mach":3002509008241, "end_mach":3002509008731, "elapsed_s":"0.000020417"}
+2023-02-02 12:27:35.240 Db locationd[34507:26dec7] [com.apple.locationd.Position:GeoFencing] Fence: engageContinuousTrackingIfNeeded, isEngageContinousTracking, 0, numOfMonitoredFences, 0, 0
+2023-02-02 12:27:35.240 I  locationd[34507:26dec7] [com.apple.locationd.Position:GeoFencing] Fence: Removing 1 fences for download
+2023-02-02 12:27:35.240 Db locationd[34507:26dec7] [com.apple.locationd.Position:GeoFencing] Removing fence from download, []/com.apple.locationd.executable-/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/libexec/brookcompaniond/brook-home
+2023-02-02 12:27:35.240 I  mapspushd[34818:26de27] [com.apple.Maps.MapsSync:MapsSync] Maps group container NOT supported on this platform
+2023-02-02 12:27:35.241 Db locationd[34507:26dec7] [com.apple.locationd.Position:GeoFencing] Fence: no reachability, download not possible
+2023-02-02 12:27:35.241 Db locationd[34507:26dec7] [com.apple.locationd.Utility:Database] {"msg":"Preparing statement for database", "query":SELECT COUNT(*) FROM GeoFences WHERE BundleId=?, "path":/Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Caches/locationd/consolidated.db}
+2023-02-02 12:27:35.241 Db locationd[34507:26dec7] [com.apple.locationd.Utility:Database] {"msg":"Prepared statement", "statement":"0x124ee8a00"}
+2023-02-02 12:27:35.241 I  mapspushd[34818:26de27] [com.apple.Maps.MapsSync:MapsSync] Using container at file:///Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Maps/MapsSync_0.0.1
+2023-02-02 12:27:35.241 Db mapspushd[34818:26de27] [com.apple.CFBundle:resources] Resource lookup at CFBundle 0x14f604a80 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/MapsSync.framework> (not loaded)
+	Request       : DataModel_0_0_1 type: momd
+	Result        : file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/MapsSync.framework/DataModel_0_0_1.momd/
+2023-02-02 12:27:35.241 Db locationd[34507:26dec7] [com.apple.LocationSupport:Intersilo] {"msg":"#Cohorting Intend to sync", "FromDispatchSilo":CLFenceManagerSilo, "FromCohortId":3, "ToDispatchSilo":CLClientAuthorizationCacheSilo, "ToCohortId":0}
+2023-02-02 12:27:35.241 Db locationd[34507:26dec7] [com.apple.locationd.Position:GeoFencing] {"msg":"Fence: isClientAuthorized", "key":com.apple.locationd.executable-/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/libexec/brookcompaniond, "authorized":0}
+2023-02-02 12:27:35.241 Db locationd[34507:26dec7] [com.apple.locationd.Position:GeoFencing] 0 fences for com.apple.locationd.executable-/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/libexec/brookcompaniond; authorized 0
+2023-02-02 12:27:35.241 Db locationd[34507:26dec7] [com.apple.locationd.Position:GeoFencing] com.apple.locationd.executable-/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/libexec/brookcompaniond: hasMonitoredFences 0, monitoringAdded 0
+2023-02-02 12:27:35.241 Db locationd[34507:26dec7] [com.apple.locationd.Position:GeoFencing] com.apple.locationd.executable-/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/libexec/brookcompaniond is no longer a fence client
+2023-02-02 12:27:35.241 Df locationd[34507:26dec7] [com.apple.locationd.Core:Core] {"msg":"#pla mark service inactive and try stop zone-monitoring", "Client":com.apple.locationd.executable-/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/libexec/brookcompaniond, "SpecifiedService":1, "ClientEntry":{
+    SupportedAuthorizationMask = 1;
+}}
+2023-02-02 12:27:35.247 Db mapspushd[34818:26de27] [com.apple.defaults:User Defaults] found no value for key com.apple.CoreData.XPCDebug in CFPrefsSearchListSource<0x600003d48980> (Domain: com.apple.Maps, Container: (null))
+2023-02-02 12:27:35.247 Df mobileassetd[34554:26d446] [com.apple.mobileassetd:Notice] dataFillInstalledWithPurpose: Path to asset dir: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/091248da8cd15aed5188039d58196e00 ... 53.asset
+2023-02-02 12:27:35.247 Db mobileassetd[34554:26d446] [com.apple.mobileassetd:Debug] getPathToAssetWithPurpose: URL to asset: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/b0dc5457cbfafaadee8b511dcb1e8cb4 ... b4.asset
+2023-02-02 12:27:35.249 Db mapspushd[34818:26de27] [com.apple.CFBundle:resources] Resource lookup at CFBundle 0x14f605bf0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/MapsSync.framework/DataModel_0_0_1.momd> (not loaded)
+	Request       : VersionInfo type: plist
+	Result        : file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/MapsSync.framework/DataModel_0_0_1.momd/VersionInfo.plist
+2023-02-02 12:27:35.249 Db mapspushd[34818:26de27] [com.apple.CFBundle:resources] Resource lookup at CFBundle 0x14f605bf0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/MapsSync.framework/DataModel_0_0_1.momd> (not loaded)
+	Request       :  type: omo
+	Result        : None
+2023-02-02 12:27:35.249 Db mapspushd[34818:26de27] [com.apple.CFBundle:resources] Resource lookup at CFBundle 0x14f605bf0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/MapsSync.framework/DataModel_0_0_1.momd> (not loaded)
+	Request       :  type: mom
+	Result        : DataModel_0_0_1.mom -- file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/MapsSync.framework/DataModel_0_0_1.momd/
+2023-02-02 12:27:35.254 Df mobileassetd[34554:26d446] [com.apple.mobileassetd:Notice] dataFillInstalledWithPurpose: Path to asset dir: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/b0dc5457cbfafaadee8b511dcb1e8cb4 ... b4.asset
+2023-02-02 12:27:35.254 Db mobileassetd[34554:26d446] [com.apple.mobileassetd:Debug] getPathToAssetWithPurpose: URL to asset: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/1142adaf5809c00485e99fd75b8f8a20 ... 25.asset
+2023-02-02 12:27:35.260 Db companionappd[34780:26de3d] [com.apple.IDS:Registration]  ...auto reconnecting
+2023-02-02 12:27:35.260 Df companionappd[34780:26de3d] [com.apple.IDS:Registration] XPC has informed us that a fatal error has occured, we will not be attempting to reconnect any further
+2023-02-02 12:27:35.261 Df mobileassetd[34554:26d446] [com.apple.mobileassetd:Notice] dataFillInstalledWithPurpose: Path to asset dir: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/1142adaf5809c00485e99fd75b8f8a20 ... 25.asset
+2023-02-02 12:27:35.261 Db mobileassetd[34554:26d446] [com.apple.mobileassetd:Debug] getPathToAssetWithPurpose: URL to asset: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/ae20beb22211b02948d81a694c424ed8 ... ce.asset
+2023-02-02 12:27:35.263 Df mobileassetd[34554:26d446] [com.apple.mobileassetd:Notice] dataFillInstalledWithPurpose: Path to asset dir: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/ae20beb22211b02948d81a694c424ed8 ... ce.asset
+2023-02-02 12:27:35.264 Db mobileassetd[34554:26d446] [com.apple.mobileassetd:Debug] getPathToAssetWithPurpose: URL to asset: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/1cbb9b05b1203fba9f7824231a565a5b ... d1.asset
+2023-02-02 12:27:35.267 Db siriinferenced[34588:26d89b] [com.apple.siri.sirisuggestions:SiriSuggestionsPool] SuggestionPool:: Loaded SiriSuggestionsKit.DelegateOwnedSuggestionsRepository suggestions as [SiriSuggestionsKit.SuggestionDetails(suggestionId: "createReminder", description: "createReminder", resolverParams: [:], viewProvider: SiriSuggestionsKit.ViewCallbacksWrapper, actionIdKeyMapper: SiriSuggestionsKit.SimpleActionKeyMapper), SiriSuggestionsKit.SuggestionDetails(suggestionId: "createNote", description: "createNote", resolverParams: [:], viewProvider: SiriSuggestionsKit.ViewCallbacksWrapper, actionIdKeyMapper: SiriSuggestionsKit.SimpleActionKeyMapper)] from provider: notebook
+2023-02-02 12:27:35.268 Db siriinferenced[34588:26d89b] [com.apple.siri.sirisuggestions:SiriSuggestionsPool] SuggestionPool:: Loaded SiriSuggestionsKit.DelegateOwnedSuggestionsRepository suggestions as [SiriSuggestionsKit.SuggestionDetails(suggestionId: "messages_SendAMessage", description: "Defines a suggestion for sending a message", resolverParams: ["groupName": SiriSuggestionsKit.ResolvableParameter, "proactiveContact": SiriSuggestionsKit.ResolvableParameter], viewProvider: SiriSuggestionsKit.ViewCallbacksWrapper, actionIdKeyMapper: SiriSuggestionsKit.SimpleActionKeyMapper), SiriSuggestionsKit.SuggestionDetails(suggestionId: "messages_ReadMyMessages", description: "Defines a suggestion for sending a message", resolverParams: [:], viewProvider: SiriSuggestionsKit.ViewCallbacksWrapper, actionIdKeyMapper: SiriSuggestionsKit.SimpleActionKeyMapper), SiriSuggestionsKit.SuggestionDetails(suggestionId: "messages_ShareThis", description: "Defines a suggestion for sharing what is on screen", resolverParams: ["proactiveContact": SiriSuggestionsKit.ResolvableParameter, "groupName": SiriSuggestionsKit.ResolvableParameter], viewProvider: SiriSuggestionsKit.ViewCallbacksWrapper, actionIdKeyMapper: SiriSuggestionsKit.SimpleActionKeyMapper)] from provider: messages
+2023-02-02 12:27:35.269 Df mobileassetd[34554:26d446] [com.apple.mobileassetd:Notice] dataFillInstalledWithPurpose: Path to asset dir: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/1cbb9b05b1203fba9f7824231a565a5b ... d1.asset
+2023-02-02 12:27:35.269 Db mobileassetd[34554:26d446] [com.apple.mobileassetd:Debug] getPathToAssetWithPurpose: URL to asset: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/a7c6f319b17f9f212a62f33338d2cefa ... a1.asset
+2023-02-02 12:27:35.281 Db assistantd[34489:26dba0] [com.apple.network:connection] -[NWConcrete_nw_endpoint_resolver startWithHandler:] [C2.1 api.smoot.apple.com:443 waiting resolver (satisfied (Path is satisfied), interface: en0[802.11])]
+2023-02-02 12:27:35.282 Db assistantd[34489:26dba0] [com.apple.network:connection] nw_endpoint_flow_receive_report [C2 api.smoot.apple.com:443 in_progress parent-flow (satisfied (Path is satisfied), interface: en0[802.11])] received child report: [C2.1 api.smoot.apple.com:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11])]
+2023-02-02 12:27:35.282 Df assistantd[34489:26dba0] [com.apple.network:connection] [C2.1 api.smoot.apple.com:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11])] event: resolver:start_dns @0.348s
+2023-02-02 12:27:35.288 Db profiled[34667:26d889] [com.apple.defaults:User Defaults] looked up value only from main document domain for key CookieAcceptPolicy in CFPrefsPlistSource<0x6000027d8000> (Domain: com.apple.WebUI, User: kCFPreferencesCurrentUser, ByHost: No, Container: (null), Contents Need Refresh: No) via CFPrefsSearchListSource<0x6000027d8780> (Domain: com.apple.WebUI, Container: (null))
+2023-02-02 12:27:35.289 I  profiled[34667:26d889] [com.apple.ManagedConfiguration:Assertions] Releasing power assertion. Count: 1 -> 0.
+2023-02-02 12:27:35.290 I  profiled[34667:26d889] [com.apple.ManagedConfiguration:Assertions] Releasing process assertion with reason: profiled-SetParameterForSettings
+2023-02-02 12:27:35.290 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 348
+2023-02-02 12:27:35.291 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027544a0 for unit 7a0 from database 0x12a008600
+2023-02-02 12:27:35.292 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002751140 for unit 12d4 from database 0x12a008600
+2023-02-02 12:27:35.294 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027544a0 for unit 12dc from database 0x12a008600
+2023-02-02 12:27:35.305 Df mobileassetd[34554:26d446] [com.apple.mobileassetd:Notice] dataFillInstalledWithPurpose: Path to asset dir: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/a7c6f319b17f9f212a62f33338d2cefa ... a1.asset
+2023-02-02 12:27:35.306 Db mobileassetd[34554:26d446] [com.apple.mobileassetd:Debug] getPathToAssetWithPurpose: URL to asset: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/b5005c1df4b04ee38f548fd2d06a472a ... 5a.asset
+2023-02-02 12:27:35.339 I  assistantd[34489:26dba0] [com.apple.network:connection] nw_resolver_create_dns_service_locked [C2.1] Starting host resolution api.smoot.apple.com:443, flags 0xc000d000 proto 0
+2023-02-02 12:27:35.342 Df assistantd[34489:26dba0] (CFNetwork) Task <C1E07867-6460-4FA0-BA0F-6A73EEF84A98>.<1> setting up Connection 2
+2023-02-02 12:27:35.343 Db assistantd[34489:26dba0] [com.apple.network:activity] Returning should log: 0 for activity cfnetwork:foreground_task
+2023-02-02 12:27:35.344 I  assistantd[34489:26dba0] [com.apple.network:connection] nw_resolver_host_resolve_callback [C2.1] flags=0x40000003 ifindex=0 error=NoSuchRecord(-65554) hostname=bag-smoot.v.aaplimg.com. addr=:: ttl=187
+2023-02-02 12:27:35.344 I  assistantd[34489:26dba0] [com.apple.network:connection] nw_resolver_host_resolve_callback [C2.1] flags=0x40000002 ifindex=0 error=NoError(0) hostname=bag-smoot.v.aaplimg.com. addr=44.235.85.225 ttl=377
+2023-02-02 12:27:35.344 Db Spotlight[34601:26d6bb] [com.apple.defaults:User Defaults] found no value for key UseNewAXBundleLoader in CFPrefsSearchListSource<0x60000388cb80> (Domain: com.apple.Accessibility, Container: (null))
+2023-02-02 12:27:35.345 Db assistantd[34489:26dba0] [com.apple.network:connection] nw_endpoint_resolver_update [C2.1 api.smoot.apple.com:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11])] resolver is complete
+2023-02-02 12:27:35.345 Db Spotlight[34601:26d6bb] [com.apple.defaults:User Defaults] found no value for key UseNewAXBundleLoader in CFPrefsSearchListSource<0x60000388cb80> (Domain: com.apple.Accessibility, Container: (null))
+2023-02-02 12:27:35.346 Df assistantd[34489:26dba0] [com.apple.network:connection] nw_endpoint_resolver_update [C2.1 api.smoot.apple.com:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11])] Adding endpoint handler for 44.235.85.225:443
+2023-02-02 12:27:35.346 Db assistantd[34489:26dba0] [com.apple.network:connection] nw_endpoint_resolver_update [C2.1 api.smoot.apple.com:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11])] Updated endpoint list is (44.235.85.225:443)
+2023-02-02 12:27:35.347 Db assistantd[34489:26dba0] [com.apple.network:connection] nw_endpoint_flow_receive_report [C2 api.smoot.apple.com:443 in_progress parent-flow (satisfied (Path is satisfied), interface: en0[802.11])] received child report: [C2.1 api.smoot.apple.com:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11])]
+2023-02-02 12:27:35.347 Df assistantd[34489:26dba0] [com.apple.network:connection] [C2.1 api.smoot.apple.com:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11])] event: resolver:receive_dns @0.413s
+2023-02-02 12:27:35.347 I  assistantd[34489:26dba0] [com.apple.network:connection] nw_endpoint_resolver_start_next_child [C2.1 api.smoot.apple.com:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11])] starting child endpoint 44.235.85.225:443
+2023-02-02 12:27:35.348 I  assistantd[34489:26dba0] [com.apple.network:connection] nw_endpoint_handler_start [C2.1.1 44.235.85.225:443 initial path ((null))]
+2023-02-02 12:27:35.349 Db assistantd[34489:26dba0] [com.apple.network:connection] nw_endpoint_resolver_receive_report [C2.1 api.smoot.apple.com:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11])] received child report: [C2.1.1 44.235.85.225:443 initial path ((null))]
+2023-02-02 12:27:35.349 Db assistantd[34489:26dba0] [com.apple.network:connection] nw_endpoint_flow_receive_report [C2 api.smoot.apple.com:443 in_progress parent-flow (satisfied (Path is satisfied), interface: en0[802.11])] received child report: [C2.1.1 44.235.85.225:443 initial path ((null))]
+2023-02-02 12:27:35.349 Df assistantd[34489:26dba0] [com.apple.network:connection] [C2.1.1 44.235.85.225:443 initial path ((null))] event: path:start @0.415s
+2023-02-02 12:27:35.357 Db parsecd[34810:26de3e] [com.apple.defaults:User Defaults] found no value for key bag.enabled in CFPrefsSearchListSource<0x600003fe4100> (Domain: com.apple.parsecd, Container: (null))
+2023-02-02 12:27:35.357 I  parsecd[34810:26de3e] [com.apple.parsecd:Parsec_Connection] set effective visibility setting for allowSpotlightNews to false
+2023-02-02 12:27:35.361 Db parsecd[34810:26de3e] [parsec:ClientName] Couldn't find a match for regex in userAgent: messages
+2023-02-02 12:27:35.362 Db parsecd[34810:26de3e] [parsec:ClientName] Allows matching abbreviated user agent. ClientName: messages
+2023-02-02 12:27:35.362 Db parsecd[34810:26de3e] [com.apple.defaults:User Defaults] found no value for key bag.enabled in CFPrefsSearchListSource<0x600003fe4100> (Domain: com.apple.parsecd, Container: (null))
+2023-02-02 12:27:35.362 Df parsecd[34810:26de3e] [com.apple.ManagedConfiguration:ProfileConnection] Setting client truth of UUID com.apple.siri.parsec.HashtagImagesApp type com.apple.siri.parsec.HashtagImagesApp to {
+    union =     {
+        blockedAppBundleIDs =         {
+            values =             (
+                "com.apple.siri.parsec.HashtagImagesApp"
+            );
+        };
+    };
+}
+2023-02-02 12:27:35.363 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 480
+2023-02-02 12:27:35.363 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027547a0 for unit 824 from database 0x12a008600
+2023-02-02 12:27:35.363 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754ba0 for unit 12e0 from database 0x12a008600
+2023-02-02 12:27:35.363 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002751140 for unit 12e8 from database 0x12a008600
+2023-02-02 12:27:35.364 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 472
+2023-02-02 12:27:35.364 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002751140 for unit 81c from database 0x12a008600
+2023-02-02 12:27:35.364 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027547a0 for unit 1388 from database 0x12a008600
+2023-02-02 12:27:35.365 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754220 for unit 1390 from database 0x12a008600
+2023-02-02 12:27:35.365 Db maild[34583:26db96] [com.apple.defaults:User Defaults] looked up value 1674855641 for key CKStartupTime in CFPrefsPlistSource<0x6000016f8a00> (Domain: com.apple.email.maild, User: kCFPreferencesCurrentUser, ByHost: No, Container: (null), Contents Need Refresh: No) via CFPrefsSearchListSource<0x6000016e0180> (Domain: com.apple.email.maild, Container: (null))
+2023-02-02 12:27:35.365 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 404
+2023-02-02 12:27:35.365 Db maild[34583:26db96] [com.apple.defaults:User Defaults] looked up value (
+    CKAcccountInfoCacheReset,
+    CKAccountInfoCacheReset
+) for key CKPerBootTasks in CFPrefsPlistSource<0x6000016f8a00> (Domain: com.apple.email.maild, User: kCFPreferencesCurrentUser, ByHost: No, Container: (null), Contents Need Refresh: No) via CFPrefsSearchListSource<0x6000016e0180> (Domain: com.apple.email.maild, Container: (null))
+2023-02-02 12:27:35.365 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002750d20 for unit 7d8 from database 0x12a008600
+2023-02-02 12:27:35.366 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754720 for unit 1394 from database 0x12a008600
+2023-02-02 12:27:35.366 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027542c0 for unit 139c from database 0x12a008600
+2023-02-02 12:27:35.366 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 12
+2023-02-02 12:27:35.366 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002751160 for unit 650 from database 0x12a008600
+2023-02-02 12:27:35.367 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002750e60 for unit 13a0 from database 0x12a008600
+2023-02-02 12:27:35.367 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027504e0 for unit 13a8 from database 0x12a008600
+2023-02-02 12:27:35.367 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 308
+2023-02-02 12:27:35.367 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754ba0 for unit 778 from database 0x12a008600
+2023-02-02 12:27:35.368 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754ba0 for unit 13b0 from database 0x12a008600
+2023-02-02 12:27:35.368 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027547a0 for unit 13b8 from database 0x12a008600
+2023-02-02 12:27:35.371 Db cfprefsd[34522:26dae5] [com.apple.defaults:cfprefsd] Process 34818 (mapspushd) sent a request related to { com.apple.GEO, user: mobile, kCFPreferencesAnyHost, /Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Preferences/com.apple.GEO.plist, managed: 0 } (0x600000c0c500)
+2023-02-02 12:27:35.372 Db cfprefsd[34522:26dae5] [com.apple.defaults:cfprefsd] Process 34818 (mapspushd) read data for { com.apple.GEO, mobile, kCFPreferencesAnyHost, /Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Preferences/com.apple.GEO.plist, managed: 0 }, backed by /Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Preferences/com.apple.GEO.plist
+2023-02-02 12:27:35.373 Db cfprefsd[34522:26dae5] [com.apple.defaults:cfprefsd] Process 34818 (mapspushd) sent a request related to { com.apple.GEO, user: mobile, kCFPreferencesAnyHost, /Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Preferences/com.apple.GEO.plist, managed: 0 } (0x600000c0c500)
+2023-02-02 12:27:35.373 Db cfprefsd[34522:26dae5] [com.apple.defaults:cfprefsd] Process 34818 (mapspushd) read data for { com.apple.GEO, mobile, kCFPreferencesAnyHost, /Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Preferences/com.apple.GEO.plist, managed: 0 }, backed by /Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Preferences/com.apple.GEO.plist
+2023-02-02 12:27:35.373 Db cfprefsd[34522:26dae5] [com.apple.defaults:cfprefsd] Process 34818 (mapspushd) sent a request related to { com.apple.GEO, user: mobile, kCFPreferencesCurrentHost, /Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Preferences/ByHost/com.apple.GEO..plist, managed: 0 } (0x600000f14e10)
+2023-02-02 12:27:35.373 E  cfprefsd[34522:26dae5] [com.apple.defaults:cfprefsd] Couldn't open parent path due to [2: No such file or directory]
+2023-02-02 12:27:35.374 Db cfprefsd[34522:26dae5] [com.apple.defaults:cfprefsd] Couldn't open /Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Preferences/ByHost/com.apple.GEO..plist due to No such file or directory
+2023-02-02 12:27:35.377 Df mobileassetd[34554:26d446] [com.apple.mobileassetd:Notice] dataFillInstalledWithPurpose: Path to asset dir: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/b5005c1df4b04ee38f548fd2d06a472a ... 5a.asset
+2023-02-02 12:27:35.379 Db mobileassetd[34554:26d446] [com.apple.mobileassetd:Debug] getPathToAssetWithPurpose: URL to asset: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/ff5c84b7c7c147d2533272c8f39f9b93 ... 44.asset
+2023-02-02 12:27:35.388 Db Spotlight[34601:26d5a0] [com.apple.defaults:User Defaults] found no value for key UseNewAXBundleLoader in CFPrefsSearchListSource<0x60000388cb80> (Domain: com.apple.Accessibility, Container: (null))
+2023-02-02 12:27:35.389 Db Spotlight[34601:26d5a0] [com.apple.defaults:User Defaults] found no value for key UseNewAXBundleLoader in CFPrefsSearchListSource<0x60000388cb80> (Domain: com.apple.Accessibility, Container: (null))
+2023-02-02 12:27:35.398 Db profiled[34667:26d889] [com.apple.ManagedConfiguration:MC] Looked up bundle ID com.apple.parsecd from audit token using entitlement.
+2023-02-02 12:27:35.398 I  profiled[34667:26d889] [com.apple.ManagedConfiguration:Assertions] Creating process assertion with reason: profiled-ApplyRestrictions
+2023-02-02 12:27:35.398 I  profiled[34667:26d889] [com.apple.ManagedConfiguration:Assertions] Retaining power assertion. Count: 0 -> 1
+2023-02-02 12:27:35.399 Df profiled[34667:26d889] [com.apple.ManagedConfiguration:MC] Setting client truth {
+    union =     {
+        blockedAppBundleIDs =         {
+            values =             (
+                "com.apple.siri.parsec.HashtagImagesApp"
+            );
+        };
+    };
+} for client com.apple.siri.parsec.HashtagImagesApp
+2023-02-02 12:27:35.401 Db profiled[34667:26d889] [com.apple.CFBundle:strings] Bundle: CFBundle 0x127607ab0 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/ManagedConfiguration.framework> (not loaded), key: ENCRYPTION_POLICY_CLIENT_FAILURE_TEXT_IPHONE, value: (null), table: Errors, localizationName: (null), result: The %1$@ requires encryption which is not supported on this iPhone.
+2023-02-02 12:27:35.431 Df profiled[34667:26d889] [com.apple.ManagedConfiguration:MC] Using cached passcode compliance with restrictions
+2023-02-02 12:27:35.431 Df profiled[34667:26d889] [com.apple.ManagedConfiguration:MC] Current passcode complies with restrictions. Removing nag.
+2023-02-02 12:27:35.431 I  profiled[34667:26d889] [com.apple.ManagedConfiguration:MC] Finished recomputing nag message. Success: 1
+2023-02-02 12:27:35.432 I  profiled[34667:26d889] [com.apple.ManagedConfiguration:Assertions] Releasing power assertion. Count: 1 -> 0.
+2023-02-02 12:27:35.432 I  maild[34583:26dba1] [com.apple.cloudkit.sim:CK] Device is NOT an AppleInternal install
+2023-02-02 12:27:35.366 Db maild[34583:26db96] [com.apple.cloudkit.sim:CK] Registering <CKContainer: 0x600001bd8140> for account change notifications. Now have 1 registered containers
+2023-02-02 12:27:35.434 Db maild[34583:26db96] [com.apple.cloudkit.sim:CK] Registering handler for libnotify account change notifications
+2023-02-02 12:27:35.368 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 260
+2023-02-02 12:27:35.435 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002750800 for unit 748 from database 0x12a008600
+2023-02-02 12:27:35.435 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027510e0 for unit 13bc from database 0x12a008600
+2023-02-02 12:27:35.435 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002750d40 for unit 13c4 from database 0x12a008600
+2023-02-02 12:27:35.436 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 184
+2023-02-02 12:27:35.436 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027510e0 for unit 6fc from database 0x12a008600
+2023-02-02 12:27:35.436 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754a60 for unit 1428 from database 0x12a008600
+2023-02-02 12:27:35.436 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002750460 for unit 1430 from database 0x12a008600
+2023-02-02 12:27:35.436 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 4
+2023-02-02 12:27:35.437 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754360 for unit 648 from database 0x12a008600
+2023-02-02 12:27:35.437 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002750ec0 for unit 145c from database 0x12a008600
+2023-02-02 12:27:35.437 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027505a0 for unit 1464 from database 0x12a008600
+2023-02-02 12:27:35.437 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 4
+2023-02-02 12:27:35.437 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027507c0 for unit 648 from database 0x12a008600
+2023-02-02 12:27:35.438 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027547a0 for unit 14f4 from database 0x12a008600
+2023-02-02 12:27:35.438 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754360 for unit 14fc from database 0x12a008600
+2023-02-02 12:27:35.438 Db mapspushd[34818:26dc80] [com.apple.defaults:User Defaults] CFPrefsPlistSource<0x600003d47080> (Domain: com.apple.GEO, User: kCFPreferencesCurrentUser, ByHost: No, Container: (null), Contents Need Refresh: No) loaded: a new base plist and no additional changes from the base plist
+2023-02-02 12:27:35.439 Db mapspushd[34818:26dc80] [com.apple.defaults:User Defaults] CFPrefsPlistSource<0x600003d46b00> (Domain: com.apple.GEO, User: kCFPreferencesCurrentUser, ByHost: No, Container: /Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data, Contents Need Refresh: No) loaded: a new base plist and no additional changes from the base plist
+2023-02-02 12:27:35.440 Db mapspushd[34818:26dc80] [com.apple.defaults:User Defaults] CFPrefsPlistSource<0x600003d46c80> (Domain: com.apple.GEO, User: kCFPreferencesCurrentUser, ByHost: Yes, Container: (null), Contents Need Refresh: No) loaded: an empty base plist and no additional changes from the base plist
+2023-02-02 12:27:35.440 Db mapspushd[34818:26dc80] [com.apple.defaults:User Defaults] found no value for key ShareETAUserEnabled in CFPrefsSearchListSource<0x600003d47100> (Domain: com.apple.GEO, Container: (null))
+2023-02-02 12:27:35.441 Db geod[34553:26d4c2] [com.apple.GeoServices:GEODaemon] peerID 13 sent messaageName defaults.addChangeListenerFor
+2023-02-02 12:27:35.441 Db geod[34553:26d4c2] [com.apple.GeoServices:UserDefaults] Peer <GEOPeer: 0x6000014684e0> [com.apple.Maps-simulator] (Defaults) connection:0x133905820 adding listeners for: (
+    ShareETAUserEnabled
+)
+2023-02-02 12:27:35.441 Db mapspushd[34818:26dc80] [com.apple.defaults:User Defaults] found no value for key MSPSharedTripServerEnabledKey in CFPrefsManagedSource<0x600003d45b00> (Domain: com.apple.GEO, User: kCFPreferencesCurrentUser, ByHost: Yes, Container: (null), Contents Need Refresh: No)
+2023-02-02 12:27:35.441 Db mapspushd[34818:26dc80] [com.apple.defaults:User Defaults] found no value for key MSPSharedTripServerEnabledKey in CFPrefsManagedSource<0x600003d45b80> (Domain: com.apple.GEO, User: kCFPreferencesAnyUser, ByHost: Yes, Container: (null), Contents Need Refresh: No)
+2023-02-02 12:27:35.441 Db mapspushd[34818:26dc80] [com.apple.defaults:User Defaults] found no value for key DebugActiveExperimentBranch in CFPrefsManagedSource<0x600003d45b00> (Domain: com.apple.GEO, User: kCFPreferencesCurrentUser, ByHost: Yes, Container: (null), Contents Need Refresh: No)
+2023-02-02 12:27:35.442 Db mapspushd[34818:26dc80] [com.apple.defaults:User Defaults] found no value for key DebugActiveExperimentBranch in CFPrefsManagedSource<0x600003d45b80> (Domain: com.apple.GEO, User: kCFPreferencesAnyUser, ByHost: Yes, Container: (null), Contents Need Refresh: No)
+2023-02-02 12:27:35.442 Db geod[34553:26d4c2] [com.apple.GeoServices:GEODaemon] peerID 13 sent messaageName defaults.addChangeListenerFor
+2023-02-02 12:27:35.442 Db geod[34553:26d4c2] [com.apple.GeoServices:UserDefaults] Peer <GEOPeer: 0x6000014684e0> [com.apple.Maps-simulator] (Defaults) connection:0x133905820 adding listeners for: (
+    MSPSharedTripServerEnabledKey
+)
+2023-02-02 12:27:35.442 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 304
+2023-02-02 12:27:35.442 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002751160 for unit 774 from database 0x12a008600
+2023-02-02 12:27:35.443 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027504e0 for unit 1540 from database 0x12a008600
+2023-02-02 12:27:35.443 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754360 for unit 1548 from database 0x12a008600
+2023-02-02 12:27:35.443 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 32
+2023-02-02 12:27:35.443 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002751160 for unit 664 from database 0x12a008600
+2023-02-02 12:27:35.443 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027507c0 for unit 157c from database 0x12a008600
+2023-02-02 12:27:35.447 E  mapspushd[34818:26de27] [com.apple.coredata:error] warning: XPC Store Server - Migration keys have been removed from {
+    NSInferMappingModelAutomaticallyOption = 1;
+    NSMigratePersistentStoresAutomaticallyOption = 1;
+    NSPersistentHistoryTrackingKey = 1;
+    NSPersistentStoreRemoteChangeNotificationOptionKey = 1;
+    NSXPCStoreDaemonize = 1;
+    NSXPCStorePostUpdateNotifications = 1;
+    NSXPCStoreServiceName = "com.apple.Maps.MapsSync.store";
+}
+2023-02-02 12:27:35.447 Df mobileassetd[34554:26d446] [com.apple.mobileassetd:Notice] dataFillInstalledWithPurpose: Path to asset dir: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/ff5c84b7c7c147d2533272c8f39f9b93 ... 44.asset
+2023-02-02 12:27:35.448 Db mobileassetd[34554:26d446] [com.apple.mobileassetd:Debug] getPathToAssetWithPurpose: URL to asset: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/bca103d3fffb8a410e53b6c57b1d0e82 ... ef.asset
+2023-02-02 12:27:35.449 Df mobileassetd[34554:26d446] [com.apple.mobileassetd:Notice] dataFillInstalledWithPurpose: Path to asset dir: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/bca103d3fffb8a410e53b6c57b1d0e82 ... ef.asset
+2023-02-02 12:27:35.449 Db mobileassetd[34554:26d446] [com.apple.mobileassetd:Debug] getPathToAssetWithPurpose: URL to asset: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/606a5214018f9c401ba91de66c8d829f ... c5.asset
+2023-02-02 12:27:35.460 Db assistantd[34489:26dba0] [com.apple.network:connection] nw_endpoint_handler_path_change [C2.1.1 44.235.85.225:443 waiting path (satisfied (Path is satisfied), interface: en0[802.11])]
+2023-02-02 12:27:35.460 Db assistantd[34489:26dba0] [com.apple.network:connection] nw_endpoint_resolver_receive_report [C2.1 api.smoot.apple.com:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11])] received child report: [C2.1.1 44.235.85.225:443 waiting path (satisfied (Path is satisfied), interface: en0[802.11])]
+2023-02-02 12:27:35.460 Db assistantd[34489:26dba0] [com.apple.network:connection] nw_endpoint_flow_receive_report [C2 api.smoot.apple.com:443 in_progress parent-flow (satisfied (Path is satisfied), interface: en0[802.11])] received child report: [C2.1.1 44.235.85.225:443 waiting path (satisfied (Path is satisfied), interface: en0[802.11])]
+2023-02-02 12:27:35.461 Df assistantd[34489:26dba0] [com.apple.network:connection] [C2.1.1 44.235.85.225:443 waiting path (satisfied (Path is satisfied), interface: en0[802.11])] event: path:satisfied @0.527s, uuid: 7719EA3A-A3A0-49F2-B722-59BCB4050B04
+2023-02-02 12:27:35.461 Db assistantd[34489:26dba0] [com.apple.network:] nw_endpoint_proxy_handler_should_use_proxy Looking up proxy for hostname: <nil>, ifindex: 0
+2023-02-02 12:27:35.462 Db assistantd[34489:26dba0] [com.apple.SystemConfiguration:SCPreferences] create <SCPreferences 0x152d0e940 [0x1ba9afc60]> {name = SCDynamicStoreCopyProxiesWithOptions, id = /Library/Managed Preferences/mobile/com.apple.SystemConfiguration.plist, path = /Library/Managed Preferences/mobile/com.apple.SystemConfiguration.plist}
+2023-02-02 12:27:35.462 Db assistantd[34489:26dba0] [com.apple.SystemConfiguration:SCPreferences] SCPreferences() access: /Library/Managed Preferences/mobile/com.apple.SystemConfiguration.plist, size=0
+2023-02-02 12:27:35.462 Db assistantd[34489:26dba0] [com.apple.SystemConfiguration:SCPreferences] release <SCPreferences 0x152d0e940 [0x1ba9afc60]> {name = SCDynamicStoreCopyProxiesWithOptions, id = /Library/Managed Preferences/mobile/com.apple.SystemConfiguration.plist, path = /Library/Managed Preferences/mobile/com.apple.SystemConfiguration.plist, accessed}
+2023-02-02 12:27:35.462 Db configd_sim[34517:26d314] [com.apple.SystemConfiguration:SCDynamicStore] copy    : 26115 : State:/Network/Global/Proxies
+2023-02-02 12:27:35.468 Db parsecd[34810:26dd8a] [com.apple.containermanager:xpc] connection <0x600001fedcb0/1/0; 0x600001fedcb0> canceled after timeout; cnt = 3
+2023-02-02 12:27:35.469 Db parsecd[34810:26dd8a] [com.apple.containermanager:xpc] connection <0x600001fedcb0/1/0> released (shared; canceler); cnt = 2
+2023-02-02 12:27:35.469 Db parsecd[34810:26dd8a] [com.apple.containermanager:xpc] connection <0x600001fedcb0/1/0> released; cnt = 1
+2023-02-02 12:27:35.469 I  parsecd[34810:26dd8a] [com.apple.containermanager:xpc] connection <0x600001fedcb0/1/0; 0x0> invalidated
+2023-02-02 12:27:35.469 Db parsecd[34810:26dd8a] [com.apple.containermanager:xpc] connection <0x600001fedcb0/1/0> released; cnt = 0
+2023-02-02 12:27:35.470 Db parsecd[34810:26dd8a] [com.apple.containermanager:xpc] connection <0x600001fedcb0/1/0> freed; cnt = 0
+2023-02-02 12:27:35.470 Db parsecd[34810:26de3e] [com.apple.parsecd:Parsec_Connection] set effective visibility restriction for com.apple.siri.parsec.HashtagImagesApp to [AnyHashable("union"): {
+    blockedAppBundleIDs =     {
+        values =         (
+            "com.apple.siri.parsec.HashtagImagesApp"
+        );
+    };
+}]
+2023-02-02 12:27:35.470 Db parsecd[34810:26de3e] [com.apple.defaults:User Defaults] found no value for key bag.enabled in CFPrefsSearchListSource<0x600003fe4100> (Domain: com.apple.parsecd, Container: (null))
+2023-02-02 12:27:35.471 Df parsecd[34810:26de3e] [com.apple.ManagedConfiguration:ProfileConnection] Set Bool value NO for settings: allowSpotlightNews
+2023-02-02 12:27:35.471 I  profiled[34667:26d889] [com.apple.ManagedConfiguration:Assertions] Releasing process assertion with reason: profiled-ApplyRestrictions
+2023-02-02 12:27:35.472 Db profiled[34667:26d889] [com.apple.ManagedConfiguration:MC] Looked up bundle ID com.apple.parsecd from audit token using entitlement.
+2023-02-02 12:27:35.472 I  profiled[34667:26d889] [com.apple.ManagedConfiguration:Assertions] Creating process assertion with reason: profiled-SetParameterForSettings
+2023-02-02 12:27:35.472 I  profiled[34667:26d889] [com.apple.ManagedConfiguration:Assertions] Retaining power assertion. Count: 0 -> 1
+2023-02-02 12:27:35.472 Db profiled[34667:26d889] [com.apple.ManagedConfiguration:profiled] </Library/Caches/com.apple.xbs/Sources/ManagedConfigurationTools_Sim/profiled/MCProfileServiceServer.m -[MCProfileServiceServer setParametersForSettingsByType:configurationUUID:toSystem:user:passcode:credentialSet:senderPID:sender:completion:]_block_invoke:1426>
+2023-02-02 12:27:35.473 Db profiled[34667:26d889] [com.apple.defaults:User Defaults] found no value for key AllowsFaceTime in CFPrefsPlistSource<0x6000027d0400> (Domain: com.apple.carrier_1, User: kCFPreferencesCurrentUser, ByHost: No, Container: /var/mobile/Library/Carrier Bundles, Contents Need Refresh: No)
+2023-02-02 12:27:35.473 Db profiled[34667:26d889] [com.apple.defaults:User Defaults] found no value for key AllowsFaceTime in CFPrefsPlistSource<0x6000027cc680> (Domain: com.apple.country.carrier_1, User: kCFPreferencesCurrentUser, ByHost: No, Container: /var/mobile/Library/CountryBundles/, Contents Need Refresh: No)
+2023-02-02 12:27:35.473 Db profiled[34667:26d889] [com.apple.defaults:User Defaults] found no value for key AllowsFaceTime in CFPrefsPlistSource<0x6000027d0480> (Domain: com.apple.carrier_2, User: kCFPreferencesCurrentUser, ByHost: No, Container: /var/mobile/Library/Carrier Bundles, Contents Need Refresh: No)
+2023-02-02 12:27:35.473 Db profiled[34667:26d889] [com.apple.defaults:User Defaults] found no value for key AllowsFaceTime in CFPrefsPlistSource<0x6000027ccb00> (Domain: com.apple.country.carrier_2, User: kCFPreferencesCurrentUser, ByHost: No, Container: /var/mobile/Library/CountryBundles/, Contents Need Refresh: No)
+2023-02-02 12:27:35.473 Df profiled[34667:26d889] (libMobileGestalt.dylib) Could not open /System/Library/CoreServices/OverrideSoftwareBehaviors.plist: No such file or directory
+2023-02-02 12:27:35.474 Db profiled[34667:26d889] [com.apple.defaults:User Defaults] found no value for key AllowsVoIP in CFPrefsPlistSource<0x6000027d0400> (Domain: com.apple.carrier_1, User: kCFPreferencesCurrentUser, ByHost: No, Container: /var/mobile/Library/Carrier Bundles, Contents Need Refresh: No)
+2023-02-02 12:27:35.474 Db profiled[34667:26d889] [com.apple.defaults:User Defaults] found no value for key AllowsVoIP in CFPrefsPlistSource<0x6000027cc680> (Domain: com.apple.country.carrier_1, User: kCFPreferencesCurrentUser, ByHost: No, Container: /var/mobile/Library/CountryBundles/, Contents Need Refresh: No)
+2023-02-02 12:27:35.474 Db profiled[34667:26d889] [com.apple.defaults:User Defaults] found no value for key AllowsVoIP in CFPrefsPlistSource<0x6000027d0480> (Domain: com.apple.carrier_2, User: kCFPreferencesCurrentUser, ByHost: No, Container: /var/mobile/Library/Carrier Bundles, Contents Need Refresh: No)
+2023-02-02 12:27:35.475 Db profiled[34667:26d889] [com.apple.defaults:User Defaults] found no value for key AllowsVoIP in CFPrefsPlistSource<0x6000027ccb00> (Domain: com.apple.country.carrier_2, User: kCFPreferencesCurrentUser, ByHost: No, Container: /var/mobile/Library/CountryBundles/, Contents Need Refresh: No)
+2023-02-02 12:27:35.481 Df profiled[34667:26d889] (libMobileGestalt.dylib) Determined that voip capability is: 1
+2023-02-02 12:27:35.490 Db mapspushd[34818:26dc80] [com.apple.defaults:User Defaults] found no value for key MSPSharedTripServerEnabledKey in CFPrefsManagedSource<0x600003d45b00> (Domain: com.apple.GEO, User: kCFPreferencesCurrentUser, ByHost: Yes, Container: (null), Contents Need Refresh: No)
+2023-02-02 12:27:35.490 Db mapspushd[34818:26dc80] [com.apple.defaults:User Defaults] found no value for key MSPSharedTripServerEnabledKey in CFPrefsManagedSource<0x600003d45b80> (Domain: com.apple.GEO, User: kCFPreferencesAnyUser, ByHost: Yes, Container: (null), Contents Need Refresh: No)
+2023-02-02 12:27:35.490 Db mapspushd[34818:26dc80] [com.apple.defaults:User Defaults] found no value for key DebugActiveExperimentBranch in CFPrefsManagedSource<0x600003d45b00> (Domain: com.apple.GEO, User: kCFPreferencesCurrentUser, ByHost: Yes, Container: (null), Contents Need Refresh: No)
+2023-02-02 12:27:35.491 Db mapspushd[34818:26dc80] [com.apple.defaults:User Defaults] found no value for key DebugActiveExperimentBranch in CFPrefsManagedSource<0x600003d45b80> (Domain: com.apple.GEO, User: kCFPreferencesAnyUser, ByHost: Yes, Container: (null), Contents Need Refresh: No)
+2023-02-02 12:27:35.498 Db mapspushd[34818:26dc80] [com.apple.defaults:User Defaults] found no value for key ShareETAUserEnabled in CFPrefsManagedSource<0x600003d45b00> (Domain: com.apple.GEO, User: kCFPreferencesCurrentUser, ByHost: Yes, Container: (null), Contents Need Refresh: No)
+2023-02-02 12:27:35.498 Db mapspushd[34818:26dc80] [com.apple.defaults:User Defaults] found no value for key ShareETAUserEnabled in CFPrefsManagedSource<0x600003d45b80> (Domain: com.apple.GEO, User: kCFPreferencesAnyUser, ByHost: Yes, Container: (null), Contents Need Refresh: No)
+2023-02-02 12:27:35.498 Db mapspushd[34818:26dc80] [com.apple.defaults:User Defaults] found no value for key ShareETAUserEnabled in CFPrefsSearchListSource<0x600003d47100> (Domain: com.apple.GEO, Container: (null))
+2023-02-02 12:27:35.499 Db mapspushd[34818:26dc80] [com.apple.GeoServices:SharedTrip] Will update SharedTripServer state if needed (enabled: YES, server: (null))
+2023-02-02 12:27:35.499 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754360 for unit 1584 from database 0x12a008600
+2023-02-02 12:27:35.499 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 192
+2023-02-02 12:27:35.499 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754040 for unit 704 from database 0x12a008600
+2023-02-02 12:27:35.500 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754b40 for unit 1588 from database 0x12a008600
+2023-02-02 12:27:35.500 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027544a0 for unit 1590 from database 0x12a008600
+2023-02-02 12:27:35.500 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 304
+2023-02-02 12:27:35.500 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027542a0 for unit 774 from database 0x12a008600
+2023-02-02 12:27:35.502 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754bc0 for unit 1594 from database 0x12a008600
+2023-02-02 12:27:35.502 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754720 for unit 159c from database 0x12a008600
+2023-02-02 12:27:35.502 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 480
+2023-02-02 12:27:35.502 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027543c0 for unit 824 from database 0x12a008600
+2023-02-02 12:27:35.502 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002750460 for unit 15a0 from database 0x12a008600
+2023-02-02 12:27:35.503 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027544a0 for unit 15a8 from database 0x12a008600
+2023-02-02 12:27:35.503 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 480
+2023-02-02 12:27:35.503 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754b40 for unit 824 from database 0x12a008600
+2023-02-02 12:27:35.503 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754280 for unit 15ac from database 0x12a008600
+2023-02-02 12:27:35.504 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002750460 for unit 15b4 from database 0x12a008600
+2023-02-02 12:27:35.504 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 480
+2023-02-02 12:27:35.504 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754360 for unit 824 from database 0x12a008600
+2023-02-02 12:27:35.505 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002751140 for unit 15b8 from database 0x12a008600
+2023-02-02 12:27:35.505 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027547e0 for unit 15c0 from database 0x12a008600
+2023-02-02 12:27:35.505 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 480
+2023-02-02 12:27:35.505 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027544a0 for unit 824 from database 0x12a008600
+2023-02-02 12:27:35.505 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754bc0 for unit 15c4 from database 0x12a008600
+2023-02-02 12:27:35.505 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027542a0 for unit 15cc from database 0x12a008600
+2023-02-02 12:27:35.506 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 308
+2023-02-02 12:27:35.506 Df mobileassetd[34554:26d446] [com.apple.mobileassetd:Notice] dataFillInstalledWithPurpose: Path to asset dir: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/606a5214018f9c401ba91de66c8d829f ... c5.asset
+2023-02-02 12:27:35.507 Db mobileassetd[34554:26d446] [com.apple.mobileassetd:Debug] getPathToAssetWithPurpose: URL to asset: /System/Library/AssetsV2/PreinstalledAssetsV2/InstallWithOs/com_apple_MobileAsset_Font7/64867a0d4d3c2e3b7f94984c33e3e3c3 ... 17.asset
+2023-02-02 12:27:35.515 I  assistantd[34489:26dba0] [com.apple.network:connection] nw_endpoint_flow_setup_protocols [C2.1.1 44.235.85.225:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11])] setup flow id 257ADDD9-1C68-404E-8E5D-D77DB2C7FEA9
+2023-02-02 12:27:35.515 Db assistantd[34489:26dba0] [com.apple.network:connection] nw_endpoint_flow_attach_protocols [C2.1.1 44.235.85.225:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11])]
+2023-02-02 12:27:35.516 Db assistantd[34489:26dba0] [com.apple.network:connection] nw_endpoint_flow_attach_protocols_block_invoke [C2.1.1 44.235.85.225:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11])] Attached application protocol: CFNetworkConnection-1325032404
+2023-02-02 12:27:35.516 Db assistantd[34489:26dba0] [com.apple.network:connection] nw_endpoint_flow_attach_protocols_block_invoke [C2.1.1 44.235.85.225:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11])] Attached application protocol: tls
+2023-02-02 12:27:35.516 Db assistantd[34489:26dba0] [com.apple.network:] nw_fd_wrapper_create Created <fd_wrapper 35, guarded: false>
+2023-02-02 12:27:35.516 Db assistantd[34489:26dba0] [com.apple.network:connection] nw_endpoint_flow_attach_protocols [C2.1.1 44.235.85.225:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11])] Attached socket protocol
+2023-02-02 12:27:35.516 Db assistantd[34489:26dba0] [com.apple.network:connection] nw_endpoint_flow_setup_protocols [C2.1.1 44.235.85.225:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11])] leaf flow starting
+2023-02-02 12:27:35.516 Db assistantd[34489:26dba0] [com.apple.network:connection] nw_endpoint_resolver_receive_report [C2.1 api.smoot.apple.com:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11])] received child report: [C2.1.1 44.235.85.225:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11])]
+2023-02-02 12:27:35.517 Db assistantd[34489:26dba0] [com.apple.network:connection] nw_endpoint_flow_receive_report [C2 api.smoot.apple.com:443 in_progress parent-flow (satisfied (Path is satisfied), interface: en0[802.11])] received child report: [C2.1.1 44.235.85.225:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11])]
+2023-02-02 12:27:35.517 Df assistantd[34489:26dba0] [com.apple.network:connection] [C2.1.1 44.235.85.225:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11])] event: flow:start_connect @0.583s
+2023-02-02 12:27:35.517 I  assistantd[34489:26dba0] [com.apple.network:boringssl] boringssl_context_restore_ssl_context(2453) [0x152e171f0] New context
+2023-02-02 12:27:35.521 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027542a0 for unit 778 from database 0x12a008600
+2023-02-02 12:27:35.522 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754a60 for unit 15d0 from database 0x12a008600
+2023-02-02 12:27:35.522 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027507c0 for unit 15d8 from database 0x12a008600
+2023-02-02 12:27:35.522 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 304
+2023-02-02 12:27:35.522 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027544a0 for unit 774 from database 0x12a008600
+2023-02-02 12:27:35.522 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002750fa0 for unit 15dc from database 0x12a008600
+2023-02-02 12:27:35.522 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027544a0 for unit 15e4 from database 0x12a008600
+2023-02-02 12:27:35.523 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 496
+2023-02-02 12:27:35.526 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027547a0 for unit 834 from database 0x12a008600
+2023-02-02 12:27:35.527 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754280 for unit 15e8 from database 0x12a008600
+2023-02-02 12:27:35.528 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027504e0 for unit 15f0 from database 0x12a008600
+2023-02-02 12:27:35.529 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 344
+2023-02-02 12:27:35.529 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754220 for unit 79c from database 0x12a008600
+2023-02-02 12:27:35.530 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027542c0 for unit 15f4 from database 0x12a008600
+2023-02-02 12:27:35.530 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002750fa0 for unit 15fc from database 0x12a008600
+2023-02-02 12:27:35.530 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 320
+2023-02-02 12:27:35.531 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027547a0 for unit 784 from database 0x12a008600
+2023-02-02 12:27:35.531 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x6000027544a0 for unit 1600 from database 0x12a008600
+2023-02-02 12:27:35.531 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002754380 for unit 1608 from database 0x12a008600
+2023-02-02 12:27:35.531 Db pkd[34552:26d463] [com.apple.launchservices:default] No extension point parent specified, returning first extension point found id: 384
+2023-02-02 12:27:35.532 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002750fa0 for unit 7c4 from database 0x12a008600
+2023-02-02 12:27:35.532 Db pkd[34552:26d463] [com.apple.launchservices:default] Got plist data 0x600002750840 for unit 160c from database 0x12a008600
+2023-02-02 12:27:35.532 I  siriinferenced[34588:26d89b] [com.apple.siri.sirisuggestions:SiriSuggestionsGenerator] Loading wrapped domain definitions [SiriSuggestions.OwnerLockedOwnerDefinition, SiriSuggestions.OwnerLockedOwnerDefinition, SiriSuggestions.OwnerLockedOwnerDefinition, SiriSuggestions.OwnerLockedOwnerDefinition, SiriSuggestions.OwnerLockedOwnerDefinition, SiriSuggestions.OwnerLockedOwnerDefinition]
+

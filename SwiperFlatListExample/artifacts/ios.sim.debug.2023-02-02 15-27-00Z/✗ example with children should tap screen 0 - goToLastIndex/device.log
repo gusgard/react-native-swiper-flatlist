@@ -1,0 +1,419 @@
+Timestamp               Ty Process[PID:TID]
+2023-02-02 12:27:30.233 I  suggestd[34615:26d765] [com.apple.proactive.PersonalIntelligenceCore:Default] New SGDSuggestManagerMailProtocol connection from com.apple.email.maild (34583)
+2023-02-02 12:27:30.239 Db suggestd[34615:26d765] [com.apple.suggestions:suggestions] clearing lastSuggestionsFromMessage cache due to settings change
+2023-02-02 12:27:30.244 I  suggestd[34615:26da35] [com.apple.suggestions:suggestions] SGDSuggestManager-fullDownloadRequestBatch
+2023-02-02 12:27:30.244 Db suggestd[34615:26d765] [com.apple.suggestions:suggestions] SGScales: fullDownloadRequestBatch took 0.001352 seconds
+2023-02-02 12:27:30.253 Df apsd[34540:26d376] [com.apple.apsd:courier] <APSCourier 0x151d04480 development>: __processStoredIncomingMessageForConnection: <APSConnectionServer: 0x600002ec8210>
+2023-02-02 12:27:30.049 Db Spotlight[34601:26d5a0] [com.apple.defaults:User Defaults] found no value for key UseNewAXBundleLoader in CFPrefsSearchListSource<0x60000388cb80> (Domain: com.apple.Accessibility, Container: (null))
+2023-02-02 12:27:30.326 Db Spotlight[34601:26d5a0] [com.apple.defaults:User Defaults] found no value for key UseNewAXBundleLoader in CFPrefsSearchListSource<0x60000388cb80> (Domain: com.apple.Accessibility, Container: (null))
+2023-02-02 12:27:30.467 Db siriinferenced[34588:26d646] [com.apple.CFBundle:strings] Bundle: CFBundle 0x132704880 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/Foundation.framework> (not loaded), key: Err513.df, value: (null), table: FoundationErrors, localizationName: (null), result: You don’t have permission to save the file “%2$@” in the folder “%1$@”.
+2023-02-02 12:27:30.205 Df maild[34583:26db9b] [com.apple.UserNotifications:Connections] [com.apple.mobilemail] Setting topics {(
+)}
+2023-02-02 12:27:30.508 I  siriinferenced[34588:26d89b] [com.apple.siri.sirisuggestions:SiriSuggestionsCore] checking principal class: VideoOwnerDefinitionFactory
+2023-02-02 12:27:30.511 Df SpringBoard[34488:26d554] [com.apple.UserNotifications:Connections] [com.apple.mobilemail] Setting topics {(
+)}
+2023-02-02 12:27:30.512 I  assistantd[34489:26d60d] [com.apple.siri.analytics:XPC] -[SiriAnalyticsXPCConnection _connectionInvalidated]
+2023-02-02 12:27:30.522 I  assistantd[34489:26d60d] [com.apple.siri.analytics:XPC] -[SiriAnalyticsXPCServiceListener listener:shouldAcceptNewConnection:]_block_invoke Siri Analytics Connection Invalidated (pid=34489)
+2023-02-02 12:27:30.203 I  maild[34583:26db96] [com.apple.coredata:debug] debug: CoreData+CloudKit: -[NSCloudKitMirroringDelegate observeChangesForStore:inPersistentStoreCoordinator:](416): <NSCloudKitMirroringDelegate: 0x6000001f6220>: Observing store: <NSSQLCore: 0x158d12a90> (URL: file:///Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Application%20Support/CloudKitMailConversationsFlags/CloudKitMirroringDataModel)
+2023-02-02 12:27:30.538 Df maild[34583:26db96] [com.apple.coredata:CloudKit] CloudKit: CoreData+CloudKit: -[NSCloudKitMirroringDelegate _setUpCloudKitIntegration](562): <NSCloudKitMirroringDelegate: 0x6000001f6220>: Successfully enqueued setup request.
+2023-02-02 12:27:30.540 Df maild[34583:26db96] [com.apple.coredata:CloudKit] CloudKit: CoreData+CloudKit: -[NSCloudKitMirroringDelegate checkAndExecuteNextRequest](3235): <NSCloudKitMirroringDelegate: 0x6000001f6220>: Checking for pending requests.
+2023-02-02 12:27:30.541 Df maild[34583:26db96] [com.apple.coredata:CloudKit] CloudKit: CoreData+CloudKit: -[NSCloudKitMirroringDelegate checkAndExecuteNextRequest]_block_invoke(3248): <NSCloudKitMirroringDelegate: 0x6000001f6220>: Executing: <NSCloudKitMirroringDelegateSetupRequest: 0x600001bcb570> 52779277-0AE7-4448-B362-38D82ECB9F8B
+2023-02-02 12:27:30.546 I  siriinferenced[34588:26d89b] [com.apple.siri.sirisuggestions:SiriSuggestionsCore] checking candidateBundleURL: file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/Siri/DM/SiriSuggestions/Owners/SiriNotebookSuggestionsPlugin.bundle/
+2023-02-02 12:27:30.578 Db maild[34583:26d55b] [com.apple.defaults:User Defaults] found no value for key kLastWidgetUpdateDefaultsKey in CFPrefsSearchListSource<0x6000016fac00> (Domain: group.com.apple.mail, Container: (null))
+2023-02-02 12:27:30.597 Df apsd[34540:26d376] [com.apple.apsd:courier] <APSCourier 0x151d04480 development>: __processStoredIncomingMessageForConnection: <APSConnectionServer: 0x600002ec4630>
+2023-02-02 12:27:30.599 Df maild[34583:26db9b] [com.apple.UserNotifications:Connections] [com.apple.mobilemail] Set topics [ hasCompletionHandler: 1 hasError: 0 ]
+2023-02-02 12:27:30.600 Df maild[34583:26db9b] [com.apple.email:UserNotifications] Successfully set new NotificationCenter topics: {(
+)}
+2023-02-02 12:27:30.603 E  siriinferenced[34588:26d646] [com.apple.siri.inference:SiriInference] InferenceError<errorId=otherError file=/Library/Caches/com.apple.xbs/Sources/SiriInference_Sim/SiriInference/SiriInference/OperationUtilities/LoggableOperation.swift function=logResult(_:payload:measurementKind:) line=44 msg=Error Domain=NSCocoaErrorDomain Code=513 "You don’t have permission to save the file “com.apple.siri.inference” in the folder “Library”." UserInfo={NSFilePath=/var/mobile/Library/com.apple.siri.inference, NSUnderlyingError=0x600002ea1290 {Error Domain=NSPOSIXErrorDomain Code=13 "Permission denied"}}>
+2023-02-02 12:27:30.604 E  siriinferenced[34588:26d646] [com.apple.siri.inference:SiriInference] 0   SiriInference                       0x000000010109ee7c block_destroy_helper.3 + 42084
+2023-02-02 12:27:30.605 E  siriinferenced[34588:26d646] [com.apple.siri.inference:SiriInference] 1   SiriInference                       0x0000000100fa5b60 __swift_memcpy34_8 + 14448
+2023-02-02 12:27:30.606 E  siriinferenced[34588:26d646] [com.apple.siri.inference:SiriInference] 2   SiriInference                       0x0000000100e8e27c __swift_allocate_boxed_opaque_existential_0 + 24020
+2023-02-02 12:27:30.606 E  siriinferenced[34588:26d646] [com.apple.siri.inference:SiriInference] 3   SiriInference                       0x0000000100fe43c8 __swift_memcpy166_8 + 10872
+2023-02-02 12:27:30.607 E  siriinferenced[34588:26d646] [com.apple.siri.inference:SiriInference] 4   SiriInference                       0x0000000100fe3c60 __swift_memcpy166_8 + 8976
+2023-02-02 12:27:30.608 E  siriinferenced[34588:26d646] [com.apple.siri.inference:SiriInference] 5   SiriInference                       0x0000000100e8ea3c __swift_allocate_boxed_opaque_existential_0 + 26004
+2023-02-02 12:27:30.609 E  siriinferenced[34588:26d646] [com.apple.siri.inference:SiriInference] 6   Foundation                          0x0000000180b9d504 __NSOPERATION_IS_INVOKING_MAIN__ + 12
+2023-02-02 12:27:30.609 E  siriinferenced[34588:26d646] [com.apple.siri.inference:SiriInference] 7   Foundation                          0x0000000180b99b20 -[NSOperation start] + 680
+2023-02-02 12:27:30.610 E  siriinferenced[34588:26d646] [com.apple.siri.inference:SiriInference] 8   Foundation                          0x0000000180b9dd5c __NSOPERATIONQUEUE_IS_STARTING_AN_OPERATION__ + 12
+2023-02-02 12:27:30.610 E  siriinferenced[34588:26d646] [com.apple.siri.inference:SiriInference] 9   Foundation                          0x0000000180b9d988 __NSOQSchedule_f + 168
+2023-02-02 12:27:30.611 E  siriinferenced[34588:26d646] [com.apple.siri.inference:SiriInference] 10  libdispatch.dylib                   0x00000001801459d4 _dispatch_block_async_invoke2 + 104
+2023-02-02 12:27:30.611 E  siriinferenced[34588:26d646] [com.apple.siri.inference:SiriInference] 11  libdispatch.dylib                   0x0000000180135768 _dispatch_client_callout + 16
+2023-02-02 12:27:30.614 E  siriinferenced[34588:26d646] [com.apple.siri.inference:SiriInference] 12  libdispatch.dylib                   0x000000018013d7f8 _dispatch_lane_serial_drain + 780
+2023-02-02 12:27:30.615 E  siriinferenced[34588:26d646] [com.apple.siri.inference:SiriInference] 13  libdispatch.dylib                   0x000000018013e474 _dispatch_lane_invoke + 448
+2023-02-02 12:27:30.615 E  siriinferenced[34588:26d646] [com.apple.siri.inference:SiriInference] 14  libdispatch.dylib                   0x000000018014a624 _dispatch_workloop_worker_thread + 772
+2023-02-02 12:27:30.616 E  siriinferenced[34588:26d646] [com.apple.siri.inference:SiriInference] 15  libsystem_pthread.dylib             0x00000001b059a8fc _pthread_wqthread + 284
+2023-02-02 12:27:30.616 E  siriinferenced[34588:26d646] [com.apple.siri.inference:SiriInference] 16  libsystem_pthread.dylib             0x00000001b05996c0 start_wqthread + 8
+2023-02-02 12:27:30.503 Db parsecd[34810:26dc32] [com.apple.defaults:User Defaults] CFPrefsManagedSource<0x600003fe4080> (Domain: com.apple.parsecd, User: kCFPreferencesCurrentUser, ByHost: Yes, Container: (null), Contents Need Refresh: No) loaded: an empty base plist and no additional changes from the base plist
+2023-02-02 12:27:30.618 Db parsecd[34810:26dc32] [com.apple.defaults:User Defaults] CFPrefsManagedSource<0x600003fe4380> (Domain: com.apple.parsecd, User: kCFPreferencesAnyUser, ByHost: Yes, Container: (null), Contents Need Refresh: No) loaded: an empty base plist and no additional changes from the base plist
+2023-02-02 12:27:30.619 Db parsecd[34810:26dc32] [com.apple.defaults:User Defaults] CFPrefsPlistSource<0x600003fe4580> (Domain: com.apple.parsecd, User: kCFPreferencesCurrentUser, ByHost: No, Container: (null), Contents Need Refresh: No) loaded: a new base plist and no additional changes from the base plist
+2023-02-02 12:27:30.620 Db parsecd[34810:26dc32] [com.apple.defaults:User Defaults] CFPrefsManagedSource<0x600003fe4700> (Domain: kCFPreferencesAnyApplication, User: kCFPreferencesCurrentUser, ByHost: Yes, Container: (null), Contents Need Refresh: No) loaded: an empty base plist and no additional changes from the base plist
+2023-02-02 12:27:30.620 Db parsecd[34810:26dc32] [com.apple.defaults:User Defaults] CFPrefsPlistSource<0x600003fe4780> (Domain: com.apple.parsecd, User: kCFPreferencesCurrentUser, ByHost: No, Container: /Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data, Contents Need Refresh: No) loaded: a new base plist and no additional changes from the base plist
+2023-02-02 12:27:30.620 Db parsecd[34810:26dc32] [com.apple.defaults:User Defaults] CFPrefsPlistSource<0x600003fe4800> (Domain: kCFPreferencesAnyApplication, User: kCFPreferencesCurrentUser, ByHost: No, Container: (null), Contents Need Refresh: No) loaded: a new base plist and no additional changes from the base plist
+2023-02-02 12:27:30.238 Df maild[34583:26db9a] [com.apple.xpc.activity:Client] xpc_activity_set_criteria, lower half: com.apple.email.maild.suggestionsLostMessageProcessing (0x6000009f6c60), check-in
+2023-02-02 12:27:30.621 Df maild[34583:26db9a] [com.apple.xpc.activity:Client] _xpc_activity_set_criteria: com.apple.email.maild.suggestionsLostMessageProcessing (0x6000009f6c60), check-in
+2023-02-02 12:27:30.621 Db parsecd[34810:26dc32] [com.apple.defaults:User Defaults] CFPrefsPlistSource<0x600003fe4900> (Domain: kCFPreferencesAnyApplication, User: kCFPreferencesCurrentUser, ByHost: No, Container: /Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data, Contents Need Refresh: No) loaded: a new base plist and no additional changes from the base plist
+2023-02-02 12:27:30.621 Db parsecd[34810:26dc32] [com.apple.defaults:User Defaults] CFPrefsPlistSource<0x600003fe4980> (Domain: com.apple.parsecd, User: kCFPreferencesCurrentUser, ByHost: Yes, Container: (null), Contents Need Refresh: No) loaded: an empty base plist and no additional changes from the base plist
+2023-02-02 12:27:30.621 Db parsecd[34810:26dc32] [com.apple.defaults:User Defaults] CFPrefsPlistSource<0x600003fe4b00> (Domain: kCFPreferencesAnyApplication, User: kCFPreferencesCurrentUser, ByHost: Yes, Container: (null), Contents Need Refresh: No) loaded: an empty base plist and no additional changes from the base plist
+2023-02-02 12:27:30.621 Db parsecd[34810:26dc32] [com.apple.defaults:User Defaults] found no value for key AppleLanguages in CFPrefsSearchListSource<0x600003fe4100> (Domain: com.apple.parsecd, Container: (null))
+2023-02-02 12:27:30.622 I  parsecd[34810:26dc32] [com.apple.defaults:User Defaults] using backstop value (
+    en
+) to avoid returning NULL for key AppleLanguages in kCFPreferencesCurrentApplication
+2023-02-02 12:27:30.622 Db parsecd[34810:26dc32] [com.apple.foundation:general] Lookup of 'AppleLocale' from current preferences failed (app preferences do not contain the key; falling back to generation via preferred languages)
+2023-02-02 12:27:30.622 Db parsecd[34810:26dc32] [com.apple.foundation:general] Lookup of 'AppleLanguages' from current preferences failed (app preferences do not contain the key); likely falling back to default locale identifier as current
+2023-02-02 12:27:30.623 Db parsecd[34810:26dc32] [com.apple.defaults:User Defaults] setting new value (
+    en
+) for key NSLanguages in CFPrefsSource<0x6000004e0a00> (Domain: Volatile, User: , ByHost: No, Container: , Contents Need Refresh: No)
+2023-02-02 12:27:30.623 Db parsecd[34810:26dc32] [com.apple.defaults:User Defaults] setting new value macintosh for key NSInterfaceStyle in CFPrefsSource<0x6000004e0a00> (Domain: Volatile, User: , ByHost: No, Container: , Contents Need Refresh: No)
+2023-02-02 12:27:30.583 Db Spotlight[34601:26d6bb] [com.apple.defaults:User Defaults] found no value for key UseNewAXBundleLoader in CFPrefsSearchListSource<0x60000388cb80> (Domain: com.apple.Accessibility, Container: (null))
+2023-02-02 12:27:30.635 Db Spotlight[34601:26d6bb] [com.apple.defaults:User Defaults] found no value for key UseNewAXBundleLoader in CFPrefsSearchListSource<0x60000388cb80> (Domain: com.apple.Accessibility, Container: (null))
+2023-02-02 12:27:30.636 Df maild[34583:26d55b] [com.apple.xpc.activity:Client] xpc_activity_register: com.apple.email.updateWidget, criteria: check-in
+2023-02-02 12:27:30.636 Df maild[34583:26db9a] [com.apple.xpc.activity:Client] xpc_activity_set_criteria: com.apple.email.maild.suggestionsLostMessageProcessing (0x6000009f6c60), setting state now to 0
+2023-02-02 12:27:30.636 Df maild[34583:26db9a] [com.apple.xpc.activity:Client] _xpc_activity_set_state: com.apple.email.maild.suggestionsLostMessageProcessing (0x6000009f6c60), 0
+2023-02-02 12:27:30.636 Df maild[34583:26db9a] [com.apple.xpc.activity:Client] __XPC_ACTIVITY_CALLING_HANDLER__: com.apple.email.maild.suggestionsLostMessageProcessing (0x6000009f6c60), current state 0, pending state 0
+2023-02-02 12:27:30.636 I  maild[34583:26db9a] [com.apple.email:XPCActivity] Check in 'com.apple.email.maild.suggestionsLostMessageProcessing'
+2023-02-02 12:27:30.637 Df maild[34583:26d55b] [com.apple.xpc.activity:Client] _xpc_activity_register: com.apple.email.updateWidget (0x6000009f2c60), 0
+2023-02-02 12:27:30.638 Df maild[34583:26d55b] [com.apple.xpc.activity:Client] xpc_activity_set_criteria: com.apple.email.updateWidget (0x6000009f2c60), check-in
+2023-02-02 12:27:30.638 Df maild[34583:26d55b] [com.apple.email:DaemonSnapshotInvalidator] Enabled monitoring for snapshot invalidation events for bundleID com.apple.mobilemail
+2023-02-02 12:27:30.638 Df maild[34583:26d55b] [com.apple.xpc.activity:Client] xpc_activity_register: com.apple.emaildaemon.protecteddatabasepersistence.cleanup, criteria: check-in
+2023-02-02 12:27:30.639 Df maild[34583:26db9a] [com.apple.xpc.activity:Client] xpc_activity_set_criteria: com.apple.email.maild.suggestionsLostMessageProcessing (0x6000009f6c60), dict
+2023-02-02 12:27:30.639 Df maild[34583:26db9a] [com.apple.xpc.activity:Client] __XPC_ACTIVITY_CALLING_HANDLER__ returned from handler: com.apple.email.maild.suggestionsLostMessageProcessing (0x6000009f6c60), current state 0, pending state 0
+2023-02-02 12:27:30.639 Df maild[34583:26db9a] [com.apple.xpc.activity:Client] _xpc_activity_set_state: com.apple.email.maild.suggestionsLostMessageProcessing (0x6000009f6c60), 1
+2023-02-02 12:27:30.643 Df nanoprefsyncd[34508:26dad4] [com.apple.NanoPreferencesSync:Daemon] messageID: ((null))
+2023-02-02 12:27:30.648 Db siriinferenced[34588:26d646] [com.apple.CoreAnalytics.event:send] com.apple.siri.inference.InferenceError {"errorId":"OtherError","file":"/Library/Caches/com.apple.xbs/Sources/SiriInference_Sim/SiriInference/SiriInference/OperationUtilities/LoggableOperation.swift","function":"logResult(_:payload:measurementKind:)","line":44}
+2023-02-02 12:27:30.223 Df maild[34583:26dba1] [com.apple.coredata:CloudKit] CloudKit: CoreData+CloudKit: -[NSCloudKitMirroringDelegate executeMirroringRequest:error:](942): <NSCloudKitMirroringDelegate: 0x6000001f6220>: Asked to execute request: <NSCloudKitMirroringImportRequest: 0x600001bca760> D21ADC6E-C4EA-4BD2-B98B-EE6F3F781DF0
+2023-02-02 12:27:30.649 E  siriinferenced[34588:26d646] [com.apple.siri.inference:SiriInference] BiomeInteractionFetcher failed. payload=["file": /Library/Caches/com.apple.xbs/Sources/SiriInference_Sim/SiriInference/SiriInference/OperationUtilities/LoggableOperation.swift, "function": logResult(_:payload:measurementKind:), "line": 44, "fetchedCount": 0, "errorId": OtherError, "outcome": failed, "topLevelError": Error Domain=NSCocoaErrorDomain Code=513 "You don’t have permission to save the file “com.apple.siri.inference” in the folder “Library”." UserInfo={NSFilePath=/var/mobile/Library/com.apple.siri.inference, NSUnderlyingError=0x600002ea1290 {Error Domain=NSPOSIXErrorDomain Code=13 "Permission denied"}}]
+2023-02-02 12:27:30.650 Df maild[34583:26dba1] [com.apple.coredata:CloudKit] CloudKit: CoreData+CloudKit: -[NSCloudKitMirroringDelegate executeMirroringRequest:error:](942): <NSCloudKitMirroringDelegate: 0x6000001f6220>: Asked to execute request: <NSCloudKitMirroringImportRequest: 0x600001bc2fd0> D1A5F885-D16D-4B2E-9E77-CDDF10E8C948
+2023-02-02 12:27:30.650 Db siriinferenced[34588:26d646] [com.apple.CoreAnalytics.event:send] com.apple.siri.inference.BiomeInteractionFetcher {"errorId":"OtherError","fetchedCount":0,"file":"/Library/Caches/com.apple.xbs/Sources/SiriInference_Sim/SiriInference/SiriInference/OperationUtilities/LoggableOperation.swift","function":"logResult(_:payload:measurementKind:)","line":44,"outcome":"failed","topLevelError":"Error Domain=NSCocoaErrorDomain Code=513 \134"You don’t have permission to save the file “com.apple.siri.inference” in the folder “Library”.\134" UserInfo={NSFilePath=/var/mobile/Library/com.apple.siri.inference, NSUnderlyingError=0x600002ea1290 {Error Domain=NSPOSIXErrorDomain Code=13 \134"Permission denied\134"}}"}
+2023-02-02 12:27:30.650 Db siriinferenced[34588:26d646] [com.apple.siri.inference:SiriInference] closing transaction nil
+2023-02-02 12:27:30.623 Db parsecd[34810:26dc32] [com.apple.defaults:User Defaults] setting new value (
+    en
+) for key AppleLanguages in CFPrefsSource<0x6000004e0a00> (Domain: Volatile, User: , ByHost: No, Container: , Contents Need Refresh: No)
+2023-02-02 12:27:30.669 Db maild[34583:26dba2] [com.apple.CFBundle:strings] Lazy cache miss for bundle: CFBundle 0x158e0c080 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/Message.framework> (framework, loaded) key: OUTBOX_SPECIAL_MAILBOX_NAME table: Message
+2023-02-02 12:27:30.670 Db maild[34583:26dba2] [com.apple.CFBundle:strings] Bundle: CFBundle 0x158e0c080 </Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/Message.framework> (framework, loaded), key: OUTBOX_SPECIAL_MAILBOX_NAME, value: Outbox, table: Message, localizationName: (null), result: Outbox
+2023-02-02 12:27:30.670 Df maild[34583:26dba2] [com.apple.email:EDMailboxProvider] populated cache: 2
+2023-02-02 12:27:30.670 Db Spotlight[34601:26d5a0] [com.apple.defaults:User Defaults] found no value for key UseNewAXBundleLoader in CFPrefsSearchListSource<0x60000388cb80> (Domain: com.apple.Accessibility, Container: (null))
+2023-02-02 12:27:30.671 Db Spotlight[34601:26d5a0] [com.apple.defaults:User Defaults] found no value for key UseNewAXBundleLoader in CFPrefsSearchListSource<0x60000388cb80> (Domain: com.apple.Accessibility, Container: (null))
+2023-02-02 12:27:30.688 Df maild[34583:26d55b] [com.apple.xpc.activity:Client] _xpc_activity_register: com.apple.emaildaemon.protecteddatabasepersistence.cleanup (0x6000009f6bc0), 0
+2023-02-02 12:27:30.689 Df maild[34583:26d55b] [com.apple.xpc.activity:Client] xpc_activity_set_criteria: com.apple.emaildaemon.protecteddatabasepersistence.cleanup (0x6000009f6bc0), check-in
+2023-02-02 12:27:30.689 Df maild[34583:26d55b] [com.apple.xpc.activity:Client] xpc_activity_register: com.apple.email.spotlightVerification, criteria: check-in
+2023-02-02 12:27:30.689 Df maild[34583:26d55b] [com.apple.xpc.activity:Client] _xpc_activity_register: com.apple.email.spotlightVerification (0x6000009f7ac0), 0
+2023-02-02 12:27:30.689 Df maild[34583:26d55b] [com.apple.xpc.activity:Client] xpc_activity_set_criteria: com.apple.email.spotlightVerification (0x6000009f7ac0), check-in
+2023-02-02 12:27:30.689 A  maild[34583:26d55b] (EmailDaemon) -[EDRemoteContentManager _scheduleBackgroundRequests]
+2023-02-02 12:27:30.689 Df maild[34583:26d55b] [com.apple.email:EDBIMIManager] Scheduling initial download
+2023-02-02 12:27:30.690 Df maild[34583:26d55b] [com.apple.email:EDBIMIManager] Scheduling indicator download, privacy proxy is enabled
+2023-02-02 12:27:30.713 Df nanoprefsyncd[34508:26dad4] [com.apple.NanoRegistry:daemon] client was blocked on threadIsBlockedWaitingOn_nanoregistryd_syncGrabLegacyRegistryWithBlock for 64 milliseconds
+2023-02-02 12:27:30.715 Db backboardd[34504:26d2c6] [com.apple.locationd.Motion:Motion] Ping timer fired, resetting watchdog
+2023-02-02 12:27:30.720 Db maild[34583:26d9e0] [com.apple.email:EFSQLPreparedStatement] Execution took 0.00005 seconds for query SELECT value FROM properties WHERE key = :key
+2023-02-02 12:27:30.720 Db maild[34583:26d9e0] [com.apple.email:EFSQLPreparedStatement] Execution took 0.00001 seconds for query INSERT OR REPLACE INTO properties (key, value) VALUES (:key, :value)
+2023-02-02 12:27:30.720 Db maild[34583:26d9e0] [com.apple.email:EDPersistenceDatabaseConnection] Write Transaction (generation: 34) on connection [<MFPersistenceDatabaseConnection_iOS: 0x600001bf5a40> isWriter: YES, SQL connection: <EFSQLConnection: 0x6000038c0d20> sqlite handle: 0x158d0a620] started successfully
+2023-02-02 12:27:30.729 I  locationd[34507:26d4dd] [com.apple.locationd.Core:Simulation] {"msg":"Nowhere to go; not preparing next location"}
+2023-02-02 12:27:30.729 Db locationd[34507:26d4dd] [com.apple.locationd.Core:Simulation] {"msg":"Dealing with no more locations", "repeatBehavior":1}
+2023-02-02 12:27:30.729 Db locationd[34507:26d4dd] [com.apple.locationd.Core:Simulation] {"msg":"Adjust next location timestamp", "originalTimestamp_s":"697044451.729632974", "delta_s":"0.027486086"}
+2023-02-02 12:27:30.729 Db locationd[34507:26d4dd] [com.apple.locationd.Core:Simulation] {"msg":"Preparing next location"}
+2023-02-02 12:27:30.729 Db locationd[34507:26d4dd] [com.apple.locationd.Core:Simulation] {"msg":"No more pending locations"}
+2023-02-02 12:27:30.729 Db locationd[34507:26d4dd] [com.apple.locationd.Core:Simulation] {"msg":"Notify location is", "location":'00 00 00 00 FF FF 00 00 DD 0A 61 35 96 E4 42 40 76 E2 72 BC 02 9A 5E C0 00 00 00 00 00 00 14 40 00 00 00 00 00 00 00 00 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 00 00 00 00 00 00 F0 BF 47 E9 E0 F1 06 C6 C4 41 00 00 00 00 00 00 00 00 00 00 F0 BF 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 F0 BF FF FF FF 7F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'}
+2023-02-02 12:27:30.729 Df locationd[34507:26d4dd] [com.apple.locationd.Position:GeneralCLX] @ClxSimulated, Fix, 1, ll, 37.7858340, -122.4064170, acc, 5.00, course, -1.0, time, 697044451.8, deltaDistance, 0.0, deltaDistanceAccuracy, 1.9, odometer, 0.0, timestampGps, 697044451.8
+2023-02-02 12:27:30.729 Db locationd[34507:26d4dd] [com.apple.locationd.Core:Simulation] {"msg":"Notification delay", "notificationDelay_s":"1.000000000"}
+2023-02-02 12:27:30.729 Db locationd[34507:26d48c] [com.apple.locationd.Core:Simulation] Sending through simulated location for simulated
+2023-02-02 12:27:30.729 A  locationd[34507:26d48c] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:27:30.729 Db locationd[34507:26d48c] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":3}
+2023-02-02 12:27:30.729 A  locationd[34507:26d48c] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:27:30.729 Db locationd[34507:26d48c] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":4}
+2023-02-02 12:27:30.730 A  locationd[34507:26d48c] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:27:30.730 Db locationd[34507:26d48c] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":40}
+2023-02-02 12:27:30.730 A  locationd[34507:26d48c] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:27:30.730 Db locationd[34507:26d48c] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":2}
+2023-02-02 12:27:30.730 A  locationd[34507:26d48c] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:27:30.730 Db locationd[34507:26d48c] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":1}
+2023-02-02 12:27:30.730 A  locationd[34507:26d48c] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:27:30.730 Db locationd[34507:26d48c] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":5}
+2023-02-02 12:27:30.730 A  locationd[34507:26d48c] CL: notifyClientsWithData (Fallback)
+2023-02-02 12:27:30.730 Db locationd[34507:26d48c] [com.apple.locationd.Core:Notifier] {"msg":"notifyClientsWithData", "event":activity, "name":simulated, "notification":0}
+2023-02-02 12:27:30.733 Db parsecd[34810:26dc32] [com.apple.defaults:User Defaults] looked up value 4 for key PARDefaultsVersion in CFPrefsPlistSource<0x600003fe4580> (Domain: com.apple.parsecd, User: kCFPreferencesCurrentUser, ByHost: No, Container: (null), Contents Need Refresh: No) via CFPrefsSearchListSource<0x600003fe4100> (Domain: com.apple.parsecd, Container: (null))
+2023-02-02 12:27:30.733 Db parsecd[34810:26dc32] [com.apple.defaults:User Defaults] CFPrefsPlistSource<0x600003fe4580> (Domain: com.apple.parsecd, User: kCFPreferencesCurrentUser, ByHost: No, Container: (null), Contents Need Refresh: No) skipping setting already-present value for key PARDefaultsVersion
+2023-02-02 12:27:30.734 Db maild[34583:26d9e0] [com.apple.email:EFSQLPreparedStatement] Execution took 0.01377 seconds for query SELECT brand_indicators.url, brand_indicators.evidence_url, brand_indicators.indicator_hash, brand_indicators.hash_algorithm FROM brand_indicators WHERE indicator IS NULL LIMIT 10
+2023-02-02 12:27:30.735 Db maild[34583:26d9e0] [com.apple.email:EDPersistenceDatabaseConnection] Transaction on connection [<MFPersistenceDatabaseConnection_iOS: 0x600001bf5a40> isWriter: YES, SQL connection: <EFSQLConnection: 0x6000038c0d20> sqlite handle: 0x158d0a620] commit succeeded
+2023-02-02 12:27:30.735 Df maild[34583:26d9e0] [com.apple.email:EDBIMIManager] Downloading 0 indicators
+2023-02-02 12:27:30.741 Db maild[34583:26d55b] [com.apple.email:EFSQLPreparedStatement] Execution took 0.00007 seconds for query SELECT value FROM properties WHERE key = :key
+2023-02-02 12:27:30.742 Db maild[34583:26d55b] [com.apple.email:EFSQLPreparedStatement] Execution took 0.00001 seconds for query INSERT OR REPLACE INTO properties (key, value) VALUES (:key, :value)
+2023-02-02 12:27:30.742 Db maild[34583:26d55b] [com.apple.email:EDPersistenceDatabaseConnection] Write Transaction (generation: 35) on connection [<MFPersistenceDatabaseConnection_iOS: 0x600001bf5a40> isWriter: YES, SQL connection: <EFSQLConnection: 0x6000038c0d20> sqlite handle: 0x158d0a620] started successfully
+2023-02-02 12:27:30.742 Db maild[34583:26d55b] [com.apple.email:EFSQLPreparedStatement] Execution took 0.00000 seconds for query SELECT addresses.ROWID FROM addresses WHERE address IN ()
+2023-02-02 12:27:30.742 Db maild[34583:26d55b] [com.apple.email:EFSQLPreparedStatement] Execution took 0.00000 seconds for query SELECT addresses.comment AS addresses_comment, addresses.address AS addresses_address, addresses.ROWID AS address_id FROM addresses LEFT OUTER JOIN sender_addresses ON addresses.ROWID = sender_addresses.address LEFT OUTER JOIN senders ON sender_addresses.sender = senders.ROWID WHERE address_id IN () AND senders.bucket IS NOT 50
+2023-02-02 12:27:30.744 Db maild[34583:26d9e0] [com.apple.email:EFSQLPreparedStatement] Execution took 0.00010 seconds for query SELECT value FROM properties WHERE key = :key
+2023-02-02 12:27:30.744 Db maild[34583:26d9e0] [com.apple.email:EDPersistenceDatabaseConnection] Read Transaction (generation: 34) on connection [<MFPersistenceDatabaseConnection_iOS: 0x600001bf55e0> isWriter: NO, SQL connection: <EFSQLConnection: 0x6000038c0600> sqlite handle: 0x158d09690] started successfully
+2023-02-02 12:27:30.746 Df nanoprefsyncd[34508:26dad4] [com.apple.NanoPreferencesSync:Daemon] -[NPSServer checkActiveDeviceChangedVersion]: Skipping Paired Device Version change check. Not paired.
+2023-02-02 12:27:30.751 Db maild[34583:26dba2] [com.apple.email:EDMessageCountQueryHandler] Created new scheduler <EFQueueScheduler: 0x600003acd1e0> "EDMessageCountQueryHandler-1"
+2023-02-02 12:27:30.751 Db maild[34583:26dba2] [com.apple.email:EDMessageCountQueryHandler] <0x6000003c8dd0: App badge> Checking out scheduler <EFQueueScheduler: 0x600003acd1e0>
+2023-02-02 12:27:30.752 I  maild[34583:26dba2] [com.apple.email:EDMessageCountQueryHandler] <0x6000003c8dd0: App badge> Scheduling count calculation with reason Initialization
+2023-02-02 12:27:30.753 I  maild[34583:26dba2] [com.apple.email:EDMessageCountQueryHandler] <0x6000003c8dd0: App badge> Firing count calculation
+2023-02-02 12:27:30.753 Db maild[34583:26d55b] [com.apple.email:EFSQLPreparedStatement] Execution took 0.01079 seconds for query SELECT addresses.comment AS addresses_comment, addresses.address AS addresses_address, addresses.ROWID AS address_id FROM addresses JOIN sender_addresses ON addresses.ROWID = sender_addresses.address JOIN senders ON sender_addresses.sender = senders.ROWID WHERE senders.bucket IS 50 AND address_id NOT IN ()
+2023-02-02 12:27:30.753 I  maild[34583:26dba2] [com.apple.email:EDMessageCountQueryHandler] <0x6000003c8dd0: App badge> starting count handler with query: (FALSEPREDICATE) AND flags.read == 0
+2023-02-02 12:27:30.754 Db maild[34583:26d55b] [com.apple.email:EDPersistenceDatabaseConnection] Transaction on connection [<MFPersistenceDatabaseConnection_iOS: 0x600001bf5a40> isWriter: YES, SQL connection: <EFSQLConnection: 0x6000038c0d20> sqlite handle: 0x158d0a620] commit succeeded
+2023-02-02 12:27:30.754 Db maild[34583:26dba2] [com.apple.email:EFSQLPreparedStatement] Execution took 0.00016 seconds for query SELECT value FROM properties WHERE key = :key
+2023-02-02 12:27:30.754 Db maild[34583:26dba2] [com.apple.email:EDPersistenceDatabaseConnection] Read Transaction (generation: 35) on connection [<MFPersistenceDatabaseConnection_iOS: 0x600001bedef0> isWriter: NO, SQL connection: <EFSQLConnection: 0x6000038ffa60> sqlite handle: 0x158e07900] started successfully
+2023-02-02 12:27:30.754 I  maild[34583:26dba2] [com.apple.email:EDMessageCountQueryHandler] <0x6000003c8dd0: App badge> recalculating unread counts (generation 35)
+2023-02-02 12:27:30.755 Db maild[34583:26d55b] [com.apple.kvs:Connection] Initializing SYDRemotePreferencesSource with applicationID=com.apple.email.maild storeID=com.apple.mail.remindMe
+2023-02-02 12:27:30.755 I  maild[34583:26d55b] [com.apple.kvs:Connection] Initializing SYDClientToDaemonConnection with configuration <SYDStoreConfiguration: 0x6000038a5d80; storeID=<SYDStoreID: 0x6000038a5d40; identifier=com.apple.mail.remindMe type=NoEncryption>> store <(com.apple.mail.remindMe)>
+2023-02-02 12:27:30.755 Db maild[34583:26d55b] [com.apple.kvs:Connection] Registering for UI change notifications on iPhone / tvOS
+2023-02-02 12:27:30.758 Df nanoprefsyncd[34508:26dad4] [com.apple.NanoRegistry:daemon] client was blocked on threadIsBlockedWaitingOn_nanoregistryd_syncGrabLegacyRegistryWithBlock for 10 milliseconds
+2023-02-02 12:27:30.764 A  maild[34583:26dba1] (SyncedDefaults) kvs/register
+2023-02-02 12:27:30.764 Db maild[34583:26dba1] [com.apple.kvs:Connection] Registering for change notifications
+2023-02-02 12:27:30.764 I  maild[34583:26dba1] [com.apple.kvs:Connection] Creating new XPC connection
+2023-02-02 12:27:30.757 Db maild[34583:26d9e0] [com.apple.email:EFSQLPreparedStatement] Execution took 0.00044 seconds for query SELECT count() FROM remote_content_links WHERE last_seen_date > 1675265250
+2023-02-02 12:27:30.767 Db maild[34583:26d9e0] [com.apple.email:EDPersistenceDatabaseConnection] Transaction on connection [<MFPersistenceDatabaseConnection_iOS: 0x600001bf55e0> isWriter: NO, SQL connection: <EFSQLConnection: 0x6000038c0600> sqlite handle: 0x158d09690] commit succeeded
+2023-02-02 12:27:30.767 Db maild[34583:26d9e0] [com.apple.email:EFSQLPreparedStatement] Execution took 0.00007 seconds for query SELECT value FROM properties WHERE key = :key
+2023-02-02 12:27:30.768 Db maild[34583:26d9e0] [com.apple.email:EDPersistenceDatabaseConnection] Read Transaction (generation: 35) on connection [<MFPersistenceDatabaseConnection_iOS: 0x600001bf55e0> isWriter: NO, SQL connection: <EFSQLConnection: 0x6000038c0600> sqlite handle: 0x158d09690] started successfully
+2023-02-02 12:27:30.769 Db maild[34583:26dba2] [com.apple.email:EFSQLPreparedStatement] Execution took 0.00003 seconds for query SELECT COUNT(DISTINCT(messages.message_id))  FROM messages  WHERE (messages.ROWID IN (-1) AND read = 0 AND likely(deleted = 0)) AND +messages.mailbox IN (SELECT ROWID FROM mailboxes WHERE url GLOB 'local://LocalAccountId/*')
+2023-02-02 12:27:30.769 I  maild[34583:26dba2] [com.apple.email:EDMessageCountQueryHandler] <0x6000003c8dd0: App badge> query took 0.0150s localCount:0
+2023-02-02 12:27:30.770 Db maild[34583:26dba2] [com.apple.email:EDPersistenceDatabaseConnection] Transaction on connection [<MFPersistenceDatabaseConnection_iOS: 0x600001bedef0> isWriter: NO, SQL connection: <EFSQLConnection: 0x6000038ffa60> sqlite handle: 0x158e07900] commit succeeded
+2023-02-02 12:27:30.770 Df maild[34583:26dba2] [com.apple.email:EDMessageCountQueryHandler] <0x6000003c8dd0: App badge> full count: 0 = 0 + 0 + (0 - 0), <EFInvocationToken: 0x6000036a4030 (App badge 0)> not invoked - 2 blocks
+(FALSEPREDICATE) AND flags.read == 0
+2023-02-02 12:27:30.771 Df maild[34583:26dba2] [com.apple.email:EDMessageCountQueryHandler] <0x6000003c8dd0: App badge> Acknowledged update App badge 0
+2023-02-02 12:27:30.773 I  maild[34583:26dba2] [com.apple.email:EDMessageCountQueryHandler] <0x6000003c8dd0: App badge> Finished count calculation
+2023-02-02 12:27:30.807 A  maild[34583:26dba1] (SyncedDefaults) kvs/synchronize
+2023-02-02 12:27:30.807 I  maild[34583:26dba1] [com.apple.kvs:Connection] Synchronizing for store <(com.apple.mail.remindMe)>
+2023-02-02 12:27:30.807 A  maild[34583:26dba1] (SyncedDefaults) kvs/get-change-token
+2023-02-02 12:27:30.808 Db maild[34583:26dba1] [com.apple.kvs:Connection] Getting change token from daemon for <SYDClientToDaemonConnection: 0x600001bc4f50; storeConfiguration=<SYDStoreConfiguration: 0x6000038a5d80; storeID=<SYDStoreID: 0x6000038a5d40; identifier=com.apple.mail.remindMe type=NoEncryption>>>
+2023-02-02 12:27:30.810 Db parsecd[34810:26dc32] [com.apple.defaults:User Defaults] setting new value 600 for key PARSessionSoftLimitOverride in CFPrefsSource<0x6000004e0a00> (Domain: Volatile, User: , ByHost: No, Container: , Contents Need Refresh: No)
+2023-02-02 12:27:30.810 Db parsecd[34810:26dc32] [com.apple.defaults:User Defaults] setting new value 180 for key PARSessionIdleTimeOverride in CFPrefsSource<0x6000004e0a00> (Domain: Volatile, User: , ByHost: No, Container: , Contents Need Refresh: No)
+2023-02-02 12:27:30.810 Db parsecd[34810:26dc32] [com.apple.defaults:User Defaults] setting new value 172800 for key PARSessionMaxAge in CFPrefsSource<0x6000004e0a00> (Domain: Volatile, User: , ByHost: No, Container: , Contents Need Refresh: No)
+2023-02-02 12:27:30.830 Df apsd[34540:26d376] [com.apple.apsd:courier] <APSCourier 0x151d04480 development>: __processStoredIncomingMessageForConnection: <APSConnectionServer: 0x600002edc580>
+2023-02-02 12:27:30.807 Db maild[34583:26d9e0] [com.apple.email:EFSQLPreparedStatement] Execution took 0.03792 seconds for query SELECT count() FROM additional_remote_content_links
+2023-02-02 12:27:30.831 Db maild[34583:26d9e0] [com.apple.email:EDPersistenceDatabaseConnection] Transaction on connection [<MFPersistenceDatabaseConnection_iOS: 0x600001bf55e0> isWriter: NO, SQL connection: <EFSQLConnection: 0x6000038c0600> sqlite handle: 0x158d09690] commit succeeded
+2023-02-02 12:27:30.831 Db maild[34583:26d9e0] [com.apple.email:EFSQLPreparedStatement] Execution took 0.00005 seconds for query SELECT value FROM properties WHERE key = :key
+2023-02-02 12:27:30.831 Db maild[34583:26d9e0] [com.apple.email:EDPersistenceDatabaseConnection] Read Transaction (generation: 35) on connection [<MFPersistenceDatabaseConnection_iOS: 0x600001bedef0> isWriter: NO, SQL connection: <EFSQLConnection: 0x6000038ffa60> sqlite handle: 0x158e07900] started successfully
+2023-02-02 12:27:30.832 Db maild[34583:26d9e0] [com.apple.email:EFSQLPreparedStatement] Execution took 0.00003 seconds for query SELECT count() FROM remote_content_links WHERE requests = 0
+2023-02-02 12:27:30.832 Db maild[34583:26d9e0] [com.apple.email:EDPersistenceDatabaseConnection] Transaction on connection [<MFPersistenceDatabaseConnection_iOS: 0x600001bedef0> isWriter: NO, SQL connection: <EFSQLConnection: 0x6000038ffa60> sqlite handle: 0x158e07900] commit succeeded
+2023-02-02 12:27:30.832 Df maild[34583:26d9e0] [com.apple.email:EDRemoteContentManager] Updated scheduling: last day count = 0, unrequested count = 0, request interval = 3877.125822, batch size = 71
+2023-02-02 12:27:30.832 A  maild[34583:26d9e0] (EmailDaemon) -[EDRemoteContentManager _scheduleBackgroundRequests]
+2023-02-02 12:27:30.833 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] xpc_activity_register: com.apple.email.EDRemoteContentManager.requestScheduler, criteria: dictionary
+2023-02-02 12:27:30.833 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] _xpc_activity_register: com.apple.email.EDRemoteContentManager.requestScheduler (0x6000009cc460), 0
+2023-02-02 12:27:30.833 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] xpc_activity_set_criteria: com.apple.email.EDRemoteContentManager.requestScheduler (0x6000009cc460), dict
+2023-02-02 12:27:30.833 Df maild[34583:26d9e0] [com.apple.email:EDRemoteContentManager] Scheduled request batch for 85 links with interval: 4419.180655
+2023-02-02 12:27:30.833 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] xpc_activity_set_criteria, lower half: com.apple.email.updateWidget (0x6000009f2c60), check-in
+2023-02-02 12:27:30.833 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] _xpc_activity_set_criteria: com.apple.email.updateWidget (0x6000009f2c60), check-in
+2023-02-02 12:27:30.834 Db parsecd[34810:26dc32] [com.apple.Foundation:general] NSURL parameterString is deprecated and now always returns nil. The path component now includes the part of the URL string which parameterString used to return.
+URL = file:///Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Caches/com.apple.parsecd/CustomFeedback/SafariAutoFill/
+2023-02-02 12:27:30.835 I  syncdefaultsd[34544:26d3af] [com.apple.kvs:Connection] Accepting new XPC connection <NSXPCConnection: 0x6000035c4460> connection from pid 34583 on mach service named com.apple.kvsd
+2023-02-02 12:27:30.835 Db syncdefaultsd[34544:26d3af] [com.apple.kvs:Connection] Resuming connection <NSXPCConnection: 0x6000035c4460> connection from pid 34583 on mach service named com.apple.kvsd
+2023-02-02 12:27:30.835 I  syncdefaultsd[34544:26d3af] [com.apple.kvs:Connection] Created client connection <SYDDaemonToClientConnection: 0x6000020da340; clientPID=34583>
+2023-02-02 12:27:30.835 Db syncdefaultsd[34544:26d3af] [com.apple.kvs:Connection] Checking if process 34583 is entitled for store <SYDStoreConfiguration: 0x6000004dee20; storeID=<SYDStoreID: 0x6000004deda0; identifier=com.apple.mail.remindMe type=NoEncryption>>
+2023-02-02 12:27:30.837 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] xpc_activity_set_criteria: com.apple.email.updateWidget (0x6000009f2c60), setting state now to 0
+2023-02-02 12:27:30.837 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] _xpc_activity_set_state: com.apple.email.updateWidget (0x6000009f2c60), 0
+2023-02-02 12:27:30.837 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] __XPC_ACTIVITY_CALLING_HANDLER__: com.apple.email.updateWidget (0x6000009f2c60), current state 0, pending state 0
+2023-02-02 12:27:30.837 I  maild[34583:26d9e0] [com.apple.email:XPCActivity] Check in 'com.apple.email.updateWidget'
+2023-02-02 12:27:30.837 I  maild[34583:26d9e0] [com.apple.email:XPCActivity] Unregister 'com.apple.email.updateWidget'
+2023-02-02 12:27:30.838 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] __xpc_activity_unregister: com.apple.email.updateWidget (0x6000009f2c60) seqno: 1, (is registered)
+2023-02-02 12:27:30.838 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] _xpc_activity_unregister: com.apple.email.updateWidget 1, last registration: true
+2023-02-02 12:27:30.839 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] __XPC_ACTIVITY_CALLING_HANDLER__ returned from handler: com.apple.email.updateWidget (0x6000009f2c60), current state 0, pending state 0
+2023-02-02 12:27:30.839 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] _xpc_activity_set_state: com.apple.email.updateWidget (0x6000009f2c60), 1
+2023-02-02 12:27:30.839 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] _xpc_activity_dispose: com.apple.email.updateWidget (0x6000009f2c60) seqno: 1, (not running)
+2023-02-02 12:27:30.839 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] xpc_activity_set_criteria, lower half: com.apple.emaildaemon.protecteddatabasepersistence.cleanup (0x6000009f6bc0), check-in
+2023-02-02 12:27:30.839 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] _xpc_activity_set_criteria: com.apple.emaildaemon.protecteddatabasepersistence.cleanup (0x6000009f6bc0), check-in
+2023-02-02 12:27:30.840 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] xpc_activity_set_criteria: com.apple.emaildaemon.protecteddatabasepersistence.cleanup (0x6000009f6bc0), setting state now to 0
+2023-02-02 12:27:30.840 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] _xpc_activity_set_state: com.apple.emaildaemon.protecteddatabasepersistence.cleanup (0x6000009f6bc0), 0
+2023-02-02 12:27:30.840 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] __XPC_ACTIVITY_CALLING_HANDLER__: com.apple.emaildaemon.protecteddatabasepersistence.cleanup (0x6000009f6bc0), current state 0, pending state 0
+2023-02-02 12:27:30.840 I  maild[34583:26d9e0] [com.apple.email:XPCActivity] Check in 'com.apple.emaildaemon.protecteddatabasepersistence.cleanup'
+2023-02-02 12:27:30.840 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] xpc_activity_set_criteria: com.apple.emaildaemon.protecteddatabasepersistence.cleanup (0x6000009f6bc0), dict
+2023-02-02 12:27:30.840 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] __XPC_ACTIVITY_CALLING_HANDLER__ returned from handler: com.apple.emaildaemon.protecteddatabasepersistence.cleanup (0x6000009f6bc0), current state 0, pending state 0
+2023-02-02 12:27:30.841 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] _xpc_activity_set_state: com.apple.emaildaemon.protecteddatabasepersistence.cleanup (0x6000009f6bc0), 1
+2023-02-02 12:27:30.842 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] xpc_activity_set_criteria, lower half: com.apple.emaildaemon.protecteddatabasepersistence.cleanup (0x6000009f6bc0), dict
+2023-02-02 12:27:30.842 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] _xpc_activity_set_criteria: com.apple.emaildaemon.protecteddatabasepersistence.cleanup (0x6000009f6bc0), dict
+2023-02-02 12:27:30.840 Db parsecd[34810:26dc32] [com.apple.foundation:general] CFURLCopyParameterString is deprecated and now always returns NULL. The path component now includes the part of the URL string which CFURLCopyParameterString used to return.
+URL = file:///Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Caches/com.apple.parsecd/CustomFeedback/SafariAutoFill/
+2023-02-02 12:27:30.842 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] _xpc_activity_set_criteria: xpc_set_event com.apple.emaildaemon.protecteddatabasepersistence.cleanup, 2
+2023-02-02 12:27:30.843 Db syncdefaultsd[34544:26d3af] [com.apple.kvs:Connection] Process 34583 is entitled for store <SYDStoreID: 0x6000004deda0; identifier=com.apple.mail.remindMe type=NoEncryption> via com.apple.private.ubiquity-additional-kvstore-identifiers
+2023-02-02 12:27:30.843 Db syncdefaultsd[34544:26d3af] [com.apple.kvs:Connection] Caching entitlement for <SYDStoreConfiguration: 0x6000004dee20; storeID=<SYDStoreID: 0x6000004deda0; identifier=com.apple.mail.remindMe type=NoEncryption>> for <SYDDaemonToClientConnection: 0x6000020da340; clientPID=34583>
+2023-02-02 12:27:30.843 Db syncdefaultsd[34544:26d3af] [com.apple.kvs:Connection] Asked to register for store <SYDStoreConfiguration: 0x6000004dee20; storeID=<SYDStoreID: 0x6000004deda0; identifier=com.apple.mail.remindMe type=NoEncryption>>
+2023-02-02 12:27:30.844 Db syncdefaultsd[34544:26d3af] [com.apple.kvs:Connection] Registering for store <SYDStoreConfiguration: 0x6000004dee20; storeID=<SYDStoreID: 0x6000004deda0; identifier=com.apple.mail.remindMe type=NoEncryption>>
+2023-02-02 12:27:30.844 Df UserEventAgent[34487:26d2f1] [com.apple.xpc.activity:Internal] Creating XPC Activity on XPC add event: com.apple.emaildaemon.protecteddatabasepersistence.cleanup
+2023-02-02 12:27:30.844 Df UserEventAgent[34487:26d2f1] [com.apple.xpc.activity:Internal] Created XPC Activity: com.apple.emaildaemon.protecteddatabasepersistence.cleanup (0x137805a20)
+2023-02-02 12:27:30.844 Df UserEventAgent[34487:26d2f1] [com.apple.xpc.activity:Activities] Registered XPC Activity: com.apple.emaildaemon.protecteddatabasepersistence.cleanup (0x137805a20)
+2023-02-02 12:27:30.844 I  UserEventAgent[34487:26d2f1] [com.apple.xpc.activity:Internal] com.apple.emaildaemon.protecteddatabasepersistence.cleanup: <dictionary: 0x600002b55e00> { count = 6, transaction: 0, voucher = 0x0, contents =
+	"_SequenceNumber" => <uint64: 0xa03501b8c3b88727>: 2
+	"Interval" => <int64: 0xa0b501b8c3b20b37>: 86400
+	"RequiresClassA" => <bool: 0x1b313cdf0>: true
+	"AllowBattery" => <bool: 0x1b313cdf0>: true
+	"RequireNetworkConnectivity" => <bool: 0x1b313ce10>: false
+	"Priority" => <string: 0x60000015f7b0> { length = 11, contents = "Maintenance" }
+}
+2023-02-02 12:27:30.844 Db syncdefaultsd[34544:26d3af] [com.apple.kvs:Misc] Falling back to NSFileManager to get the Library directory
+2023-02-02 12:27:30.845 Db syncdefaultsd[34544:26d3af] [com.apple.kvs:Misc] Found KVS container directory: file:///Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/SyncedPreferences/com.apple.kvs/
+2023-02-02 12:27:30.845 A  nanoprefsyncd[34508:26dad4] (libsystem_containermanager.dylib) container_system_group_path_for_identifier
+2023-02-02 12:27:30.845 Df nanoprefsyncd[34508:26dad4] [com.apple.containermanager:xpc] Requesting container lookup; class = 13, identifier = (null), group_identifier = systemgroup.com.apple.configurationprofiles, create = 1, temp = 0, euid = 502, uid = 502
+2023-02-02 12:27:30.845 A  nanoprefsyncd[34508:26dad4] (libsystem_containermanager.dylib) container_query_t
+2023-02-02 12:27:30.846 Df nanoprefsyncd[34508:26dad4] [com.apple.containermanager:xpc] Query; euid = 502, uid = 502, query = <dictionary: 0x600001f40a20> { count = 8, transaction: 0, voucher = 0x0, contents =
+	"ContainerClass" => <uint64: 0xa60eeeaa4cd71c87>: 13
+	"Platform" => <uint64: 0xa60eeeaa4cd71cd7>: 7
+	"Flags" => <uint64: 0xa60eeee24cd71cf7>: 38654705667
+	"Explicit" => <uint64: 0xa60eeeaa4cd71ddf>: 38
+	"PrivateFlags" => <uint64: 0xa60eeeaa4cd71cf7>: 3
+	"Transient" => <bool: 0x1b313ce10>: false
+	"Command" => <uint64: 0xa60eeeaa4cd71dd7>: 39
+	"GroupIdentifiers" => <array: 0x600003563060> { count = 1, capacity = 10, contents =
+		0: <string: 0x600003563210> { length = 43, contents = "systemgroup.com.apple.configurationprofiles" }
+	}
+}
+2023-02-02 12:27:30.846 Db syncdefaultsd[34544:26d3af] [com.apple.kvs:Misc] Created change token URL for type=NoEncryption process=maild url=file:///Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/SyncedPreferences/com.apple.kvs/ChangeTokens/NoEncryption/maild/com.apple.mail.remindMe
+2023-02-02 12:27:30.847 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] xpc_activity_set_criteria: com.apple.emaildaemon.protecteddatabasepersistence.cleanup (0x6000009f6bc0), setting state now to 1
+2023-02-02 12:27:30.847 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] _xpc_activity_set_state: com.apple.emaildaemon.protecteddatabasepersistence.cleanup (0x6000009f6bc0), 1
+2023-02-02 12:27:30.848 Db maild[34583:26d9e0] [com.apple.kvs:Connection] Finished registering for change notifications
+2023-02-02 12:27:30.848 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] xpc_activity_set_criteria, lower half: com.apple.email.EDRemoteContentManager.requestScheduler (0x6000009cc460), dict
+2023-02-02 12:27:30.848 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] _xpc_activity_set_criteria: com.apple.email.EDRemoteContentManager.requestScheduler (0x6000009cc460), dict
+2023-02-02 12:27:30.848 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] _xpc_activity_set_criteria: xpc_set_event com.apple.email.EDRemoteContentManager.requestScheduler, 1
+2023-02-02 12:27:30.848 Db syncdefaultsd[34544:26d3c8] [com.apple.kvs:TCC] Enabling TCC if necessary
+2023-02-02 12:27:30.849 Df UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Internal] Creating XPC Activity on XPC add event: com.apple.email.EDRemoteContentManager.requestScheduler
+2023-02-02 12:27:30.849 Df UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Internal] Created XPC Activity: com.apple.email.EDRemoteContentManager.requestScheduler (0x135e05370)
+2023-02-02 12:27:30.849 Df UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Activities] Registered XPC Activity: com.apple.email.EDRemoteContentManager.requestScheduler (0x135e05370)
+2023-02-02 12:27:30.849 I  UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Internal] com.apple.email.EDRemoteContentManager.requestScheduler: <dictionary: 0x600002b4dc80> { count = 8, transaction: 0, voucher = 0x0, contents =
+	"_SequenceNumber" => <uint64: 0xa03501b8c3b8873f>: 1
+	"Repeating" => <bool: 0x1b313ce10>: false
+	"Interval" => <int64: 0xa0b501b8c3b80d2f>: 4419
+	"GracePeriod" => <int64: 0xa0b501b8c3b8c227>: 2210
+	"RequireInexpensiveNetworkConnectivity" => <bool: 0x1b313cdf0>: true
+	"Delay" => <int64: 0xa0b501b8c3b8c227>: 2210
+	"AllowBattery" => <bool: 0x1b313ce10>: false
+	"Priority" => <string: 0x600000145a10> { length = 11, contents = "Maintenance" }
+}
+2023-02-02 12:27:30.850 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] xpc_activity_set_criteria: com.apple.email.EDRemoteContentManager.requestScheduler (0x6000009cc460), setting state now to 1
+2023-02-02 12:27:30.850 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] _xpc_activity_set_state: com.apple.email.EDRemoteContentManager.requestScheduler (0x6000009cc460), 1
+2023-02-02 12:27:30.850 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] xpc_activity_set_criteria, lower half: com.apple.email.maild.suggestionsLostMessageProcessing (0x6000009f6c60), dict
+2023-02-02 12:27:30.851 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] _xpc_activity_set_criteria: com.apple.email.maild.suggestionsLostMessageProcessing (0x6000009f6c60), dict
+2023-02-02 12:27:30.851 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] _xpc_activity_set_criteria: xpc_set_event com.apple.email.maild.suggestionsLostMessageProcessing, 2
+2023-02-02 12:27:30.852 Df UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Internal] Creating XPC Activity on XPC add event: com.apple.email.maild.suggestionsLostMessageProcessing
+2023-02-02 12:27:30.852 Df UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Internal] Created XPC Activity: com.apple.email.maild.suggestionsLostMessageProcessing (0x137c05200)
+2023-02-02 12:27:30.852 Df UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Activities] Registered XPC Activity: com.apple.email.maild.suggestionsLostMessageProcessing (0x137c05200)
+2023-02-02 12:27:30.852 I  UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Internal] com.apple.email.maild.suggestionsLostMessageProcessing: <dictionary: 0x600002b5c180> { count = 4, transaction: 0, voucher = 0x0, contents =
+	"_SequenceNumber" => <uint64: 0xa03501b8c3b88727>: 2
+	"Interval" => <int64: 0xa0b501b8c3b20b37>: 86400
+	"RequireScreenSleep" => <bool: 0x1b313cdf0>: true
+	"Priority" => <string: 0x6000001486c0> { length = 11, contents = "Maintenance" }
+}
+2023-02-02 12:27:30.853 Db nanoprefsyncd[34508:26dad4] [com.apple.containermanager:xpc] connection <0x600003566ac0/1/0> created; cnt = 2
+2023-02-02 12:27:30.853 Db syncdefaultsd[34544:26d3c8] [com.apple.launchservices:error] Constructing NSError NSOSStatusErrorDomain/-50 at +[LSBundleRecord _bundleRecordForAuditToken:checkNSBundleMainBundle:error:]:258
+2023-02-02 12:27:30.853 Db syncdefaultsd[34544:26d3c8] [com.apple.kvs:TCC] No bundle, no TCC
+2023-02-02 12:27:30.853 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] xpc_activity_set_criteria: com.apple.email.maild.suggestionsLostMessageProcessing (0x6000009f6c60), setting state now to 1
+2023-02-02 12:27:30.854 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] _xpc_activity_set_state: com.apple.email.maild.suggestionsLostMessageProcessing (0x6000009f6c60), 1
+2023-02-02 12:27:30.854 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] xpc_activity_set_criteria, lower half: com.apple.email.spotlightVerification (0x6000009f7ac0), check-in
+2023-02-02 12:27:30.854 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] _xpc_activity_set_criteria: com.apple.email.spotlightVerification (0x6000009f7ac0), check-in
+2023-02-02 12:27:30.854 Db nanoprefsyncd[34508:26dad4] [com.apple.containermanager:xpc] connection <0x600003566ac0/1/0> shared; cnt = 3
+2023-02-02 12:27:30.861 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] xpc_activity_set_criteria: com.apple.email.spotlightVerification (0x6000009f7ac0), setting state now to 0
+2023-02-02 12:27:30.861 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] _xpc_activity_set_state: com.apple.email.spotlightVerification (0x6000009f7ac0), 0
+2023-02-02 12:27:30.861 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] __XPC_ACTIVITY_CALLING_HANDLER__: com.apple.email.spotlightVerification (0x6000009f7ac0), current state 0, pending state 0
+2023-02-02 12:27:30.861 I  maild[34583:26d9e0] [com.apple.email:XPCActivity] Check in 'com.apple.email.spotlightVerification'
+2023-02-02 12:27:30.861 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] xpc_activity_set_criteria: com.apple.email.spotlightVerification (0x6000009f7ac0), dict
+2023-02-02 12:27:30.864 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] __XPC_ACTIVITY_CALLING_HANDLER__ returned from handler: com.apple.email.spotlightVerification (0x6000009f7ac0), current state 0, pending state 0
+2023-02-02 12:27:30.864 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] _xpc_activity_set_state: com.apple.email.spotlightVerification (0x6000009f7ac0), 1
+2023-02-02 12:27:30.864 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] xpc_activity_set_criteria, lower half: com.apple.email.spotlightVerification (0x6000009f7ac0), dict
+2023-02-02 12:27:30.865 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] _xpc_activity_set_criteria: com.apple.email.spotlightVerification (0x6000009f7ac0), dict
+2023-02-02 12:27:30.865 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] _xpc_activity_set_criteria: xpc_set_event com.apple.email.spotlightVerification, 2
+2023-02-02 12:27:30.866 Df UserEventAgent[34487:26d2f1] [com.apple.xpc.activity:Internal] Creating XPC Activity on XPC add event: com.apple.email.spotlightVerification
+2023-02-02 12:27:30.867 Df UserEventAgent[34487:26d2f1] [com.apple.xpc.activity:Internal] Created XPC Activity: com.apple.email.spotlightVerification (0x135f06a70)
+2023-02-02 12:27:30.867 Df UserEventAgent[34487:26d2f1] [com.apple.xpc.activity:Activities] Registered XPC Activity: com.apple.email.spotlightVerification (0x135f06a70)
+2023-02-02 12:27:30.867 I  UserEventAgent[34487:26d2f1] [com.apple.xpc.activity:Internal] com.apple.email.spotlightVerification: <dictionary: 0x600002b558c0> { count = 5, transaction: 0, voucher = 0x0, contents =
+	"_SequenceNumber" => <uint64: 0xa03501b8c3b88727>: 2
+	"Interval" => <int64: 0xa0b501b8c3b94537>: 14400
+	"RequiresClassA" => <bool: 0x1b313cdf0>: true
+	"AllowBattery" => <bool: 0x1b313cdf0>: true
+	"Priority" => <string: 0x60000015f240> { length = 11, contents = "Maintenance" }
+}
+2023-02-02 12:27:30.908 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] xpc_activity_set_criteria: com.apple.email.spotlightVerification (0x6000009f7ac0), setting state now to 1
+2023-02-02 12:27:30.908 Df maild[34583:26d9e0] [com.apple.xpc.activity:Client] _xpc_activity_set_state: com.apple.email.spotlightVerification (0x6000009f7ac0), 1
+2023-02-02 12:27:30.938 Df apsd[34540:26d376] <APSNetworkMonitor: 0x600002bdc1b0> wifi is historically cheap? YES  awakePercentage = 0.000000,  wifiGrowAttemptDelta 0  wifiKeepAliveInterval 900.000000
+2023-02-02 12:27:30.938 Df apsd[34540:26d376] [com.apple.CommonUtilities:Network] is WiFi associated? YES
+2023-02-02 12:27:30.938 Df apsd[34540:26d376] <APSNetworkMonitor: 0x600002bdc1b0> we're allowed to piggyback - we will not associate to wifi ourselves.
+2023-02-02 12:27:30.938 Df apsd[34540:26d376] <APSNetworkMonitor: 0x600002bdc1b0> _toggleWiFiAutoAssociateIfNecessary disabling wifi auto association highEnoughPushCost NO  wifiHistoricallyOK YES  serverLoadIsOK YES criticalReliability NO  serverSupportsDualMode YES  _dualMode 0 enableDualMode YES disableCostDrivenDualMode NO isPiggybacking YES isWoWEnabled NO
+2023-02-02 12:27:30.938 Df apsd[34540:26d376] [com.apple.apsd:courier] <APSCourier 0x151d04480 development>: Received delegate call: shouldUseDualMode is set to YES
+2023-02-02 12:27:30.938 Df apsd[34540:26d376] [com.apple.apsd:courier] <APSCourier 0x151d04480 development> resetting consecutive failures because we have at least one connection
+2023-02-02 12:27:30.938 Df apsd[34540:26d376] <APSCourierConnection: 0x151e04900>: handleDualModeState isDualChannelAllowed YES
+2023-02-02 12:27:30.938 Df apsd[34540:26d376] [com.apple.apsd:courier] APSCourier <APSCourier 0x151d04480 development> adjusting connection. Connected on 1 interfaces. Current link quality: wwan is unknown; wifi is good
+2023-02-02 12:27:30.938 Df apsd[34540:26d376] [com.apple.apsd:courier] <APSCourier 0x151d04480 development> calling _connectStream with interface preference None
+2023-02-02 12:27:30.938 Df apsd[34540:26d376] [com.apple.apsd:courier] <APSCourier 0x151d04480 development> _connectStream has None preference and dual channel is enabled.
+2023-02-02 12:27:30.938 Df apsd[34540:26d376] [com.apple.apsd:courier] <APSCourier 0x151d04480 development> _connectStream - kicking WWAN for dual channel
+2023-02-02 12:27:30.938 Df apsd[34540:26d376] [com.apple.apsd:courier] <APSCourier 0x151d04480 development> attempting to _connectStream. currently onInterface NonCellular consecutiveFailures 0 preference WWAN shouldUseDualChannel YES. Connected on 1 interfaces.
+2023-02-02 12:27:30.938 A  apsd[34540:26d376] (Security) SecItemCopyMatching_ios
+2023-02-02 12:27:30.939 Db securityd[34539:26d37c] [com.apple.securityd:serverxpc] XPC [apsd[34540]/1#31 LF=0] operation: copy_matching (1)
+2023-02-02 12:27:30.940 Df apsd[34540:26d376] [com.apple.apsd:courier] No identity found in keychain. Copying activation identity.
+2023-02-02 12:27:30.940 Df apsd[34540:26d376] [com.apple.apsd:courier] <APSCourier 0x151d04480 development> _connectStream - dual channel with 1 connected interfaces. isWWANUsable NO, isWiFiUsable YES. Not attempting to connect.
+2023-02-02 12:27:30.977 Db maild[34583:26dba1] [com.apple.kvs:Connection] Got change token from daemon
+2023-02-02 12:27:31.038 Db syncdefaultsd[34544:26d3af] [com.apple.kvs:Connection] Generating change dictionary for token {length = 492, bytes = 0x62706c69 73743030 d4010203 04050607 ... 00000000 0000017e } in store (<SYDStoreConfiguration: 0x6000004da2a0; storeID=<SYDStoreID: 0x6000004d9e60; identifier=com.apple.mail.remindMe type=NoEncryption>>) for <SYDDaemonToClientConnection: 0x6000020da340; registeredStoreIDs=[<SYDStoreID: 0x6000004deda0; identifier=com.apple.mail.remindMe type=NoEncryption>] clientPID=34583>
+2023-02-02 12:27:31.040 Db syncdefaultsd[34544:26d3af] [com.apple.kvs:Connection] Getting sync manager for lookup key=PersonalPersona storeType=NoEncryption container=<CKContainerID: 0x600000ac8cf0; containerIdentifier=com.apple.KeyValueService, containerEnvironment="Production">
+2023-02-02 12:27:31.040 Db syncdefaultsd[34544:26d3af] [com.apple.kvs:CoreData] Getting current token for (com.apple.mail.remindMe)
+2023-02-02 12:27:31.046 Df apsd[34540:26d376] [com.apple.apsd:courier] <APSCourier 0x151d04480 development>: __processStoredIncomingMessageForConnection: <APSConnectionServer: 0x600002ecc160>
+2023-02-02 12:27:31.067 Db syncdefaultsd[34544:26d3af] [com.apple.kvs:CoreData] Getting changed keys for store <(com.apple.mail.remindMe)> with token
+2023-02-02 12:27:30.970 Db Spotlight[34601:26d6bb] [com.apple.defaults:User Defaults] found no value for key UseNewAXBundleLoader in CFPrefsSearchListSource<0x60000388cb80> (Domain: com.apple.Accessibility, Container: (null))
+2023-02-02 12:27:31.099 Db Spotlight[34601:26d6bb] [com.apple.defaults:User Defaults] found no value for key UseNewAXBundleLoader in CFPrefsSearchListSource<0x60000388cb80> (Domain: com.apple.Accessibility, Container: (null))
+2023-02-02 12:27:31.116 Db Spotlight[34601:26d5a0] [com.apple.defaults:User Defaults] found no value for key UseNewAXBundleLoader in CFPrefsSearchListSource<0x60000388cb80> (Domain: com.apple.Accessibility, Container: (null))
+2023-02-02 12:27:31.116 Db Spotlight[34601:26d5a0] [com.apple.defaults:User Defaults] found no value for key UseNewAXBundleLoader in CFPrefsSearchListSource<0x60000388cb80> (Domain: com.apple.Accessibility, Container: (null))
+2023-02-02 12:27:31.132 I  nsurlsessiond[34528:26da94] [com.apple.network:connection] nw_association_schedule_deactivation_block_invoke <nw_association configuration.apple.com:443> becoming dormant
+2023-02-02 12:27:31.132 I  nsurlsessiond[34528:26da94] [com.apple.network:connection] nw_association_schedule_deactivation_block_invoke <nw_association 184.26.128.32:443> becoming dormant
+2023-02-02 12:27:31.203 I  containermanagerd[34525:26d30f] [com.apple.containermanager:xpc] Generating new codesign info blob for [com.apple.nanoprefsyncd]
+2023-02-02 12:27:31.204 Db containermanagerd[34525:26d30f] [com.apple.containermanager:cache] [clientCodeSignInfo] Evicting from cache: <MCMClientCodeSignInfo: 0x6000033ab540>
+2023-02-02 12:27:31.204 I  containermanagerd[34525:26d30f] [com.apple.containermanager:xpc] Generating new client identity for [com.apple.nanoprefsyncd/<502/20/502/2/502>]
+2023-02-02 12:27:31.205 Db containermanagerd[34525:26d30f] [com.apple.containermanager:cache] [perPersonaClients] Evicting from cache: <MCMClientIdentity: 0x600001385100; identifier = com.apple.calaccessd, userIdentity = <MCMUserIdentity: 0x600002880080; posixUser = (502|unknown|/Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data), identifier = 502>, posixUser = (502|unknown|/Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data), posixPID = 34570, isSandboxed = 0, platform = 7, isSigned = YES, isSignatureValid = YES, isPlatformBinary = YES, sandboxContainerURL = [(null)], cached>
+2023-02-02 12:27:31.209 I  UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Internal] activity timer fired
+2023-02-02 12:27:31.211 Db syncdefaultsd[34544:26d3af] [com.apple.kvs:CoreData] Found 0 changed keys for store <(com.apple.mail.remindMe)>
+2023-02-02 12:27:31.212 Db syncdefaultsd[34544:26d3af] [com.apple.kvs:Connection] Generated change dictionary for 0 changes
+2023-02-02 12:27:31.238 Df apsd[34540:26d376] [com.apple.apsd:courier] <APSCourier 0x151d04480 development>: __processStoredIncomingMessageForConnection: <APSConnectionServer: 0x600002ed8210>
+2023-02-02 12:27:31.243 Db maild[34583:26dba1] [com.apple.kvs:Connection] Received change dictionary from daemon for <SYDClientToDaemonConnection: 0x600001bc4f50; storeConfiguration=<SYDStoreConfiguration: 0x6000038a5d80; storeID=<SYDStoreID: 0x6000038a5d40; identifier=com.apple.mail.remindMe type=NoEncryption>>>
+2023-02-02 12:27:31.246 A  maild[34583:26dba1] (SyncedDefaults) kvs/save-change-token
+2023-02-02 12:27:31.248 Db maild[34583:26dba1] [com.apple.kvs:Connection] Saving change token to daemon for <SYDClientToDaemonConnection: 0x600001bc4f50; storeConfiguration=<SYDStoreConfiguration: 0x6000038a5d80; storeID=<SYDStoreID: 0x6000038a5d40; identifier=com.apple.mail.remindMe type=NoEncryption>>>
+2023-02-02 12:27:31.306 Db maild[34583:26d9e0] [com.apple.IDS:Registration]  ...auto reconnecting
+2023-02-02 12:27:31.308 I  UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Internal] evaluating activities
+2023-02-02 12:27:31.313 I  UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Internal] Scheduling activity timer for [com.apple.securityd.daily (0x137b0bb10)] in 40620 seconds
+2023-02-02 12:27:31.313 I  UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Internal] Scheduling activity timer for [com.apple.chronod.nextScheduledTimelineRefresh (0x137c0af50)] in 84 seconds
+2023-02-02 12:27:31.314 I  UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Internal] Activity com.apple.webbookmarksd.passwordIconsRepeatingCleanupActivityIdentifier (0x137c087e0) is eligible to run.
+2023-02-02 12:27:31.314 I  UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Internal] Activity com.apple.proactiveeventtrackerd.mapreduce.heartbeat (0x137c085c0) is eligible to run.
+2023-02-02 12:27:31.314 I  UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Internal] Scheduling activity timer for [com.apple.FileProvider.maintenance.auto-trash (0x137b076d0)] in 33 seconds
+2023-02-02 12:27:31.315 I  UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Internal] Scheduling activity timer for [com.apple.ClipServices.clipserviced.xpc.cleanupActivity (0x137c08da0)] in 10 seconds
+2023-02-02 12:27:31.315 I  UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Internal] Activity com.apple.fontservicesd.subscription-support (0x137c07310) is eligible to run.
+2023-02-02 12:27:31.315 I  UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Internal] com.apple.fontservicesd.subscription-support state change 1 -> 2
+2023-02-02 12:27:31.315 Df UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Activities] Initiating XPC Activity: com.apple.fontservicesd.subscription-support (0x137c07310)
+2023-02-02 12:27:31.318 I  UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Internal] Activity com.apple.webbookmarksd.xpc.backupActivity (0x137c09350) is eligible to run.
+2023-02-02 12:27:31.319 I  UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Internal] Activity com.apple.nanotimekit.facesupport.dailyQuery (0x137b0b7e0) is eligible to run.
+2023-02-02 12:27:31.319 I  UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Internal] Activity com.apple.cloudphotod.backup (0x137c0aa00) is eligible to run.
+2023-02-02 12:27:31.319 I  UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Internal] Activity com.apple.healthappd.generation.prediction (0x137b04c10) is eligible to run.
+2023-02-02 12:27:31.320 Df maild[34583:26d9e0] [com.apple.IDS:Registration] XPC has informed us that a fatal error has occured, we will not be attempting to reconnect any further
+2023-02-02 12:27:31.321 Db syncdefaultsd[34544:26d3c8] [com.apple.kvs:Misc] Falling back to NSFileManager to get the Library directory
+2023-02-02 12:27:31.321 Db syncdefaultsd[34544:26d3c8] [com.apple.kvs:Misc] Found KVS container directory: file:///Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/SyncedPreferences/com.apple.kvs/
+2023-02-02 12:27:31.321 Db syncdefaultsd[34544:26d3c8] [com.apple.kvs:Misc] Created change token URL for type=NoEncryption process=maild url=file:///Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/SyncedPreferences/com.apple.kvs/ChangeTokens/NoEncryption/maild/com.apple.mail.remindMe
+2023-02-02 12:27:31.322 Db syncdefaultsd[34544:26d3c8] [com.apple.kvs:Connection] Saving change token to disk for <SYDDaemonToClientConnection: 0x6000020da340; registeredStoreIDs=[<SYDStoreID: 0x6000004deda0; identifier=com.apple.mail.remindMe type=NoEncryption>] clientPID=34583>
+2023-02-02 12:27:31.335 Df fontservicesd[34567:26d50c] [com.apple.xpc.activity:Client] _xpc_activity_dispatch: beginning dispatch, activity name com.apple.fontservicesd.subscription-support, seqno 0
+2023-02-02 12:27:31.336 Df fontservicesd[34567:26d50c] [com.apple.xpc.activity:Client] _xpc_activity_dispatch: com.apple.fontservicesd.subscription-support (0x6000025d0140): found an activity with matching seqno 0
+2023-02-02 12:27:31.336 Df fontservicesd[34567:26d50c] [com.apple.xpc.activity:Client] _xpc_activity_begin_running: com.apple.fontservicesd.subscription-support (0x6000025d0140) seqno: 0.
+2023-02-02 12:27:31.336 Df fontservicesd[34567:26d50c] [com.apple.xpc.activity:Client] _xpc_activity_dispatch: lower half, activity name com.apple.fontservicesd.subscription-support (0x6000025d0140), seqno from top half was 0
+2023-02-02 12:27:31.336 Df fontservicesd[34567:26d50c] [com.apple.xpc.activity:Client] _xpc_activity_dispatch: created connection 0x15fc044e0 for activity name com.apple.fontservicesd.subscription-support (0x6000025d0140), seqno 0
+2023-02-02 12:27:31.337 Df fontservicesd[34567:26d50c] [com.apple.xpc.activity:Client] _xpc_activity_set_state: com.apple.fontservicesd.subscription-support (0x6000025d0140), 2
+2023-02-02 12:27:31.338 Df fontservicesd[34567:26d50c] [com.apple.xpc.activity:Client] _xpc_activity_set_state: send new state to CTS: com.apple.fontservicesd.subscription-support (0x6000025d0140), 2
+2023-02-02 12:27:31.340 Df UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Activities] Running XPC Activity (PID 34567): com.apple.fontservicesd.subscription-support (0x137c07310)
+2023-02-02 12:27:31.340 Db maild[34583:26dba1] [com.apple.kvs:Connection] Saved change token to daemon
+2023-02-02 12:27:31.343 Db containermanagerd[34525:26d30f] [com.apple.containermanager:query] message userIdentity: (null)
+2023-02-02 12:27:31.344 Db containermanagerd[34525:26d30f] [com.apple.containermanager:query] userIdentity: (null)
+2023-02-02 12:27:31.344 I  containermanagerd[34525:26d30f] [com.apple.containermanager:unspecified] createOrLookup; identity: <systemgroup.com.apple.configurationprofiles(13);<502/20/502/2/502>;pf7>, createIfNecessary: 1, platform: 7, transient: 0, privileged: 0, clientBundleIdentifier: com.apple.nanoprefsyncd
+2023-02-02 12:27:31.347 Df fontservicesd[34567:26d80f] [com.apple.xpc.activity:Client] _xpc_activity_set_state_from_cts: com.apple.fontservicesd.subscription-support (0x6000025d0140), set activity state to 2
+2023-02-02 12:27:31.349 Df fontservicesd[34567:26d80f] [com.apple.xpc.activity:Client] __XPC_ACTIVITY_CALLING_HANDLER__: com.apple.fontservicesd.subscription-support (0x6000025d0140), current state 2, pending state 0
+2023-02-02 12:27:31.351 Df fontservicesd[34567:26d80f] [com.apple.xpc.activity:Client] __XPC_ACTIVITY_CALLING_HANDLER__ returned from handler: com.apple.fontservicesd.subscription-support (0x6000025d0140), current state 2, pending state 0
+2023-02-02 12:27:31.351 Df fontservicesd[34567:26d80f] [com.apple.xpc.activity:Client] _xpc_activity_set_state: com.apple.fontservicesd.subscription-support (0x6000025d0140), 5
+2023-02-02 12:27:31.351 Df fontservicesd[34567:26d80f] [com.apple.xpc.activity:Client] _xpc_activity_set_state: send new state to CTS: com.apple.fontservicesd.subscription-support (0x6000025d0140), 5
+2023-02-02 12:27:31.352 I  UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Internal] com.apple.fontservicesd.subscription-support state change 2 -> 5
+2023-02-02 12:27:31.352 Df UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Activities] Completed XPC Activity: com.apple.fontservicesd.subscription-support (0x137c07310)
+2023-02-02 12:27:31.356 A  maild[34583:26d55b] (SyncedDefaults) kvs/dictionary-representation
+2023-02-02 12:27:31.356 Db maild[34583:26d55b] [com.apple.kvs:Connection] Getting dictionary representation for store <(com.apple.mail.remindMe)>
+2023-02-02 12:27:31.357 Db UserEventAgent[34487:26daf9] [com.apple.defaults:User Defaults] setting {
+    ActivityBaseDates =     {
+        "CLClientManager.loc-consumption-pruning" = "2023-02-02 14:44:33 +0000";
+        "CLPrivacyManager.B" = "2023-02-02 14:44:30 +0000";
+        "CLPrivacyManager.C" = "2023-02-02 14:44:30 +0000";
+        "CLPrivacyManager.D" = "2023-02-02 14:44:30 +0000";
+        "PDAuxiliaryCapabilityManager.checkPassRegistrationState" = "1992-02-02 15:27:04 +0000";
+        "PDCardFileManager.CacheMaintenance" = "2023-02-16 15:27:14 +0000";
+        "PDCardFileManager.RevocationCheck" = "2023-02-03 15:27:15 +0000";
+        "PDChangeRegistryScheduledClientIdentifier.PDChangeRegistryScheduledActivityIdentifier" = "2023-03-04 15:27:15 +0000";
+        "PDCloudStoreNotificationCoordinatorScheduledActivityClientIdentifier.PDPassChangesActivityIdentifier" = "2023-02-02 16:12:15 +0000";
+        "PDCloudStoreNotificationCoordinatorScheduledActivityClientIdentifier.PDPassSyncActivityIdentifier" = "2023-02-03 03:27:15 +0000";
+        "PDMapsBrandAndMerchantUpdaterClientIdentifier.PDMapsBrand<…> in <decode: missing data>
+2023-02-02 12:27:31.358 Db cfprefsd[34522:26d3b9] [com.apple.defaults:cfprefsd] Process 34487 (UserEventAgent) sent a request related to { com.apple.xpc.activity2, user: mobile, kCFPreferencesAnyHost, /Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Preferences/com.apple.xpc.activity2.plist, managed: 0 } (0x600000c10140)
+2023-02-02 12:27:31.358 Db cfprefsd[34522:26d3b9] [com.apple.defaults:cfprefsd] Process 34487 (UserEventAgent) wrote the key(s) ActivityBaseDates in { com.apple.xpc.activity2, mobile, kCFPreferencesAnyHost, /Users/ggard/Library/Developer/CoreSimulator/Devices/773105ED-D5BC-4800-A2E6-239ECE9FE9FA/data/Library/Preferences/com.apple.xpc.activity2.plist, managed: 0 }
+2023-02-02 12:27:31.358 Df UserEventAgent[34487:26daf9] [com.apple.xpc.activity:Activities] Rescheduling XPC Activity: com.apple.fontservicesd.subscription-support (0x137c07310)
+2023-02-02 12:27:31.362 Df fontservicesd[34567:26d50c] [com.apple.xpc.activity:Client] _xpc_activity_set_state_from_cts: com.apple.fontservicesd.subscription-support (0x6000025d0140), set activity state to 1
+2023-02-02 12:27:31.362 Df fontservicesd[34567:26d50c] [com.apple.xpc.activity:Client] _xpc_activity_end_running: com.apple.fontservicesd.subscription-support (0x6000025d0140) seqno: 0.
+
