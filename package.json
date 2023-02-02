@@ -25,7 +25,6 @@
     "@types/react-test-renderer": "^17.0.0",
     "babel-jest": "24.8.0",
     "eslint-plugin-detox": "^1.0.0",
-    "eslint-plugin-import": "^2.18.2",
     "jest": "24.8.0",
     "metro-react-native-babel-preset": "^0.55.0",
     "pre-commit": "^1.2.2",
