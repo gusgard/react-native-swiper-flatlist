@@ -254,7 +254,7 @@ export const SwiperFlatList = React.forwardRef(
           };
         };
       }
-
+      // TODO: do we need this anymore? check 3.1.0
       (flatListProps as any).dataSet = { 'paging-enabled-fix': true };
     }
 
