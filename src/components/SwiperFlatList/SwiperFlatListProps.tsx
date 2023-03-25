@@ -145,6 +145,13 @@ export type SwiperFlatListProps<T> = Partial<FlatListProps<T>> & {
    *
    */
   PaginationComponent?: React.FC<PaginationProps>;
+
+  /**
+   * Use react-native-gesture-handler FlatList instead of the native FlatList
+   *
+   * Defaults to 'false'
+   */
+  useReactNativeGestureHandler?: boolean;
 } & Pick<
     PaginationProps,
     | 'paginationActiveColor'
