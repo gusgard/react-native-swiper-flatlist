@@ -1,5 +1,7 @@
 import React from 'react';
-import { FlatList, FlatListProps, Platform, Dimensions } from 'react-native';
+import { FlatList as RNFlatList, FlatListProps, Platform, Dimensions } from 'react-native';
+
+let FlatList = RNFlatList;
 
 import { Pagination } from '../Pagination/Pagination';
 import { SwiperFlatListProps, SwiperFlatListRefProps } from './SwiperFlatListProps';
@@ -26,6 +28,7 @@ export const SwiperFlatList = React.forwardRef(
       renderItem,
       renderAll = false,
       index = FIRST_INDEX,
+      useReactNativeGestureHandler = false,
       // Pagination
       showPagination = false,
       PaginationComponent = Pagination,
@@ -72,7 +75,7 @@ export const SwiperFlatList = React.forwardRef(
     const _initialNumToRender = renderAll ? size : 1;
     const [currentIndexes, setCurrentIndexes] = React.useState({ index, prevIndex: index });
     const [ignoreOnMomentumScrollEnd, setIgnoreOnMomentumScrollEnd] = React.useState(false);
-    const flatListElement = React.useRef<FlatList<unknown>>(null);
+    const flatListElement = React.useRef<RNFlatList<unknown>>(null);
     const [scrollEnabled, setScrollEnabled] = React.useState(!disableGesture);
 
     React.useEffect(() => {
@@ -273,6 +276,16 @@ export const SwiperFlatList = React.forwardRef(
       paginationTapDisabled,
       e2eID,
     };
+
+    if (useReactNativeGestureHandler) {
+      try {
+        FlatList = require('react-native-gesture-handler').FlatList;
+      } catch (error) {
+        console.warn(
+          "react-native-gesture-handler isn't installed, please install it or remove `useReactNativeGestureHandler`",
+        );
+      }
+    }
 
     return (
       <React.Fragment>

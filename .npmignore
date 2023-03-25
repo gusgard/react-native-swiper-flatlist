@@ -10,3 +10,4 @@ babel.config.js
 bitrise.yml
 demo.gif
 expo-example/
+.yarn
