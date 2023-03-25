@@ -128,32 +128,33 @@ export default App;
 
 ## Props
 
-| Prop                        |                      Default                      |                  Type                   | Description                                                                           |
-| :-------------------------- | :-----------------------------------------------: | :-------------------------------------: | :------------------------------------------------------------------------------------ |
-| data                        |        _not required if children is used_         |                 `array`                 | Data to use in renderItem                                                             |
-| children                    |                         -                         |                 `node`                  | Children elements                                                                     |
-| renderItem                  |        _not required if children is used_         |    `FlatListProps<T>['renderItem']`     | Takes an item from data and renders it into the list                                  |
-| onMomentumScrollEnd         |                         -                         | `(item: { index: number }, event: any)` | Called after scroll end and the first parameter is the current index                  |
-| vertical                    |                       false                       |                `boolean`                | Show vertical swiper                                                                  |
-| index                       |                         0                         |                `number`                 | Index to start                                                                        |
-| renderAll                   |                       false                       |                `boolean`                | Render all the items before display it                                                |
-| **Pagination**              |
-| showPagination              |                       false                       |                `boolean`                | Show pagination                                                                       |
-| paginationDefaultColor      |                       gray                        |                `string`                 | Pagination color                                                                      |
-| paginationActiveColor       |                       white                       |                `string`                 | Pagination color                                                                      |
-| paginationStyle             |                        {}                         |               `ViewStyle`               | Style object for the container                                                        |
-| paginationStyleItem         |                        {}                         |               `ViewStyle`               | Style object for the item (dot)                                                       |
-| paginationStyleItemActive   |                        {}                         |               `ViewStyle`               | Style object for the active item (dot)                                                |
-| paginationStyleItemInactive |                        {}                         |               `ViewStyle`               | Style object for the inactive item (dot)                                              |
-| onPaginationSelectedIndex   |                         -                         |              `() => void`               | Executed when the user presses the pagination index, similar properties onChangeIndex |
-| PaginationComponent         | [Component](./src/components/Pagination/index.js) |                 `node`                  | Overwrite Pagination component                                                        |
-| **Autoplay**                |
-| autoplay                    |                       false                       |                `boolean`                | Change index automatically                                                            |
-| autoplayDelay               |                         3                         |                `number`                 | Delay between every page in seconds                                                   |
-| autoplayLoop                |                       false                       |                `boolean`                | Continue playing after reach end                                                      |
-| autoplayLoopKeepAnimation   |                       false                       |                `boolean`                | Show animation when reach the end of the list                                         |
-| autoplayInvertDirection     |                       false                       |                `boolean`                | Invert auto play direction                                                            |
-| disableGesture              |                       false                       |                `boolean`                | Disable swipe gesture                                                                 |
+| Prop                         |                      Default                      |                  Type                   | Description                                                                           |
+| :--------------------------- | :-----------------------------------------------: | :-------------------------------------: | :------------------------------------------------------------------------------------ |
+| data                         |        _not required if children is used_         |                 `array`                 | Data to use in renderItem                                                             |
+| children                     |                         -                         |                 `node`                  | Children elements                                                                     |
+| renderItem                   |        _not required if children is used_         |    `FlatListProps<T>['renderItem']`     | Takes an item from data and renders it into the list                                  |
+| onMomentumScrollEnd          |                         -                         | `(item: { index: number }, event: any)` | Called after scroll end and the first parameter is the current index                  |
+| vertical                     |                       false                       |                `boolean`                | Show vertical swiper                                                                  |
+| index                        |                         0                         |                `number`                 | Index to start                                                                        |
+| renderAll                    |                       false                       |                `boolean`                | Render all the items before display it                                                |
+| **Pagination**               |
+| showPagination               |                       false                       |                `boolean`                | Show pagination                                                                       |
+| paginationDefaultColor       |                       gray                        |                `string`                 | Pagination color                                                                      |
+| paginationActiveColor        |                       white                       |                `string`                 | Pagination color                                                                      |
+| paginationStyle              |                        {}                         |               `ViewStyle`               | Style object for the container                                                        |
+| paginationStyleItem          |                        {}                         |               `ViewStyle`               | Style object for the item (dot)                                                       |
+| paginationStyleItemActive    |                        {}                         |               `ViewStyle`               | Style object for the active item (dot)                                                |
+| paginationStyleItemInactive  |                        {}                         |               `ViewStyle`               | Style object for the inactive item (dot)                                              |
+| onPaginationSelectedIndex    |                         -                         |              `() => void`               | Executed when the user presses the pagination index, similar properties onChangeIndex |
+| PaginationComponent          | [Component](./src/components/Pagination/index.js) |                 `node`                  | Overwrite Pagination component                                                        |
+| **Autoplay**                 |
+| autoplay                     |                       false                       |                `boolean`                | Change index automatically                                                            |
+| autoplayDelay                |                         3                         |                `number`                 | Delay between every page in seconds                                                   |
+| autoplayLoop                 |                       false                       |                `boolean`                | Continue playing after reach end                                                      |
+| autoplayLoopKeepAnimation    |                       false                       |                `boolean`                | Show animation when reach the end of the list                                         |
+| autoplayInvertDirection      |                       false                       |                `boolean`                | Invert auto play direction                                                            |
+| disableGesture               |                       false                       |                `boolean`                | Disable swipe gesture                                                                 |
+| useReactNativeGestureHandler |                       false                       |                `boolean`                | Use `react-native-gesture-handler` FlatList instead of the React Native FlatList      |
 
 **More props**
 
@@ -172,7 +173,7 @@ This is a wrapper around [Flatlist](http://facebook.github.io/react-native/docs/
 
 ## Limitations
 
-- Vertical pagination is not supported on Android. [Doc](https://github.com/facebook/react-native/blob/a48da14800013659e115bf2b58e31aa396e678e5/Libraries/Components/ScrollView/ScrollView.js#L274)
+- Vertical pagination is not supported on Android. [Doc](https://github.com/facebook/react-native/blob/a48da14800013659e115bf2b58e31aa396e678e5/Libraries/Components/ScrollView/ScrollView.js#L274), that is way we have `useReactNativeGestureHandler` which is a workaround for this issue.
 
 ## Author
 
