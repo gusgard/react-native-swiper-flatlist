@@ -119,4 +119,3 @@ trigger_map:
 meta:
   bitrise.io:
     stack: osx-xcode-14.3.x-ventura
-    machine_type_id: g2-m1.8core
