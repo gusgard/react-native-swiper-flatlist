@@ -209,24 +209,24 @@ export const SwiperFlatList = React.forwardRef(
       [],
     );
 
-    const keyExtractor: FlatListProps<unknown>['keyExtractor'] = (_item, _index) =>
-      _index.toString();
-    const onScrollToIndexFailed: FlatListProps<unknown>['onScrollToIndexFailed'] = (info) =>
-      setTimeout(() =>
-        _scrollToIndex({ index: info.index, animated: false }, { useOnChangeIndex: true }),
-      );
-
-    const flatListProps = {
+    const flatListProps: FlatListProps<unknown> & { ref: React.RefObject<RNFlatList<unknown>> } = {
       scrollEnabled,
       ref: flatListElement,
-      keyExtractor,
+      keyExtractor: (_item, _index) => {
+        const item = _item as { key?: string; id?: string };
+        const key = item?.key ?? item?.id ?? _index.toString();
+        return key;
+      },
       horizontal: !vertical,
       showsHorizontalScrollIndicator: false,
       showsVerticalScrollIndicator: false,
       pagingEnabled: true,
       ...props,
       onMomentumScrollEnd: _onMomentumScrollEnd,
-      onScrollToIndexFailed: onScrollToIndexFailed,
+      onScrollToIndexFailed: (info) =>
+        setTimeout(() =>
+          _scrollToIndex({ index: info.index, animated: false }, { useOnChangeIndex: true }),
+        ),
       data: _data,
       renderItem: _renderItem,
       initialNumToRender: _initialNumToRender,
@@ -258,25 +258,6 @@ export const SwiperFlatList = React.forwardRef(
       (flatListProps as any).dataSet = { 'paging-enabled-fix': true };
     }
 
-    const scrollToIndexForPagination = (params: ScrollToIndex) => {
-      _scrollToIndex(params, { useOnChangeIndex: false });
-    };
-
-    const paginationProps = {
-      size,
-      paginationIndex: currentIndexes.index,
-      scrollToIndex: scrollToIndexForPagination,
-      paginationActiveColor,
-      paginationDefaultColor,
-      paginationStyle,
-      paginationStyleItem,
-      paginationStyleItemActive,
-      paginationStyleItemInactive,
-      onPaginationSelectedIndex,
-      paginationTapDisabled,
-      e2eID,
-    };
-
     if (useReactNativeGestureHandler) {
       try {
         FlatList = require('react-native-gesture-handler').FlatList;
@@ -290,7 +271,24 @@ export const SwiperFlatList = React.forwardRef(
     return (
       <React.Fragment>
         <FlatList {...flatListProps} />
-        {showPagination && <PaginationComponent {...paginationProps} />}
+        {showPagination ? (
+          <PaginationComponent
+            size={size}
+            paginationIndex={currentIndexes.index}
+            scrollToIndex={(params: ScrollToIndex) => {
+              _scrollToIndex(params, { useOnChangeIndex: false });
+            }}
+            paginationActiveColor={paginationActiveColor}
+            paginationDefaultColor={paginationDefaultColor}
+            paginationStyle={paginationStyle}
+            paginationStyleItem={paginationStyleItem}
+            paginationStyleItemActive={paginationStyleItemActive}
+            paginationStyleItemInactive={paginationStyleItemInactive}
+            onPaginationSelectedIndex={onPaginationSelectedIndex}
+            paginationTapDisabled={paginationTapDisabled}
+            e2eID={e2eID}
+          />
+        ) : null}
       </React.Fragment>
     );
   },

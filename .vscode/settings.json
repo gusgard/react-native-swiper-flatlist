@@ -8,6 +8,7 @@
   "prettier.semi": true,
   "breadcrumbs.enabled": true,
   "eslint.packageManager": "yarn",
+  "typescript.tsdk": "node_modules/typescript/lib",
   "editor.codeActionsOnSave": {
     "source.fixAll.tslint": true,
     "source.fixAll.eslint": true
