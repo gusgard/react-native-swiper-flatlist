@@ -91,39 +91,41 @@ export const SwiperFlatList = React.forwardRef(
       [onChangeIndex],
     );
 
-    const _scrollToIndex = (params: ScrollToIndex, extra: ScrollToIndexInternal) => {
-      const { index: indexToScroll, animated = true } = params;
-      const newParams = { animated, index: indexToScroll };
+    const _scrollToIndex = React.useCallback(
+      (params: ScrollToIndex, extra: ScrollToIndexInternal) => {
+        const { index: indexToScroll, animated = true } = params;
+        const newParams = { animated, index: indexToScroll };
 
-      setIgnoreOnMomentumScrollEnd(true);
+        setIgnoreOnMomentumScrollEnd(true);
 
-      const next = {
-        index: indexToScroll,
-        prevIndex: currentIndexes.index,
-      };
-      if (currentIndexes.index !== next.index && currentIndexes.prevIndex !== next.prevIndex) {
-        setCurrentIndexes({ index: next.index, prevIndex: next.prevIndex });
-      } else if (currentIndexes.index !== next.index) {
-        setCurrentIndexes((prevState) => ({ ...prevState, index: next.index }));
-      } else if (currentIndexes.prevIndex !== next.prevIndex) {
-        setCurrentIndexes((prevState) => ({ ...prevState, prevIndex: next.prevIndex }));
-      }
+        const next = {
+          index: indexToScroll,
+          prevIndex: currentIndexes.index,
+        };
+        if (currentIndexes.index !== next.index && currentIndexes.prevIndex !== next.prevIndex) {
+          setCurrentIndexes({ index: next.index, prevIndex: next.prevIndex });
+        } else if (currentIndexes.index !== next.index) {
+          setCurrentIndexes((prevState) => ({ ...prevState, index: next.index }));
+        } else if (currentIndexes.prevIndex !== next.prevIndex) {
+          setCurrentIndexes((prevState) => ({ ...prevState, prevIndex: next.prevIndex }));
+        }
 
-      if (extra.useOnChangeIndex) {
-        _onChangeIndex({ index: next.index, prevIndex: next.prevIndex });
-      }
+        if (extra.useOnChangeIndex) {
+          _onChangeIndex({ index: next.index, prevIndex: next.prevIndex });
+        }
 
-      // When execute "scrollToIndex", we ignore the method "onMomentumScrollEnd"
-      // because it not working on Android
-      // https://github.com/facebook/react-native/issues/21718
-      flatListElement?.current?.scrollToIndex(newParams);
-    };
+        // When execute "scrollToIndex", we ignore the method "onMomentumScrollEnd"
+        // because it not working on Android
+        // https://github.com/facebook/react-native/issues/21718
+        flatListElement?.current?.scrollToIndex(newParams);
+      },
+      [_onChangeIndex, currentIndexes.index, currentIndexes.prevIndex],
+    );
 
     // change the index when the user swipe the items
     React.useEffect(() => {
       _onChangeIndex({ index: currentIndexes.index, prevIndex: currentIndexes.prevIndex });
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [currentIndexes.index]);
+    }, [_onChangeIndex, currentIndexes.index, currentIndexes.prevIndex]);
 
     React.useImperativeHandle(ref, () => ({
       scrollToIndex: (item: ScrollToIndex) => {
@@ -178,8 +180,16 @@ export const SwiperFlatList = React.forwardRef(
       }
       // https://upmostly.com/tutorials/settimeout-in-react-components-using-hooks
       return () => clearTimeout(autoplayTimer);
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [autoplay, currentIndexes.index, _data.length]);
+    }, [
+      autoplay,
+      currentIndexes.index,
+      _data.length,
+      autoplayInvertDirection,
+      autoplayLoop,
+      autoplayDelay,
+      autoplayLoopKeepAnimation,
+      _scrollToIndex,
+    ]);
 
     const _onMomentumScrollEnd: FlatListProps<unknown>['onMomentumScrollEnd'] = (event) => {
       // NOTE: Method not executed when call "flatListElement?.current?.scrollToIndex"
@@ -205,8 +215,7 @@ export const SwiperFlatList = React.forwardRef(
         }
         onViewableItemsChanged?.(params);
       },
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      [],
+      [onViewableItemsChanged],
     );
 
     const flatListProps: FlatListProps<unknown> & { ref: React.RefObject<RNFlatList<unknown>> } = {
