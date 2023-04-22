@@ -24,6 +24,7 @@
     "babel-jest": "24.8.0",
     "eslint": "^8.19.0",
     "eslint-plugin-detox": "^1.0.0",
+    "eslint-plugin-ft-flow": "^2.0.3",
     "jest": "24.8.0",
     "metro-react-native-babel-preset": "^0.55.0",
     "pre-commit": "^1.2.2",
