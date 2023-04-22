@@ -258,7 +258,6 @@ export const SwiperFlatList = React.forwardRef(
         index: ItemIndex,
       });
     }
-    console.log(e2eID, { width, height });
     if (Platform.OS === 'web') {
       // TODO: do we need this anymore? check 3.1.0
       (flatListProps as any).dataSet = { 'paging-enabled-fix': true };
