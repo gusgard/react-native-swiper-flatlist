@@ -23,6 +23,7 @@ exports[`swiper flatlist renders children 1`] = `
   disableVirtualization={false}
   getItem={[Function]}
   getItemCount={[Function]}
+  getItemLayout={[Function]}
   horizontal={true}
   initialNumToRender={1}
   initialScrollIndex={0}
@@ -68,7 +69,6 @@ exports[`swiper flatlist renders children 1`] = `
 >
   <View>
     <View
-      onLayout={[Function]}
       style={
         Array [
           Object {
@@ -89,7 +89,7 @@ exports[`swiper flatlist renders children 1`] = `
     <View
       style={
         Object {
-          "width": 0,
+          "width": 750,
         }
       }
     />
@@ -118,6 +118,7 @@ exports[`swiper flatlist renders correctly 1`] = `
   disableVirtualization={false}
   getItem={[Function]}
   getItemCount={[Function]}
+  getItemLayout={[Function]}
   horizontal={true}
   initialNumToRender={1}
   initialScrollIndex={0}
@@ -163,7 +164,6 @@ exports[`swiper flatlist renders correctly 1`] = `
 >
   <View>
     <View
-      onLayout={[Function]}
       style={
         Array [
           Object {
@@ -184,7 +184,7 @@ exports[`swiper flatlist renders correctly 1`] = `
     <View
       style={
         Object {
-          "width": 0,
+          "width": 750,
         }
       }
     />
@@ -198,6 +198,7 @@ exports[`swiper flatlist renders empty data correctly 1`] = `
   disableVirtualization={false}
   getItem={[Function]}
   getItemCount={[Function]}
+  getItemLayout={[Function]}
   horizontal={true}
   initialNumToRender={1}
   initialScrollIndex={0}

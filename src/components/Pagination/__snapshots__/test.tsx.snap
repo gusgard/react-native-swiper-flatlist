@@ -19,7 +19,7 @@ exports[`pagination renders all props 1`] = `
 >
   <View
     accessible={true}
-    clickable={true}
+    focusable={true}
     isTVSelectable={true}
     onClick={[Function]}
     onResponderGrant={[Function]}
@@ -42,7 +42,7 @@ exports[`pagination renders all props 1`] = `
   />
   <View
     accessible={true}
-    clickable={true}
+    focusable={true}
     isTVSelectable={true}
     onClick={[Function]}
     onResponderGrant={[Function]}
@@ -65,7 +65,7 @@ exports[`pagination renders all props 1`] = `
   />
   <View
     accessible={true}
-    clickable={true}
+    focusable={true}
     isTVSelectable={true}
     onClick={[Function]}
     onResponderGrant={[Function]}
@@ -88,7 +88,7 @@ exports[`pagination renders all props 1`] = `
   />
   <View
     accessible={true}
-    clickable={true}
+    focusable={true}
     isTVSelectable={true}
     onClick={[Function]}
     onResponderGrant={[Function]}
@@ -111,7 +111,7 @@ exports[`pagination renders all props 1`] = `
   />
   <View
     accessible={true}
-    clickable={true}
+    focusable={true}
     isTVSelectable={true}
     onClick={[Function]}
     onResponderGrant={[Function]}
@@ -154,7 +154,7 @@ exports[`pagination renders correctly 1`] = `
 >
   <View
     accessible={true}
-    clickable={true}
+    focusable={true}
     isTVSelectable={true}
     onClick={[Function]}
     onResponderGrant={[Function]}
@@ -177,7 +177,7 @@ exports[`pagination renders correctly 1`] = `
   />
   <View
     accessible={true}
-    clickable={true}
+    focusable={true}
     isTVSelectable={true}
     onClick={[Function]}
     onResponderGrant={[Function]}
@@ -200,7 +200,7 @@ exports[`pagination renders correctly 1`] = `
   />
   <View
     accessible={true}
-    clickable={true}
+    focusable={true}
     isTVSelectable={true}
     onClick={[Function]}
     onResponderGrant={[Function]}
@@ -223,7 +223,7 @@ exports[`pagination renders correctly 1`] = `
   />
   <View
     accessible={true}
-    clickable={true}
+    focusable={true}
     isTVSelectable={true}
     onClick={[Function]}
     onResponderGrant={[Function]}
@@ -246,7 +246,7 @@ exports[`pagination renders correctly 1`] = `
   />
   <View
     accessible={true}
-    clickable={true}
+    focusable={true}
     isTVSelectable={true}
     onClick={[Function]}
     onResponderGrant={[Function]}
