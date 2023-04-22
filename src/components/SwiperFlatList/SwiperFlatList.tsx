@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList as RNFlatList, FlatListProps, Platform, Dimensions } from 'react-native';
+import { FlatList as RNFlatList, FlatListProps, Platform, useWindowDimensions } from 'react-native';
 
 let FlatList = RNFlatList;
 
@@ -14,8 +14,6 @@ const ITEM_VISIBLE_PERCENT_THRESHOLD = 60;
 type T1 = any;
 type ScrollToIndex = { index: number; animated?: boolean };
 type ScrollToIndexInternal = { useOnChangeIndex: boolean };
-
-const { width: WIDTH, height: HEIGHT } = Dimensions.get('window');
 
 // const SwiperFlatList = React.forwardRef<RefProps, SwiperFlatListProps<SwiperType>>(
 export const SwiperFlatList = React.forwardRef(
@@ -251,18 +249,17 @@ export const SwiperFlatList = React.forwardRef(
       testID: e2eID,
     };
 
+    const { width, height } = useWindowDimensions();
+    if (props.getItemLayout === undefined) {
+      const itemDimension = vertical ? height : width;
+      flatListProps.getItemLayout = (__data, ItemIndex: number) => ({
+        length: itemDimension,
+        offset: itemDimension * ItemIndex,
+        index: ItemIndex,
+      });
+    }
+    console.log(e2eID, { width, height });
     if (Platform.OS === 'web') {
-      if (props.getItemLayout === undefined) {
-        // NOTE: should we pass height/width for getItemLayout?
-        const ITEM_DIMENSION = vertical ? HEIGHT : WIDTH;
-        flatListProps.getItemLayout = (__data, ItemIndex: number) => {
-          return {
-            length: ITEM_DIMENSION,
-            offset: ITEM_DIMENSION * ItemIndex,
-            index: ItemIndex,
-          };
-        };
-      }
       // TODO: do we need this anymore? check 3.1.0
       (flatListProps as any).dataSet = { 'paging-enabled-fix': true };
     }
