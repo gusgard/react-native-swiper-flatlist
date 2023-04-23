@@ -10,4 +10,7 @@ module.exports = {
     describe: false,
     expect: false,
   },
+  rules: {
+    'react-native/no-inline-styles': OFF,
+  },
 };
