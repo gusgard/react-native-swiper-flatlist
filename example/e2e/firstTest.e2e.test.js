@@ -1,4 +1,4 @@
-const {device, expect, element, by} = require('detox');
+const { device, expect, element, by } = require('detox');
 
 const TEXT_IN_SCREENS = {
   zero: '0 - Go to last index',

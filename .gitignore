@@ -42,12 +42,12 @@ buck-out/
 *.keystore
 
 
-example/e2e/coverage
+old-rn-example/e2e/coverage
+old-rn-example/coverage
+old-rn-example/artifacts
+
+
+example/.expo/*
+example/web-build/
+example/src/
 example/coverage
-example/artifacts
-
-
-expo-example/.expo/*
-expo-example/web-build/
-expo-example/src/
-expo-example/coverage

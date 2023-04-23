@@ -1,4 +1,4 @@
-const {device, expect, element, by, waitFor} = require('detox');
+const { device, expect, element, by, waitFor } = require('detox');
 
 // const TEXT_IN_SCREENS = {
 //   zero: 'Item at index 0',

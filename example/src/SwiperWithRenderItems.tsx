@@ -1,14 +1,14 @@
 import React from 'react';
-import {Dimensions, ImageBackground, StyleSheet, Text} from 'react-native';
-import {SwiperFlatList} from 'react-native-swiper-flatlist';
+import { Dimensions, ImageBackground, StyleSheet, Text } from 'react-native';
+import { SwiperFlatList } from 'react-native-swiper-flatlist';
 
-import {fox, cat, background, element, lion} from './images';
-import {CustomPagination} from './CustomPagination';
+import { fox, cat, background, element, lion } from './images';
+import { CustomPagination } from './CustomPagination';
 
-const {width} = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 
 const newImage = [lion, fox, cat, background, element];
-const image = (index: number) => ({image: newImage[index % newImage.length]});
+const image = (index: number) => ({ image: newImage[index % newImage.length] });
 const items = Array.from(Array(5)).map((_, index) => image(index));
 
 export default () => {
@@ -20,11 +20,12 @@ export default () => {
       // autoplayLoop
       // autoplayInvertDirection
       data={items}
-      renderItem={({item, index}) => (
+      renderItem={({ item, index }) => (
         <ImageBackground
           style={styles.image}
           source={item.image}
-          testID={`container_swiper_renderItem_screen_${index}`}>
+          testID={`container_swiper_renderItem_screen_${index}`}
+        >
           <Text style={styles.text}>Item at index {index}</Text>
         </ImageBackground>
       )}

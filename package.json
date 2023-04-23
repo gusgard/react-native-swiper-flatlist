@@ -50,7 +50,7 @@
     ],
     "modulePathIgnorePatterns": [
       "<rootDir>/example/",
-      "<rootDir>/expo-example/"
+      "<rootDir>/old-rn-example/"
     ]
   },
   "pre-commit": {
