@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View, SafeAreaView} from 'react-native';
+import { StyleSheet, View, SafeAreaView } from 'react-native';
 
 import SwiperWithRenderItems from './SwiperWithRenderItems';
 import SwiperWithChildren from './SwiperWithChildren';

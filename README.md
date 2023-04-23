@@ -28,11 +28,11 @@ Version 2.x was re-implemented using React Hooks so it only works with version 0
 
 Version 3.x was re-implemented using Typescript and it works with react-native-web
 
-| react-native-swiper-flatlist | react-native | Detox tests                                                                                                                                                                     |
-| ---------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1.x                          | <= 0.58      | [![Build Status](https://travis-ci.org/gusgard/react-native-swiper-flatlist.svg?branch=v1)](https://travis-ci.org/github/gusgard/react-native-swiper-flatlist/builds/565267550) |
-| 2.x                          | >= 0.59      | [![Build Status](https://travis-ci.org/gusgard/react-native-swiper-flatlist.svg?branch=v1)](https://travis-ci.org/github/gusgard/react-native-swiper-flatlist/builds/749156790) |
-| 3.x                          | >= 0.59      | [![Build Status](https://app.bitrise.io/app/dfeb47a453df37dd/status.svg?token=54NHsU_G5kGTSZpdEejqLA&branch=master)](https://app.bitrise.io/app/dfeb47a453df37dd)               |
+| react-native-swiper-flatlist | react-native | Detox tests                                                                                                                                                       |
+| ---------------------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1.x                          | <= 0.58      | X                                                                                                                                                                 |
+| 2.x                          | >= 0.59      | X                                                                                                                                                                 |
+| 3.x                          | >= 0.59      | [![Build Status](https://app.bitrise.io/app/dfeb47a453df37dd/status.svg?token=54NHsU_G5kGTSZpdEejqLA&branch=master)](https://app.bitrise.io/app/dfeb47a453df37dd) |
 
 Note: we are using the feature `export type` available in `babel v7.9.0` https://github.com/babel/babel/pull/11171, you might have this issue with React Native between 0.60 and 0.63, please update `babel` to at least to `v7.9.0`
 
@@ -42,7 +42,7 @@ Note: we are using the feature `export type` available in `babel v7.9.0` https:/
 
 [Expo example with children](https://snack.expo.io/@gusgard/react-native-swiper-flatlist-show-next-screen)
 
-[React Native example with renderItems and custom pagination](./example/src/SwiperWithRenderItems.js)
+[React Native example with renderItems and custom pagination](./example/src/SwiperWithRenderItems.tsx)
 
 [React Native example with children](./example/src/SwiperWithChildren.tsx)
 
@@ -128,33 +128,33 @@ export default App;
 
 ## Props
 
-| Prop                         |                      Default                      |                  Type                   | Description                                                                           |
-| :--------------------------- | :-----------------------------------------------: | :-------------------------------------: | :------------------------------------------------------------------------------------ |
-| data                         |        _not required if children is used_         |                 `array`                 | Data to use in renderItem                                                             |
-| children                     |                         -                         |                 `node`                  | Children elements                                                                     |
-| renderItem                   |        _not required if children is used_         |    `FlatListProps<T>['renderItem']`     | Takes an item from data and renders it into the list                                  |
-| onMomentumScrollEnd          |                         -                         | `(item: { index: number }, event: any)` | Called after scroll end and the first parameter is the current index                  |
-| vertical                     |                       false                       |                `boolean`                | Show vertical swiper                                                                  |
-| index                        |                         0                         |                `number`                 | Index to start                                                                        |
-| renderAll                    |                       false                       |                `boolean`                | Render all the items before display it                                                |
+| Prop                         |                      Default                       |                  Type                   | Description                                                                           |
+| :--------------------------- | :------------------------------------------------: | :-------------------------------------: | :------------------------------------------------------------------------------------ |
+| data                         |         _not required if children is used_         |                 `array`                 | Data to use in renderItem                                                             |
+| children                     |                         -                          |                 `node`                  | Children elements                                                                     |
+| renderItem                   |         _not required if children is used_         |    `FlatListProps<T>['renderItem']`     | Takes an item from data and renders it into the list                                  |
+| onMomentumScrollEnd          |                         -                          | `(item: { index: number }, event: any)` | Called after scroll end and the first parameter is the current index                  |
+| vertical                     |                       false                        |                `boolean`                | Show vertical swiper                                                                  |
+| index                        |                         0                          |                `number`                 | Index to start                                                                        |
+| renderAll                    |                       false                        |                `boolean`                | Render all the items before display it                                                |
 | **Pagination**               |
-| showPagination               |                       false                       |                `boolean`                | Show pagination                                                                       |
-| paginationDefaultColor       |                       gray                        |                `string`                 | Pagination color                                                                      |
-| paginationActiveColor        |                       white                       |                `string`                 | Pagination color                                                                      |
-| paginationStyle              |                        {}                         |               `ViewStyle`               | Style object for the container                                                        |
-| paginationStyleItem          |                        {}                         |               `ViewStyle`               | Style object for the item (dot)                                                       |
-| paginationStyleItemActive    |                        {}                         |               `ViewStyle`               | Style object for the active item (dot)                                                |
-| paginationStyleItemInactive  |                        {}                         |               `ViewStyle`               | Style object for the inactive item (dot)                                              |
-| onPaginationSelectedIndex    |                         -                         |              `() => void`               | Executed when the user presses the pagination index, similar properties onChangeIndex |
-| PaginationComponent          | [Component](./src/components/Pagination/index.js) |                 `node`                  | Overwrite Pagination component                                                        |
+| showPagination               |                       false                        |                `boolean`                | Show pagination                                                                       |
+| paginationDefaultColor       |                        gray                        |                `string`                 | Pagination color                                                                      |
+| paginationActiveColor        |                       white                        |                `string`                 | Pagination color                                                                      |
+| paginationStyle              |                         {}                         |               `ViewStyle`               | Style object for the container                                                        |
+| paginationStyleItem          |                         {}                         |               `ViewStyle`               | Style object for the item (dot)                                                       |
+| paginationStyleItemActive    |                         {}                         |               `ViewStyle`               | Style object for the active item (dot)                                                |
+| paginationStyleItemInactive  |                         {}                         |               `ViewStyle`               | Style object for the inactive item (dot)                                              |
+| onPaginationSelectedIndex    |                         -                          |              `() => void`               | Executed when the user presses the pagination index, similar properties onChangeIndex |
+| PaginationComponent          | [Component](./src/components/Pagination/index.tsx) |                 `node`                  | Overwrite Pagination component                                                        |
 | **Autoplay**                 |
-| autoplay                     |                       false                       |                `boolean`                | Change index automatically                                                            |
-| autoplayDelay                |                         3                         |                `number`                 | Delay between every page in seconds                                                   |
-| autoplayLoop                 |                       false                       |                `boolean`                | Continue playing after reach end                                                      |
-| autoplayLoopKeepAnimation    |                       false                       |                `boolean`                | Show animation when reach the end of the list                                         |
-| autoplayInvertDirection      |                       false                       |                `boolean`                | Invert auto play direction                                                            |
-| disableGesture               |                       false                       |                `boolean`                | Disable swipe gesture                                                                 |
-| useReactNativeGestureHandler |                       false                       |                `boolean`                | Use `react-native-gesture-handler` FlatList instead of the React Native FlatList      |
+| autoplay                     |                       false                        |                `boolean`                | Change index automatically                                                            |
+| autoplayDelay                |                         3                          |                `number`                 | Delay between every page in seconds                                                   |
+| autoplayLoop                 |                       false                        |                `boolean`                | Continue playing after reach end                                                      |
+| autoplayLoopKeepAnimation    |                       false                        |                `boolean`                | Show animation when reach the end of the list                                         |
+| autoplayInvertDirection      |                       false                        |                `boolean`                | Invert auto play direction                                                            |
+| disableGesture               |                       false                        |                `boolean`                | Disable swipe gesture                                                                 |
+| useReactNativeGestureHandler |                       false                        |                `boolean`                | Use `react-native-gesture-handler` FlatList instead of the React Native FlatList      |
 
 **More props**
 

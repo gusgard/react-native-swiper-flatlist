@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "react-native-swiper-flatlist": "3.0.10"
+  }
+}

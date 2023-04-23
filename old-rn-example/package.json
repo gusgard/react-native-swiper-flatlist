@@ -1,0 +1,56 @@
+{
+  "name": "SwiperFlatListExample",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "lint": "eslint .",
+    "start": "react-native start",
+    "test": "jest",
+    "postinstall": "yarn copy:src && rm -rf node_modules/react-native-swiper-flatlist/node_modules/react-native && npx pod-install",
+    "copy:src": "cp -r ../src/* ./node_modules/react-native-swiper-flatlist/src",
+    "watch": "node ./scripts/watch-and-copy.js",
+    "start:watch": "concurrently 'npm run watch' 'npm run start'",
+    "e2e:ios:build": "yarn detox build --configuration ios.sim.debug",
+    "e2e:ios:test": "yarn detox test --configuration ios.sim.debug --cleanup --debug-synchronization --take-screenshots all --record-logs all --coverage",
+    "e2e:ios:build-test": "yarn e2e:ios:build && yarn e2e:ios:test",
+    "e2e:ios:test:ci": "yarn detox test --configuration ios.sim.release --workers 3 --debug-synchronization",
+    "e2e:ios:build:ci": "yarn detox build --configuration ios.sim.release",
+    "e2e:ios:build-test:ci": "yarn e2e:ios:build:ci && yarn e2e:ios:test:ci"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-native": "0.71.2",
+    "react-native-gesture-handler": "^2.9.0",
+    "react-native-swiper-flatlist": "3.0.18"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@babel/preset-env": "^7.20.0",
+    "@babel/runtime": "^7.20.0",
+    "@react-native-community/eslint-config": "^3.2.0",
+    "@tsconfig/react-native": "^2.0.2",
+    "@types/jest": "^29.2.1",
+    "@types/react": "^18.0.24",
+    "@types/react-test-renderer": "^18.0.0",
+    "babel-jest": "^29.2.1",
+    "concurrently": "4.1.1",
+    "detox": "^20",
+    "eslint": "^8.19.0",
+    "eslint-plugin-ft-flow": "^2.0.3",
+    "fs-extra": "8.1.0",
+    "jest": "^29.2.1",
+    "metro-react-native-babel-preset": "0.73.7",
+    "minimatch": "3.0.4",
+    "node-watch": "0.6.2",
+    "prettier": "^2.4.1",
+    "react-test-renderer": "18.2.0",
+    "rimraf": "^2.5.4",
+    "typescript": "4.8.4"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "packageManager": "yarn@3.5.0"
+}

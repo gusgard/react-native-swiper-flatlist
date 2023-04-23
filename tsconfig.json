@@ -5,9 +5,7 @@
     "esModuleInterop": true,
     "isolatedModules": true,
     "jsx": "react-native",
-    "lib": [
-      "es6"
-    ],
+    "lib": ["es6"],
     "moduleResolution": "node",
     "noEmit": true,
     "strict": true,
@@ -20,7 +18,7 @@
     "babel.config.js",
     "metro.config.js",
     "jest.config.js",
-    "./expo-example/",
-    "./example/"
+    "./example/",
+    "old-rn-example"
   ]
 }

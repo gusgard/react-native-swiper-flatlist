@@ -1,6 +1,6 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
-import {Pagination, PaginationProps} from 'react-native-swiper-flatlist';
+import { StyleSheet } from 'react-native';
+import { Pagination, PaginationProps } from 'react-native-swiper-flatlist';
 
 const styles = StyleSheet.create({
   paginationContainer: {
@@ -11,9 +11,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export const CustomPagination = (
-  props: JSX.IntrinsicAttributes & PaginationProps,
-) => {
+export const CustomPagination = (props: JSX.IntrinsicAttributes & PaginationProps) => {
   return (
     <Pagination
       {...props}
