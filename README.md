@@ -171,6 +171,10 @@ This is a wrapper around [Flatlist](http://facebook.github.io/react-native/docs/
 | goToFirstIndex  | `() => void`                                     | Go to the first index                                                                               |
 | goToLastIndex   | `() => void`                                     | Go to the last index                                                                                |
 
+## Right To Left
+
+This library support RTL languages, when `I18nManager.isRTL` is `true`.
+
 ## Limitations
 
 - Vertical pagination is not supported on Android. [Doc](https://github.com/facebook/react-native/blob/a48da14800013659e115bf2b58e31aa396e678e5/Libraries/Components/ScrollView/ScrollView.js#L274), that is way we have `useReactNativeGestureHandler` which is a workaround for this issue.
