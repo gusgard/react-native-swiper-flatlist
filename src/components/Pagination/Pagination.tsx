@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import { I18nManager, StyleSheet, TouchableOpacity, View } from 'react-native';
 
 import { colors, vertical, horizontal } from '../../themes';
 import { PaginationProps } from './PaginationProps';
@@ -7,7 +7,7 @@ import { PaginationProps } from './PaginationProps';
 const styles = StyleSheet.create({
   container: {
     position: 'absolute',
-    flexDirection: 'row',
+    flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
     marginVertical: vertical.xxSmall,
     justifyContent: 'center',
     alignSelf: 'center',

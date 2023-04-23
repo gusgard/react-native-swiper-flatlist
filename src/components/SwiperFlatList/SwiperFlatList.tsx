@@ -1,5 +1,11 @@
 import React from 'react';
-import { FlatList as RNFlatList, FlatListProps, Platform, useWindowDimensions } from 'react-native';
+import {
+  FlatList as RNFlatList,
+  FlatListProps,
+  I18nManager,
+  Platform,
+  useWindowDimensions,
+} from 'react-native';
 
 let FlatList = RNFlatList;
 
@@ -24,7 +30,7 @@ export const SwiperFlatList = React.forwardRef(
       data = [],
       renderItem,
       renderAll = false,
-      index = FIRST_INDEX,
+      index = I18nManager.isRTL ? data.length - 1 : FIRST_INDEX,
       useReactNativeGestureHandler = false,
       // Pagination
       showPagination = false,
@@ -42,7 +48,7 @@ export const SwiperFlatList = React.forwardRef(
       autoplay = false,
       autoplayLoop = false,
       autoplayLoopKeepAnimation = false,
-      autoplayInvertDirection = false,
+      autoplayInvertDirection = I18nManager.isRTL,
       // Functions
       onChangeIndex,
       onMomentumScrollEnd,
@@ -130,12 +136,12 @@ export const SwiperFlatList = React.forwardRef(
       getPrevIndex: () => currentIndexes.prevIndex,
       goToLastIndex: () => {
         setScrollEnabled(true);
-        _scrollToIndex({ index: size - 1 });
+        _scrollToIndex({ index: I18nManager.isRTL ? FIRST_INDEX : size - 1 });
         setScrollEnabled(!disableGesture);
       },
       goToFirstIndex: () => {
         setScrollEnabled(true);
-        _scrollToIndex({ index: FIRST_INDEX });
+        _scrollToIndex({ index: I18nManager.isRTL ? size - 1 : FIRST_INDEX });
         setScrollEnabled(!disableGesture);
       },
     }));

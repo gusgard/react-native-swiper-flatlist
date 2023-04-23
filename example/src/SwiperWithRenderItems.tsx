@@ -14,6 +14,7 @@ const items = Array.from(Array(5)).map((_, index) => image(index));
 export default () => {
   return (
     <SwiperFlatList
+      // inverted
       autoplay
       autoplayDelay={2}
       // index={3}
@@ -29,6 +30,9 @@ export default () => {
           <Text style={styles.text}>Item at index {index}</Text>
         </ImageBackground>
       )}
+      // onChangeIndex={({ index, prevIndex }) => {
+      //   console.log('renderItem', { index, prevIndex });
+      // }}
       showPagination
       PaginationComponent={CustomPagination}
       e2eID="container_swiper_renderItem"

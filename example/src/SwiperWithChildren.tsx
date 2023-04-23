@@ -28,7 +28,7 @@ export default () => {
       showPagination
       ref={scrollRef}
       onChangeIndex={({ index, prevIndex }) => {
-        console.log({ index, prevIndex });
+        console.log('example', { index, prevIndex });
       }}
       // TODO: rename it to children eg: "container_swiper_children"
       e2eID="container_swiper"

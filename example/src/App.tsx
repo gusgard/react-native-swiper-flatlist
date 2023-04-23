@@ -4,6 +4,10 @@ import { StyleSheet, View, SafeAreaView } from 'react-native';
 import SwiperWithRenderItems from './SwiperWithRenderItems';
 import SwiperWithChildren from './SwiperWithChildren';
 
+// TODO: we should add RTL tests
+// I18nManager.forceRTL(true);
+// I18nManager.allowRTL(true);
+
 export default () => {
   return (
     <SafeAreaView style={styles.container}>
