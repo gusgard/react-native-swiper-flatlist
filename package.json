@@ -1,6 +1,6 @@
 {
   "name": "react-native-swiper-flatlist",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "main": "index.ts",
   "license": "Apache-2.0",
   "description": "React native swiper flatlist component",

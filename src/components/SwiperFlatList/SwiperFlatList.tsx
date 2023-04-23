@@ -1,5 +1,11 @@
 import React from 'react';
-import { FlatList as RNFlatList, FlatListProps, Platform, useWindowDimensions } from 'react-native';
+import {
+  FlatList as RNFlatList,
+  FlatListProps,
+  I18nManager,
+  Platform,
+  useWindowDimensions,
+} from 'react-native';
 
 let FlatList = RNFlatList;
 
@@ -13,7 +19,6 @@ const ITEM_VISIBLE_PERCENT_THRESHOLD = 60;
 // TODO: figure out how to use forwardRef with generics
 type T1 = any;
 type ScrollToIndex = { index: number; animated?: boolean };
-type ScrollToIndexInternal = { useOnChangeIndex: boolean };
 
 // const SwiperFlatList = React.forwardRef<RefProps, SwiperFlatListProps<SwiperType>>(
 export const SwiperFlatList = React.forwardRef(
@@ -25,7 +30,7 @@ export const SwiperFlatList = React.forwardRef(
       data = [],
       renderItem,
       renderAll = false,
-      index = FIRST_INDEX,
+      index = I18nManager.isRTL ? data.length - 1 : FIRST_INDEX,
       useReactNativeGestureHandler = false,
       // Pagination
       showPagination = false,
@@ -43,7 +48,7 @@ export const SwiperFlatList = React.forwardRef(
       autoplay = false,
       autoplayLoop = false,
       autoplayLoopKeepAnimation = false,
-      autoplayInvertDirection = false,
+      autoplayInvertDirection = I18nManager.isRTL,
       // Functions
       onChangeIndex,
       onMomentumScrollEnd,
@@ -90,7 +95,7 @@ export const SwiperFlatList = React.forwardRef(
     );
 
     const _scrollToIndex = React.useCallback(
-      (params: ScrollToIndex, extra: ScrollToIndexInternal) => {
+      (params: ScrollToIndex) => {
         const { index: indexToScroll, animated = true } = params;
         const newParams = { animated, index: indexToScroll };
 
@@ -108,16 +113,12 @@ export const SwiperFlatList = React.forwardRef(
           setCurrentIndexes((prevState) => ({ ...prevState, prevIndex: next.prevIndex }));
         }
 
-        if (extra.useOnChangeIndex) {
-          _onChangeIndex({ index: next.index, prevIndex: next.prevIndex });
-        }
-
         // When execute "scrollToIndex", we ignore the method "onMomentumScrollEnd"
         // because it not working on Android
         // https://github.com/facebook/react-native/issues/21718
         flatListElement?.current?.scrollToIndex(newParams);
       },
-      [_onChangeIndex, currentIndexes.index, currentIndexes.prevIndex],
+      [currentIndexes.index, currentIndexes.prevIndex],
     );
 
     // change the index when the user swipe the items
@@ -128,19 +129,19 @@ export const SwiperFlatList = React.forwardRef(
     React.useImperativeHandle(ref, () => ({
       scrollToIndex: (item: ScrollToIndex) => {
         setScrollEnabled(true);
-        _scrollToIndex(item, { useOnChangeIndex: true });
+        _scrollToIndex(item);
         setScrollEnabled(!disableGesture);
       },
       getCurrentIndex: () => currentIndexes.index,
       getPrevIndex: () => currentIndexes.prevIndex,
       goToLastIndex: () => {
         setScrollEnabled(true);
-        _scrollToIndex({ index: size - 1 }, { useOnChangeIndex: false });
+        _scrollToIndex({ index: I18nManager.isRTL ? FIRST_INDEX : size - 1 });
         setScrollEnabled(!disableGesture);
       },
       goToFirstIndex: () => {
         setScrollEnabled(true);
-        _scrollToIndex({ index: FIRST_INDEX }, { useOnChangeIndex: false });
+        _scrollToIndex({ index: I18nManager.isRTL ? size - 1 : FIRST_INDEX });
         setScrollEnabled(!disableGesture);
       },
     }));
@@ -173,7 +174,7 @@ export const SwiperFlatList = React.forwardRef(
           // Disable end loop animation unless `autoplayLoopKeepAnimation` prop configured
           const animate = !isLastIndexEnd || autoplayLoopKeepAnimation;
 
-          _scrollToIndex({ index: nextIndex, animated: animate }, { useOnChangeIndex: true });
+          _scrollToIndex({ index: nextIndex, animated: animate });
         }, autoplayDelay * MILLISECONDS);
       }
       // https://upmostly.com/tutorials/settimeout-in-react-components-using-hooks
@@ -231,9 +232,7 @@ export const SwiperFlatList = React.forwardRef(
       ...props,
       onMomentumScrollEnd: _onMomentumScrollEnd,
       onScrollToIndexFailed: (info) =>
-        setTimeout(() =>
-          _scrollToIndex({ index: info.index, animated: false }, { useOnChangeIndex: true }),
-        ),
+        setTimeout(() => _scrollToIndex({ index: info.index, animated: false })),
       data: _data,
       renderItem: _renderItem,
       initialNumToRender: _initialNumToRender,
@@ -281,7 +280,7 @@ export const SwiperFlatList = React.forwardRef(
             size={size}
             paginationIndex={currentIndexes.index}
             scrollToIndex={(params: ScrollToIndex) => {
-              _scrollToIndex(params, { useOnChangeIndex: false });
+              _scrollToIndex(params);
             }}
             paginationActiveColor={paginationActiveColor}
             paginationDefaultColor={paginationDefaultColor}
