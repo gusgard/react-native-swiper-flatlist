@@ -1,5 +1,5 @@
 {
-  "name": "expo-example48",
+  "name": "SwiperFlatListExample",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
@@ -7,9 +7,19 @@
     "postinstall": "yarn copy:src && cp -r ../example/src ./src && rm -rf node_modules/react-native-swiper-flatlist/node_modules/react-native",
     "start:watch": "node ../example/scripts/watch-and-copy.js",
     "start": "expo start",
+    "expo:prebuild": "expo prebuild --clean",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "watch": "node ./scripts/watch-and-copy.js",
+    "lint": "eslint .",
+    "test": "jest",
+    "e2e:ios:build": "yarn detox build --configuration ios.sim.debug",
+    "e2e:ios:test": "yarn detox test --configuration ios.sim.debug --cleanup --debug-synchronization --take-screenshots all --record-logs all --coverage",
+    "e2e:ios:build-test": "yarn e2e:ios:build && yarn e2e:ios:test",
+    "e2e:ios:test:ci": "yarn detox test --configuration ios.sim.release --workers 3 --debug-synchronization",
+    "e2e:ios:build:ci": "yarn detox build --configuration ios.sim.release",
+    "e2e:ios:build-test:ci": "yarn e2e:ios:build:ci && yarn e2e:ios:test:ci"
   },
   "dependencies": {
     "expo": "~48.0.11",
@@ -19,7 +29,8 @@
     "react-native-swiper-flatlist": "3.1.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "detox": "^20"
   },
   "private": true,
   "packageManager": "yarn@3.5.0"
