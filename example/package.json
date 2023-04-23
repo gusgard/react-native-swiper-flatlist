@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "copy:src": "cp -r ../src/* ./node_modules/react-native-swiper-flatlist/src",
-    "postinstall": "yarn copy:src && cp -r ../example/src ./src && rm -rf node_modules/react-native-swiper-flatlist/node_modules/react-native",
-    "start:watch": "node ../example/scripts/watch-and-copy.js",
+    "postinstall": "yarn copy:src && rm -rf node_modules/react-native-swiper-flatlist/node_modules/react-native && npx pod-install",
+    "start:watch": "concurrently 'npm run watch' 'npm run start'",
     "start": "expo start --dev-client",
     "expo:prebuild": "expo prebuild --clean",
     "android": "expo run:android",
@@ -29,8 +29,12 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "concurrently": "4.1.1",
     "detox": "^20",
-    "jest": "^29.5.0"
+    "jest": "^29.5.0",
+    "minimatch": "3.0.4",
+    "node-watch": "0.6.2",
+    "rimraf": "^2.5.4"
   },
   "private": true,
   "packageManager": "yarn@3.5.0"
