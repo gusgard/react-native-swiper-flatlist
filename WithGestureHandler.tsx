@@ -1,3 +1,5 @@
+// NOTE: this is a quick fix for the case https://github.com/gusgard/react-native-swiper-flatlist/issues/169
+// TODO: delete this file and refactor the code in SwiperFlatList to support the gesture handler without using "require"
 import React from 'react';
 import {
   FlatList as RNFlatList,
@@ -7,8 +9,13 @@ import {
   useWindowDimensions,
 } from 'react-native';
 
-import { Pagination } from '../Pagination/Pagination';
-import { SwiperFlatListProps, SwiperFlatListRefProps } from './SwiperFlatListProps';
+let FlatList = RNFlatList;
+
+import { Pagination } from './src/components/Pagination/Pagination';
+import {
+  SwiperFlatListProps,
+  SwiperFlatListRefProps,
+} from './src/components/SwiperFlatList/SwiperFlatListProps';
 
 const MILLISECONDS = 1000;
 const FIRST_INDEX = 0;
@@ -19,7 +26,7 @@ type T1 = any;
 type ScrollToIndex = { index: number; animated?: boolean };
 
 // const SwiperFlatList = React.forwardRef<RefProps, SwiperFlatListProps<SwiperType>>(
-export const SwiperFlatList = React.forwardRef(
+export const SwiperFlatListWithGestureHandler = React.forwardRef(
   // <T1 extends any>(
   (
     {
@@ -260,18 +267,19 @@ export const SwiperFlatList = React.forwardRef(
       (flatListProps as any).dataSet = { 'paging-enabled-fix': true };
     }
 
-    //NOTE: quick fix for the new version of metro bundler
-    // we should remove this console.warn in the next version (3.2.4)
     if (useReactNativeGestureHandler) {
-      console.warn('Please remove `useReactNativeGestureHandler` and import the library like:');
-      console.warn(
-        "import { SwiperFlatListWithGestureHandler } from 'react-native-swiper-flatlist/WithGestureHandler';",
-      );
+      try {
+        FlatList = require('react-native-gesture-handler').FlatList;
+      } catch (error) {
+        console.warn(
+          "react-native-gesture-handler isn't installed, please install it or remove `useReactNativeGestureHandler`",
+        );
+      }
     }
 
     return (
       <React.Fragment>
-        <RNFlatList {...flatListProps} />
+        <FlatList {...flatListProps} />
         {showPagination ? (
           <PaginationComponent
             size={size}
@@ -299,4 +307,4 @@ export const SwiperFlatList = React.forwardRef(
 type Handle<T> = T extends React.ForwardRefExoticComponent<React.RefAttributes<infer T2>>
   ? T2
   : never;
-export type SwiperFlatList = Handle<typeof SwiperFlatList>;
+export type SwiperFlatList = Handle<typeof SwiperFlatListWithGestureHandler>;

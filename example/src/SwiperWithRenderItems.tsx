@@ -1,6 +1,7 @@
 import React from 'react';
 import { Dimensions, ImageBackground, StyleSheet, Text } from 'react-native';
-import { SwiperFlatList } from 'react-native-swiper-flatlist';
+// import { SwiperFlatList } from 'react-native-swiper-flatlist';
+import { SwiperFlatListWithGestureHandler } from 'react-native-swiper-flatlist/WithGestureHandler';
 
 import { fox, cat, background, element, lion } from './images';
 import { CustomPagination } from './CustomPagination';
@@ -13,7 +14,8 @@ const items = Array.from(Array(5)).map((_, index) => image(index));
 
 export default () => {
   return (
-    <SwiperFlatList
+    <SwiperFlatListWithGestureHandler
+      // useReactNativeGestureHandler
       // inverted
       autoplay
       autoplayDelay={2}
