@@ -245,8 +245,8 @@ export const SwiperFlatList = React.forwardRef(
         itemVisiblePercentThreshold: ITEM_VISIBLE_PERCENT_THRESHOLD,
         ...viewabilityConfig,
       },
-      viewabilityConfigCallbackPairs: viewabilityConfigCallbackPairs.current,
-      // onViewableItemsChanged: _onViewableItemsChanged,
+      viewabilityConfigCallbackPairs: Platform.OS === 'ios'? viewabilityConfigCallbackPairs.current : undefined,
+      onViewableItemsChanged: Platform.OS === 'android'? _onViewableItemsChanged : undefined,
       // debug: true, // for debug
       testID: e2eID,
     };
