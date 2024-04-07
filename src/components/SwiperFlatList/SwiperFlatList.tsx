@@ -54,6 +54,7 @@ export const SwiperFlatList = React.forwardRef(
       viewabilityConfig = {},
       disableGesture = false,
       e2eID,
+      paginationAccessibilityLabels,
       ...props
     }: SwiperFlatListProps<T1>,
     ref: React.Ref<SwiperFlatListRefProps>,
@@ -288,6 +289,7 @@ export const SwiperFlatList = React.forwardRef(
             onPaginationSelectedIndex={onPaginationSelectedIndex}
             paginationTapDisabled={paginationTapDisabled}
             e2eID={e2eID}
+            paginationAccessibilityLabels={paginationAccessibilityLabels}
           />
         ) : null}
       </React.Fragment>
