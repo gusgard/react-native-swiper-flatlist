@@ -152,6 +152,11 @@ export type SwiperFlatListProps<T> = Partial<FlatListProps<T>> & {
    * Defaults to 'false'
    */
   useReactNativeGestureHandler?: boolean;
+  /**
+   * Accessibility labels for the pagination items.
+   * This is optional and used for screen readers.
+   */
+  paginationAccessibilityLabels?: string[];
 } & Pick<
     PaginationProps,
     | 'paginationActiveColor'
@@ -162,5 +167,6 @@ export type SwiperFlatListProps<T> = Partial<FlatListProps<T>> & {
     | 'paginationStyleItemInactive'
     | 'onPaginationSelectedIndex'
     | 'paginationTapDisabled'
+    | 'paginationAccessibilityLabels'
   >;
 //#endregion Pagination

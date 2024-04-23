@@ -68,4 +68,9 @@ export type PaginationProps = {
    *
    */
   e2eID?: string;
+  /**
+   * Accessibility labels for the pagination items.
+   * This is optional and used for screen readers.
+   */
+  paginationAccessibilityLabels?: string[];
 };

@@ -16,6 +16,7 @@ describe('pagination', () => {
         paginationActiveColor="black"
         paginationDefaultColor="white"
         size={5}
+        paginationAccessibilityLabels={['1', '2', '3', '4', '5']}
       />,
     );
     expect(toJSON()).toMatchSnapshot();

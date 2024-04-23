@@ -35,6 +35,7 @@ export const Pagination: React.FC<PaginationProps> = ({
   onPaginationSelectedIndex,
   paginationTapDisabled = false,
   e2eID = '',
+  paginationAccessibilityLabels = [],
 }) => {
   return (
     <View style={[styles.container, paginationStyle]}>
@@ -55,6 +56,8 @@ export const Pagination: React.FC<PaginationProps> = ({
             onPaginationSelectedIndex?.();
           }}
           disabled={paginationTapDisabled}
+          accessibilityLabel={paginationAccessibilityLabels[index]}
+          accessible={!!paginationAccessibilityLabels[index]}
         />
       ))}
     </View>
