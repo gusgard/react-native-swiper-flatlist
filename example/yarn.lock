@@ -2819,7 +2819,7 @@ __metadata:
     node-watch: 0.6.2
     react: 18.2.0
     react-native: 0.71.6
-    react-native-swiper-flatlist: 3.2.3
+    react-native-swiper-flatlist: 3.2.4
     rimraf: ^2.5.4
   languageName: unknown
   linkType: soft
@@ -9108,12 +9108,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-swiper-flatlist@npm:3.2.3":
-  version: 3.2.3
-  resolution: "react-native-swiper-flatlist@npm:3.2.3"
+"react-native-swiper-flatlist@npm:3.2.4":
+  version: 3.2.4
+  resolution: "react-native-swiper-flatlist@npm:3.2.4"
   peerDependencies:
     react-native: ">=0.59.0"
-  checksum: 5a90b90a2c3d896f3fa1bcf466642234dc90eef3711cb4e394c57e168daaa98d64b862a848b27865851a8a941c37598c6cc1a3d80d7f809523d584cef1e4f834
+  checksum: c36c16e422faf1f4f22af72fbd4c50be0f307e59549b50fd43b930f045d6f65b6f85332a447b338b52aa4761a633bbe8f27a11faa61b3b8d92ed0be2088655b9
   languageName: node
   linkType: hard
 
