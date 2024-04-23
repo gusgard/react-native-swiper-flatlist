@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import {
   FlatList as RNFlatList,
   FlatListProps,
@@ -216,6 +216,10 @@ export const SwiperFlatList = React.forwardRef(
       [onViewableItemsChanged],
     );
 
+    const viewabilityConfigCallbackPairs = useRef<any>([
+      { onViewableItemsChanged:_onViewableItemsChanged, },
+    ]);
+
     const flatListProps: FlatListProps<unknown> & { ref: React.RefObject<RNFlatList<unknown>> } = {
       scrollEnabled,
       ref: flatListElement,
@@ -242,7 +246,8 @@ export const SwiperFlatList = React.forwardRef(
         itemVisiblePercentThreshold: ITEM_VISIBLE_PERCENT_THRESHOLD,
         ...viewabilityConfig,
       },
-      onViewableItemsChanged: _onViewableItemsChanged,
+      viewabilityConfigCallbackPairs: Platform.OS === 'ios'? viewabilityConfigCallbackPairs.current : undefined,
+      onViewableItemsChanged: Platform.OS === 'android'? _onViewableItemsChanged : undefined,
       // debug: true, // for debug
       testID: e2eID,
     };
