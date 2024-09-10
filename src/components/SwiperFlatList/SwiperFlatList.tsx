@@ -206,13 +206,14 @@ export const SwiperFlatList = React.forwardRef(
     >(
       () => (params) => {
         const { changed } = params;
-        const newItem = changed?.[FIRST_INDEX];
-        if (newItem !== undefined) {
-          const nextIndex = newItem.index as number;
-          if (newItem.isViewable) {
-            setCurrentIndexes((prevState) => ({ ...prevState, index: nextIndex }));
-          } else {
-            setCurrentIndexes((prevState) => ({ ...prevState, prevIndex: nextIndex }));
+        for (const newItem of changed) {
+          if (newItem !== undefined) {
+            const nextIndex = newItem.index as number;
+            if (newItem.isViewable) {
+              setCurrentIndexes((prevState) => ({ ...prevState, index: nextIndex }));
+            } else {
+              setCurrentIndexes((prevState) => ({ ...prevState, prevIndex: nextIndex }));
+            }
           }
         }
         onViewableItemsChanged?.(params);
