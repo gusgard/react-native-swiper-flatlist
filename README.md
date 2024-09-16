@@ -124,7 +124,9 @@ export default App;
 
 ### Example project with Detox tests
 
-[Code example](./example/README.md)
+[Code example](./example/e2e)
+
+### react-native-gesture-handler
 
 To use `react-native-gesture-handler` instead of FlatList import the library like:
 
