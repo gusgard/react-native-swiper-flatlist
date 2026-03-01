@@ -100,7 +100,7 @@ pnpm jest --updateSnapshot
 
 ### GitHub Actions (`.github/workflows/node.js.yml`)
 - Triggers on all pushes and pull requests
-- Matrix: Node 20.x and 22.x
+- Node.js 24.x
 - Uses `pnpm/action-setup@v4` for pnpm installation
 - Steps: `pnpm install` → `pnpm tsc` → `pnpm lint` → `pnpm jest`
 
