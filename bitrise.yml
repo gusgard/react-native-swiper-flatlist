@@ -23,6 +23,15 @@ workflows:
                 set -x
                 npm install -g pnpm
                 pnpm install
+      - script@1:
+          title: Expo Prebuild iOS
+          inputs:
+            - working_dir: example
+            - content: |-
+                #!/usr/bin/env bash
+                set -e
+                set -x
+                pnpm expo prebuild --platform ios --clean
       - npm@3:
           inputs:
             - command: install -g detox-cli
