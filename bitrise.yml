@@ -9,21 +9,19 @@ workflows:
           run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
       - git-clone@8: {}
       - cache-pull@2: {}
-      - avd-manager@1:
+      - avd-manager@2:
           inputs:
             - tag: default
             - profile: Nexus 5X
             - emulator_id: Nexus_5X_API_27
             - api_level: '27'
-      - yarn@0:
+      - yarn@2:
           inputs:
             - workdir: example
-            - cache_local_deps: 'yes'
             - command: install
-      - npm@1:
+      - npm@3:
           inputs:
             - command: install -g detox-cli
-            - cache_local_deps: 'true'
             - workdir: example
       - script@1:
           inputs:
@@ -50,17 +48,15 @@ workflows:
           run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
       - git-clone@8: {}
       - cache-pull@2: {}
-      - yarn@0:
+      - yarn@2:
           inputs:
             - workdir: example
-            - cache_local_deps: 'yes'
             - command: install
-      - npm@1:
+      - npm@3:
           inputs:
             - command: install -g detox-cli
-            - cache_local_deps: 'true'
             - workdir: example
-      - cocoapods-install@2:
+      - cocoapods-install@3:
           inputs:
             - source_root_path: '$BITRISE_SOURCE_DIR/example/ios'
       - script@1:
