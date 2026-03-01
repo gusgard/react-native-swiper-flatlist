@@ -9318,7 +9318,8 @@ __metadata:
     react-test-renderer: 16.8.6
     typescript: ^4.1.3
   peerDependencies:
-    react-native: ">=0.59.0"
+    react: ">=17.0.0"
+    react-native: ">=0.64.0"
   languageName: unknown
   linkType: soft
 
