@@ -137,3 +137,13 @@ yarn jest --updateSnapshot
 - The `disableGesture` prop works by overlaying a `View` with `onTouchStart`/`onTouchEnd` that captures gestures
 - `renderAll` prop controls whether `windowSize` is set to render all items upfront or use default windowing
 - Peer dependency: `react-native >= 0.59.0`
+
+## Pre-completion Checklist
+
+Before considering any work done, **always** complete the following steps:
+
+- [ ] Run `yarn install` to ensure all dependencies are up to date
+- [ ] Run `yarn lint` (or `yarn lint:fix`) to verify there are no linting errors
+- [ ] Run `yarn tsc` to verify there are no TypeScript errors
+- [ ] Run `yarn test` to verify all unit tests pass
+- [ ] If snapshots changed intentionally, run `yarn jest --updateSnapshot`
