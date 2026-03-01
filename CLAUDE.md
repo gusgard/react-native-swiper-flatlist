@@ -37,11 +37,6 @@
 
 ## Commands
 
-### Full validation (matches pre-commit hook)
-```sh
-pnpm lint-and-test       # Runs: pnpm tsc && pnpm lint && pnpm jest
-```
-
 ### Individual commands
 ```sh
 pnpm tsc                 # TypeScript type checking (strict mode, noEmit)
@@ -108,10 +103,6 @@ pnpm jest --updateSnapshot
 - Matrix: Node 20.x and 22.x
 - Uses `pnpm/action-setup@v4` for pnpm installation
 - Steps: `pnpm install` → `pnpm tsc` → `pnpm lint` → `pnpm jest`
-
-### Pre-commit hook
-- Configured via `pre-commit` package in package.json
-- Runs `lint-and-test` (tsc + lint + jest) before every commit
 
 ## Public API
 

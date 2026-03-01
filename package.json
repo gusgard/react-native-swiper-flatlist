@@ -10,7 +10,6 @@
     "lint:fix": "pnpm lint --fix",
     "test": "jest",
     "test:watch": "jest --watch",
-    "lint-and-test": "pnpm tsc && pnpm lint && pnpm jest",
     "start": "echo ----- Check example folder  ----- 👻",
     "publish": "npm publish",
     "publish:beta": "npm publish --tag beta"
@@ -27,7 +26,6 @@
     "eslint-plugin-ft-flow": "^2.0.3",
     "eslint-plugin-prettier": "^4.2.5",
     "jest": "^29.7.0",
-    "pre-commit": "^1.2.2",
     "prettier": "^2.4.1",
     "react": "19.0.0",
     "react-native": "0.78.0",
@@ -53,11 +51,6 @@
     "modulePathIgnorePatterns": [
       "<rootDir>/example/",
       "<rootDir>/old-rn-example/"
-    ]
-  },
-  "pre-commit": {
-    "run": [
-      "lint-and-test"
     ]
   },
   "repository": {
@@ -102,11 +95,5 @@
       "url": "https://github.com/gusgard"
     }
   ],
-  "packageManager": "pnpm@10.29.3",
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "pre-commit",
-      "spawn-sync"
-    ]
-  }
+  "packageManager": "pnpm@10.29.3"
 }
