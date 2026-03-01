@@ -6,17 +6,17 @@
   "description": "React native swiper flatlist component",
   "author": "Gustavo Gard <gusgard.it@gmail.com> (https://github.com/gusgard)",
   "scripts": {
-    "lint": "yarn eslint index.ts src example/scripts example/src --ext .js,.ts,.tsx",
-    "lint:fix": "yarn lint --fix",
+    "lint": "eslint index.ts src example/scripts example/src --ext .js,.ts,.tsx",
+    "lint:fix": "pnpm lint --fix",
     "test": "jest",
     "test:watch": "jest --watch",
-    "lint-and-test": "yarn tsc && yarn lint && yarn jest",
     "start": "echo ----- Check example folder  ----- 👻",
     "publish": "npm publish",
     "publish:beta": "npm publish --tag beta"
   },
   "devDependencies": {
     "@react-native-community/eslint-config": "^3.2.0",
+    "@react-native/babel-preset": "^0.78.0",
     "@testing-library/react-native": "^13.3.0",
     "@types/jest": "^29.5.0",
     "@types/react": "^19.0.0",
@@ -24,9 +24,8 @@
     "eslint": "^8.19.0",
     "eslint-plugin-detox": "^1.0.0",
     "eslint-plugin-ft-flow": "^2.0.3",
+    "eslint-plugin-prettier": "^4.2.5",
     "jest": "^29.7.0",
-    "@react-native/babel-preset": "^0.78.0",
-    "pre-commit": "^1.2.2",
     "prettier": "^2.4.1",
     "react": "19.0.0",
     "react-native": "0.78.0",
@@ -46,14 +45,12 @@
       "json",
       "node"
     ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!\\.pnpm|((jest-)?react-native|@react-native(-community)?)/)"
+    ],
     "modulePathIgnorePatterns": [
       "<rootDir>/example/",
       "<rootDir>/old-rn-example/"
-    ]
-  },
-  "pre-commit": {
-    "run": [
-      "lint-and-test"
     ]
   },
   "repository": {
@@ -98,5 +95,5 @@
       "url": "https://github.com/gusgard"
     }
   ],
-  "packageManager": "yarn@3.5.0"
+  "packageManager": "pnpm@10.29.3"
 }

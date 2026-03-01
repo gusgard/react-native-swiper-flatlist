@@ -5,9 +5,7 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ master ]
   pull_request:
-    branches: [ master ]
 
 jobs:
   build:
@@ -20,13 +18,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Install pnpm
+      uses: pnpm/action-setup@v4
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Enable Corepack
-      run: corepack enable
-    - run: yarn install
-    - run: yarn tsc
-    - run: yarn lint
-    - run: yarn jest
+        cache: 'pnpm'
+    - run: pnpm install
+    - run: pnpm tsc
+    - run: pnpm lint
+    - run: pnpm jest
