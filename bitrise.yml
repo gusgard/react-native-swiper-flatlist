@@ -15,10 +15,16 @@ workflows:
             - profile: Nexus 5X
             - emulator_id: Nexus_5X_API_27
             - api_level: '27'
-      - yarn@2:
+      - script@1:
+          title: Install pnpm and dependencies
           inputs:
-            - workdir: example
-            - command: install
+            - working_dir: example
+            - content: |-
+                #!/usr/bin/env bash
+                set -e
+                set -x
+                npm install -g pnpm
+                pnpm install
       - npm@3:
           inputs:
             - command: install -g detox-cli
@@ -27,7 +33,7 @@ workflows:
           inputs:
             - working_dir: example
             - content: "#!/usr/bin/env bash\n# fail if any commands fails\nset -e\n# debug
-                log\nset -x\n      \n# we are building a release device configuration\nyarn
+                log\nset -x\n      \n# we are building a release device configuration\npnpm
                 detox build --configuration android.emu.release"
           title: Detox Build
       - save-npm-cache@1: {}
@@ -36,7 +42,7 @@ workflows:
           inputs:
             - working_dir: example
             - content: "#!/usr/bin/env bash\n# fail if any commands fails\nset -e\n# debug
-                log\nset -x\n   \n# we are testing a release device configuration\nyarn
+                log\nset -x\n   \n# we are testing a release device configuration\npnpm
                 detox test --configuration android.emu.release --cleanup"
           title: Detox Test
       - deploy-to-bitrise-io@2:
@@ -49,10 +55,16 @@ workflows:
       - git-clone@8: {}
       - restore-npm-cache@1: {}
       - restore-cocoapods-cache@1: {}
-      - yarn@2:
+      - script@1:
+          title: Install pnpm and dependencies
           inputs:
-            - workdir: example
-            - command: install
+            - working_dir: example
+            - content: |-
+                #!/usr/bin/env bash
+                set -e
+                set -x
+                npm install -g pnpm
+                pnpm install
       - npm@3:
           inputs:
             - command: install -g detox-cli
@@ -71,14 +83,14 @@ workflows:
           inputs:
             - working_dir: example
             - content: "#!/usr/bin/env bash\n# fail if any commands fails\nset -e\n# debug
-                log\nset -x\n      \n# we are building a release device configuration\nyarn
+                log\nset -x\n      \n# we are building a release device configuration\npnpm
                 detox build --configuration ios.sim.release"
           title: Detox Build
       - script@1:
           inputs:
             - working_dir: example
             - content: "#!/usr/bin/env bash\n# fail if any commands fails\nset -e\n# debug
-                log\nset -x\n   \n# we are testing a release device configuration\nyarn
+                log\nset -x\n   \n# we are testing a release device configuration\npnpm
                 detox test --configuration ios.sim.release --cleanup"
           title: Detox Test
       - save-npm-cache@1: {}
