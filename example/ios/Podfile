@@ -14,6 +14,19 @@ install! 'cocoapods',
 
 prepare_react_native_project!
 
+# Fix boost checksum mismatch: the boost 1.76.0 source archive was re-published
+# with a different checksum, causing pod install to fail verification.
+boost_podspec_path = File.join(__dir__, '..', 'node_modules', 'react-native', 'third-party-podspecs', 'boost.podspec')
+if File.exist?(boost_podspec_path)
+  spec_content = File.read(boost_podspec_path)
+  old_checksum = 'f0397ba6e982c4450f27bf32a2a83292aba035b827a5623a14636ea583318c41'
+  new_checksum = '1c162b579a423fa6876c6c5bc16d39ab4bc05e28898977a0a6af345f523f6357'
+  if spec_content.include?(old_checksum)
+    spec_content.gsub!(old_checksum, new_checksum)
+    File.write(boost_podspec_path, spec_content)
+  end
+end
+
 # If you are using a `react-native-flipper` your iOS build will fail when `NO_FLIPPER=1` is set.
 # because `react-native-flipper` depends on (FlipperKit,...), which will be excluded. To fix this,
 # you can also exclude `react-native-flipper` in `react-native.config.js`
