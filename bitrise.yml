@@ -15,6 +15,9 @@ workflows:
             - profile: Nexus 5X
             - emulator_id: Nexus_5X_API_27
             - api_level: '27'
+      - nvm@1:
+          inputs:
+            - node_version_number: '24'
       - script@1:
           title: Install pnpm and dependencies
           inputs:
@@ -55,6 +58,9 @@ workflows:
       - git-clone@8: {}
       - restore-npm-cache@1: {}
       - restore-cocoapods-cache@1: {}
+      - nvm@1:
+          inputs:
+            - node_version_number: '24'
       - script@1:
           title: Install pnpm and dependencies
           inputs:

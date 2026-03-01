@@ -13,7 +13,7 @@
 ## Installation
 
 ```
-yarn add react-native-swiper-flatlist
+pnpm add react-native-swiper-flatlist
 ```
 
 or
