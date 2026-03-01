@@ -47,6 +47,16 @@ workflows:
                 tap wix/brew\nbrew install applesimutils"
           title: Detox Install
       - script@1:
+          title: Detox Build Framework Cache
+          inputs:
+            - working_dir: example
+            - content: |-
+                #!/usr/bin/env bash
+                set -e
+                set -x
+                detox clean-framework-cache
+                detox build-framework-cache
+      - script@1:
           inputs:
             - working_dir: example
             - content: "#!/usr/bin/env bash\n# fail if any commands fails\nset -e\n# debug
