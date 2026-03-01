@@ -245,31 +245,30 @@ export const createSwiperFlatList = (FlatListComponent: typeof RNFlatList) =>
       const effectiveScrollEnabled =
         scrollEnabledOverride.current !== null ? scrollEnabledOverride.current : scrollEnabled;
 
-      const flatListProps: FlatListProps<unknown> & { ref: React.RefObject<RNFlatList<unknown>> } =
-        {
-          scrollEnabled: effectiveScrollEnabled,
-          ref: flatListElement,
-          keyExtractor: (_item, _index) => {
-            const item = _item as { key?: string; id?: string };
-            const key = item?.key ?? item?.id ?? _index.toString();
-            return key;
-          },
-          horizontal: !vertical,
-          showsHorizontalScrollIndicator: false,
-          showsVerticalScrollIndicator: false,
-          pagingEnabled: true,
-          ...props,
-          onMomentumScrollEnd: _onMomentumScrollEnd,
-          onScrollToIndexFailed: (info) =>
-            setTimeout(() => _scrollToIndex({ index: info.index, animated: false })),
-          data: _data,
-          renderItem: _renderItem,
-          initialNumToRender: _initialNumToRender,
-          initialScrollIndex: index, // used with onScrollToIndexFailed
-          viewabilityConfigCallbackPairs: viewabilityConfigCallbackPairs.current,
-          // debug: true, // for debug
-          testID: e2eID,
-        };
+      const flatListProps = {
+        scrollEnabled: effectiveScrollEnabled,
+        ref: flatListElement as React.RefObject<RNFlatList<unknown>>,
+        keyExtractor: (_item: unknown, _index: number) => {
+          const item = _item as { key?: string; id?: string };
+          const key = item?.key ?? item?.id ?? _index.toString();
+          return key;
+        },
+        horizontal: !vertical,
+        showsHorizontalScrollIndicator: false,
+        showsVerticalScrollIndicator: false,
+        pagingEnabled: true,
+        ...props,
+        onMomentumScrollEnd: _onMomentumScrollEnd,
+        onScrollToIndexFailed: (info: { index: number }) =>
+          setTimeout(() => _scrollToIndex({ index: info.index, animated: false })),
+        data: _data,
+        renderItem: _renderItem,
+        initialNumToRender: _initialNumToRender,
+        initialScrollIndex: index, // used with onScrollToIndexFailed
+        viewabilityConfigCallbackPairs: viewabilityConfigCallbackPairs.current,
+        // debug: true, // for debug
+        testID: e2eID,
+      };
 
       const { width, height } = useWindowDimensions();
       if (props.getItemLayout === undefined) {

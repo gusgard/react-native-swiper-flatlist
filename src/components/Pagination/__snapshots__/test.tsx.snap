@@ -3,8 +3,8 @@
 exports[`pagination renders all props 1`] = `
 <View
   style={
-    Array [
-      Object {
+    [
+      {
         "alignSelf": "center",
         "bottom": 0,
         "flexDirection": "row",
@@ -13,15 +13,32 @@ exports[`pagination renders all props 1`] = `
         "marginVertical": 16.675,
         "position": "absolute",
       },
-      Object {},
+      {},
     ]
   }
 >
   <View
     accessibilityLabel="1"
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": false,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
     accessible={true}
+    collapsable={false}
     focusable={true}
-    isTVSelectable={true}
     onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
@@ -30,7 +47,7 @@ exports[`pagination renders all props 1`] = `
     onResponderTerminationRequest={[Function]}
     onStartShouldSetResponder={[Function]}
     style={
-      Object {
+      {
         "backgroundColor": "white",
         "borderRadius": 25,
         "height": 28.125,
@@ -43,9 +60,26 @@ exports[`pagination renders all props 1`] = `
   />
   <View
     accessibilityLabel="2"
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": false,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
     accessible={true}
+    collapsable={false}
     focusable={true}
-    isTVSelectable={true}
     onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
@@ -54,7 +88,7 @@ exports[`pagination renders all props 1`] = `
     onResponderTerminationRequest={[Function]}
     onStartShouldSetResponder={[Function]}
     style={
-      Object {
+      {
         "backgroundColor": "black",
         "borderRadius": 25,
         "height": 28.125,
@@ -67,9 +101,26 @@ exports[`pagination renders all props 1`] = `
   />
   <View
     accessibilityLabel="3"
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": false,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
     accessible={true}
+    collapsable={false}
     focusable={true}
-    isTVSelectable={true}
     onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
@@ -78,7 +129,7 @@ exports[`pagination renders all props 1`] = `
     onResponderTerminationRequest={[Function]}
     onStartShouldSetResponder={[Function]}
     style={
-      Object {
+      {
         "backgroundColor": "white",
         "borderRadius": 25,
         "height": 28.125,
@@ -91,9 +142,26 @@ exports[`pagination renders all props 1`] = `
   />
   <View
     accessibilityLabel="4"
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": false,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
     accessible={true}
+    collapsable={false}
     focusable={true}
-    isTVSelectable={true}
     onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
@@ -102,7 +170,7 @@ exports[`pagination renders all props 1`] = `
     onResponderTerminationRequest={[Function]}
     onStartShouldSetResponder={[Function]}
     style={
-      Object {
+      {
         "backgroundColor": "white",
         "borderRadius": 25,
         "height": 28.125,
@@ -115,9 +183,26 @@ exports[`pagination renders all props 1`] = `
   />
   <View
     accessibilityLabel="5"
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": false,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
     accessible={true}
+    collapsable={false}
     focusable={true}
-    isTVSelectable={true}
     onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
@@ -126,7 +211,7 @@ exports[`pagination renders all props 1`] = `
     onResponderTerminationRequest={[Function]}
     onStartShouldSetResponder={[Function]}
     style={
-      Object {
+      {
         "backgroundColor": "white",
         "borderRadius": 25,
         "height": 28.125,
@@ -143,8 +228,8 @@ exports[`pagination renders all props 1`] = `
 exports[`pagination renders correctly 1`] = `
 <View
   style={
-    Array [
-      Object {
+    [
+      {
         "alignSelf": "center",
         "bottom": 0,
         "flexDirection": "row",
@@ -153,14 +238,31 @@ exports[`pagination renders correctly 1`] = `
         "marginVertical": 16.675,
         "position": "absolute",
       },
-      Object {},
+      {},
     ]
   }
 >
   <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": false,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
     accessible={false}
+    collapsable={false}
     focusable={true}
-    isTVSelectable={true}
     onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
@@ -169,7 +271,7 @@ exports[`pagination renders correctly 1`] = `
     onResponderTerminationRequest={[Function]}
     onStartShouldSetResponder={[Function]}
     style={
-      Object {
+      {
         "backgroundColor": "#FFFFFF",
         "borderRadius": 25,
         "height": 28.125,
@@ -181,9 +283,26 @@ exports[`pagination renders correctly 1`] = `
     testID="_pagination_0"
   />
   <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": false,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
     accessible={false}
+    collapsable={false}
     focusable={true}
-    isTVSelectable={true}
     onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
@@ -192,7 +311,7 @@ exports[`pagination renders correctly 1`] = `
     onResponderTerminationRequest={[Function]}
     onStartShouldSetResponder={[Function]}
     style={
-      Object {
+      {
         "backgroundColor": "#808080",
         "borderRadius": 25,
         "height": 28.125,
@@ -204,9 +323,26 @@ exports[`pagination renders correctly 1`] = `
     testID="_pagination_1"
   />
   <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": false,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
     accessible={false}
+    collapsable={false}
     focusable={true}
-    isTVSelectable={true}
     onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
@@ -215,7 +351,7 @@ exports[`pagination renders correctly 1`] = `
     onResponderTerminationRequest={[Function]}
     onStartShouldSetResponder={[Function]}
     style={
-      Object {
+      {
         "backgroundColor": "#808080",
         "borderRadius": 25,
         "height": 28.125,
@@ -227,9 +363,26 @@ exports[`pagination renders correctly 1`] = `
     testID="_pagination_2"
   />
   <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": false,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
     accessible={false}
+    collapsable={false}
     focusable={true}
-    isTVSelectable={true}
     onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
@@ -238,7 +391,7 @@ exports[`pagination renders correctly 1`] = `
     onResponderTerminationRequest={[Function]}
     onStartShouldSetResponder={[Function]}
     style={
-      Object {
+      {
         "backgroundColor": "#808080",
         "borderRadius": 25,
         "height": 28.125,
@@ -250,9 +403,26 @@ exports[`pagination renders correctly 1`] = `
     testID="_pagination_3"
   />
   <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": false,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
     accessible={false}
+    collapsable={false}
     focusable={true}
-    isTVSelectable={true}
     onClick={[Function]}
     onResponderGrant={[Function]}
     onResponderMove={[Function]}
@@ -261,7 +431,7 @@ exports[`pagination renders correctly 1`] = `
     onResponderTerminationRequest={[Function]}
     onStartShouldSetResponder={[Function]}
     style={
-      Object {
+      {
         "backgroundColor": "#808080",
         "borderRadius": 25,
         "height": 28.125,

@@ -3,24 +3,33 @@
 exports[`swiper flatlist renders children 1`] = `
 <RCTScrollView
   data={
-    Array [
-      <Image
-        source={
-          Object {
+    [
+      {
+        "$$typeof": Symbol(react.transitional.element),
+        "_owner": null,
+        "_store": {},
+        "key": null,
+        "props": {
+          "source": {
             "uri": "https://...",
-          }
-        }
-      />,
-      <Image
-        source={
-          Object {
+          },
+        },
+        "type": [Function],
+      },
+      {
+        "$$typeof": Symbol(react.transitional.element),
+        "_owner": null,
+        "_store": {},
+        "key": null,
+        "props": {
+          "source": {
             "uri": "https://...",
-          }
-        }
-      />,
+          },
+        },
+        "type": [Function],
+      },
     ]
   }
-  disableVirtualization={false}
   getItem={[Function]}
   getItemCount={[Function]}
   getItemLayout={[Function]}
@@ -28,11 +37,9 @@ exports[`swiper flatlist renders children 1`] = `
   initialNumToRender={1}
   initialScrollIndex={0}
   keyExtractor={[Function]}
-  maxToRenderPerBatch={10}
-  numColumns={1}
   onContentSizeChange={[Function]}
-  onEndReachedThreshold={2}
   onLayout={[Function]}
+  onMomentumScrollBegin={[Function]}
   onMomentumScrollEnd={[Function]}
   onScroll={[Function]}
   onScrollBeginDrag={[Function]}
@@ -42,29 +49,28 @@ exports[`swiper flatlist renders children 1`] = `
   removeClippedSubviews={false}
   renderItem={[Function]}
   scrollEnabled={true}
-  scrollEventThrottle={50}
+  scrollEventThrottle={0.0001}
   showsHorizontalScrollIndicator={false}
   showsVerticalScrollIndicator={false}
-  stickyHeaderIndices={Array []}
-  updateCellsBatchingPeriod={50}
+  stickyHeaderIndices={[]}
   viewabilityConfigCallbackPairs={
-    Array [
-      Object {
+    [
+      {
         "onViewableItemsChanged": [Function],
-        "viewabilityConfig": Object {
+        "viewabilityConfig": {
           "itemVisiblePercentThreshold": 60,
           "minimumViewTime": 200,
         },
       },
     ]
   }
-  windowSize={21}
 >
   <View>
     <View
+      onFocusCapture={[Function]}
       style={
-        Array [
-          Object {
+        [
+          {
             "flexDirection": "row",
           },
           null,
@@ -73,7 +79,7 @@ exports[`swiper flatlist renders children 1`] = `
     >
       <Image
         source={
-          Object {
+          {
             "uri": "https://...",
           }
         }
@@ -81,7 +87,7 @@ exports[`swiper flatlist renders children 1`] = `
     </View>
     <View
       style={
-        Object {
+        {
           "width": 750,
         }
       }
@@ -93,22 +99,21 @@ exports[`swiper flatlist renders children 1`] = `
 exports[`swiper flatlist renders correctly 1`] = `
 <RCTScrollView
   data={
-    Array [
-      Object {
+    [
+      {
         "id": 1,
-        "thumbnail": Object {
+        "thumbnail": {
           "uri": "https://...",
         },
       },
-      Object {
+      {
         "id": 2,
-        "thumbnail": Object {
+        "thumbnail": {
           "uri": "https://...",
         },
       },
     ]
   }
-  disableVirtualization={false}
   getItem={[Function]}
   getItemCount={[Function]}
   getItemLayout={[Function]}
@@ -116,11 +121,9 @@ exports[`swiper flatlist renders correctly 1`] = `
   initialNumToRender={1}
   initialScrollIndex={0}
   keyExtractor={[Function]}
-  maxToRenderPerBatch={10}
-  numColumns={1}
   onContentSizeChange={[Function]}
-  onEndReachedThreshold={2}
   onLayout={[Function]}
+  onMomentumScrollBegin={[Function]}
   onMomentumScrollEnd={[Function]}
   onScroll={[Function]}
   onScrollBeginDrag={[Function]}
@@ -130,29 +133,28 @@ exports[`swiper flatlist renders correctly 1`] = `
   removeClippedSubviews={false}
   renderItem={[Function]}
   scrollEnabled={true}
-  scrollEventThrottle={50}
+  scrollEventThrottle={0.0001}
   showsHorizontalScrollIndicator={false}
   showsVerticalScrollIndicator={false}
-  stickyHeaderIndices={Array []}
-  updateCellsBatchingPeriod={50}
+  stickyHeaderIndices={[]}
   viewabilityConfigCallbackPairs={
-    Array [
-      Object {
+    [
+      {
         "onViewableItemsChanged": [Function],
-        "viewabilityConfig": Object {
+        "viewabilityConfig": {
           "itemVisiblePercentThreshold": 60,
           "minimumViewTime": 200,
         },
       },
     ]
   }
-  windowSize={21}
 >
   <View>
     <View
+      onFocusCapture={[Function]}
       style={
-        Array [
-          Object {
+        [
+          {
             "flexDirection": "row",
           },
           null,
@@ -161,7 +163,7 @@ exports[`swiper flatlist renders correctly 1`] = `
     >
       <Image
         source={
-          Object {
+          {
             "uri": "https://...",
           }
         }
@@ -169,7 +171,7 @@ exports[`swiper flatlist renders correctly 1`] = `
     </View>
     <View
       style={
-        Object {
+        {
           "width": 750,
         }
       }
@@ -180,8 +182,7 @@ exports[`swiper flatlist renders correctly 1`] = `
 
 exports[`swiper flatlist renders empty data correctly 1`] = `
 <RCTScrollView
-  data={Array []}
-  disableVirtualization={false}
+  data={[]}
   getItem={[Function]}
   getItemCount={[Function]}
   getItemLayout={[Function]}
@@ -189,11 +190,9 @@ exports[`swiper flatlist renders empty data correctly 1`] = `
   initialNumToRender={1}
   initialScrollIndex={0}
   keyExtractor={[Function]}
-  maxToRenderPerBatch={10}
-  numColumns={1}
   onContentSizeChange={[Function]}
-  onEndReachedThreshold={2}
   onLayout={[Function]}
+  onMomentumScrollBegin={[Function]}
   onMomentumScrollEnd={[Function]}
   onScroll={[Function]}
   onScrollBeginDrag={[Function]}
@@ -203,23 +202,21 @@ exports[`swiper flatlist renders empty data correctly 1`] = `
   removeClippedSubviews={false}
   renderItem={[Function]}
   scrollEnabled={true}
-  scrollEventThrottle={50}
+  scrollEventThrottle={0.0001}
   showsHorizontalScrollIndicator={false}
   showsVerticalScrollIndicator={false}
-  stickyHeaderIndices={Array []}
-  updateCellsBatchingPeriod={50}
+  stickyHeaderIndices={[]}
   viewabilityConfigCallbackPairs={
-    Array [
-      Object {
+    [
+      {
         "onViewableItemsChanged": [Function],
-        "viewabilityConfig": Object {
+        "viewabilityConfig": {
           "itemVisiblePercentThreshold": 60,
           "minimumViewTime": 200,
         },
       },
     ]
   }
-  windowSize={21}
 >
   <View />
 </RCTScrollView>
