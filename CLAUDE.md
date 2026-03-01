@@ -106,7 +106,8 @@ yarn jest --updateSnapshot
 ### GitHub Actions (`.github/workflows/node.js.yml`)
 - Triggers on push to `master` and PRs targeting `master`
 - Matrix: Node 20.x and 22.x
-- Steps: `yarn install` → `yarn tsc` → `yarn lint` → `yarn jest`
+- Enables corepack for Yarn 3 (Berry) support
+- Steps: `corepack enable` → `yarn install` → `yarn tsc` → `yarn lint` → `yarn jest`
 
 ### Pre-commit hook
 - Configured via `pre-commit` package in package.json
