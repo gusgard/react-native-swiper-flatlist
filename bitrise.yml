@@ -118,4 +118,4 @@ trigger_map:
     pull_request_target_branch: master
 meta:
   bitrise.io:
-    stack: osx-xcode-14.3.x-ventura
+    stack: osx-xcode-26.0.x
