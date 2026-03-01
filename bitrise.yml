@@ -1,63 +1,15 @@
 ---
-format_version: '8'
+format_version: '11'
 default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 project_type: react-native
 workflows:
-  android:
-    steps:
-      - activate-ssh-key@4:
-          run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
-      - git-clone@8: {}
-      - restore-npm-cache@1: {}
-      - avd-manager@2:
-          inputs:
-            - tag: default
-            - profile: Nexus 5X
-            - emulator_id: Nexus_5X_API_27
-            - api_level: '27'
-      - nvm@1:
-          inputs:
-            - node_version_number: '24'
-      - script@1:
-          title: Install pnpm and dependencies
-          inputs:
-            - working_dir: example
-            - content: |-
-                #!/usr/bin/env bash
-                set -e
-                set -x
-                npm install -g pnpm
-                pnpm install
-      - npm@3:
-          inputs:
-            - command: install -g detox-cli
-            - workdir: example
-      - script@1:
-          inputs:
-            - working_dir: example
-            - content: "#!/usr/bin/env bash\n# fail if any commands fails\nset -e\n# debug
-                log\nset -x\n      \n# we are building a release device configuration\npnpm
-                detox build --configuration android.emu.release"
-          title: Detox Build
-      - save-npm-cache@1: {}
-      - wait-for-android-emulator@1: {}
-      - script@1:
-          inputs:
-            - working_dir: example
-            - content: "#!/usr/bin/env bash\n# fail if any commands fails\nset -e\n# debug
-                log\nset -x\n   \n# we are testing a release device configuration\npnpm
-                detox test --configuration android.emu.release --cleanup"
-          title: Detox Test
-      - deploy-to-bitrise-io@2:
-          inputs:
-            - deploy_path: example
   primary:
     steps:
       - activate-ssh-key@4:
           run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
       - git-clone@8: {}
-      - restore-npm-cache@1: {}
-      - restore-cocoapods-cache@1: {}
+      - restore-npm-cache@2: {}
+      - restore-cocoapods-cache@2: {}
       - nvm@1:
           inputs:
             - node_version_number: '24'
@@ -106,15 +58,6 @@ workflows:
             - deploy_path: example
 app:
   envs:
-    - opts:
-        is_expand: false
-      PROJECT_LOCATION: example/android
-    - opts:
-        is_expand: false
-      MODULE: app
-    - opts:
-        is_expand: false
-      VARIANT: ''
     - opts:
         is_expand: false
       BITRISE_PROJECT_PATH: example/ios/SwiperFlatListExample.xcworkspace
