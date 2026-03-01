@@ -20,193 +20,203 @@ const ITEM_VISIBLE_PERCENT_THRESHOLD = 60;
 type T1 = any;
 type ScrollToIndex = { index: number; animated?: boolean };
 
-// const SwiperFlatList = React.forwardRef<RefProps, SwiperFlatListProps<SwiperType>>(
-export const SwiperFlatList = React.forwardRef(
-  // <T1 extends any>(
-  (
-    {
-      vertical = false,
-      children,
-      data = [],
-      renderItem,
-      renderAll = false,
-      index = I18nManager.isRTL ? data.length - 1 : FIRST_INDEX,
-      useReactNativeGestureHandler = false,
-      // Pagination
-      showPagination = false,
-      PaginationComponent = Pagination,
-      paginationActiveColor,
-      paginationDefaultColor,
-      paginationStyle,
-      paginationStyleItem,
-      paginationStyleItemActive,
-      paginationStyleItemInactive,
-      onPaginationSelectedIndex,
-      paginationTapDisabled = false,
-      // Autoplay
-      autoplayDelay = 3,
-      autoplay = false,
-      autoplayLoop = false,
-      autoplayLoopKeepAnimation = false,
-      autoplayInvertDirection = I18nManager.isRTL,
-      // Functions
-      onChangeIndex,
-      onMomentumScrollEnd,
-      onViewableItemsChanged,
-      viewabilityConfig = {},
-      disableGesture = false,
-      e2eID,
-      paginationAccessibilityLabels,
-      ...props
-    }: SwiperFlatListProps<T1>,
-    ref: React.Ref<SwiperFlatListRefProps>,
-  ) => {
-    let _data: unknown[] = [];
-    let _renderItem: FlatListProps<any>['renderItem'];
+/**
+ * Factory function to create a SwiperFlatList component with a given FlatList implementation.
+ * This allows sharing all logic between the standard and gesture-handler variants.
+ */
+export const createSwiperFlatList = (FlatListComponent: typeof RNFlatList) =>
+  React.forwardRef(
+    (
+      {
+        vertical = false,
+        children,
+        data = [],
+        renderItem,
+        renderAll = false,
+        index = I18nManager.isRTL ? data.length - 1 : FIRST_INDEX,
+        useReactNativeGestureHandler = false,
+        // Pagination
+        showPagination = false,
+        PaginationComponent = Pagination,
+        paginationActiveColor,
+        paginationDefaultColor,
+        paginationStyle,
+        paginationStyleItem,
+        paginationStyleItemActive,
+        paginationStyleItemInactive,
+        onPaginationSelectedIndex,
+        paginationTapDisabled = false,
+        // Autoplay
+        autoplayDelay = 3,
+        autoplay = false,
+        autoplayLoop = false,
+        autoplayLoopKeepAnimation = false,
+        autoplayInvertDirection = I18nManager.isRTL,
+        // Functions
+        onChangeIndex,
+        onMomentumScrollEnd,
+        onViewableItemsChanged,
+        viewabilityConfig = {},
+        disableGesture = false,
+        e2eID,
+        paginationAccessibilityLabels,
+        ...props
+      }: SwiperFlatListProps<T1>,
+      ref: React.Ref<SwiperFlatListRefProps>,
+    ) => {
+      let _data: unknown[] = [];
+      let _renderItem: FlatListProps<any>['renderItem'];
 
-    if (children) {
-      // github.com/gusgard/react-native-swiper-flatlist/issues/40
-      _data = Array.isArray(children) ? children : [children];
-      _renderItem = ({ item }) => item;
-    } else if (data) {
-      _data = data;
-      _renderItem = renderItem;
-    } else {
-      console.error('Invalid props, `data` or `children` is required');
-    }
-    const size = _data.length;
-    // Items to render in the initial batch.
-    const _initialNumToRender = renderAll ? size : 1;
-    const [currentIndexes, setCurrentIndexes] = React.useState({ index, prevIndex: index });
-    const [ignoreOnMomentumScrollEnd, setIgnoreOnMomentumScrollEnd] = React.useState(false);
-    const flatListElement = React.useRef<RNFlatList<unknown>>(null);
-    const [scrollEnabled, setScrollEnabled] = React.useState(!disableGesture);
-
-    React.useEffect(() => {
-      setScrollEnabled(!disableGesture);
-    }, [disableGesture]);
-
-    const _onChangeIndex = React.useCallback(
-      ({ index: _index, prevIndex: _prevIndex }: { index: number; prevIndex: number }) => {
-        if (_index !== _prevIndex) {
-          onChangeIndex?.({ index: _index, prevIndex: _prevIndex });
-        }
-      },
-      [onChangeIndex],
-    );
-
-    const _scrollToIndex = React.useCallback(
-      (params: ScrollToIndex) => {
-        const { index: indexToScroll, animated = true } = params;
-        const newParams = { animated, index: indexToScroll };
-
-        setIgnoreOnMomentumScrollEnd(true);
-
-        const next = {
-          index: indexToScroll,
-          prevIndex: currentIndexes.index,
-        };
-        if (currentIndexes.index !== next.index && currentIndexes.prevIndex !== next.prevIndex) {
-          setCurrentIndexes({ index: next.index, prevIndex: next.prevIndex });
-        } else if (currentIndexes.index !== next.index) {
-          setCurrentIndexes((prevState) => ({ ...prevState, index: next.index }));
-        } else if (currentIndexes.prevIndex !== next.prevIndex) {
-          setCurrentIndexes((prevState) => ({ ...prevState, prevIndex: next.prevIndex }));
-        }
-
-        // When execute "scrollToIndex", we ignore the method "onMomentumScrollEnd"
-        // because it not working on Android
-        // https://github.com/facebook/react-native/issues/21718
-        flatListElement?.current?.scrollToIndex(newParams);
-      },
-      [currentIndexes.index, currentIndexes.prevIndex],
-    );
-
-    // change the index when the user swipe the items
-    React.useEffect(() => {
-      _onChangeIndex({ index: currentIndexes.index, prevIndex: currentIndexes.prevIndex });
-    }, [_onChangeIndex, currentIndexes.index, currentIndexes.prevIndex]);
-
-    React.useImperativeHandle(ref, () => ({
-      scrollToIndex: (item: ScrollToIndex) => {
-        setScrollEnabled(true);
-        _scrollToIndex(item);
-        setScrollEnabled(!disableGesture);
-      },
-      getCurrentIndex: () => currentIndexes.index,
-      getPrevIndex: () => currentIndexes.prevIndex,
-      goToLastIndex: () => {
-        setScrollEnabled(true);
-        _scrollToIndex({ index: I18nManager.isRTL ? FIRST_INDEX : size - 1 });
-        setScrollEnabled(!disableGesture);
-      },
-      goToFirstIndex: () => {
-        setScrollEnabled(true);
-        _scrollToIndex({ index: I18nManager.isRTL ? size - 1 : FIRST_INDEX });
-        setScrollEnabled(!disableGesture);
-      },
-    }));
-
-    React.useEffect(() => {
-      const isLastIndexEnd = autoplayInvertDirection
-        ? currentIndexes.index === FIRST_INDEX
-        : currentIndexes.index === _data.length - 1;
-      const shouldContinuoWithAutoplay = autoplay && !isLastIndexEnd;
-      let autoplayTimer: ReturnType<typeof setTimeout>;
-      if (shouldContinuoWithAutoplay || autoplayLoop) {
-        autoplayTimer = setTimeout(() => {
-          if (_data.length < 1) {
-            // avoid nextIndex being set to NaN
-            return;
-          }
-
-          if (!autoplay) {
-            // disabled if autoplay is off
-            return;
-          }
-
-          const nextIncrement = autoplayInvertDirection ? -1 : +1;
-
-          let nextIndex = (currentIndexes.index + nextIncrement) % _data.length;
-          if (autoplayInvertDirection && nextIndex < FIRST_INDEX) {
-            nextIndex = _data.length - 1;
-          }
-
-          // Disable end loop animation unless `autoplayLoopKeepAnimation` prop configured
-          const animate = !isLastIndexEnd || autoplayLoopKeepAnimation;
-
-          _scrollToIndex({ index: nextIndex, animated: animate });
-        }, autoplayDelay * MILLISECONDS);
+      if (children) {
+        // github.com/gusgard/react-native-swiper-flatlist/issues/40
+        _data = Array.isArray(children) ? children : [children];
+        _renderItem = ({ item }) => item;
+      } else if (data) {
+        _data = data;
+        _renderItem = renderItem;
+      } else {
+        console.error('Invalid props, `data` or `children` is required');
       }
-      // https://upmostly.com/tutorials/settimeout-in-react-components-using-hooks
-      return () => clearTimeout(autoplayTimer);
-    }, [
-      autoplay,
-      currentIndexes.index,
-      _data.length,
-      autoplayInvertDirection,
-      autoplayLoop,
-      autoplayDelay,
-      autoplayLoopKeepAnimation,
-      _scrollToIndex,
-    ]);
+      const size = _data.length;
+      // Items to render in the initial batch.
+      const _initialNumToRender = renderAll ? size : 1;
+      const [currentIndexes, setCurrentIndexes] = React.useState({ index, prevIndex: index });
+      const [ignoreOnMomentumScrollEnd, setIgnoreOnMomentumScrollEnd] = React.useState(false);
+      const flatListElement = React.useRef<RNFlatList<unknown>>(null);
+      const [scrollEnabled, setScrollEnabled] = React.useState(!disableGesture);
 
-    const _onMomentumScrollEnd: FlatListProps<unknown>['onMomentumScrollEnd'] = (event) => {
-      // NOTE: Method not executed when call "flatListElement?.current?.scrollToIndex"
-      if (ignoreOnMomentumScrollEnd) {
-        setIgnoreOnMomentumScrollEnd(false);
-        return;
-      }
+      // Use a ref for temporary scroll enable/disable during imperative scrolling
+      // to avoid the race condition with async state updates
+      const scrollEnabledOverride = React.useRef<boolean | null>(null);
 
-      onMomentumScrollEnd?.({ index: currentIndexes.index }, event);
-    };
+      React.useEffect(() => {
+        setScrollEnabled(!disableGesture);
+      }, [disableGesture]);
 
-    const _onViewableItemsChanged = React.useMemo<
-      ViewabilityConfigCallbackPair['onViewableItemsChanged']
-    >(
-      () => (params) => {
-        const { changed } = params;
-        for (const newItem of changed) {
+      const _onChangeIndex = React.useCallback(
+        ({ index: _index, prevIndex: _prevIndex }: { index: number; prevIndex: number }) => {
+          if (_index !== _prevIndex) {
+            onChangeIndex?.({ index: _index, prevIndex: _prevIndex });
+          }
+        },
+        [onChangeIndex],
+      );
+
+      const _scrollToIndex = React.useCallback(
+        (params: ScrollToIndex) => {
+          const { index: indexToScroll, animated = true } = params;
+          const newParams = { animated, index: indexToScroll };
+
+          setIgnoreOnMomentumScrollEnd(true);
+
+          const next = {
+            index: indexToScroll,
+            prevIndex: currentIndexes.index,
+          };
+          if (currentIndexes.index !== next.index && currentIndexes.prevIndex !== next.prevIndex) {
+            setCurrentIndexes({ index: next.index, prevIndex: next.prevIndex });
+          } else if (currentIndexes.index !== next.index) {
+            setCurrentIndexes((prevState) => ({ ...prevState, index: next.index }));
+          } else if (currentIndexes.prevIndex !== next.prevIndex) {
+            setCurrentIndexes((prevState) => ({ ...prevState, prevIndex: next.prevIndex }));
+          }
+
+          // When execute "scrollToIndex", we ignore the method "onMomentumScrollEnd"
+          // because it not working on Android
+          // https://github.com/facebook/react-native/issues/21718
+          flatListElement?.current?.scrollToIndex(newParams);
+        },
+        [currentIndexes.index, currentIndexes.prevIndex],
+      );
+
+      // change the index when the user swipe the items
+      React.useEffect(() => {
+        _onChangeIndex({ index: currentIndexes.index, prevIndex: currentIndexes.prevIndex });
+      }, [_onChangeIndex, currentIndexes.index, currentIndexes.prevIndex]);
+
+      React.useImperativeHandle(ref, () => ({
+        scrollToIndex: (item: ScrollToIndex) => {
+          // Temporarily enable scrolling via ref override (synchronous, no race condition)
+          scrollEnabledOverride.current = true;
+          _scrollToIndex(item);
+          // Schedule restore after the scroll has been initiated
+          setTimeout(() => {
+            scrollEnabledOverride.current = null;
+          }, 0);
+        },
+        getCurrentIndex: () => currentIndexes.index,
+        getPrevIndex: () => currentIndexes.prevIndex,
+        goToLastIndex: () => {
+          scrollEnabledOverride.current = true;
+          _scrollToIndex({ index: I18nManager.isRTL ? FIRST_INDEX : size - 1 });
+          setTimeout(() => {
+            scrollEnabledOverride.current = null;
+          }, 0);
+        },
+        goToFirstIndex: () => {
+          scrollEnabledOverride.current = true;
+          _scrollToIndex({ index: I18nManager.isRTL ? size - 1 : FIRST_INDEX });
+          setTimeout(() => {
+            scrollEnabledOverride.current = null;
+          }, 0);
+        },
+      }));
+
+      React.useEffect(() => {
+        const isLastIndexEnd = autoplayInvertDirection
+          ? currentIndexes.index === FIRST_INDEX
+          : currentIndexes.index === _data.length - 1;
+        const shouldContinuoWithAutoplay = autoplay && !isLastIndexEnd;
+        let autoplayTimer: ReturnType<typeof setTimeout>;
+        if (autoplay && (shouldContinuoWithAutoplay || autoplayLoop)) {
+          autoplayTimer = setTimeout(() => {
+            if (_data.length < 1) {
+              // avoid nextIndex being set to NaN
+              return;
+            }
+
+            const nextIncrement = autoplayInvertDirection ? -1 : +1;
+
+            let nextIndex = (currentIndexes.index + nextIncrement) % _data.length;
+            if (autoplayInvertDirection && nextIndex < FIRST_INDEX) {
+              nextIndex = _data.length - 1;
+            }
+
+            // Disable end loop animation unless `autoplayLoopKeepAnimation` prop configured
+            const animate = !isLastIndexEnd || autoplayLoopKeepAnimation;
+
+            _scrollToIndex({ index: nextIndex, animated: animate });
+          }, autoplayDelay * MILLISECONDS);
+        }
+        // https://upmostly.com/tutorials/settimeout-in-react-components-using-hooks
+        return () => clearTimeout(autoplayTimer);
+      }, [
+        autoplay,
+        currentIndexes.index,
+        _data.length,
+        autoplayInvertDirection,
+        autoplayLoop,
+        autoplayDelay,
+        autoplayLoopKeepAnimation,
+        _scrollToIndex,
+      ]);
+
+      const _onMomentumScrollEnd: FlatListProps<unknown>['onMomentumScrollEnd'] = (event) => {
+        // NOTE: Method not executed when call "flatListElement?.current?.scrollToIndex"
+        if (ignoreOnMomentumScrollEnd) {
+          setIgnoreOnMomentumScrollEnd(false);
+          return;
+        }
+
+        onMomentumScrollEnd?.({ index: currentIndexes.index }, event);
+      };
+
+      const _onViewableItemsChanged = React.useMemo<
+        ViewabilityConfigCallbackPair['onViewableItemsChanged']
+      >(
+        () => (params) => {
+          const { changed } = params;
+          const newItem = changed?.[FIRST_INDEX];
           if (newItem !== undefined) {
             const nextIndex = newItem.index as number;
             if (newItem.isViewable) {
@@ -215,106 +225,102 @@ export const SwiperFlatList = React.forwardRef(
               setCurrentIndexes((prevState) => ({ ...prevState, prevIndex: nextIndex }));
             }
           }
-        }
-        onViewableItemsChanged?.(params);
-      },
-      [onViewableItemsChanged],
-    );
-
-    const viewabilityConfigCallbackPairs = useRef<ViewabilityConfigCallbackPairs>([
-      {
-        onViewableItemsChanged: _onViewableItemsChanged,
-        viewabilityConfig: {
-          // https://facebook.github.io/react-native/docs/flatlist#minimumviewtime
-          minimumViewTime: 200,
-          itemVisiblePercentThreshold: ITEM_VISIBLE_PERCENT_THRESHOLD,
-          ...viewabilityConfig,
+          onViewableItemsChanged?.(params);
         },
-      },
-    ]);
-
-    const flatListProps: FlatListProps<unknown> & { ref: React.RefObject<RNFlatList<unknown>> } = {
-      scrollEnabled,
-      ref: flatListElement,
-      keyExtractor: (_item, _index) => {
-        const item = _item as { key?: string; id?: string };
-        const key = item?.key ?? item?.id ?? _index.toString();
-        return key;
-      },
-      horizontal: !vertical,
-      showsHorizontalScrollIndicator: false,
-      showsVerticalScrollIndicator: false,
-      pagingEnabled: true,
-      ...props,
-      onMomentumScrollEnd: _onMomentumScrollEnd,
-      onScrollToIndexFailed: (info) =>
-        setTimeout(() => _scrollToIndex({ index: info.index, animated: false })),
-      data: _data,
-      renderItem: _renderItem,
-      initialNumToRender: _initialNumToRender,
-      initialScrollIndex: index, // used with onScrollToIndexFailed
-      viewabilityConfig: {
-        // https://facebook.github.io/react-native/docs/flatlist#minimumviewtime
-        minimumViewTime: 200,
-        itemVisiblePercentThreshold: ITEM_VISIBLE_PERCENT_THRESHOLD,
-        ...viewabilityConfig,
-      },
-      viewabilityConfigCallbackPairs:
-        Platform.OS === 'ios' ? viewabilityConfigCallbackPairs.current : undefined,
-      onViewableItemsChanged: Platform.OS === 'android' ? _onViewableItemsChanged : undefined,
-      // debug: true, // for debug
-      testID: e2eID,
-    };
-
-    const { width, height } = useWindowDimensions();
-    if (props.getItemLayout === undefined) {
-      const itemDimension = vertical ? height : width;
-      flatListProps.getItemLayout = (__data, ItemIndex: number) => ({
-        length: itemDimension,
-        offset: itemDimension * ItemIndex,
-        index: ItemIndex,
-      });
-    }
-    if (Platform.OS === 'web') {
-      // TODO: do we need this anymore? check 3.1.0
-      (flatListProps as any).dataSet = { 'paging-enabled-fix': true };
-    }
-
-    //NOTE: quick fix for the new version of metro bundler
-    // we should remove this console.warn in the next version (3.2.4)
-    if (useReactNativeGestureHandler) {
-      console.warn('Please remove `useReactNativeGestureHandler` and import the library like:');
-      console.warn(
-        "import { SwiperFlatListWithGestureHandler } from 'react-native-swiper-flatlist/WithGestureHandler';",
+        [onViewableItemsChanged],
       );
-    }
 
-    return (
-      <React.Fragment>
-        <RNFlatList {...flatListProps} />
-        {showPagination ? (
-          <PaginationComponent
-            size={size}
-            paginationIndex={currentIndexes.index}
-            scrollToIndex={(params: ScrollToIndex) => {
-              _scrollToIndex(params);
-            }}
-            paginationActiveColor={paginationActiveColor}
-            paginationDefaultColor={paginationDefaultColor}
-            paginationStyle={paginationStyle}
-            paginationStyleItem={paginationStyleItem}
-            paginationStyleItemActive={paginationStyleItemActive}
-            paginationStyleItemInactive={paginationStyleItemInactive}
-            onPaginationSelectedIndex={onPaginationSelectedIndex}
-            paginationTapDisabled={paginationTapDisabled}
-            e2eID={e2eID}
-            paginationAccessibilityLabels={paginationAccessibilityLabels}
-          />
-        ) : null}
-      </React.Fragment>
-    );
-  },
-);
+      const viewabilityConfigCallbackPairs = useRef<ViewabilityConfigCallbackPairs>([
+        {
+          onViewableItemsChanged: _onViewableItemsChanged,
+          viewabilityConfig: {
+            // https://facebook.github.io/react-native/docs/flatlist#minimumviewtime
+            minimumViewTime: 200,
+            itemVisiblePercentThreshold: ITEM_VISIBLE_PERCENT_THRESHOLD,
+            ...viewabilityConfig,
+          },
+        },
+      ]);
+
+      const effectiveScrollEnabled =
+        scrollEnabledOverride.current !== null ? scrollEnabledOverride.current : scrollEnabled;
+
+      const flatListProps: FlatListProps<unknown> & { ref: React.RefObject<RNFlatList<unknown>> } =
+        {
+          scrollEnabled: effectiveScrollEnabled,
+          ref: flatListElement,
+          keyExtractor: (_item, _index) => {
+            const item = _item as { key?: string; id?: string };
+            const key = item?.key ?? item?.id ?? _index.toString();
+            return key;
+          },
+          horizontal: !vertical,
+          showsHorizontalScrollIndicator: false,
+          showsVerticalScrollIndicator: false,
+          pagingEnabled: true,
+          ...props,
+          onMomentumScrollEnd: _onMomentumScrollEnd,
+          onScrollToIndexFailed: (info) =>
+            setTimeout(() => _scrollToIndex({ index: info.index, animated: false })),
+          data: _data,
+          renderItem: _renderItem,
+          initialNumToRender: _initialNumToRender,
+          initialScrollIndex: index, // used with onScrollToIndexFailed
+          viewabilityConfigCallbackPairs: viewabilityConfigCallbackPairs.current,
+          // debug: true, // for debug
+          testID: e2eID,
+        };
+
+      const { width, height } = useWindowDimensions();
+      if (props.getItemLayout === undefined) {
+        const itemDimension = vertical ? height : width;
+        flatListProps.getItemLayout = (__data, ItemIndex: number) => ({
+          length: itemDimension,
+          offset: itemDimension * ItemIndex,
+          index: ItemIndex,
+        });
+      }
+      if (Platform.OS === 'web') {
+        (flatListProps as any).dataSet = { 'paging-enabled-fix': true };
+      }
+
+      //NOTE: quick fix for the new version of metro bundler
+      if (useReactNativeGestureHandler) {
+        console.warn('Please remove `useReactNativeGestureHandler` and import the library like:');
+        console.warn(
+          "import { SwiperFlatListWithGestureHandler } from 'react-native-swiper-flatlist/WithGestureHandler';",
+        );
+      }
+
+      return (
+        <React.Fragment>
+          <FlatListComponent {...flatListProps} />
+          {showPagination ? (
+            <PaginationComponent
+              size={size}
+              paginationIndex={currentIndexes.index}
+              scrollToIndex={(params: ScrollToIndex) => {
+                _scrollToIndex(params);
+              }}
+              paginationActiveColor={paginationActiveColor}
+              paginationDefaultColor={paginationDefaultColor}
+              paginationStyle={paginationStyle}
+              paginationStyleItem={paginationStyleItem}
+              paginationStyleItemActive={paginationStyleItemActive}
+              paginationStyleItemInactive={paginationStyleItemInactive}
+              onPaginationSelectedIndex={onPaginationSelectedIndex}
+              paginationTapDisabled={paginationTapDisabled}
+              e2eID={e2eID}
+              paginationAccessibilityLabels={paginationAccessibilityLabels}
+            />
+          ) : null}
+        </React.Fragment>
+      );
+    },
+  );
+
+// Default SwiperFlatList using React Native's built-in FlatList
+export const SwiperFlatList = createSwiperFlatList(RNFlatList);
 
 // https://gist.github.com/Venryx/7cff24b17867da305fff12c6f8ef6f96
 type Handle<T> = T extends React.ForwardRefExoticComponent<React.RefAttributes<infer T2>>

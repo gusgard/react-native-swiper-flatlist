@@ -1,2 +1,2 @@
 export { colors } from './colors';
-export { horizontal, vertical } from './layout';
+export { useLayout } from './layout';

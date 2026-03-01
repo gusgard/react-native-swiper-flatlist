@@ -47,12 +47,6 @@ exports[`swiper flatlist renders children 1`] = `
   showsVerticalScrollIndicator={false}
   stickyHeaderIndices={Array []}
   updateCellsBatchingPeriod={50}
-  viewabilityConfig={
-    Object {
-      "itemVisiblePercentThreshold": 60,
-      "minimumViewTime": 200,
-    }
-  }
   viewabilityConfigCallbackPairs={
     Array [
       Object {
@@ -141,12 +135,6 @@ exports[`swiper flatlist renders correctly 1`] = `
   showsVerticalScrollIndicator={false}
   stickyHeaderIndices={Array []}
   updateCellsBatchingPeriod={50}
-  viewabilityConfig={
-    Object {
-      "itemVisiblePercentThreshold": 60,
-      "minimumViewTime": 200,
-    }
-  }
   viewabilityConfigCallbackPairs={
     Array [
       Object {
@@ -220,12 +208,6 @@ exports[`swiper flatlist renders empty data correctly 1`] = `
   showsVerticalScrollIndicator={false}
   stickyHeaderIndices={Array []}
   updateCellsBatchingPeriod={50}
-  viewabilityConfig={
-    Object {
-      "itemVisiblePercentThreshold": 60,
-      "minimumViewTime": 200,
-    }
-  }
   viewabilityConfigCallbackPairs={
     Array [
       Object {

@@ -193,7 +193,7 @@ exports[`pagination renders correctly 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "backgroundColor": "gray",
+        "backgroundColor": "#808080",
         "borderRadius": 25,
         "height": 28.125,
         "marginHorizontal": 18.75,
@@ -216,7 +216,7 @@ exports[`pagination renders correctly 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "backgroundColor": "gray",
+        "backgroundColor": "#808080",
         "borderRadius": 25,
         "height": 28.125,
         "marginHorizontal": 18.75,
@@ -239,7 +239,7 @@ exports[`pagination renders correctly 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "backgroundColor": "gray",
+        "backgroundColor": "#808080",
         "borderRadius": 25,
         "height": 28.125,
         "marginHorizontal": 18.75,
@@ -262,7 +262,7 @@ exports[`pagination renders correctly 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "backgroundColor": "gray",
+        "backgroundColor": "#808080",
         "borderRadius": 25,
         "height": 28.125,
         "marginHorizontal": 18.75,
