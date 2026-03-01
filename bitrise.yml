@@ -8,7 +8,11 @@ workflows:
       - activate-ssh-key@4:
           run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
       - git-clone@8: {}
-      - cache-pull@2: {}
+      - restore-cache@1:
+          inputs:
+            - key: |-
+                deps-android-{{ checksum "example/package.json" }}
+                deps-android-
       - avd-manager@2:
           inputs:
             - tag: default
@@ -30,7 +34,13 @@ workflows:
                 log\nset -x\n      \n# we are building a release device configuration\nyarn
                 detox build --configuration android.emu.release"
           title: Detox Build
-      - cache-push@2: {}
+      - save-cache@1:
+          inputs:
+            - key: deps-android-{{ checksum "example/package.json" }}
+            - paths: |-
+                example/node_modules
+                ~/.gradle/caches
+            - is_key_unique: 'true'
       - wait-for-android-emulator@1: {}
       - script@1:
           inputs:
@@ -47,7 +57,11 @@ workflows:
       - activate-ssh-key@4:
           run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
       - git-clone@8: {}
-      - cache-pull@2: {}
+      - restore-cache@1:
+          inputs:
+            - key: |-
+                deps-ios-{{ checksum "example/package.json" }}
+                deps-ios-
       - yarn@2:
           inputs:
             - workdir: example
@@ -80,9 +94,14 @@ workflows:
                 log\nset -x\n   \n# we are testing a release device configuration\nyarn
                 detox test --configuration ios.sim.release --cleanup"
           title: Detox Test
-      - cache-push@2:
+      - save-cache@1:
           inputs:
-            - cache_paths: ''
+            - key: deps-ios-{{ checksum "example/package.json" }}
+            - paths: |-
+                example/node_modules
+                ~/Library/Caches/CocoaPods
+                example/ios/Pods
+            - is_key_unique: 'true'
       - deploy-to-bitrise-io@2:
           inputs:
             - deploy_path: example
