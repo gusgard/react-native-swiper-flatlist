@@ -78,9 +78,22 @@ workflows:
       - script@1:
           inputs:
             - working_dir: example
-            - content: "#!/usr/bin/env bash\n# fail if any commands fails\nset -e\n# debug
-                log\nset -x\n   \n# we are testing a release device configuration\npnpm
-                detox test --configuration ios.sim.release --cleanup"
+            - content: |-
+                #!/usr/bin/env bash
+                set -x
+
+                # Run detox tests and capture output + exit code
+                pnpm detox test --configuration ios.sim.release --cleanup 2>&1 | tee /tmp/detox-output.log
+                DETOX_EXIT_CODE=${PIPESTATUS[0]}
+
+                # If tests failed, post a PR comment with the failure details
+                if [ $DETOX_EXIT_CODE -ne 0 ]; then
+                  echo "Detox tests failed (exit code: $DETOX_EXIT_CODE). Reporting to GitHub PR..."
+                  bash scripts/report-detox-failures.sh /tmp/detox-output.log || echo "Warning: Failed to post PR comment"
+                fi
+
+                # Propagate the original exit code so Bitrise still marks the build as failed
+                exit $DETOX_EXIT_CODE
           title: Detox Test
       - save-npm-cache@1: {}
       - save-cocoapods-cache@1: {}
