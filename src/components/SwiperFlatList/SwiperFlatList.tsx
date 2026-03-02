@@ -102,32 +102,24 @@ export const createSwiperFlatList = (FlatListComponent: typeof RNFlatList) =>
         [onChangeIndex],
       );
 
-      const _scrollToIndex = React.useCallback(
-        (params: ScrollToIndex) => {
-          const { index: indexToScroll, animated = true } = params;
-          const newParams = { animated, index: indexToScroll };
+      const _scrollToIndex = React.useCallback((params: ScrollToIndex) => {
+        const { index: indexToScroll, animated = true } = params;
 
-          setIgnoreOnMomentumScrollEnd(true);
+        setIgnoreOnMomentumScrollEnd(true);
 
-          const next = {
-            index: indexToScroll,
-            prevIndex: currentIndexes.index,
-          };
-          if (currentIndexes.index !== next.index && currentIndexes.prevIndex !== next.prevIndex) {
-            setCurrentIndexes({ index: next.index, prevIndex: next.prevIndex });
-          } else if (currentIndexes.index !== next.index) {
-            setCurrentIndexes((prevState) => ({ ...prevState, index: next.index }));
-          } else if (currentIndexes.prevIndex !== next.prevIndex) {
-            setCurrentIndexes((prevState) => ({ ...prevState, prevIndex: next.prevIndex }));
+        setCurrentIndexes((prevState) => {
+          const newState = { index: indexToScroll, prevIndex: prevState.index };
+          if (prevState.index === newState.index && prevState.prevIndex === newState.prevIndex) {
+            return prevState;
           }
+          return newState;
+        });
 
-          // When execute "scrollToIndex", we ignore the method "onMomentumScrollEnd"
-          // because it not working on Android
-          // https://github.com/facebook/react-native/issues/21718
-          flatListElement?.current?.scrollToIndex(newParams);
-        },
-        [currentIndexes.index, currentIndexes.prevIndex],
-      );
+        // When execute "scrollToIndex", we ignore the method "onMomentumScrollEnd"
+        // because it not working on Android
+        // https://github.com/facebook/react-native/issues/21718
+        flatListElement?.current?.scrollToIndex({ animated, index: indexToScroll });
+      }, []);
 
       // change the index when the user swipe the items
       React.useEffect(() => {
@@ -216,15 +208,16 @@ export const createSwiperFlatList = (FlatListComponent: typeof RNFlatList) =>
       >(
         () => (params) => {
           const { changed } = params;
-          const newItem = changed?.[FIRST_INDEX];
-          if (newItem !== undefined) {
-            const nextIndex = newItem.index as number;
-            if (newItem.isViewable) {
-              setCurrentIndexes((prevState) => ({ ...prevState, index: nextIndex }));
-            } else {
-              setCurrentIndexes((prevState) => ({ ...prevState, prevIndex: nextIndex }));
+          changed?.forEach((newItem) => {
+            if (newItem.index != null) {
+              const nextIndex = newItem.index as number;
+              if (newItem.isViewable) {
+                setCurrentIndexes((prevState) => ({ ...prevState, index: nextIndex }));
+              } else {
+                setCurrentIndexes((prevState) => ({ ...prevState, prevIndex: nextIndex }));
+              }
             }
-          }
+          });
           onViewableItemsChanged?.(params);
         },
         [onViewableItemsChanged],
