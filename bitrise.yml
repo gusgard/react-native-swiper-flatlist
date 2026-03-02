@@ -39,6 +39,12 @@ workflows:
       - cocoapods-install@3:
           inputs:
             - source_root_path: '$BITRISE_SOURCE_DIR/example/ios'
+      - restore-cache@1:
+          title: Restore Detox Build Cache
+          inputs:
+            - key: |-
+                detox-build-{{ checksum "example/ios/Podfile.lock" }}-{{ checksum "example/app.json" }}
+                detox-build-
       - script@1:
           inputs:
             - working_dir: example
@@ -63,6 +69,12 @@ workflows:
                 log\nset -x\n      \n# we are building a release device configuration\npnpm
                 detox build --configuration ios.sim.release"
           title: Detox Build
+      - save-cache@1:
+          title: Save Detox Build Cache
+          inputs:
+            - key: detox-build-{{ checksum "example/ios/Podfile.lock" }}-{{ checksum "example/app.json" }}
+            - paths: example/ios/build
+            - is_key_unique: "true"
       - script@1:
           inputs:
             - working_dir: example
