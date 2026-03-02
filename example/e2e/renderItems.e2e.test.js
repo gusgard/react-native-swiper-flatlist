@@ -9,6 +9,7 @@ const SCREENS = {
 };
 
 const DELAY = 2 * 1000;
+const ANIMATION_SETTLE_TIMEOUT = 500;
 
 describe('example with renderItems and data', () => {
   beforeAll(async () => {
@@ -31,10 +32,10 @@ describe('example with renderItems and data', () => {
       .toBeVisible()
       .withTimeout(DELAY);
 
-    await expect(element(by.id(SCREENS.one))).toBeNotVisible();
-    await expect(element(by.id(SCREENS.two))).toBeNotVisible();
-    await expect(element(by.id(SCREENS.three))).toBeNotVisible();
-    await expect(element(by.id(SCREENS.fourth))).toBeNotVisible();
+    await waitFor(element(by.id(SCREENS.one))).toBeNotVisible().withTimeout(ANIMATION_SETTLE_TIMEOUT);
+    await waitFor(element(by.id(SCREENS.two))).toBeNotVisible().withTimeout(ANIMATION_SETTLE_TIMEOUT);
+    await waitFor(element(by.id(SCREENS.three))).toBeNotVisible().withTimeout(ANIMATION_SETTLE_TIMEOUT);
+    await waitFor(element(by.id(SCREENS.fourth))).toBeNotVisible().withTimeout(ANIMATION_SETTLE_TIMEOUT);
 
     // after 2s => screen with one
     await new Promise((_) => setTimeout(_, DELAY / 2));
@@ -42,10 +43,10 @@ describe('example with renderItems and data', () => {
       .toBeVisible()
       .withTimeout(DELAY);
 
-    await expect(element(by.id(SCREENS.zero))).toBeNotVisible();
-    await expect(element(by.id(SCREENS.two))).toBeNotVisible();
-    await expect(element(by.id(SCREENS.three))).toBeNotVisible();
-    await expect(element(by.id(SCREENS.fourth))).toBeNotVisible();
+    await waitFor(element(by.id(SCREENS.zero))).toBeNotVisible().withTimeout(ANIMATION_SETTLE_TIMEOUT);
+    await waitFor(element(by.id(SCREENS.two))).toBeNotVisible().withTimeout(ANIMATION_SETTLE_TIMEOUT);
+    await waitFor(element(by.id(SCREENS.three))).toBeNotVisible().withTimeout(ANIMATION_SETTLE_TIMEOUT);
+    await waitFor(element(by.id(SCREENS.fourth))).toBeNotVisible().withTimeout(ANIMATION_SETTLE_TIMEOUT);
 
     // after 4s => screen with two
     await new Promise((_) => setTimeout(_, DELAY / 2));
@@ -53,10 +54,10 @@ describe('example with renderItems and data', () => {
       .toBeVisible()
       .withTimeout(DELAY);
 
-    await expect(element(by.id(SCREENS.zero))).toBeNotVisible();
-    await expect(element(by.id(SCREENS.one))).toBeNotVisible();
-    await expect(element(by.id(SCREENS.three))).toBeNotVisible();
-    await expect(element(by.id(SCREENS.fourth))).toBeNotVisible();
+    await waitFor(element(by.id(SCREENS.zero))).toBeNotVisible().withTimeout(ANIMATION_SETTLE_TIMEOUT);
+    await waitFor(element(by.id(SCREENS.one))).toBeNotVisible().withTimeout(ANIMATION_SETTLE_TIMEOUT);
+    await waitFor(element(by.id(SCREENS.three))).toBeNotVisible().withTimeout(ANIMATION_SETTLE_TIMEOUT);
+    await waitFor(element(by.id(SCREENS.fourth))).toBeNotVisible().withTimeout(ANIMATION_SETTLE_TIMEOUT);
 
     // after 6s => screen with three
     await new Promise((_) => setTimeout(_, DELAY / 2));
@@ -64,10 +65,10 @@ describe('example with renderItems and data', () => {
       .toBeVisible()
       .withTimeout(DELAY);
 
-    await expect(element(by.id(SCREENS.zero))).toBeNotVisible();
-    await expect(element(by.id(SCREENS.one))).toBeNotVisible();
-    await expect(element(by.id(SCREENS.two))).toBeNotVisible();
-    await expect(element(by.id(SCREENS.fourth))).toBeNotVisible();
+    await waitFor(element(by.id(SCREENS.zero))).toBeNotVisible().withTimeout(ANIMATION_SETTLE_TIMEOUT);
+    await waitFor(element(by.id(SCREENS.one))).toBeNotVisible().withTimeout(ANIMATION_SETTLE_TIMEOUT);
+    await waitFor(element(by.id(SCREENS.two))).toBeNotVisible().withTimeout(ANIMATION_SETTLE_TIMEOUT);
+    await waitFor(element(by.id(SCREENS.fourth))).toBeNotVisible().withTimeout(ANIMATION_SETTLE_TIMEOUT);
 
     // after 8s => screen with fourth
     await new Promise((_) => setTimeout(_, DELAY / 2));
@@ -75,10 +76,10 @@ describe('example with renderItems and data', () => {
       .toBeVisible()
       .withTimeout(DELAY);
 
-    await expect(element(by.id(SCREENS.zero))).toBeNotVisible();
-    await expect(element(by.id(SCREENS.one))).toBeNotVisible();
-    await expect(element(by.id(SCREENS.two))).toBeNotVisible();
-    await expect(element(by.id(SCREENS.three))).toBeNotVisible();
+    await waitFor(element(by.id(SCREENS.zero))).toBeNotVisible().withTimeout(ANIMATION_SETTLE_TIMEOUT);
+    await waitFor(element(by.id(SCREENS.one))).toBeNotVisible().withTimeout(ANIMATION_SETTLE_TIMEOUT);
+    await waitFor(element(by.id(SCREENS.two))).toBeNotVisible().withTimeout(ANIMATION_SETTLE_TIMEOUT);
+    await waitFor(element(by.id(SCREENS.three))).toBeNotVisible().withTimeout(ANIMATION_SETTLE_TIMEOUT);
   });
 
   // https://github.com/wix/Detox/blob/master/docs/APIRef.ActionsOnElement.md#swipedirection-speed-percentage
