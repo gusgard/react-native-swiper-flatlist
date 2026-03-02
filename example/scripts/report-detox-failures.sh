@@ -18,6 +18,12 @@
 
 set -o pipefail
 
+# --- Verify required tools ---
+if ! command -v jq &>/dev/null; then
+  echo "Error: 'jq' is required but not found in PATH. Install it with: brew install jq"
+  exit 1
+fi
+
 LOG_FILE="${1:?Usage: report-detox-failures.sh <log-file>}"
 
 if [ ! -f "$LOG_FILE" ]; then
@@ -61,10 +67,6 @@ if [ ${#LOG_CONTENT} -gt $MAX_LOG_CHARS ]; then
 ... (truncated — full output available in Bitrise build logs)"
 fi
 
-# --- Escape for JSON ---
-# Use jq to safely encode the log content into a JSON string
-LOG_JSON=$(echo "$LOG_CONTENT" | jq -Rs .)
-
 # --- Build comment body ---
 BUILD_LINK=""
 if [ -n "$BUILD_URL" ]; then
@@ -101,19 +103,19 @@ COMMENT_EOF
 )
 
 # Encode the full body as JSON
-BODY_JSON=$(echo "$BODY" | jq -Rs .)
+BODY_JSON=$(printf '%s\n' "$BODY" | jq -Rs .)
 
 # --- Post comment to PR ---
 GITHUB_API_URL="https://api.github.com/repos/${REPO_SLUG}/issues/${PR_NUMBER}/comments"
 
 echo "Posting Detox failure report to PR #${PR_NUMBER} on ${REPO_SLUG}..."
 
-HTTP_STATUS=$(curl -s -o /tmp/gh-comment-response.json -w "%{http_code}" \
+HTTP_STATUS=$(printf '{"body": %s}' "$BODY_JSON" | curl -s -o /tmp/gh-comment-response.json -w "%{http_code}" \
   -X POST \
-  -H "Authorization: token $GITHUB_TOKEN" \
+  -H "Authorization: Bearer $GITHUB_TOKEN" \
   -H "Accept: application/vnd.github.v3+json" \
   -H "Content-Type: application/json" \
-  -d "{\"body\": ${BODY_JSON}}" \
+  --data-binary @- \
   "$GITHUB_API_URL")
 
 if [ "$HTTP_STATUS" -ge 200 ] && [ "$HTTP_STATUS" -lt 300 ]; then
