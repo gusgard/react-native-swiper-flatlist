@@ -8,16 +8,16 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "postinstall": "yarn copy:src && rm -rf node_modules/react-native-swiper-flatlist/node_modules/react-native && npx pod-install",
+    "postinstall": "pnpm copy:src && rm -rf node_modules/react-native-swiper-flatlist/node_modules/react-native && npx pod-install",
     "copy:src": "cp -r ../src/* ./node_modules/react-native-swiper-flatlist/src",
     "watch": "node ./scripts/watch-and-copy.js",
     "start:watch": "concurrently 'npm run watch' 'npm run start'",
-    "e2e:ios:build": "yarn detox build --configuration ios.sim.debug",
-    "e2e:ios:test": "yarn detox test --configuration ios.sim.debug --cleanup --debug-synchronization --take-screenshots all --record-logs all --coverage",
-    "e2e:ios:build-test": "yarn e2e:ios:build && yarn e2e:ios:test",
-    "e2e:ios:test:ci": "yarn detox test --configuration ios.sim.release --workers 3 --debug-synchronization",
-    "e2e:ios:build:ci": "yarn detox build --configuration ios.sim.release",
-    "e2e:ios:build-test:ci": "yarn e2e:ios:build:ci && yarn e2e:ios:test:ci"
+    "e2e:ios:build": "pnpm detox build --configuration ios.sim.debug",
+    "e2e:ios:test": "pnpm detox test --configuration ios.sim.debug --cleanup --debug-synchronization --take-screenshots all --record-logs all --coverage",
+    "e2e:ios:build-test": "pnpm e2e:ios:build && pnpm e2e:ios:test",
+    "e2e:ios:test:ci": "pnpm detox test --configuration ios.sim.release --workers 3 --debug-synchronization",
+    "e2e:ios:build:ci": "pnpm detox build --configuration ios.sim.release",
+    "e2e:ios:build-test:ci": "pnpm e2e:ios:build:ci && pnpm e2e:ios:test:ci"
   },
   "dependencies": {
     "react": "18.2.0",
@@ -52,5 +52,5 @@
   "jest": {
     "preset": "react-native"
   },
-  "packageManager": "yarn@3.5.0"
+  "packageManager": "pnpm@10.29.3"
 }

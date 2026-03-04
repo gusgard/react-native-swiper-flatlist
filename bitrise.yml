@@ -1,57 +1,37 @@
 ---
-format_version: '8'
+format_version: '11'
 default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 project_type: react-native
 workflows:
-  android:
-    steps:
-      - activate-ssh-key@4:
-          run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
-      - git-clone@8: {}
-      - cache-pull@2: {}
-      - avd-manager@2:
-          inputs:
-            - tag: default
-            - profile: Nexus 5X
-            - emulator_id: Nexus_5X_API_27
-            - api_level: '27'
-      - yarn@2:
-          inputs:
-            - workdir: example
-            - command: install
-      - npm@3:
-          inputs:
-            - command: install -g detox-cli
-            - workdir: example
-      - script@1:
-          inputs:
-            - working_dir: example
-            - content: "#!/usr/bin/env bash\n# fail if any commands fails\nset -e\n# debug
-                log\nset -x\n      \n# we are building a release device configuration\nyarn
-                detox build --configuration android.emu.release"
-          title: Detox Build
-      - cache-push@2: {}
-      - wait-for-android-emulator@1: {}
-      - script@1:
-          inputs:
-            - working_dir: example
-            - content: "#!/usr/bin/env bash\n# fail if any commands fails\nset -e\n# debug
-                log\nset -x\n   \n# we are testing a release device configuration\nyarn
-                detox test --configuration android.emu.release --cleanup"
-          title: Detox Test
-      - deploy-to-bitrise-io@2:
-          inputs:
-            - deploy_path: example
   primary:
     steps:
       - activate-ssh-key@4:
           run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
       - git-clone@8: {}
-      - cache-pull@2: {}
-      - yarn@2:
+      - restore-npm-cache@2: {}
+      - restore-cocoapods-cache@2: {}
+      - nvm@1:
           inputs:
-            - workdir: example
-            - command: install
+            - node_version_number: '24'
+      - script@1:
+          title: Install pnpm and dependencies
+          inputs:
+            - working_dir: example
+            - content: |-
+                #!/usr/bin/env bash
+                set -e
+                set -x
+                npm install -g pnpm
+                pnpm install
+      - script@1:
+          title: Expo Prebuild iOS
+          inputs:
+            - working_dir: example
+            - content: |-
+                #!/usr/bin/env bash
+                set -e
+                set -x
+                pnpm expo prebuild --platform ios --clean
       - npm@3:
           inputs:
             - command: install -g detox-cli
@@ -59,6 +39,12 @@ workflows:
       - cocoapods-install@3:
           inputs:
             - source_root_path: '$BITRISE_SOURCE_DIR/example/ios'
+      - restore-cache@1:
+          title: Restore Detox Build Cache
+          inputs:
+            - key: |-
+                detox-build-{{ checksum "example/ios/Podfile.lock" }}-{{ checksum "example/app.json" }}
+                detox-build-
       - script@1:
           inputs:
             - working_dir: example
@@ -67,36 +53,55 @@ workflows:
                 tap wix/brew\nbrew install applesimutils"
           title: Detox Install
       - script@1:
+          title: Detox Build Framework Cache
           inputs:
             - working_dir: example
-            - content: "#!/usr/bin/env bash\n# fail if any commands fails\nset -e\n# debug
-                log\nset -x\n      \n# we are building a release device configuration\nyarn
-                detox build --configuration ios.sim.release"
-          title: Detox Build
+            - content: |-
+                #!/usr/bin/env bash
+                set -e
+                set -x
+                detox clean-framework-cache
+                detox build-framework-cache
       - script@1:
           inputs:
             - working_dir: example
             - content: "#!/usr/bin/env bash\n# fail if any commands fails\nset -e\n# debug
-                log\nset -x\n   \n# we are testing a release device configuration\nyarn
-                detox test --configuration ios.sim.release --cleanup"
-          title: Detox Test
-      - cache-push@2:
+                log\nset -x\n      \n# we are building a release device configuration\npnpm
+                detox build --configuration ios.sim.release"
+          title: Detox Build
+      - save-cache@1:
+          title: Save Detox Build Cache
           inputs:
-            - cache_paths: ''
+            - key: detox-build-{{ checksum "example/ios/Podfile.lock" }}-{{ checksum "example/app.json" }}
+            - paths: example/ios/build
+            - is_key_unique: "true"
+      - script@1:
+          inputs:
+            - working_dir: example
+            - content: |-
+                #!/usr/bin/env bash
+                set -x
+
+                # Run detox tests and capture output + exit code
+                pnpm detox test --configuration ios.sim.release --cleanup 2>&1 | tee /tmp/detox-output.log
+                DETOX_EXIT_CODE=${PIPESTATUS[0]}
+
+                # If tests failed, post a PR comment with the failure details
+                if [ $DETOX_EXIT_CODE -ne 0 ]; then
+                  echo "Detox tests failed (exit code: $DETOX_EXIT_CODE). Reporting to GitHub PR..."
+                  bash scripts/report-detox-failures.sh /tmp/detox-output.log || echo "Warning: Failed to post PR comment"
+                fi
+
+                # Propagate the original exit code so Bitrise still marks the build as failed
+                exit $DETOX_EXIT_CODE
+          title: Detox Test
+      - save-npm-cache@1: {}
+      - save-cocoapods-cache@1: {}
       - deploy-to-bitrise-io@2:
           inputs:
             - deploy_path: example
 app:
   envs:
-    - opts:
-        is_expand: false
-      PROJECT_LOCATION: example/android
-    - opts:
-        is_expand: false
-      MODULE: app
-    - opts:
-        is_expand: false
-      VARIANT: ''
     - opts:
         is_expand: false
       BITRISE_PROJECT_PATH: example/ios/SwiperFlatListExample.xcworkspace

@@ -5,9 +5,7 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ master ]
   pull_request:
-    branches: [ master ]
 
 jobs:
   build:
@@ -16,11 +14,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Install pnpm
+      uses: pnpm/action-setup@v4
     - name: Use Node.js 24.x
       uses: actions/setup-node@v4
       with:
         node-version: 24.x
-    - run: yarn install
-    - run: yarn tsc
-    - run: yarn lint
-    - run: yarn jest
+        cache: 'pnpm'
+    - run: pnpm install
+    - run: pnpm tsc
+    - run: pnpm lint
+    - run: pnpm jest

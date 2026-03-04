@@ -6,7 +6,7 @@
 
 - **Version**: 3.2.5
 - **License**: Apache-2.0
-- **Package manager**: Yarn 3.5.0
+- **Package manager**: pnpm 10.29.3
 - **Entry point**: `index.ts`
 
 ## Repository Structure
@@ -37,28 +37,23 @@
 
 ## Commands
 
-### Full validation (matches pre-commit hook)
-```sh
-yarn lint-and-test       # Runs: yarn tsc && yarn lint && yarn jest
-```
-
 ### Individual commands
 ```sh
-yarn tsc                 # TypeScript type checking (strict mode, noEmit)
-yarn lint                # ESLint on index.ts, src/, example/scripts, example/src
-yarn lint:fix            # ESLint with auto-fix
-yarn test                # Jest unit tests (alias for yarn jest)
-yarn test:watch          # Jest in watch mode
+pnpm tsc                 # TypeScript type checking (strict mode, noEmit)
+pnpm lint                # ESLint on index.ts, src/, example/scripts, example/src
+pnpm lint:fix            # ESLint with auto-fix
+pnpm test                # Jest unit tests (alias for pnpm jest)
+pnpm test:watch          # Jest in watch mode
 ```
 
 ### Example app (from example/ directory)
 ```sh
 cd example
-yarn install
-yarn start               # Expo dev server
-yarn ios                 # Run on iOS
-yarn android             # Run on Android
-yarn web                 # Run on web
+pnpm install
+pnpm start               # Expo dev server
+pnpm ios                 # Run on iOS
+pnpm android             # Run on Android
+pnpm web                 # Run on web
 ```
 
 ## Code Style & Conventions
@@ -98,19 +93,16 @@ yarn web                 # Run on web
 
 When updating snapshots after intentional visual changes:
 ```sh
-yarn jest --updateSnapshot
+pnpm jest --updateSnapshot
 ```
 
 ## CI
 
 ### GitHub Actions (`.github/workflows/node.js.yml`)
-- Triggers on push to `master` and PRs targeting `master`
-- Matrix: Node 20.x and 22.x
-- Steps: `yarn install` → `yarn tsc` → `yarn lint` → `yarn jest`
-
-### Pre-commit hook
-- Configured via `pre-commit` package in package.json
-- Runs `lint-and-test` (tsc + lint + jest) before every commit
+- Triggers on all pushes and pull requests
+- Node.js 24.x
+- Uses `pnpm/action-setup@v4` for pnpm installation
+- Steps: `pnpm install` → `pnpm tsc` → `pnpm lint` → `pnpm jest`
 
 ## Public API
 
@@ -142,8 +134,8 @@ yarn jest --updateSnapshot
 
 Before considering any work done, **always** complete the following steps:
 
-- [ ] Run `yarn install` to ensure all dependencies are up to date
-- [ ] Run `yarn lint` (or `yarn lint:fix`) to verify there are no linting errors
-- [ ] Run `yarn tsc` to verify there are no TypeScript errors
-- [ ] Run `yarn test` to verify all unit tests pass
-- [ ] If snapshots changed intentionally, run `yarn jest --updateSnapshot`
+- [ ] Run `pnpm install` to ensure all dependencies are up to date
+- [ ] Run `pnpm lint` (or `pnpm lint:fix`) to verify there are no linting errors
+- [ ] Run `pnpm tsc` to verify there are no TypeScript errors
+- [ ] Run `pnpm test` to verify all unit tests pass
+- [ ] If snapshots changed intentionally, run `pnpm jest --updateSnapshot`

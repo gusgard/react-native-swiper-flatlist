@@ -1,26 +1,8 @@
 import React from 'react';
-import { I18nManager, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { I18nManager, TouchableOpacity, View } from 'react-native';
 
-import { colors, vertical, horizontal } from '../../themes';
+import { colors, useLayout } from '../../themes';
 import { PaginationProps } from './PaginationProps';
-
-const styles = StyleSheet.create({
-  container: {
-    position: 'absolute',
-    flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
-    marginVertical: vertical.xxSmall,
-    justifyContent: 'center',
-    alignSelf: 'center',
-    bottom: 0,
-    height: horizontal.small,
-  },
-  pagination: {
-    width: horizontal.small,
-    height: horizontal.small,
-    borderRadius: 25,
-    marginHorizontal: horizontal.xSmall,
-  },
-});
 
 export const Pagination: React.FC<PaginationProps> = ({
   size,
@@ -37,13 +19,33 @@ export const Pagination: React.FC<PaginationProps> = ({
   e2eID = '',
   paginationAccessibilityLabels = [],
 }) => {
+  const { horizontal, vertical } = useLayout();
+
   return (
-    <View style={[styles.container, paginationStyle]}>
+    <View
+      style={[
+        {
+          position: 'absolute',
+          flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
+          marginVertical: vertical.xxSmall,
+          justifyContent: 'center',
+          alignSelf: 'center',
+          bottom: 0,
+          height: horizontal.small,
+        },
+        paginationStyle,
+      ]}
+    >
       {Array.from({ length: size }).map((_, index) => (
         <TouchableOpacity
           testID={`${e2eID}_pagination_${index}`}
           style={[
-            styles.pagination,
+            {
+              width: horizontal.small,
+              height: horizontal.small,
+              borderRadius: 25,
+              marginHorizontal: horizontal.xSmall,
+            },
             paginationStyleItem,
             paginationIndex === index
               ? { backgroundColor: paginationActiveColor }
